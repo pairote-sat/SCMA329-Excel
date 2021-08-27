@@ -1,9 +1,80 @@
 --- 
-title: "YOUR TITLE HERE"
-author: "YOUR NAME HERE"
+title: "SCMA329 Practical Mathematical Financial Modeling"
+author: "Pairote Satiracoo"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 ---
 
-# Down the rabbit-hole
+
+Dates and date functions
+========================
+
+Dates and date functions will be discussed in this section. Depending on
+the system setting, the dates used in this section corresponds to the
+U.S. setting, i.e. month/day/year. Thus, 7/1/2017 corresponds to 1 July
+2017.
+
+The following date formats are recognized by Excel:
+
+-   7/1/2017, 7/1/17
+
+-   7-1-2017, 7-1-17,
+
+-   7-1/2017, 7-1/17,
+
+-   July 1, 2017
+
+-   1-Jul-2017
+
+if the date input is without the year, then it is the date on the
+current year, i.e. 7-1, 7/1, July 1, Jul 1, corresponds to 1 July 2018.
+
+Inconsistent date entries
+-------------------------
+
+::: {.example}
+**Example 1**. *What will be the output when we enter dates by using the
+following two digits for the years:*
+
+1.  *7/1/01*
+
+2.  *7/1/60*
+:::
+
+Excel interprets two digit years between 00 and 29 as 21st century
+dates, and two digit years between 30 and 99 as 20th century dates.
+
+Date serial number
+------------------
+
+Excel stores dates as sequential serial numbers so that they can be used
+in calculations. For example,
+
+-   1 January 1900 is serial number 1,
+
+-   1 January 2018 is serial number 43101 because it is 43101 days after
+    1 January 1900.
+
+Date functions
+--------------
+
+The list of date functions can be seen by choosing
+
+**Formulas $\rightarrow$ Function Library $\rightarrow$ Function Library $\rightarrow$ Date & Time**.
+
+  **Function**   **Description**
+  -------------- ---------------------------------------------------------------------------------------------------------------------------------
+  DATE           Returns the serial number of a particular date
+  DATEVALUE      Converts a date in the form of text to a serial number
+  DAY            Converts a serial number to a day of the month
+  DAYS           Returns the number of days between two dates
+  WEEKDAY        Converts a serial number to a day of the week
+  NETWORKDAYS    Returns the difference between two dates, excluding weekend days (Saturdays and Sundays)
+  WORKDAY        Returns a number that represents a date that is the indicated number of working days before or after a date (the starting date)
+  EDATE          Returns the serial number that represents the date that is the indicated number of months before or after a specified date
+  EOMONTH        Returns the serial number for the last day of the month that is the indicated number of months before or after a specified date
+  YEARFRAC       Returns a decimal value that represents fractional years between two dates
+
+For a complete list, see the date and time functions available online.
+More detailed examples are also given in the Excel lab.
 

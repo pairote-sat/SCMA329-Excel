@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Section 3 Interest Rate, Present Values and Cashflows | SCMA329 Practical Mathematical Financial Modeling</title>
+  <meta name="description" content="Section 3 Interest Rate, Present Values and Cashflows | SCMA329 Practical Mathematical Financial Modeling" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Section 3 Interest Rate, Present Values and Cashflows | SCMA329 Practical Mathematical Financial Modeling" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Section 3 Interest Rate, Present Values and Cashflows | SCMA329 Practical Mathematical Financial Modeling" />
+  
+  
+  
+
+<meta name="author" content="Pairote Satiracoo" />
+
+
+<meta name="date" content="2021-08-27" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="working-with-texts.html"/>
+
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">SCMA329-Excel</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Dates and date functions</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#inconsistent-date-entries"><i class="fa fa-check"></i><b>1.1</b> Inconsistent date entries</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#date-serial-number"><i class="fa fa-check"></i><b>1.2</b> Date serial number</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#date-functions"><i class="fa fa-check"></i><b>1.3</b> Date functions</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="working-with-texts.html"><a href="working-with-texts.html"><i class="fa fa-check"></i><b>2</b> Working with Texts</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="working-with-texts.html"><a href="working-with-texts.html#text-functions"><i class="fa fa-check"></i><b>2.1</b> Text functions</a></li>
+<li class="chapter" data-level="2.2" data-path="working-with-texts.html"><a href="working-with-texts.html#character-codes"><i class="fa fa-check"></i><b>2.2</b> Character codes</a></li>
+<li class="chapter" data-level="2.3" data-path="working-with-texts.html"><a href="working-with-texts.html#determining-whether-two-string-are-identical"><i class="fa fa-check"></i><b>2.3</b> Determining whether two string are identical</a></li>
+<li class="chapter" data-level="2.4" data-path="working-with-texts.html"><a href="working-with-texts.html#joining-two-or-more-cells"><i class="fa fa-check"></i><b>2.4</b> Joining two or more cells</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="interest-rate-present-values-and-cashflows.html"><a href="interest-rate-present-values-and-cashflows.html"><i class="fa fa-check"></i><b>3</b> Interest Rate, Present Values and Cashflows</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="interest-rate-present-values-and-cashflows.html"><a href="interest-rate-present-values-and-cashflows.html#working-with-a-single-cashflow-in-excel"><i class="fa fa-check"></i><b>3.1</b> Working with a single cashflow in Excel</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="interest-rate-present-values-and-cashflows.html"><a href="interest-rate-present-values-and-cashflows.html#how-to-calculate-the-future-value-of-a-single-cashflow"><i class="fa fa-check"></i><b>3.1.1</b> How to calculate the future value of a single cashflow</a></li>
+<li class="chapter" data-level="3.1.2" data-path="interest-rate-present-values-and-cashflows.html"><a href="interest-rate-present-values-and-cashflows.html#how-to-calculate-the-present-value-of-a-single-cashflow"><i class="fa fa-check"></i><b>3.1.2</b> How to calculate the present value of a single cashflow</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="interest-rate-present-values-and-cashflows.html"><a href="interest-rate-present-values-and-cashflows.html#present-values-of-a-series-of-cashflows"><i class="fa fa-check"></i><b>3.2</b> Present values of a series of cashflows</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="interest-rate-present-values-and-cashflows.html"><a href="interest-rate-present-values-and-cashflows.html#level-annuities-certain"><i class="fa fa-check"></i><b>3.2.1</b> Level Annuities certain</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">SCMA329 Practical Mathematical Financial Modeling</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="interest-rate-present-values-and-cashflows" class="section level1" number="3">
+<h1><span class="header-section-number">Section 3</span> Interest Rate, Present Values and Cashflows</h1>
+<div id="working-with-a-single-cashflow-in-excel" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Working with a single cashflow in Excel</h2>
+<div id="how-to-calculate-the-future-value-of-a-single-cashflow" class="section level3" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> How to calculate the future value of a single cashflow</h3>
+<p>Suppose an amount <span class="math inline">\(C\)</span> is deposited in an account that pays a fixed
+interest at the rate of <span class="math inline">\(i\)</span>% per time units. Then after <span class="math inline">\(t\)</span> time units,
+the deposit will have accumulated to <span class="math display">\[C (1+i)^t.\]</span></p>
+<p>In Excel, the function FV calculates the future value of a single
+investment (and also periodic constant payments) and a constant interest
+rate.</p>
+<p>The syntax of the function is:</p>
+<p><span class="math display">\[\text{FV(rate, nper, pmt, [pv], [type])},\]</span></p>
+<p>where</p>
+<ul>
+<li><p>rate is the interest rate per period</p></li>
+<li><p>nper is the number of periods over which the investment is made.</p></li>
+<li><p>pmt (used for an annuity type) is the payment made each period and
+cannot change over the life of the annuity.</p></li>
+<li><p>pv (optional) is an additional cash flow now (time 0)</p></li>
+<li><p>fv is an additional cash flow nper periods from now.</p></li>
+<li><p>type (optional) is an optional argument that defines whether the
+payment is made at the start or the end of the period:</p>
+<p>0 - the payment is made at the end of the period;</p>
+<p>1 - the payment is made at the start of the period.</p>
+<p>If the [type] argument is omitted, it takes on the default value
+of 0.</p></li>
+</ul>
+<p>The following timeline illustrates the cashflows used for the FV
+function (assuming that the payments (pmt) are made in arrears).</p>
+<div class="figure" style="text-align: center"><span id="fig:tikz-ex"></span>
+<img src="SCMA329ExcelBookdownproj_files/figure-html/tikz-ex-1.png" alt="Timeline of cashflows for FV function" width="672" />
+<p class="caption">
+Figure 3.1: Timeline of cashflows for FV function
+</p>
+</div>
+<p><strong>Note</strong> For a single cash flow, we set pmt argument to be 0, as there are no
+ongoing payments after the initial investment.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-3" class="example"><strong>Example 3.1  </strong></span><strong>Example 1</strong>. <em>You plan to invest today with an interest rate of 3% per
+year effective. How much money will you accumulate at the end of 2
+years?</em></p>
+</div>
+<p><strong>Solution:</strong> The accumulation of today in 2 years can be calculated by Excel as
+<span class="math display">\[\text{FV}(3\%, 2, 0, -100).\]</span></p>
+</div>
+<div id="how-to-calculate-the-present-value-of-a-single-cashflow" class="section level3" number="3.1.2">
+<h3><span class="header-section-number">3.1.2</span> How to calculate the present value of a single cashflow</h3>
+<p>Similarly, the present value of a future cashflow <span class="math inline">\(C\)</span> required at time
+<span class="math inline">\(t\)</span> time units at a fixed interest of <span class="math inline">\(i\)</span>% per time units can be
+calculated as <span class="math display">\[\frac{C}{(1+i)^t}.\]</span> In Excel, the function PV
+calculates the present value of a single investment (and also periodic
+constant payments) and a constant interest rate. The syntax of the
+function is:</p>
+<p><span class="math display">\[\text{PV(rate, nper, pmt, [fv], [type])}\]</span> where fv is an additional
+cash flow nper periods from now.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-4" class="example"><strong>Example 3.2  </strong></span><strong>Example 2</strong>. <em>How much should you deposit into the account with an
+interest of 8% so that 10 years from now its value would be ?</em></p>
+</div>
+<p><strong>Solution:</strong>
+The present value of today in 10 years can be calculated by Excel as
+<span class="math display">\[\text{PV}(8\%, 10, 0, -1000).\]</span></p>
+</div>
+</div>
+<div id="present-values-of-a-series-of-cashflows" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Present values of a series of cashflows</h2>
+<p>Consider a series of cashflows defined by</p>
+<ol style="list-style-type: decimal">
+<li><p>the times of payments (cashflows), denoted by <span class="math inline">\(t_1, t_2, \ldots,\)</span>
+and</p></li>
+<li><p>the amount of payments, denoted by <span class="math inline">\(C_{r}\)</span> (in short for <span class="math inline">\(C_{t_r}\)</span>),
+which will be paid at time <span class="math inline">\(t_r\)</span>, for <span class="math inline">\(r = 1,2, \ldots\)</span>. The amounts
+can be positive or negative</p></li>
+</ol>
+<p>The present value at any time <span class="math inline">\(t\)</span> of this series of cashflow is
+<span class="math display">\[PV(t) = \sum_{r=1}^\infty C_r (1 + i)^{t - t_r} = \sum_{r=1}^\infty C_r v^{t _r - t}\]</span>
+where <span class="math inline">\(i\)</span> is the effective rate of interest and <span class="math inline">\(v = 1/(1+i)\)</span>.</p>
+<div class="figure" style="text-align: center"><span id="fig:tikz-ex2"></span>
+<img src="SCMA329ExcelBookdownproj_files/figure-html/tikz-ex2-1.png" alt="Timeline of a series of cashflows" width="672" />
+<p class="caption">
+Figure 3.2: Timeline of a series of cashflows
+</p>
+</div>
+<p><strong>Notes</strong>
+1. At a fixed effective rate of interest, the original series of
+cashflows is equivalent to a single payment of amount <span class="math inline">\(PV(t)\)</span> at
+time <span class="math inline">\(t\)</span>.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>If two different series of cashflows have the same <span class="math inline">\(PV\)</span> at one time
+at a given effective rate of interest, then they have the same <span class="math inline">\(PV\)</span>
+at any time at that effective rate of interest.</li>
+</ol>
+<div id="level-annuities-certain" class="section level3" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> Level Annuities certain</h3>
+<p>An <em>annuity</em> is a regular series of payments (cashflows). When the
+payments are certain which are payable for a definite period of time, we
+call it an <em>annuity certain</em>.</p>
+<ul>
+<li><p>If the payments are made at the end of each time period, they are
+paid <em>in arrear</em>.</p></li>
+<li><p>Otherwise, payments are made at the beginning of each time period,
+they are pain <em>in advance</em>.</p></li>
+<li><p>An annuity paid in advance is also known as an <em>annuity due</em></p></li>
+<li><p>If each payment is for the same amount, this is a <em>level</em> annuity.</p></li>
+</ul>
+<div class="example">
+<p><span id="exm:unlabeled-div-5" class="example"><strong>Example 3.3  </strong></span><strong>Example 3</strong>. <em>Let <span class="math inline">\(i\)</span> be the constant effective rate of interest per
+time unit. In Excel, one can calculate the accumulated value of a level
+annuity certain having cashflow of pmt unit at the end of each of the
+next <span class="math inline">\(n\)</span> time units by <span class="math display">\[\text{FV}(i\%, n, pmt, 0).\]</span> The cashflows of
+this annuity is shown in the timeline below.</em></p>
+<div class="figure" style="text-align: center"><span id="fig:tikz-ex3"></span>
+<img src="SCMA329ExcelBookdownproj_files/figure-html/tikz-ex3-1.png" alt="Level Annuity Certain" width="672" />
+<p class="caption">
+Figure 3.3: Level Annuity Certain
+</p>
+</div>
+<p><strong>Note</strong>
+<em>The last argument of the above syntax, [pv] (optional) which is an
+additional cash flow now (at time 0), has been set to 0.</em></p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-6" class="example"><strong>Example 3.4  </strong></span><strong>Example 4</strong>. <em>Let <span class="math inline">\(i\)</span> be the constant effective rate of interest per
+time unit. In Excel, one can calculate the present value at time 0 of a
+level annuity certain having cashflow of pmt unit at the end of each of
+the next <span class="math inline">\(n\)</span> time units by <span class="math display">\[\text{PV}(i\%, n, pmt, 0).\]</span></em></p>
+</div>
+<p>The timeline of these cashflows is shown in the figure below:</p>
+<div class="figure" style="text-align: center"><span id="fig:tikz-ex4"></span>
+<img src="SCMA329ExcelBookdownproj_files/figure-html/tikz-ex4-1.png" alt="Level Annuity Certain" width="672" />
+<p class="caption">
+Figure 3.4: Level Annuity Certain
+</p>
+</div>
+<p><strong>Note</strong>
+The last argument of the above syntax, [fv] (optional) which is an
+additional cash flow at time <span class="math inline">\(n\)</span>, has been set to 0.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-7" class="example"><strong>Example 3.5  </strong></span><strong>Example 5</strong>. <em>Given the effective rate of interest of <span class="math inline">\(8\%\)</span> p.a., use
+Excel to calculate</em></p>
+<ol style="list-style-type: decimal">
+<li><p><em>the accumulation at 12 years of payable yearly in arrear for the
+next 12 years.</em></p></li>
+<li><p><em>the present value now of ,000 payable yearly in arrear for the next
+6 years.</em></p></li>
+<li><p><em>the present value now of ,000 payable half-yearly in arrear for the
+next 12.5 years.</em></p></li>
+</ol>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-8" class="example"><strong>Example 3.6  </strong></span><strong>Example 6</strong>. <em>Let <span class="math inline">\(i = 4\%\)</span> effective per time unit. Cashflows are
+given as follows:</em></p>
+<ul>
+<li><p><em><span class="math inline">\(C_1 = 200\)</span> at time <span class="math inline">\(t_1 = 1\)</span>.</em></p></li>
+<li><p><em><span class="math inline">\(C_2 = 300\)</span> at time <span class="math inline">\(t_2 = 3\)</span>.</em></p></li>
+<li><p><em><span class="math inline">\(C_3 = -100\)</span> at time <span class="math inline">\(t_3 = 5\)</span>.</em></p></li>
+<li><p><em><span class="math inline">\(C_4 = -50\)</span> at time <span class="math inline">\(t_4 = 6\)</span>.</em></p></li>
+</ul>
+<p><em>Develop the model using Excel to calculate</em></p>
+<ol style="list-style-type: decimal">
+<li><p><em>the accumulation at time <span class="math inline">\(t = 7\)</span>.</em></p></li>
+<li><p><em>the present value at time <span class="math inline">\(t = 0\)</span>.</em></p></li>
+<li><p><em>the present value at time <span class="math inline">\(t = 4\)</span>.</em></p></li>
+</ol>
+</div>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="working-with-texts.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/pairote-sat/SCMA329-Excel/edit/master/03-present-values.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/pairote-sat/SCMA329-Excel/blob/master/03-present-values.Rmd",
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

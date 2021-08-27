@@ -1,0 +1,506 @@
+# Interest Rate, Present Values and Cashflows
+
+## Working with a single cashflow in Excel
+
+### How to calculate the future value of a single cashflow
+
+
+Suppose an amount $C$ is deposited in an account that pays a fixed
+interest at the rate of $i$% per time units. Then after $t$ time units,
+the deposit will have accumulated to $$C (1+i)^t.$$
+
+In Excel, the function FV calculates the future value of a single
+investment (and also periodic constant payments) and a constant interest
+rate.
+
+The syntax of the function is:
+
+$$\text{FV(rate, nper, pmt, [pv], [type])},$$
+
+where
+
+-   rate is the interest rate per period
+
+-   nper is the number of periods over which the investment is made.
+
+-   pmt (used for an annuity type) is the payment made each period and
+    cannot change over the life of the annuity.
+
+-   pv (optional) is an additional cash flow now (time 0)
+
+-   fv is an additional cash flow nper periods from now.
+
+-   type (optional) is an optional argument that defines whether the
+    payment is made at the start or the end of the period:
+
+    0 - the payment is made at the end of the period;
+
+    1 - the payment is made at the start of the period.
+
+    If the [type] argument is omitted, it takes on the default value
+    of 0.
+
+The following timeline illustrates the cashflows used for the FV
+function (assuming that the payments (pmt) are made in arrears).
+
+```{tikz, tikz-ex, fig.cap = "Timeline of cashflows for FV function", fig.ext = 'png',fig.align="center", cache=TRUE, echo = FALSE}
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Straight Lines [id:da8691686097400964] 
+\draw    (11.5,121) -- (648.5,121) ;
+\draw [shift={(650.5,121)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da597257855042824] 
+\draw    (21,115) -- (21,126) ;
+%Straight Lines [id:da9474951160801843] 
+\draw    (120,116) -- (120,127) ;
+%Straight Lines [id:da6185331554915787] 
+\draw    (219,115) -- (219,126) ;
+%Straight Lines [id:da5682405407635602] 
+\draw    (619,116) -- (619,127) ;
+%Straight Lines [id:da6916216612158876] 
+\draw    (520,115) -- (520,126) ;
+%Straight Lines [id:da5378437724389864] 
+\draw    (121,75) -- (120.53,104) ;
+\draw [shift={(120.5,106)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da8577021712761623] 
+\draw    (319,114) -- (319,125) ;
+%Straight Lines [id:da0484009302785704] 
+\draw    (320,75) -- (319.53,104) ;
+\draw [shift={(319.5,106)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da030936689105132587] 
+\draw    (220,75) -- (219.53,104) ;
+\draw [shift={(219.5,106)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da8986801473423123] 
+\draw    (520,75) -- (519.53,104) ;
+\draw [shift={(519.5,106)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da38826749510871394] 
+\draw    (620,75) -- (619.53,104) ;
+\draw [shift={(619.5,106)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da3974947054835791] 
+\draw    (23,74) -- (22.53,103) ;
+\draw [shift={(22.5,105)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da820217957787257] 
+\draw    (620,163) -- (619.53,192) ;
+\draw [shift={(619.5,194)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (21,141.5) node   [align=left] {$\displaystyle 0$};
+% Text Node
+\draw (119,142.5) node   [align=left] {$\displaystyle 1$};
+% Text Node
+\draw (222,141.5) node   [align=left] {$\displaystyle 2$};
+% Text Node
+\draw (620,142.5) node   [align=left] {$\displaystyle nper$};
+% Text Node
+\draw (521,141.5) node   [align=left] {$\displaystyle nper-1$};
+% Text Node
+\draw (122,59) node   [align=left] {$\displaystyle pmt$};
+% Text Node
+\draw (647,104) node   [align=left] {Time};
+% Text Node
+\draw (318,140.5) node   [align=left] {$\displaystyle 3$};
+% Text Node
+\draw (321,59) node   [align=left] {$\displaystyle pmt$};
+% Text Node
+\draw (221,59) node   [align=left] {$\displaystyle pmt$};
+% Text Node
+\draw (521,59) node   [align=left] {$\displaystyle pmt$};
+% Text Node
+\draw (621,59) node   [align=left] {$\displaystyle pmt$};
+% Text Node
+\draw (419,134.5) node   [align=left] {$\displaystyle .\ \ .\ \ .$};
+% Text Node
+\draw (24,58) node   [align=left] {$\displaystyle [ pv]$};
+% Text Node
+\draw (621,211) node   [align=left] {$\displaystyle FV=?$};
+
+
+\end{tikzpicture}
+
+```
+
+**Note** For a single cash flow, we set pmt argument to be 0, as there are no
+ongoing payments after the initial investment.
+
+::: {.example}
+**Example 1**. *You plan to invest today with an interest rate of 3% per
+year effective. How much money will you accumulate at the end of 2
+years?*
+:::
+
+**Solution:** The accumulation of today in 2 years can be calculated by Excel as
+$$\text{FV}(3\%, 2, 0, -100).$$
+
+### How to calculate the present value of a single cashflow
+
+
+Similarly, the present value of a future cashflow $C$ required at time
+$t$ time units at a fixed interest of $i$% per time units can be
+calculated as $$\frac{C}{(1+i)^t}.$$ In Excel, the function PV
+calculates the present value of a single investment (and also periodic
+constant payments) and a constant interest rate. The syntax of the
+function is:
+
+$$\text{PV(rate, nper, pmt, [fv], [type])}$$ where fv is an additional
+cash flow nper periods from now.
+
+::: {.example}
+**Example 2**. *How much should you deposit into the account with an
+interest of 8% so that 10 years from now its value would be ?*
+:::
+**Solution:** 
+The present value of today in 10 years can be calculated by Excel as
+$$\text{PV}(8\%, 10, 0, -1000).$$
+
+## Present values of a series of cashflows
+
+
+Consider a series of cashflows defined by
+
+1.  the times of payments (cashflows), denoted by $t_1, t_2, \ldots,$
+    and
+
+2.  the amount of payments, denoted by $C_{r}$ (in short for $C_{t_r}$),
+    which will be paid at time $t_r$, for $r = 1,2, \ldots$. The amounts
+    can be positive or negative
+
+The present value at any time $t$ of this series of cashflow is
+$$PV(t) = \sum_{r=1}^\infty C_r (1 + i)^{t - t_r} = \sum_{r=1}^\infty C_r v^{t _r - t}$$
+where $i$ is the effective rate of interest and $v = 1/(1+i)$.
+
+
+```{tikz, tikz-ex2, fig.cap = "Timeline of a series of cashflows", fig.ext = 'png',  fig.align="center", cache=TRUE, echo = FALSE}
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1,scale = 0.8]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Straight Lines [id:da8691686097400964] 
+\draw    (11.5,121) -- (648.5,121) ;
+\draw [shift={(650.5,121)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+%Straight Lines [id:da597257855042824] 
+\draw    (21,115) -- (21,126) ;
+
+
+%Straight Lines [id:da9474951160801843] 
+\draw    (161,116) -- (161,127) ;
+
+
+%Straight Lines [id:da6185331554915787] 
+\draw    (320,115) -- (320,126) ;
+
+
+%Straight Lines [id:da5682405407635602] 
+\draw    (599,116) -- (599,127) ;
+
+
+%Straight Lines [id:da6916216612158876] 
+\draw    (470,115) -- (470,126) ;
+
+
+%Straight Lines [id:da5378437724389864] 
+\draw    (21,75) -- (20.53,104) ;
+\draw [shift={(20.5,106)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+%Straight Lines [id:da5881588816774714] 
+\draw    (470,76) -- (469.53,105) ;
+\draw [shift={(469.5,107)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+%Straight Lines [id:da048688156533002847] 
+\draw    (160,160) -- (159.53,189) ;
+\draw [shift={(159.5,191)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+%Straight Lines [id:da15939998725879834] 
+\draw    (600,158) -- (599.53,187) ;
+\draw [shift={(599.5,189)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+%Curve Lines [id:da031538711266737796] 
+\draw    (21,33) .. controls (33,16) and (214,-44) .. (321,103) ;
+\draw [shift={(321,103)}, rotate = 233.95] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+%Curve Lines [id:da21933383878087986] 
+\draw    (159,228) .. controls (270.87,250.77) and (293.55,197.09) .. (318.25,156.23) ;
+\draw [shift={(319,155)}, rotate = 481.37] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+%Curve Lines [id:da756354870019234] 
+\draw    (325.5,159.8) .. controls (344.9,184.07) and (363.33,243.45) .. (454,261) .. controls (547,279) and (584.98,241.51) .. (599,231) ;
+
+\draw [shift={(324,158)}, rotate = 48.99] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da08207150502732485] 
+\draw    (321.56,100.94) .. controls (330.16,72.83) and (391.93,-6.87) .. (467,37) ;
+
+\draw [shift={(321,103)}, rotate = 282.99] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (22,141.5) node   [align=left] {$\displaystyle t_{1}$};
+% Text Node
+\draw (160,142.5) node   [align=left] {$\displaystyle t_{2}$};
+% Text Node
+\draw (323,141.5) node   [align=left] {$\displaystyle t$};
+% Text Node
+\draw (600,142.5) node   [align=left] {$\displaystyle t_{n}$};
+% Text Node
+\draw (471,141.5) node   [align=left] {$\displaystyle t_{n-1}$};
+% Text Node
+\draw (22,59) node   [align=left] {$\displaystyle C_{1}$};
+% Text Node
+\draw (471,60) node   [align=left] {$\displaystyle C_{n-1}$};
+% Text Node
+\draw (161,205) node   [align=left] {$\displaystyle C_{2}$};
+% Text Node
+\draw (601,204) node   [align=left] {$\displaystyle C_{n}$};
+% Text Node
+\draw (636,104) node   [align=left] {time};
+
+
+\end{tikzpicture}
+```
+
+
+**Notes**
+1.  At a fixed effective rate of interest, the original series of
+    cashflows is equivalent to a single payment of amount $PV(t)$ at
+    time $t$.
+
+2.  If two different series of cashflows have the same $PV$ at one time
+    at a given effective rate of interest, then they have the same $PV$
+    at any time at that effective rate of interest.
+
+### Level Annuities certain
+
+
+An *annuity* is a regular series of payments (cashflows). When the
+payments are certain which are payable for a definite period of time, we
+call it an *annuity certain*.
+
+-   If the payments are made at the end of each time period, they are
+    paid *in arrear*.
+
+-   Otherwise, payments are made at the beginning of each time period,
+    they are pain *in advance*.
+
+-   An annuity paid in advance is also known as an *annuity due*
+
+-   If each payment is for the same amount, this is a *level* annuity.
+
+::: {.example}
+**Example 3**. *Let $i$ be the constant effective rate of interest per
+time unit. In Excel, one can calculate the accumulated value of a level
+annuity certain having cashflow of pmt unit at the end of each of the
+next $n$ time units by $$\text{FV}(i\%, n, pmt, 0).$$ The cashflows of
+this annuity is shown in the timeline below.*
+
+
+```{tikz, tikz-ex3, fig.cap = "Level Annuity Certain", fig.ext = 'png',  fig.align="center", cache=TRUE, echo = FALSE}
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1,scale = 0.8]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Straight Lines [id:da8691686097400964] 
+\draw    (11.5,121) -- (648.5,121) ;
+\draw [shift={(650.5,121)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da597257855042824] 
+\draw    (21,115) -- (21,126) ;
+%Straight Lines [id:da9474951160801843] 
+\draw    (120,116) -- (120,127) ;
+%Straight Lines [id:da6185331554915787] 
+\draw    (219,115) -- (219,126) ;
+%Straight Lines [id:da5682405407635602] 
+\draw    (619,116) -- (619,127) ;
+%Straight Lines [id:da6916216612158876] 
+\draw    (520,115) -- (520,126) ;
+%Straight Lines [id:da5378437724389864] 
+\draw    (121,75) -- (120.53,104) ;
+\draw [shift={(120.5,106)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da8577021712761623] 
+\draw    (319,114) -- (319,125) ;
+%Straight Lines [id:da0484009302785704] 
+\draw    (320,75) -- (319.53,104) ;
+\draw [shift={(319.5,106)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da030936689105132587] 
+\draw    (220,75) -- (219.53,104) ;
+\draw [shift={(219.5,106)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da8986801473423123] 
+\draw    (520,75) -- (519.53,104) ;
+\draw [shift={(519.5,106)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da38826749510871394] 
+\draw    (620,75) -- (619.53,104) ;
+\draw [shift={(619.5,106)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da3974947054835791] 
+\draw    (23,74) -- (22.53,103) ;
+\draw [shift={(22.5,105)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da820217957787257] 
+\draw    (620,163) -- (619.53,192) ;
+\draw [shift={(619.5,194)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (21,141.5) node   [align=left] {$\displaystyle 0$};
+% Text Node
+\draw (119,142.5) node   [align=left] {$\displaystyle 1$};
+% Text Node
+\draw (222,141.5) node   [align=left] {$\displaystyle 2$};
+% Text Node
+\draw (620,142.5) node   [align=left] {$\displaystyle n$};
+% Text Node
+\draw (521,141.5) node   [align=left] {$\displaystyle n-1$};
+% Text Node
+\draw (122,59) node   [align=left] {$\displaystyle pmt$};
+% Text Node
+\draw (647,104) node   [align=left] {Time};
+% Text Node
+\draw (318,140.5) node   [align=left] {$\displaystyle 3$};
+% Text Node
+\draw (321,59) node   [align=left] {$\displaystyle pmt$};
+% Text Node
+\draw (221,59) node   [align=left] {$\displaystyle pmt$};
+% Text Node
+\draw (521,59) node   [align=left] {$\displaystyle pmt$};
+% Text Node
+\draw (621,59) node   [align=left] {$\displaystyle pmt$};
+% Text Node
+\draw (419,134.5) node   [align=left] {$\displaystyle .\ \ .\ \ .$};
+% Text Node
+\draw (24,58) node   [align=left] {$\displaystyle 0$};
+% Text Node
+\draw (621,211) node   [align=left] {$\displaystyle FV=?$};
+
+
+\end{tikzpicture}
+
+
+```
+
+**Note**
+*The last argument of the above syntax, [pv] (optional) which is an
+additional cash flow now (at time 0), has been set to 0.*
+:::
+
+::: {.example}
+**Example 4**. *Let $i$ be the constant effective rate of interest per
+time unit. In Excel, one can calculate the present value at time 0 of a
+level annuity certain having cashflow of pmt unit at the end of each of
+the next $n$ time units by $$\text{PV}(i\%, n, pmt, 0).$$*
+:::
+The timeline of these cashflows is shown in the figure below:
+
+```{tikz, tikz-ex4, fig.cap = "Level Annuity Certain", fig.ext = 'png',  fig.align="center", cache=TRUE, echo = FALSE}
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1,scale=0.8]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Straight Lines [id:da8691686097400964] 
+\draw    (26.5,121) -- (663.5,121) ;
+\draw [shift={(665.5,121)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da597257855042824] 
+\draw    (36,115) -- (36,126) ;
+%Straight Lines [id:da9474951160801843] 
+\draw    (135,116) -- (135,127) ;
+%Straight Lines [id:da6185331554915787] 
+\draw    (234,115) -- (234,126) ;
+%Straight Lines [id:da5682405407635602] 
+\draw    (634,116) -- (634,127) ;
+%Straight Lines [id:da6916216612158876] 
+\draw    (535,115) -- (535,126) ;
+%Straight Lines [id:da5378437724389864] 
+\draw    (136,75) -- (135.53,104) ;
+\draw [shift={(135.5,106)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da8577021712761623] 
+\draw    (334,114) -- (334,125) ;
+%Straight Lines [id:da0484009302785704] 
+\draw    (335,75) -- (334.53,104) ;
+\draw [shift={(334.5,106)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da030936689105132587] 
+\draw    (235,75) -- (234.53,104) ;
+\draw [shift={(234.5,106)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da8986801473423123] 
+\draw    (535,75) -- (534.53,104) ;
+\draw [shift={(534.5,106)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da38826749510871394] 
+\draw    (635,75) -- (634.53,104) ;
+\draw [shift={(634.5,106)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da820217957787257] 
+\draw    (35.97,165) -- (35.5,194) ;
+\draw [shift={(36,163)}, rotate = 90.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (36,141.5) node   [align=left] {$\displaystyle 0$};
+% Text Node
+\draw (134,142.5) node   [align=left] {$\displaystyle 1$};
+% Text Node
+\draw (237,141.5) node   [align=left] {$\displaystyle 2$};
+% Text Node
+\draw (635,142.5) node   [align=left] {$\displaystyle n$};
+% Text Node
+\draw (536,141.5) node   [align=left] {$\displaystyle n-1$};
+% Text Node
+\draw (137,59) node   [align=left] {$\displaystyle pmt$};
+% Text Node
+\draw (662,104) node   [align=left] {Time};
+% Text Node
+\draw (333,140.5) node   [align=left] {$\displaystyle 3$};
+% Text Node
+\draw (336,59) node   [align=left] {$\displaystyle pmt$};
+% Text Node
+\draw (236,59) node   [align=left] {$\displaystyle pmt$};
+% Text Node
+\draw (536,59) node   [align=left] {$\displaystyle pmt$};
+% Text Node
+\draw (636,59) node   [align=left] {$\displaystyle pmt$};
+% Text Node
+\draw (434,134.5) node   [align=left] {$\displaystyle .\ \ .\ \ .$};
+% Text Node
+\draw (37,211) node   [align=left] {$\displaystyle PV=?$};
+
+
+\end{tikzpicture}
+```
+
+
+**Note**
+The last argument of the above syntax, [fv] (optional) which is an
+additional cash flow at time $n$, has been set to 0.
+
+::: {.example}
+**Example 5**. *Given the effective rate of interest of $8\%$ p.a., use
+Excel to calculate*
+
+1.  *the accumulation at 12 years of payable yearly in arrear for the
+    next 12 years.*
+
+2.  *the present value now of ,000 payable yearly in arrear for the next
+    6 years.*
+
+3.  *the present value now of ,000 payable half-yearly in arrear for the
+    next 12.5 years.*
+:::
+
+::: {.example}
+**Example 6**. *Let $i = 4\%$ effective per time unit. Cashflows are
+given as follows:*
+
+-   *$C_1 = 200$ at time $t_1 = 1$.*
+
+-   *$C_2 = 300$ at time $t_2 = 3$.*
+
+-   *$C_3 = -100$ at time $t_3 = 5$.*
+
+-   *$C_4 = -50$ at time $t_4 = 6$.*
+
+*Develop the model using Excel to calculate*
+
+1.  *the accumulation at time $t = 7$.*
+
+2.  *the present value at time $t = 0$.*
+
+3.  *the present value at time $t = 4$.*
+:::

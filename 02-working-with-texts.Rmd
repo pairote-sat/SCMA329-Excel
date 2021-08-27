@@ -1,0 +1,152 @@
+
+Working with Texts
+=================
+In this section, we will see how Excel handles text strings, and how we
+use text functions to modify and manipulate text strings. First, we give
+a note regarding texts in Excel.
+
+-   A single cell can hold up to 32,000 characters. In case you need to
+    display a lot of text in a worksheet, then use a text box (Choose
+    Insert $\Rightarrow$ Text $\Rightarrow$ Text Box). It will be easier
+    to edit texts in the text box than in cells.
+
+-   Sometimes, when you download numerical data from the internet or
+    database, the imported values are treated as text, i.e. when you do
+    a calculation with such data, you will get a \#VALUE error. When a
+    number is not treated as a number, there will be an error indicator.
+    By clinking to expand a list of options, you can then convert it to
+    the number.
+
+-   Another issue that you may encounter is about currency that uses
+    different characters to separate thousands or decimals.
+    <https://en.wikipedia.org/wiki/Decimal_separator>
+
+Text functions
+--------------
+
+The following Excel functions can be used to modify text strings in the
+format you need. Alternatively, one may extract data by using the
+Convert Text To Columns Wizard (choose Data $\Rightarrow$ Text To
+Columns).
+
+1.  RIGHT(text,[n]) returns the last $n$ characters in a text string.
+
+2.  LEFT(text, [n]) returns the first $n$ characters in a text string.
+
+3.  MID(text, start_num, num_chars) returns num_char characters from a
+    text string, starting at start_num.
+
+4.  TRIM(text) removes all spaces from text except for single spaces
+    between words. Use TRIM when text strings have irregular spacing.
+
+5.  LEN(text) returns the number of characters in a text string.
+
+6.  FIND(find_text, within_text, [start_num]) return the location at
+    or after character start_num of the first character of find_text in
+    within_text.
+
+7.  SEARCH(find_text, within_text, [start_num]) has the same syntax as
+    FIND, but it is not case sensitive.
+
+8.  SUBSTITUTE(text, old_text, new_text, [instance_num]) is used to
+    replace new_text for old_text in a text string. Here Instance_num is
+    optional. It specifies which occurrence of old_text you want to
+    replace with new_text. If you specify instance_num, only that
+    instance of old_text is replaced. Otherwise, every occurrence of
+    old_text in text is changed to new_text.
+
+Character codes
+---------------
+
+Excel uses the standard ASCII character set. Therefore, each character
+has its own code. For example, to get the code number of "A", simply
+type
+
+=CODE("A"), which returns the code number 65.
+
+The CHAR function reverses the role of CODE function, i.e.
+
+=CHAR(65), which returns the letter A. The input for the CHAR function
+should be a value between 1 and 255.
+
+For the complete list of ASCII codes, please visit
+<https://theasciicode.com.ar>
+
+::: {.example}
+**Example 1**. *Create an Excel file to list all the first 255 ASCII
+codes. It is a good idea to compare the outputs with those from the
+website above.*
+:::
+
+Determining whether two string are identical
+--------------------------------------------
+
+In order to determine whether strings in cell A1 and A2 have the same
+contents, we use = A1 = A2, which returns either TRUE or FALSE. Note
+that the comparison is not case-sensitive.
+
+Alternative, the function that provides an exact, case-sensitive
+comparison is EXACT function.
+
+Joining two or more cells
+-------------------------
+
+To join two or more cells, Excel uses an ampersand &. For example if the
+string "the effective interest rate per annum" is in A1 and the value of
+5% (formatted value) is in B1. Then use the formula
+
+= A1 & " is " & B1, which returns the effective interest rate per annum
+is 0.05.
+
+A better solution is to use the TEXT function to format the value as
+text as follows.
+
+= A1 & " is " & TEXT(B1," 0.00%") , which returns the effective interest
+rate per annum is 0.05.
+
+Use **Home Format Format cells** to obtain the list of various text
+formats.
+
+For example, if A1 contains the principle of \$10,000, then
+
+= "The principle is" & TEXT(A1, " \$\#,\#\#0"), which returns The
+principle is \$10,000.
+
+The following table gives examples that are format with TEXT function.
+
+``` {frame="single" caption="R code for Example1(6-7)."}
+=TEXT(1234.567,"$#,##0.00")     
+Currency with a thousands separator and 2 decimals, like $1,234.57. Note that Excel rounds the value to 2 decimal places.
+
+=TEXT(TODAY(),"MM/DD/YY")
+Today's date in MM/DD/YY format, like 03/14/12
+
+=TEXT(TODAY(),"DDDD")
+Today's day of the week, like Monday
+
+=TEXT(NOW(),"H:MM AM/PM")
+Current time, like 1:29 PM
+
+=TEXT(0.285,"0.0%")
+Percentage, like 28.5%
+
+=TEXT(4.34 ,"# ?/?")
+Fraction, like 4 1/3
+
+=TRIM(TEXT(0.34,"# ?/?"))
+Fraction, like 1/3. Note this uses the TRIM function to remove the leading space with a decimal value.
+
+=TEXT(12200000,"0.00E+00")
+Scientific notation, like 1.22E+07
+
+=TEXT(1234567898,"[<=9999999]###-####;(###) ###-####")
+Special (Phone number), like (123) 456-7898
+
+=TEXT(1234,"0000000")
+Add leading zeros (0), like 0001234
+```
+
+The TEXT function will convert numbers to text. It is best practice to
+keep your original values in one cell, and formatted number in another
+cell. When you do calculation, you should refer to the cells containing
+original values.
