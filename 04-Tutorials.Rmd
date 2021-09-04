@@ -119,7 +119,7 @@ Tutorial 2
         cashflows.
 
  
-```{tikz, tikz-ex0, fig.ext = 'png', cache=TRUE, echo = FALSE,fig.align="center"}
+```{tikz, tikz-exam1, fig.ext = 'png', cache=TRUE, echo = FALSE,fig.align="center"}
 \usetikzlibrary{snakes}
 \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
 
@@ -172,7 +172,7 @@ Tutorial 2
     3.  Calculate the present value at time time t = 0 units of these
         cashflows.
 
-```{tikz, tikz-ex1, fig.ext = 'png', cache=TRUE, echo = FALSE, fig.align="center"}
+```{tikz, tikz-exam2, fig.ext = 'png', cache=TRUE, echo = FALSE, fig.align="center"}
 \usetikzlibrary{snakes}
 \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt   
 
@@ -222,6 +222,52 @@ Tutorial 2
     2.  Calculate the present value on 1/1/2015 of these cashflows.
 
     3.  Calculate the value at time time 1/7/2017 of these cashflows.
+
+
+
+```{tikz, tikz-exam3, fig.ext = 'png', cache=TRUE, echo = FALSE, fig.align="center"}
+\usetikzlibrary{snakes}
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt   
+
+ \begin{tikzpicture}[snake=zigzag, line before snake = 5mm, line after snake = 5mm, scale=2.5]
+    % draw horizontal line   
+    \draw[->]  (0,0) -- (5,0);
+%    %\draw[snake] (2,0) -- (4,0);
+%    \draw[] (2,0) -- (4,0);
+%    \draw (4,0) -- (5,0);
+%    \draw[->] (0,0) -- (7,0);
+
+    % draw vertical lines
+    \foreach \x in {0,1.25,2.75,3.5,4}
+      \draw (\x cm,2pt) -- (\x cm,-2pt);
+
+    % draw nodes
+    \draw (0,0) node[below=5pt] {$ t= 0 $} node[above=5pt] {$ \Big \downarrow $};
+    \draw (0,0) node[above=25pt] {$  +5,000  $};
+
+    
+    \draw (1.25,0) node[below=5pt] {$ 1.25 $} node[above=3pt] {$  $};
+    \draw (1.25,0) node[below=15pt] {$  \Big \downarrow $};
+    \draw (1.25,0) node[below=35pt] {$  -2,000 $};
+    
+    \draw (2.75,0) node[below=5pt] {$ 2.75 $} node[above=3pt] {$  $};
+    \draw (2.75,0) node[below=15pt] {$  \Big \downarrow $};
+    \draw (2.75,0) node[below=35pt] {$  -1,000 $}; 
+   
+    \draw (3.5,0) node[below=5pt] {$ 3.5 $} node[above=3pt] {$ \Big \downarrow $};
+    \draw (3.5,0) node[above=25pt] {$  +4,000  $};
+    
+    \draw (4,0) node[below=5pt] {$ 4 $} node[above=3pt] {$  $};
+    \draw (4,0) node[below=15pt] {$  \Big \downarrow $};
+    \draw (4,0) node[below=35pt] {$  -500 $}; 
+
+    \draw (5.4,0) node[] { time units } node[above=3pt] {$  $};
+
+  \end{tikzpicture}
+```
+
+
+
 
 5.  (Excel) It is a good exercise to check whether the Excel worksheet
     you have developed so far for calculating the present value and
@@ -491,14 +537,14 @@ $$ PV(0) = 200 \ddot{a}^{j}_{120} + 300 \ddot{a}^{j}_{180} \left( \frac{1}{1.02}
     $$100 (Is)^{3\%}_{5} (1.04)^5 (1.05)^{20} + \left[100 (Is)^{4\%}_{5} + 500 s^{4\%}_{5} \right] (1.05)^{20}  + \left[100 (Is)^{5\%}_{20} + 1000 s^{5\%}_{20} \right]= 78929.01  $$
     
     4. Let $i_1 = 3\%, i_2 = 4\%$ and $i_3 = 5\%$. The accumuated value is given by
-    \begin{aligned} 
+    $$\begin{aligned} 
     V(18) &= \left[1000(1+i_1)^5 + 1000(1.02)(1+i_1)^4 + 1000(1.02)^2(1+i_1)^3 + \ldots + 1000(1.02)^4(1+i_1)\right](1.04)^5(1.05)^8   \\
     &+ \left[1000(1.02)^5(1+i_2)^5 + 1000(1.02)^6(1+i_2)^4 + 1000(1.02)^7(1+i_2)^3 + \ldots + 1000(1.02)^9(1+i_2)\right](1.05)^8   \\
     &+ \left[1000(1.02)^{10}(1+i_3)^8 + 1000(1.02)^{11}(1+i_3)^7 + 1000(1.02)^{12}(1+i_3)^6 + \ldots + 1000(1.02)^{17}(1+i_3)\right]  \\
     &= 1000(1.02)^5 \left[ \left(\frac{1+i_1}{1.02}\right)^5   + \left(\frac{1+i_1}{1.02}\right)^4 + \ldots + \left(\frac{1+i_1}{1.02}\right) \right](1.04)^5(1.05)^8 \\
     &+ 1000(1.02)^{10} \left[ \left(\frac{1+i_2}{1.02}\right)^5   + \left(\frac{1+i_2}{1.02}\right)^4 + \ldots + \left(\frac{1+i_2}{1.02}\right) \right](1.05)^8 \\
      &+ 1000(1.02)^{18} \left[ \left(\frac{1+i_3}{1.02}\right)^8   + \left(\frac{1+i_3}{1.02}\right)^7 + \ldots + \left(\frac{1+i_3}{1.02}\right) \right] 
-    \end{aligned}
+    \end{aligned}$$
 Let $1+j_1  = \frac{1+i_1}{1.02}$. Then, $j_1 = 0.009804$ and 
 $$ \left[ \left(\frac{1+i_1}{1.02}\right)^5   + \left(\frac{1+i_1}{1.02}\right)^4 + \ldots + \left(\frac{1+i_1}{1.02}\right) \right] = \frac{(1+j_1)^5 - 1}{j_1/(1+j_1)} = 5.148995.$$
 Let $1+j_2  = \frac{1+i_2}{1.02}$. Then, $j_2 = 0.019608$ and 
@@ -509,10 +555,10 @@ Therefore, $V(18) = 32814.45$.
 
     5. The present value is 
     
-\begin{aligned}
+$$\begin{aligned}
     PV(0) &= \left( \frac{200}{(1.03)^4} + \frac{200}{(1.03)^5}\right) + 200 a^{0.04}_5 (1.03)^{-5} + 200 a^{0.05}_{3} (1.03)^{-5} (1.04)^{-5} \\
     &= 350.2192 + 768.0362 + 386.1574 = 1504.413
-\end{aligned}
+\end{aligned}$$
 
 3. The solutions to each question are as follows:
 
