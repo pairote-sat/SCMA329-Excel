@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Section 3 Tutorial 2 | SCMA329 Practical Mathematical Financial Modeling</title>
+  <meta name="description" content="Section 3 Tutorial 2 | SCMA329 Practical Mathematical Financial Modeling" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Section 3 Tutorial 2 | SCMA329 Practical Mathematical Financial Modeling" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Section 3 Tutorial 2 | SCMA329 Practical Mathematical Financial Modeling" />
+  
+  
+  
+
+<meta name="author" content="Pairote Satiracoo" />
+
+
+<meta name="date" content="2021-09-04" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="tutorial-1.html"/>
+<link rel="next" href="tutorial-3.html"/>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">SCMA329-Excel</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="interest-rate-present-values-and-cashflows.html"><a href="interest-rate-present-values-and-cashflows.html"><i class="fa fa-check"></i><b>1</b> Interest Rate, Present Values and Cashflows</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="interest-rate-present-values-and-cashflows.html"><a href="interest-rate-present-values-and-cashflows.html#working-with-a-single-cashflow-in-excel"><i class="fa fa-check"></i><b>1.1</b> Working with a single cashflow in Excel</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="interest-rate-present-values-and-cashflows.html"><a href="interest-rate-present-values-and-cashflows.html#how-to-calculate-the-future-value-of-a-single-cashflow"><i class="fa fa-check"></i><b>1.1.1</b> How to calculate the future value of a single cashflow</a></li>
+<li class="chapter" data-level="1.1.2" data-path="interest-rate-present-values-and-cashflows.html"><a href="interest-rate-present-values-and-cashflows.html#how-to-calculate-the-present-value-of-a-single-cashflow"><i class="fa fa-check"></i><b>1.1.2</b> How to calculate the present value of a single cashflow</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="interest-rate-present-values-and-cashflows.html"><a href="interest-rate-present-values-and-cashflows.html#present-values-of-a-series-of-cashflows"><i class="fa fa-check"></i><b>1.2</b> Present values of a series of cashflows</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="interest-rate-present-values-and-cashflows.html"><a href="interest-rate-present-values-and-cashflows.html#level-annuities-certain"><i class="fa fa-check"></i><b>1.2.1</b> Level Annuities certain</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="tutorial-1.html"><a href="tutorial-1.html"><i class="fa fa-check"></i><b>2</b> Tutorial 1</a></li>
+<li class="chapter" data-level="3" data-path="tutorial-2.html"><a href="tutorial-2.html"><i class="fa fa-check"></i><b>3</b> Tutorial 2</a></li>
+<li class="chapter" data-level="4" data-path="tutorial-3.html"><a href="tutorial-3.html"><i class="fa fa-check"></i><b>4</b> Tutorial 3</a></li>
+<li class="chapter" data-level="5" data-path="solutions-to-tutorial-1.html"><a href="solutions-to-tutorial-1.html"><i class="fa fa-check"></i><b>5</b> Solutions to Tutorial 1</a></li>
+<li class="chapter" data-level="6" data-path="solutions-to-tutorial-2.html"><a href="solutions-to-tutorial-2.html"><i class="fa fa-check"></i><b>6</b> Solutions to Tutorial 2</a></li>
+<li class="chapter" data-level="7" data-path="solutions-to-tutorial-3.html"><a href="solutions-to-tutorial-3.html"><i class="fa fa-check"></i><b>7</b> Solutions to Tutorial 3</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">SCMA329 Practical Mathematical Financial Modeling</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="tutorial-2" class="section level1" number="3">
+<h1><span class="header-section-number">Section 3</span> Tutorial 2</h1>
+<ol style="list-style-type: decimal">
+<li><p>Starting at 1 January 2015, the effective rate of interest per annum
+was 3% per quarter-year for 9 months, 4% per half-year for 15 months
+and and 2% per month thereafter.</p>
+<ol style="list-style-type: decimal">
+<li><p>Calculate the accumulation factor from 1 January 2015 to 1
+January 2018.</p></li>
+<li><p>Calculate the accumulation of $5,000 from 1 July 2015 to 1
+October 2017.</p></li>
+<li><p>Calculate the accumulation of $100 from 1 March 2016 to 1
+August 2018.</p></li>
+<li><p>Calculate the present value at 1 January 2015 of $ 25,000
+receivable on 1 July 2016.</p></li>
+<li><p>Calculate the present value at 1 April 2015 of $ 8,000
+receivable on 1 October 2017.</p></li>
+<li><p>Calculate the discount factor from 1 July 2015 to 1
+October 2016.</p></li>
+</ol></li>
+<li><p>The effective rate of interest is 7.25% per time unit. Cashflows are
+shown in the following time line.</p>
+<ol style="list-style-type: decimal">
+<li><p>Calculate the accumulation at time time t = 4 units of these
+cashflows.</p></li>
+<li><p>Calculate the accumulation at time time t = 8 units of these
+cashflows.</p></li>
+<li><p>Calculate the present value at time time t = 0 units of these
+cashflows.</p></li>
+</ol></li>
+</ol>
+<p><img src="SCMA329ExcelBookdownproj_files/figure-html/tikz-ex0-1.png" width="672" style="display: block; margin: auto;" /></p>
+<ol start="3" style="list-style-type: decimal">
+<li><p>The effective rate of interest is 6% per time unit. Cashflows are
+shown in the following time line.</p>
+<ol style="list-style-type: decimal">
+<li><p>Calculate the accumulation at time time t = 5 units of these
+cashflows.</p></li>
+<li><p>Calculate the value at time time t = 2 units of these cashflows.</p></li>
+<li><p>Calculate the present value at time time t = 0 units of these
+cashflows.</p></li>
+</ol></li>
+</ol>
+<p><img src="SCMA329ExcelBookdownproj_files/figure-html/tikz-ex1-1.png" width="672" style="display: block; margin: auto;" /></p>
+<ol start="4" style="list-style-type: decimal">
+<li><p>The effective rate of interest per annum was 4% during 2015, 3% per
+half-year until 1 October 2017 and 1.5% per month thereafter.
+Cashflows are shown in the following time line.</p>
+<ol style="list-style-type: decimal">
+<li><p>Calculate the accumulation on 1/1/2019 of these cashflows.</p></li>
+<li><p>Calculate the present value on 1/1/2015 of these cashflows.</p></li>
+<li><p>Calculate the value at time time 1/7/2017 of these cashflows.</p></li>
+</ol></li>
+<li><p>(Excel) It is a good exercise to check whether the Excel worksheet
+you have developed so far for calculating the present value and
+future value can be applied to the questions in this Tutorial. What
+would you do to improve the Excel worksheet for a more general
+scenario?</p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="tutorial-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tutorial-3.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/pairote-sat/SCMA329-Excel/edit/master/04-Tutorials.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/pairote-sat/SCMA329-Excel/blob/master/04-Tutorials.Rmd",
+"text": null
+},
+"download": ["SCMA329ExcelBookdownproj.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

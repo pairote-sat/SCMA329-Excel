@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Section 6 Solutions to Tutorial 2 | SCMA329 Practical Mathematical Financial Modeling</title>
+  <meta name="description" content="Section 6 Solutions to Tutorial 2 | SCMA329 Practical Mathematical Financial Modeling" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Section 6 Solutions to Tutorial 2 | SCMA329 Practical Mathematical Financial Modeling" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Section 6 Solutions to Tutorial 2 | SCMA329 Practical Mathematical Financial Modeling" />
+  
+  
+  
+
+<meta name="author" content="Pairote Satiracoo" />
+
+
+<meta name="date" content="2021-09-04" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="solutions-to-tutorial-1.html"/>
+<link rel="next" href="solutions-to-tutorial-3.html"/>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">SCMA329-Excel</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="interest-rate-present-values-and-cashflows.html"><a href="interest-rate-present-values-and-cashflows.html"><i class="fa fa-check"></i><b>1</b> Interest Rate, Present Values and Cashflows</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="interest-rate-present-values-and-cashflows.html"><a href="interest-rate-present-values-and-cashflows.html#working-with-a-single-cashflow-in-excel"><i class="fa fa-check"></i><b>1.1</b> Working with a single cashflow in Excel</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="interest-rate-present-values-and-cashflows.html"><a href="interest-rate-present-values-and-cashflows.html#how-to-calculate-the-future-value-of-a-single-cashflow"><i class="fa fa-check"></i><b>1.1.1</b> How to calculate the future value of a single cashflow</a></li>
+<li class="chapter" data-level="1.1.2" data-path="interest-rate-present-values-and-cashflows.html"><a href="interest-rate-present-values-and-cashflows.html#how-to-calculate-the-present-value-of-a-single-cashflow"><i class="fa fa-check"></i><b>1.1.2</b> How to calculate the present value of a single cashflow</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="interest-rate-present-values-and-cashflows.html"><a href="interest-rate-present-values-and-cashflows.html#present-values-of-a-series-of-cashflows"><i class="fa fa-check"></i><b>1.2</b> Present values of a series of cashflows</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="interest-rate-present-values-and-cashflows.html"><a href="interest-rate-present-values-and-cashflows.html#level-annuities-certain"><i class="fa fa-check"></i><b>1.2.1</b> Level Annuities certain</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="tutorial-1.html"><a href="tutorial-1.html"><i class="fa fa-check"></i><b>2</b> Tutorial 1</a></li>
+<li class="chapter" data-level="3" data-path="tutorial-2.html"><a href="tutorial-2.html"><i class="fa fa-check"></i><b>3</b> Tutorial 2</a></li>
+<li class="chapter" data-level="4" data-path="tutorial-3.html"><a href="tutorial-3.html"><i class="fa fa-check"></i><b>4</b> Tutorial 3</a></li>
+<li class="chapter" data-level="5" data-path="solutions-to-tutorial-1.html"><a href="solutions-to-tutorial-1.html"><i class="fa fa-check"></i><b>5</b> Solutions to Tutorial 1</a></li>
+<li class="chapter" data-level="6" data-path="solutions-to-tutorial-2.html"><a href="solutions-to-tutorial-2.html"><i class="fa fa-check"></i><b>6</b> Solutions to Tutorial 2</a></li>
+<li class="chapter" data-level="7" data-path="solutions-to-tutorial-3.html"><a href="solutions-to-tutorial-3.html"><i class="fa fa-check"></i><b>7</b> Solutions to Tutorial 3</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">SCMA329 Practical Mathematical Financial Modeling</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="solutions-to-tutorial-2" class="section level1" number="6">
+<h1><span class="header-section-number">Section 6</span> Solutions to Tutorial 2</h1>
+<ol style="list-style-type: decimal">
+<li><p>The solutions to each question are as follows:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\((1.03)^3(1.04)^{2.5} (1.02)^{12} = 1.528611\)</span></li>
+<li><span class="math inline">\(5000A(0.5,2.75) = 5000(1.03)(1.04)^{2.5} (1.02)^{9} = 6788.786068\)</span></li>
+<li>We first find the rate <span class="math inline">\(j\%\)</span> per month effective that is equivalent to the rate of <span class="math inline">\(4\%\)</span> per half-year effective.
+<span class="math display">\[j = (1.04)^{1/6} - 1 = 0.00656.\]</span>
+The accumulated value is <span class="math inline">\(100A(1+2/12, 3 + 7/12 ) = 100(1+j)^{10}(1.02)^{19} = 155.522118.\)</span></li>
+<li><span class="math inline">\(25000V(0,1.5) = \frac{25000}{(1.03)^3(1.04)^{1.5}} = 21571.39968.\)</span></li>
+<li><span class="math inline">\(8000V(0.25,2.75) = \frac{8000}{(1.03)^2(1.04)^{2.5}(1.02)^{9}} = 5720.455921.\)</span></li>
+<li><span class="math inline">\(V(0.5,1.75) = \frac{1}{(1.03)(1.04)^{2}} = 0.897627.\)</span></li>
+</ol></li>
+<li><p>The solutions to each question are as follows:</p>
+<ol style="list-style-type: decimal">
+<li>With <span class="math inline">\(i = 7.25\%\)</span> per time period, <span class="math inline">\(V(4) = 100 (1+i)^4 - 30(1+i)^3 - 30 (1+i)^2 + 100 (1+i) - 30 = 138.041762.\)</span></li>
+<li><span class="math inline">\(V(8) = V(4)\cdot (1+i)^4 = 182.641597.\)</span></li>
+<li><span class="math inline">\(PV(0) = V(4)\cdot (1+i)^{-4} = 104.332903.\)</span></li>
+</ol></li>
+<li><p>The solutions to each question are as follows:</p>
+<ol style="list-style-type: decimal">
+<li>With $ = 6%$ per time period, <span class="math inline">\(V(5) = 5000 (1+i)^5 - 2000(1+i)^{3.75} - 1000 (1+i)^{2.25} + 4000 (1+i)^{1.5} - 500(1+i) = 6897.948585.\)</span></li>
+<li><span class="math inline">\(V(2) = V(5)(1+i)^{-3} = 5791.650645.\)</span></li>
+<li><span class="math inline">\(PV(0) = V(5)(1+i)^{-5} = 5154.548456.\)</span></li>
+</ol></li>
+<li><p>The solutions to each question are as follows:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(V(1/1/2019) = 100(1.04)(1.03)^{3.5}(1.015)^{15} - 30 (1.03)^{3.5} (1.015)^{15}- 30 (1.03)^{1.5} (1.015)^{15} + 100 (1.015)^{12} - 30 = 152.955693.\)</span></li>
+<li><span class="math inline">\(PV(0)= V(1/1/2015) = \frac{152.955693}{(1.04)(1.03)^{3.5}(1.015)^{15}} =106.074596.\)</span></li>
+<li><span class="math inline">\(V(1/7/2017) = PV(0)(1.04)(1.03)^3 = 120.546998.\)</span></li>
+</ol></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="solutions-to-tutorial-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="solutions-to-tutorial-3.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/pairote-sat/SCMA329-Excel/edit/master/04-Tutorials.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/pairote-sat/SCMA329-Excel/blob/master/04-Tutorials.Rmd",
+"text": null
+},
+"download": ["SCMA329ExcelBookdownproj.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
