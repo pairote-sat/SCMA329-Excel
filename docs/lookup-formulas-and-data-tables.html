@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Section 4 Lookup Formulas and Data Tables | Lookup Formulas and Data Tables</title>
+  <meta name="description" content="Section 4 Lookup Formulas and Data Tables | Lookup Formulas and Data Tables" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Section 4 Lookup Formulas and Data Tables | Lookup Formulas and Data Tables" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Section 4 Lookup Formulas and Data Tables | Lookup Formulas and Data Tables" />
+  
+  
+  
+
+<meta name="author" content="Pairote Satiracoo" />
+
+
+<meta name="date" content="2021-09-10" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="interest-rate-present-values-and-cashflows.html"/>
+<link rel="next" href="tutorial-1.html"/>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">SCMA329-Excel</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Dates and date functions</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#inconsistent-date-entries"><i class="fa fa-check"></i><b>1.1</b> Inconsistent date entries</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#date-serial-number"><i class="fa fa-check"></i><b>1.2</b> Date serial number</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#date-functions"><i class="fa fa-check"></i><b>1.3</b> Date functions</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="working-with-texts.html"><a href="working-with-texts.html"><i class="fa fa-check"></i><b>2</b> Working with Texts</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="working-with-texts.html"><a href="working-with-texts.html#text-functions"><i class="fa fa-check"></i><b>2.1</b> Text functions</a></li>
+<li class="chapter" data-level="2.2" data-path="working-with-texts.html"><a href="working-with-texts.html#character-codes"><i class="fa fa-check"></i><b>2.2</b> Character codes</a></li>
+<li class="chapter" data-level="2.3" data-path="working-with-texts.html"><a href="working-with-texts.html#determining-whether-two-string-are-identical"><i class="fa fa-check"></i><b>2.3</b> Determining whether two string are identical</a></li>
+<li class="chapter" data-level="2.4" data-path="working-with-texts.html"><a href="working-with-texts.html#joining-two-or-more-cells"><i class="fa fa-check"></i><b>2.4</b> Joining two or more cells</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="interest-rate-present-values-and-cashflows.html"><a href="interest-rate-present-values-and-cashflows.html"><i class="fa fa-check"></i><b>3</b> Interest Rate, Present Values and Cashflows</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="interest-rate-present-values-and-cashflows.html"><a href="interest-rate-present-values-and-cashflows.html#working-with-a-single-cashflow-in-excel"><i class="fa fa-check"></i><b>3.1</b> Working with a single cashflow in Excel</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="interest-rate-present-values-and-cashflows.html"><a href="interest-rate-present-values-and-cashflows.html#how-to-calculate-the-future-value-of-a-single-cashflow"><i class="fa fa-check"></i><b>3.1.1</b> How to calculate the future value of a single cashflow</a></li>
+<li class="chapter" data-level="3.1.2" data-path="interest-rate-present-values-and-cashflows.html"><a href="interest-rate-present-values-and-cashflows.html#how-to-calculate-the-present-value-of-a-single-cashflow"><i class="fa fa-check"></i><b>3.1.2</b> How to calculate the present value of a single cashflow</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="interest-rate-present-values-and-cashflows.html"><a href="interest-rate-present-values-and-cashflows.html#present-values-of-a-series-of-cashflows"><i class="fa fa-check"></i><b>3.2</b> Present values of a series of cashflows</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="interest-rate-present-values-and-cashflows.html"><a href="interest-rate-present-values-and-cashflows.html#level-annuities-certain"><i class="fa fa-check"></i><b>3.2.1</b> Level Annuities certain</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="lookup-formulas-and-data-tables.html"><a href="lookup-formulas-and-data-tables.html"><i class="fa fa-check"></i><b>4</b> Lookup Formulas and Data Tables</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="lookup-formulas-and-data-tables.html"><a href="lookup-formulas-and-data-tables.html#lookup-function"><i class="fa fa-check"></i><b>4.1</b> Lookup function</a></li>
+<li class="chapter" data-level="4.2" data-path="lookup-formulas-and-data-tables.html"><a href="lookup-formulas-and-data-tables.html#match-and-index-functions"><i class="fa fa-check"></i><b>4.2</b> MATCH and INDEX functions</a></li>
+<li class="chapter" data-level="4.3" data-path="lookup-formulas-and-data-tables.html"><a href="lookup-formulas-and-data-tables.html#data-tables"><i class="fa fa-check"></i><b>4.3</b> Data tables</a>
+<ul>
+<li class="chapter" data-level="" data-path="lookup-formulas-and-data-tables.html"><a href="lookup-formulas-and-data-tables.html#model-formulation"><i class="fa fa-check"></i>Model formulation</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="tutorial-1.html"><a href="tutorial-1.html"><i class="fa fa-check"></i><b>5</b> Tutorial 1</a></li>
+<li class="chapter" data-level="6" data-path="tutorial-2.html"><a href="tutorial-2.html"><i class="fa fa-check"></i><b>6</b> Tutorial 2</a></li>
+<li class="chapter" data-level="7" data-path="tutorial-3.html"><a href="tutorial-3.html"><i class="fa fa-check"></i><b>7</b> Tutorial 3</a></li>
+<li class="chapter" data-level="8" data-path="solutions-to-tutorial-1.html"><a href="solutions-to-tutorial-1.html"><i class="fa fa-check"></i><b>8</b> Solutions to Tutorial 1</a></li>
+<li class="chapter" data-level="9" data-path="solutions-to-tutorial-2.html"><a href="solutions-to-tutorial-2.html"><i class="fa fa-check"></i><b>9</b> Solutions to Tutorial 2</a></li>
+<li class="chapter" data-level="10" data-path="solutions-to-tutorial-3.html"><a href="solutions-to-tutorial-3.html"><i class="fa fa-check"></i><b>10</b> Solutions to Tutorial 3</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><strong>Lookup Formulas and Data Tables</strong></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="lookup-formulas-and-data-tables" class="section level1" number="4">
+<h1><span class="header-section-number">Section 4</span> Lookup Formulas and Data Tables</h1>
+<div id="lookup-function" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Lookup function</h2>
+<p>Lookup function can be used to return (or retrieve) a value from a table
+or a range of data. For example, use lookup function to find some
+information such as date of birth, address etc. from a customer
+database. Two useful lookup functions are <code>VLOOKUP</code> and <code>HLOOKUP</code>.</p>
+<ul>
+<li><p>The <code>VLOOKUP</code> function searches a value in the first column and
+returns a value in the same row from a column you specify in the
+table or array.</p></li>
+<li><p>The <code>HLOOKUP</code> function searches a value in the top row and returns a
+value in the same column from a row you specify in the table or
+array.</p></li>
+</ul>
+<p>The syntaxes for the <code>LOOKUP</code> functions are</p>
+<p><code>=VLOOKUP(lookup value, range containing the lookup value, the column number in the range containing the return value, [range_lookup])</code>.</p>
+<p><code>=VLOOKUP(lookup_value, table_array, col_index_num, [range_lookup])</code>.</p>
+<p><code>=HLOOKUP(lookup_value, table_array, row_index_num, [range_lookup])</code>.</p>
+<p>The <code>[range_lookup]</code> is an optional which can be specified as <code>TRUE</code> for
+approximate match or <code>FALSE</code> for an exact match.</p>
+<p><strong>Notes</strong></p>
+<ol style="list-style-type: decimal">
+<li><p>The EXCEL <code>LOOKUP</code> functions treat empty cells in the result range as
+<strong>zeros</strong>.</p></li>
+<li><p>If the range_lookup is <code>FALSE</code> and an exact match is not found, the
+function returns #N/A.</p></li>
+<li><p>If the range_lookup is <code>TRUE</code> or omitted, the first column of the
+<code>VLOOKUP</code> table must be in ascending order. If lookup_value is smaller
+than the the smallest value in the first column of the table_array,
+then the function returns #N/A.</p></li>
+<li><p>Use <code>IFERROR</code> function to avoid the return #N/A. Use the following
+syntax</p>
+<p><code>=IFERROR(value, value_if_error)</code></p>
+<p>(for example, <code>=IFERROR(VLOOKUP(...),"Value is not availble"</code> )</p></li>
+<li><p>The wildcard character * and ? can be used when the range_lookup
+argument is text.</p></li>
+<li><p>The wildcard character ? refers to any single character, for example
+"analy?e" finds "analyse" and "analyze".</p></li>
+<li><p>The wildcard character * refers to any number of characters, for
+example "bio*" finds "biology" and "biotechnology".</p></li>
+</ol>
+<div class="example">
+<p><span id="exm:unlabeled-div-9" class="example"><strong>Example 4.1  </strong></span>Import SET Index historical daily data starting from 1 January 2020 up
+to now from
+<a href="https://www.investing.com/indices/thailand-set-historical-data" class="uri">https://www.investing.com/indices/thailand-set-historical-data</a>. Use
+<code>LOOKUP</code> function to create the table showing</p>
+<ol style="list-style-type: decimal">
+<li><p>the closing price on the first working day of each month (not
+including holidays).</p></li>
+<li><p>the closing price on the last working day of each month (not
+including holidays).</p></li>
+</ol>
+<p>Hint: use</p>
+<p><code>=WORKDAY(DATE(YEAR(A1),MONTH(A1),1)-1,1)</code> to return the first working day
+of a month and</p>
+<p><code>=WORKDAY(DATE(YEAR(A1),MONTH(A1)+1,1),-1)</code> to return the last working day
+of a month.</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-10" class="example"><strong>Example 4.2  </strong></span>Use the SET Index historical data above. On your selected cells, find
+the lowest and highest closing prices and the dates when those occurred
+(sorting data is not allowed).</p>
+</div>
+</div>
+<div id="match-and-index-functions" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> MATCH and INDEX functions</h2>
+<p>The <code>MATCH</code> and <code>INDEX</code> functions are often used together to perform
+lookups.</p>
+<p>The <code>MATCH</code> function returns the relative position of a specified item in
+a range of cells. For example, if the range A1:A3 contains the values 2,
+4 and 6, then the formula</p>
+<p><code>=MATCH(4,A1:A3,0)</code> returns the number 2, i.e. the second item in the
+range.</p>
+<p>The syntax for MATCH is</p>
+<p><code>=MATCH(lookup_value, lookup_array, [match_type])</code></p>
+<p>The optional argument is match_type consisting of 3 values, <span class="math inline">\(-1\)</span>, 0 and
+1, that specify how the match is determined.</p>
+<ul>
+<li><p>If match_type = 1 or omitted, then <code>MATCH</code> finds the largest value
+less than or equal to lookup_value where lookup_array must be in
+<strong>ascending order</strong>.</p></li>
+<li><p>If match_type = 0, then <code>MATCH</code> finds the <strong>first value exactly equal
+to</strong> lookup_value.</p></li>
+<li><p>If match_type = <span class="math inline">\(-1\)</span>, then MATCH finds the smallest value greater
+than or equal to lookup_value where lookup_array must be in
+<strong>descending order</strong>.</p></li>
+</ul>
+<p>The <code>INDEX</code> function returns a value from within a table or range. The
+syntax for INDEX is</p>
+<p><code>=INDEX(array, row_num, [column_num])</code></p>
+<p>If array contains only one row or column, the corresponding row_num or
+column_num argument is optional.</p>
+</div>
+<div id="data-tables" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> Data tables</h2>
+<p>Data tables allows you to create a table of values from</p>
+<ul>
+<li><p>a formula as one or two variables from the formula are varied, and</p></li>
+<li><p>more formulas for various values of a single input cell.</p></li>
+</ul>
+<p>As a result, you can examine a range of possible values when one or two
+variables are systematically changed. For example, a data table can be
+used to display the amount your investment will grow to for various
+numbers of compounding.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-11" class="example"><strong>Example 4.3  </strong></span>An amount of <span class="math inline">\(P\)</span> is invested for <span class="math inline">\(n\)</span> years at a nominal interest rate of
+i%. Create a worksheet to calculate the effective annual interest rate
+you will earn and the accumulation at time <span class="math inline">\(n\)</span> years for various numbers
+of compounding periods per year including</p>
+<ol style="list-style-type: decimal">
+<li><p>annual compounding</p></li>
+<li><p>semi-annual compounding</p></li>
+<li><p>quarterly compounding</p></li>
+<li><p>monthly compounding</p></li>
+<li><p>bi-weekly compounding</p></li>
+<li><p>weekly compounding</p></li>
+<li><p>daily compounding</p></li>
+</ol>
+</div>
+<div id="model-formulation" class="section level3 unnumbered">
+<h3>Model formulation</h3>
+<ol style="list-style-type: decimal">
+<li><p><strong>Set up input variables:</strong> Referring to the corresponding excel
+file, create the labels for the input variables and enter the values
+in cells B4:B7.</p></li>
+<li><p><strong>Calculate the output values:</strong> The effective annual interest rate
+<span class="math inline">\(i\%\)</span> which is equivalent to the given nominal rate <span class="math inline">\(i^{(p)}\)</span>
+convertible <span class="math inline">\(p\)</span> times a year can be calculated by
+<span class="math display">\[i = \left(1 + \frac{i^{(p)}}{p} \right)^p - 1.\]</span> Hence, the value
+of the investment at time <span class="math inline">\(n\)</span> years is <span class="math display">\[FV = P (1 + i)^n.\]</span> The
+output values are calculated and placed in cells B10 and B11,
+respectively.</p></li>
+<li><p><strong>Set up data table (a one-input data table) :</strong></p>
+<ol style="list-style-type: decimal">
+<li><p>Create the labels and values for different compounding
+frequencies.</p></li>
+<li><p>In cells C16 and D16, create the references to cells B10 and
+B11, which are the effective annual interest rate and future
+value of investment, respectively.</p>
+<p>The positions of the cells C16 and D16, the formulas used to
+calculate the required values, are <strong>one row above and to the
+right</strong> of the column of values. The data table is
+column-oriented because the variable values are in a column,
+B17:B23 in this example.</p></li>
+<li><p>Select the range of cells that contains the formulas and values
+that you want to substitute, i.e. the range B16:D23.</p></li>
+<li><p>Choose Data
+What-If Analysis Data table. Then type the cell reference for
+the input cell, cell B5 in this case, in the <strong>Column input
+cell</strong> because the data table is column-oriented. Click OK and
+Excel will complete the data table.</p></li>
+</ol></li>
+</ol>
+<!-- -->
+<p><strong>Notes</strong></p>
+<ol style="list-style-type: decimal">
+<li><p>A new formula can be added to the existing one-variable data table
+by typing the new formula in a blank cell to the right of the
+existing formula(s) in the top row of the data table. Then repeat
+Step 3.4 as given above.</p></li>
+<li><p>The contents of the data table are generated with a multicell array
+formula (details will be discussed in a subsequent section):</p>
+<p><code>{=TABLE(,B5)}</code>.</p></li>
+</ol>
+<div class="example">
+<p><span id="exm:unlabeled-div-12" class="example"><strong>Example 4.4  </strong></span>Suppose you borrow <span class="math inline">\(L\)</span> from a bank to be repaid by the end of <span class="math inline">\(n\)</span> years
+at an interest rate of <span class="math inline">\(i\%\)</span> per annum effective. If you agree to repay
+the loan and the interest in level instalments throughout term of loan.</p>
+<ol style="list-style-type: decimal">
+<li><p>Create a model to calculate the amount of annual instalments <span class="math inline">\(X\)</span> for
+various values of number of instalments <span class="math inline">\(n\)</span> and interest rate of
+<span class="math inline">\(i\%\)</span> per annum effective.</p></li>
+<li><p>Set up a two-input data table to show annual instalments <span class="math inline">\(X\)</span> for
+different values of <span class="math inline">\(n\)</span> and <span class="math inline">\(i\)</span>.</p></li>
+<li><p>Comment on the results obtained.</p></li>
+</ol>
+</div>
+
+<hr />
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="interest-rate-present-values-and-cashflows.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tutorial-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/pairote-sat/SCMA329-Excel/edit/master/04-lookup-functions-and-data-tables.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/pairote-sat/SCMA329-Excel/blob/master/04-lookup-functions-and-data-tables.Rmd",
+"text": null
+},
+"download": ["SCMA329ExcelBookdownproj.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

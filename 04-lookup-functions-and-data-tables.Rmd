@@ -1,0 +1,230 @@
+---
+title: " **Lookup Formulas and Data Tables**"
+---
+
+# Lookup Formulas and Data Tables
+
+## Lookup function 
+
+Lookup function can be used to return (or retrieve) a value from a table
+or a range of data. For example, use lookup function to find some
+information such as date of birth, address etc. from a customer
+database. Two useful lookup functions are `VLOOKUP` and `HLOOKUP`.
+
+-   The `VLOOKUP` function searches a value in the first column and
+    returns a value in the same row from a column you specify in the
+    table or array.
+
+-   The `HLOOKUP` function searches a value in the top row and returns a
+    value in the same column from a row you specify in the table or
+    array.
+
+The syntaxes for the `LOOKUP` functions are
+
+`=VLOOKUP(lookup value, range containing the lookup value, the column number in the range containing the return value, [range_lookup])`.
+
+`=VLOOKUP(lookup_value, table_array, col_index_num, [range_lookup])`.
+
+`=HLOOKUP(lookup_value, table_array, row_index_num, [range_lookup])`.
+
+The `[range_lookup]` is an optional which can be specified as `TRUE` for
+approximate match or `FALSE` for an exact match.
+
+**Notes**
+
+1.  The EXCEL `LOOKUP` functions treat empty cells in the result range as
+    **zeros**.
+
+2.  If the range_lookup is `FALSE` and an exact match is not found, the
+    function returns \#N/A.
+
+3.  If the range_lookup is `TRUE` or omitted, the first column of the
+    `VLOOKUP` table must be in ascending order. If lookup_value is smaller
+    than the the smallest value in the first column of the table_array,
+    then the function returns \#N/A.
+
+4.  Use `IFERROR` function to avoid the return \#N/A. Use the following
+    syntax
+
+    `=IFERROR(value, value_if_error)` 
+    
+    (for example, `=IFERROR(VLOOKUP(...),"Value is not availble"` )
+
+5.  The wildcard character \* and ? can be used when the range_lookup
+    argument is text.
+
+6.  The wildcard character ? refers to any single character, for example
+    \"analy?e\" finds \"analyse\" and \"analyze\".
+
+7.  The wildcard character \* refers to any number of characters, for
+    example \"bio\*\" finds \"biology\" and \"biotechnology\".
+
+::: {.example}
+Import SET Index historical daily data starting from 1 January 2020 up
+to now from
+https://www.investing.com/indices/thailand-set-historical-data. Use
+`LOOKUP` function to create the table showing
+
+1.  the closing price on the first working day of each month (not
+    including holidays).
+
+2.  the closing price on the last working day of each month (not
+    including holidays).
+
+Hint: use
+
+`=WORKDAY(DATE(YEAR(A1),MONTH(A1),1)-1,1)` to return the first working day
+of a month and
+
+`=WORKDAY(DATE(YEAR(A1),MONTH(A1)+1,1),-1)` to return the last working day
+of a month.
+:::
+
+::: {.example}
+Use the SET Index historical data above. On your selected cells, find
+the lowest and highest closing prices and the dates when those occurred
+(sorting data is not allowed).
+:::
+
+## MATCH and INDEX functions 
+
+
+The `MATCH` and `INDEX` functions are often used together to perform
+lookups.
+
+The `MATCH` function returns the relative position of a specified item in
+a range of cells. For example, if the range A1:A3 contains the values 2,
+4 and 6, then the formula
+
+`=MATCH(4,A1:A3,0)` returns the number 2, i.e. the second item in the
+range.
+
+The syntax for MATCH is
+
+`=MATCH(lookup_value, lookup_array, [match_type])`
+
+The optional argument is match_type consisting of 3 values, $-1$, 0 and
+1, that specify how the match is determined.
+
+-   If match_type = 1 or omitted, then `MATCH` finds the largest value
+    less than or equal to lookup_value where lookup_array must be in
+    **ascending order**.
+
+-   If match_type = 0, then `MATCH` finds the **first value exactly equal
+    to** lookup_value.
+
+-   If match_type = $-1$, then MATCH finds the smallest value greater
+    than or equal to lookup_value where lookup_array must be in
+    **descending order**.
+
+The `INDEX` function returns a value from within a table or range. The
+syntax for INDEX is
+
+`=INDEX(array, row_num, [column_num])`
+
+If array contains only one row or column, the corresponding row_num or
+column_num argument is optional.
+
+
+## Data tables
+
+
+Data tables allows you to create a table of values from
+
+-   a formula as one or two variables from the formula are varied, and
+
+-   more formulas for various values of a single input cell.
+
+As a result, you can examine a range of possible values when one or two
+variables are systematically changed. For example, a data table can be
+used to display the amount your investment will grow to for various
+numbers of compounding.
+
+::: {.example}
+An amount of $P$ is invested for $n$ years at a nominal interest rate of
+i%. Create a worksheet to calculate the effective annual interest rate
+you will earn and the accumulation at time $n$ years for various numbers
+of compounding periods per year including
+
+1.  annual compounding
+
+2.  semi-annual compounding
+
+3.  quarterly compounding
+
+4.  monthly compounding
+
+5.  bi-weekly compounding
+
+6.  weekly compounding
+
+7.  daily compounding
+:::
+
+### Model formulation {#model-formulation .unnumbered}
+
+1.  **Set up input variables:** Referring to the corresponding excel
+    file, create the labels for the input variables and enter the values
+    in cells B4:B7.
+
+2.  **Calculate the output values:** The effective annual interest rate
+    $i\%$ which is equivalent to the given nominal rate $i^{(p)}$
+    convertible $p$ times a year can be calculated by
+    $$i = \left(1 + \frac{i^{(p)}}{p} \right)^p - 1.$$ Hence, the value
+    of the investment at time $n$ years is $$FV = P (1 + i)^n.$$ The
+    output values are calculated and placed in cells B10 and B11,
+    respectively.
+
+3.  **Set up data table (a one-input data table) :**
+
+    1.  Create the labels and values for different compounding
+        frequencies.
+
+    2.  In cells C16 and D16, create the references to cells B10 and
+        B11, which are the effective annual interest rate and future
+        value of investment, respectively.
+
+        The positions of the cells C16 and D16, the formulas used to
+        calculate the required values, are **one row above and to the
+        right** of the column of values. The data table is
+        column-oriented because the variable values are in a column,
+        B17:B23 in this example.
+
+    3.  Select the range of cells that contains the formulas and values
+        that you want to substitute, i.e. the range B16:D23.
+
+    4.  Choose Data
+        What-If Analysis Data table. Then type the cell reference for
+        the input cell, cell B5 in this case, in the **Column input
+        cell** because the data table is column-oriented. Click OK and
+        Excel will complete the data table.
+
+```{=html}
+<!-- -->
+```
+**Notes**
+
+1.  A new formula can be added to the existing one-variable data table
+    by typing the new formula in a blank cell to the right of the
+    existing formula(s) in the top row of the data table. Then repeat
+    Step 3.4 as given above.
+
+2.  The contents of the data table are generated with a multicell array
+    formula (details will be discussed in a subsequent section):
+
+    `{=TABLE(,B5)}`.
+
+::: {.example}
+Suppose you borrow $L$ from a bank to be repaid by the end of $n$ years
+at an interest rate of $i\%$ per annum effective. If you agree to repay
+the loan and the interest in level instalments throughout term of loan.
+
+1.  Create a model to calculate the amount of annual instalments $X$ for
+    various values of number of instalments $n$ and interest rate of
+    $i\%$ per annum effective.
+
+2.  Set up a two-input data table to show annual instalments $X$ for
+    different values of $n$ and $i$.
+
+3.  Comment on the results obtained.
+:::

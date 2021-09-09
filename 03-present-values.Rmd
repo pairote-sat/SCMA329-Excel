@@ -127,7 +127,7 @@ function (assuming that the payments (pmt) are made in arrears).
 ongoing payments after the initial investment.
 
 ::: {.example}
-**Example 1**. *You plan to invest today with an interest rate of 3% per
+*You plan to invest today with an interest rate of 3% per
 year effective. How much money will you accumulate at the end of 2
 years?*
 :::
@@ -149,7 +149,7 @@ $$\text{PV(rate, nper, pmt, [fv], [type])}$$ where fv is an additional
 cash flow nper periods from now.
 
 ::: {.example}
-**Example 2**. *How much should you deposit into the account with an
+*How much should you deposit into the account with an
 interest of 8% so that 10 years from now its value would be ?*
 :::
 **Solution:** 
@@ -289,7 +289,7 @@ call it an *annuity certain*.
 -   If each payment is for the same amount, this is a *level* annuity.
 
 ::: {.example}
-**Example 3**. *Let $i$ be the constant effective rate of interest per
+*Let $i$ be the constant effective rate of interest per
 time unit. In Excel, one can calculate the accumulated value of a level
 annuity certain having cashflow of pmt unit at the end of each of the
 next $n$ time units by $$\text{FV}(i\%, n, pmt, 0).$$ The cashflows of
@@ -383,7 +383,7 @@ additional cash flow now (at time 0), has been set to 0.*
 :::
 
 ::: {.example}
-**Example 4**. *Let $i$ be the constant effective rate of interest per
+*Let $i$ be the constant effective rate of interest per
 time unit. In Excel, one can calculate the present value at time 0 of a
 level annuity certain having cashflow of pmt unit at the end of each of
 the next $n$ time units by $$\text{PV}(i\%, n, pmt, 0).$$*
@@ -471,7 +471,7 @@ The last argument of the above syntax, [fv] (optional) which is an
 additional cash flow at time $n$, has been set to 0.
 
 ::: {.example}
-**Example 5**. *Given the effective rate of interest of $8\%$ p.a., use
+*Given the effective rate of interest of $8\%$ p.a., use
 Excel to calculate*
 
 1.  *the accumulation at 12 years of payable yearly in arrear for the
@@ -485,7 +485,7 @@ Excel to calculate*
 :::
 
 ::: {.example}
-**Example 6**. *Let $i = 4\%$ effective per time unit. Cashflows are
+*Let $i = 4\%$ effective per time unit. Cashflows are
 given as follows:*
 
 -   *$C_1 = 200$ at time $t_1 = 1$.*
