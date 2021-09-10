@@ -73,7 +73,7 @@ For the complete list of ASCII codes, please visit
 <https://theasciicode.com.ar>
 
 ::: {.example}
-**Example 1**. *Create an Excel file to list all the first 255 ASCII
+*Create an Excel file to list all the first 255 ASCII
 codes. It is a good idea to compare the outputs with those from the
 website above.*
 :::

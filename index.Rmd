@@ -33,7 +33,7 @@ Inconsistent date entries
 -------------------------
 
 ::: {.example}
-**Example 1**. *What will be the output when we enter dates by using the
+*What will be the output when we enter dates by using the
 following two digits for the years:*
 
 1.  *7/1/01*

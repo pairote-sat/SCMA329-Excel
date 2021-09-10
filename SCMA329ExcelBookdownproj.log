@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2018.4.12)  4 SEP 2021 15:02
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2018.4.12)  10 SEP 2021 09:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1659,7 +1659,13 @@ type QTm)
 <use  "SCMA329ExcelBookdownproj_files/figure-latex/tikz-ex3-1.pdf" > [7]
 File: SCMA329ExcelBookdownproj_files/figure-latex/tikz-ex4-1.pdf Graphic file (
 type QTm)
-<use  "SCMA329ExcelBookdownproj_files/figure-latex/tikz-ex4-1.pdf" > [8] [9]
+<use  "SCMA329ExcelBookdownproj_files/figure-latex/tikz-ex4-1.pdf" > [8]
+Underfull \hbox (badness 10000) in paragraph at lines 659--660
+[]\TU/lmtt/m/n/10 =VLOOKUP(lookup value, range containing the lookup value, the
+ column number in the range
+ []
+
+[9] [10] [11] [12]
 File: SCMA329ExcelBookdownproj_files/figure-latex/tikz-exam1-1.pdf Graphic file
  (type QTm)
 <use  "SCMA329ExcelBookdownproj_files/figure-latex/tikz-exam1-1.pdf" >
@@ -1668,39 +1674,39 @@ File: SCMA329ExcelBookdownproj_files/figure-latex/tikz-exam2-1.pdf Graphic file
 <use  "SCMA329ExcelBookdownproj_files/figure-latex/tikz-exam2-1.pdf" >
 File: SCMA329ExcelBookdownproj_files/figure-latex/tikz-exam3-1.pdf Graphic file
  (type QTm)
-<use  "SCMA329ExcelBookdownproj_files/figure-latex/tikz-exam3-1.pdf" > [10] [11
+<use  "SCMA329ExcelBookdownproj_files/figure-latex/tikz-exam3-1.pdf" > [13] [14
 ]
 File: SCMA329ExcelBookdownproj_files/figure-latex/tikz-sol1-1.pdf Graphic file 
 (type QTm)
 <use  "SCMA329ExcelBookdownproj_files/figure-latex/tikz-sol1-1.pdf" >
 File: SCMA329ExcelBookdownproj_files/figure-latex/tikz-sol2-1.pdf Graphic file 
 (type QTm)
-<use  "SCMA329ExcelBookdownproj_files/figure-latex/tikz-sol2-1.pdf" > [12]
-Underfull \hbox (badness 2452) in paragraph at lines 1076--1078
+<use  "SCMA329ExcelBookdownproj_files/figure-latex/tikz-sol2-1.pdf" > [15]
+Underfull \hbox (badness 2452) in paragraph at lines 1352--1354
 []$[][][][][][][][][][][] [] [][][][][][][][][][][][][][][][][][][][][][][][] [
 ] [][][][][][][][][][][][][][][][][] [] [][][][][][][][][][][][][][][][][] []
  []
 
-[13]
-Overfull \hbox (56.48016pt too wide) detected at line 1124
+[16]
+Overfull \hbox (56.48016pt too wide) detected at line 1400
 [][]
  []
 
-[14] [15]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1176.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1176.
+[17] [18]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1452.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1452.
 (./SCMA329ExcelBookdownproj.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1176.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1176.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1176.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1452.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1452.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1452.
  ) 
 Here is how much of TeX's memory you used:
- 38502 strings out of 493005
- 747295 string characters out of 6134596
- 937213 words of memory out of 5000000
- 41892 multiletter control sequences out of 15000+600000
- 10026 words of font info for 66 fonts, out of 8000000 for 9000
+ 38518 strings out of 493005
+ 747592 string characters out of 6134596
+ 937444 words of memory out of 5000000
+ 41907 multiletter control sequences out of 15000+600000
+ 10034 words of font info for 67 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 75i,9n,84p,10419b,536s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 75i,9n,84p,10419b,577s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on SCMA329ExcelBookdownproj.pdf (15 pages).
+Output written on SCMA329ExcelBookdownproj.pdf (18 pages).
