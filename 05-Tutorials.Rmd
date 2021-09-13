@@ -342,6 +342,145 @@ Tutorial 3
 5.  (Excel) Use Excel worksheet you have developed so far to calculate
     the results from the questions in this Tutorial.
 
+
+
+
+Tutorial 4
+==========
+
+1.  Show that the following series of cashflows are equivalent given
+    that an interest rate is 4% per annum effective.
+
+    1.  One single payment of amount 14,802.44 at year 10.
+
+    2.  a level annuity of 400 payable yearly in arrear for the next 10
+        years plus a lump sum of 10,000.
+
+    3.  a level annuity of 1,232.91 payable yearly in arrear for the
+        next 10 years.
+
+2.  You invest in a project which requires you to pay 2,000 and receive
+    back 300 at the end of each of the next 8 years. Calculate the yield
+    of this investment. ANS = 4.2394551%
+
+3.  You pay a price of 5,000 for an investment that will repay you 600
+    per annum payable half-yearly in arrear for the next 12 years.
+    Calculate the yield of this investment. ANS = 3.1491266%
+
+4.  An investor pays 100,000 in order to receive 20,000 back at the end
+    of the first 3 years and 25,000 back at the end in the next 4 years.
+    Calculate the yield of this investment. ANS = 12.6209232%
+
+5.  You invest in a project which requires you to pay 500,000 at the
+    start of each of the calendar years 2018, 2019 and 2020. The project
+    is expected to return profits of 400,000 for 6 years a the end of
+    each calendar year 2024 to 2029 inclusive. Calculate the yield of
+    this investment. ANS = 5.7285486%
+
+6.  (Modified from CT1 2014 IFoA Exam)
+
+    An investor is considering two projects, Project A and Project B.
+    Project A involves the investment of 2,000,000 in a retail outlet.
+    Rent is received quarterly in arrear for 25 years, at an initial
+    rate of 100,000 per annum. It is assumed that the rent will increase
+    at a rate of 5% per annum compound, but with increases taking place
+    every five years. Maintenance and other expenses are incurred
+    quarterly in arrear, at a rate of 12,000 per annum. The retail
+    outlet reverts to its original owner after 25 years for no payment.
+
+    Project B involves the purchase of an office building for 1,000,000.
+    The rent is to be received quarterly in advance at an initial rate
+    of 85,000 per annum. It is assumed that the rent will increase to
+    90,000 per annum after 20 years. There are no maintenance or other
+    expenses. After 25 years the property reverts to its original owner
+    for no payment.
+
+    Calculate the annual effective internal reate of return for both
+    Projects A and B. Which project is preferable?
+
+7.  (Excel) Use Excel worksheet you have developed to calculate the
+    results from the questions in this Tutorial.
+
+Tutorial 5
+==========
+
+1.  You borrow 30,000 for a term of 6 months to be repaid in arrear by
+    level monthly instalments. The rate of interest will be 4% pa
+    effective.
+
+    1.  Calculate the monthly repayment.
+
+    2.  Construct the complete loan schedule
+
+2.  A loan of 800,000 is repayable by equal monthly repayments for 10
+    years, with interest rate payable at 6.5% pa effective.
+
+    1.  Calculate the amount of each monthly payment.
+
+    2.  Calculate the interest and capital contents of the 96th
+        repayment.
+
+3.  1.  An investor takes out a loan of 100,000 from a bank to be repaid
+        by level annual instalments in arrear over 12 years where the
+        bank charges an effective annual rate of interest of 7%.
+        Immediately after the 6th repayment has been made, the investor
+        may
+
+        1.  extend the term of the loan by extra 2 year, or
+
+        2.  miss the next two repayments.
+
+        Calculate the revised repayment amount in each case.
+
+    2.  Suppose the bank allows the
+        investor to miss the next two repayments but the capital
+        outstanding will be charged interest at 10% pa effective while
+        the investor is not making repayments. Calculate the revised
+        repayment.
+
+    3.  Suppose in Question 3.2 that the investor will miss the next two
+        repayment and extend the term of the loan by extra 4 years.
+        Calculate the revised repayment.
+
+4.  An investor borrows 50,000 for a term of 12 years. The rate of
+    interest will be 4% pa effective for the first 6 years and 5% pa
+    effective thereafter. The loan will be repaid level annual
+    repayments for the first 6 years, and then increasing to twice the
+    origin level for the last 6 years. Calculate the annual repayment.
+
+5.  An investor borrows 40,000 for a term of 10 years. The rate of
+    interest will be 6.5% pa effective The loan will be repaid level
+    annual repayments, increasing at 2% per annum.
+
+    1.  Calculate the first annual repayment.
+
+    2.  Calculate the capital outstanding after the 7th repayment is
+        made.
+
+    3.  Calculate the interest content of the 8th repayment.
+
+6.  (Excel) Suppose you borrow $L$ from a bank to be repaid by the end
+    of $n$ years at an interest rate of $i\%$ per annum effective. If
+    you agree to repay the loan and the interest in equal annual
+    instalments throughout term of loan and the first payment is made at
+    the end of the first year.
+
+    Create a model to produce a loan amortisation (or loan schedule)
+    table. Make the interest rate, loan life, initial loan, and other
+    necessary variables input variables. The loan amortisation table
+    should include the following columns:
+
+    -   The year-beginning balance
+
+    -   The annual repayment
+
+    -   Interest Component
+
+    -   Capital content
+
+    -   Capital outstanding (the year-end balance)
+
+
 # Solutions to Tutorial 1
 
 1. The solutions to each question are as follows:
