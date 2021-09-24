@@ -1,0 +1,137 @@
+---
+title: " **Analysing data using Goal Seeking and Solver**"
+---
+
+# Analysing data using Goal Seeking and Solver
+
+## Analysing data using Goal Seeking
+
+Goal Seek feature allows a user to find the value that is an input for a
+formula (a single input cell) to produce a required result. For example,
+given a series of cashflows $C_1, C_2, \ldots C_n$ (positive and
+negative) payable at times $t_1, t_2, \ldots, t_n$, you can set up your
+worksheet to calculate the present value at time 0 defined by
+$$PV_i(0) = \sum_{i=1}^n C_i \left( \frac{1}{1+i} \right)^{t_i}.$$ The
+solution $i$ of the equation $$PV_i(0) = 0,$$ which is the yield of the
+cashflows, can be directly obtained by using Goal Seek. Here the yield
+$i$ is the value for a worksheet input that makes the value of the
+formula $PV_i(0)$ (or the present value function expressed in terms of
+$i$) match the goal, which is zero in this case.
+
+
+**Note** Goal Seek works only with one variable input value. You can use the
+Solver add-in when more than one input value is needed; for example,
+both the loan amount and the monthly payment amount for a loan.
+
+We first illustrate how to use Goal Seek to find the interest rate from
+a loan in the following example.
+
+::: {#exampleGoalSeek .example}
+*Suppose that you borrow 5,000 for a term of 3 years. The
+loan is to be repaid by 3 level annual repayments of 2,010.57 at the end
+of each year. Calculate the interest rate for this loan.*
+:::
+
+#### Model formulation for Example [5.1](#exampleGoalSeek){reference-type="ref" reference="exampleGoalSeek"} {#model-formulation-for-example-examplegoalseek .unnumbered}
+
+
+1.  **Set up input variables** Create the labels for the input variables
+    in cells A4:A6 for loan amount, term of the loan, and payment,
+    respectively. Then enter the values 5,000, 3 and 2,010.57 in cells
+    B4-B6, respectively. Create the label for the output variable (i.e.
+    the interest rate $i$). You may enter the guessing value for the
+    interest rate, say for e.g. $i = 1\%$ in the corresponding cell
+    (i.e. the cell B9)
+
+2.  **Construct year-by-year cashflows** Use the guessing value of $i$
+    to construct year-by-year cashflow to calculate the present value of
+    the cashflows (in cell E12 in our example)
+
+3.  **Use Goal Seek to calculate the interest rate**. Choose
+
+    **Data $\rightarrow$ Data Tools  $\rightarrow$ What-If Analysis $\rightarrow$ Goal Seek**
+
+    1.  Then in the **Set cell** box, enter the reference for the cell
+        that contains the formula (or the goal we want to match), i.e.
+        cell E12.
+
+    2.  In the **To value** box, enter the result of the the formula,
+        i.e. the value of the present value of the cashflows which is 0.
+
+    3.  In the **By changing cell** box, enter the reference for the
+        cell that you want to adjust, i.e. cell B9.
+
+4.  **Goal Seek status box** then displays the target value and the
+    value that excel calculated.
+
+**Note**
+
+1.  In case that Goal Seek cannot find a solution but there is a
+    solution to the problem.
+
+    1.  You should change the value used in the by changing cell box to
+        a value that should be close to the solution.
+
+    2.  Increase the Maximum Iterations setting which allows Excel to
+        try more possible solutions. To set the Maximum Iterations, go
+        to
+
+        **File $\rightarrow$ Excel $\rightarrow$ Options$\rightarrow$ Formula tab**
+
+2.  In order to increase the accuracy of the (approximated) solution,
+    set the option value for Maximum Change (located in **Excel Options
+    Formula tab**) to a small value. The defaul value is 0.001 which
+    gives only 3 decimals accuracy.
+
+::: {#exampleYield .example}
+*Consider a transaction from an investment that offers*
+
+-   *to pay an investor of amounts $B_1, B_2, \ldots, B_n$ at time
+    $t_1, t_2, \ldots ,t_n$*
+
+-   *in return for outlays (amounts to be paid by the investor) of
+    amounts $A_1, A_2, \ldots, A_n$ at these times, respectively.*
+
+*Only one of $A_i$ and $B_i$ will be non-zero in general. Make all the
+important variables of the problem input variables. Build the model to
+calculate the yield of the investment for the two examples in the
+lecture note.*
+:::
+
+## Analysing data using Solver
+
+
+Goal Seek has a limitation that can solve for only one adjustable cell.
+Solver extends this Goal Seek function and can do the following:
+
+-   work with multiple adjustable cells.
+
+-   specify constrains for the values of adjustable cells.
+
+-   find an optimum value for a formula.
+
+-   generate multiple solutions to a problem.
+
+## A simple Solver example
+
+
+We will describe how to use Solver to solve same the problem as Goal
+Seek.
+
+1.  **Set up input variables** This is similar to Goal Seek section.
+
+2.  **Set up a formula for the output variable** This is similar to Goal
+    Seek section.
+
+3.  **Use Goal Seek to calculate the interest rate**. Choose
+
+    **Data $\rightarrow$ Analysis $\rightarrow$ Solver**
+
+    1.  Then in the **Set Objective** box, enter the reference for the
+        cell that contains the formula, i.e. cell B6.
+
+    2.  In the **To** box, choose **Value of** box and then enter the
+        result of the the formula.
+
+    3.  In the **By Changing Variable cells** box, enter the reference
+        for the cell that you want to adjust, i.e. cell B5.

@@ -36,7 +36,7 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
-  pdftitle={Lookup Formulas and Data Tables},
+  pdftitle={Pivot Tables},
   pdfauthor={Pairote Satiracoo},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
@@ -87,9 +87,9 @@
 \usepackage[]{natbib}
 \bibliographystyle{plainnat}
 
-\title{\textbf{Lookup Formulas and Data Tables}}
+\title{\textbf{Pivot Tables}}
 \author{Pairote Satiracoo}
-\date{2021-09-20}
+\date{2021-09-24}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[section]
@@ -907,6 +907,466 @@ the loan and the interest in level instalments throughout term of loan.
 \end{enumerate}
 
 \end{example}
+
+\hypertarget{analysing-data-using-goal-seeking-and-solver}{%
+\section{Analysing data using Goal Seeking and Solver}\label{analysing-data-using-goal-seeking-and-solver}}
+
+\hypertarget{analysing-data-using-goal-seeking}{%
+\subsection{Analysing data using Goal Seeking}\label{analysing-data-using-goal-seeking}}
+
+Goal Seek feature allows a user to find the value that is an input for a
+formula (a single input cell) to produce a required result. For example,
+given a series of cashflows \(C_1, C_2, \ldots C_n\) (positive and
+negative) payable at times \(t_1, t_2, \ldots, t_n\), you can set up your
+worksheet to calculate the present value at time 0 defined by
+\[PV_i(0) = \sum_{i=1}^n C_i \left( \frac{1}{1+i} \right)^{t_i}.\] The
+solution \(i\) of the equation \[PV_i(0) = 0,\] which is the yield of the
+cashflows, can be directly obtained by using Goal Seek. Here the yield
+\(i\) is the value for a worksheet input that makes the value of the
+formula \(PV_i(0)\) (or the present value function expressed in terms of
+\(i\)) match the goal, which is zero in this case.
+
+\textbf{Note} Goal Seek works only with one variable input value. You can use the
+Solver add-in when more than one input value is needed; for example,
+both the loan amount and the monthly payment amount for a loan.
+
+We first illustrate how to use Goal Seek to find the interest rate from
+a loan in the following example.
+
+\begin{example}
+\protect\hypertarget{exm:exampleGoalSeek}{}\label{exm:exampleGoalSeek}
+
+\emph{Suppose that you borrow 5,000 for a term of 3 years. The
+loan is to be repaid by 3 level annual repayments of 2,010.57 at the end
+of each year. Calculate the interest rate for this loan.}
+
+\end{example}
+
+\hypertarget{model-formulation-for-example-examplegoalseek}{%
+\paragraph*{\texorpdfstring{Model formulation for Example \protect\hyperlink{exampleGoalSeek}{5.1}}{Model formulation for Example 5.1}}\label{model-formulation-for-example-examplegoalseek}}
+\addcontentsline{toc}{paragraph}{Model formulation for Example \protect\hyperlink{exampleGoalSeek}{5.1}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Set up input variables} Create the labels for the input variables
+  in cells A4:A6 for loan amount, term of the loan, and payment,
+  respectively. Then enter the values 5,000, 3 and 2,010.57 in cells
+  B4-B6, respectively. Create the label for the output variable (i.e.
+  the interest rate \(i\)). You may enter the guessing value for the
+  interest rate, say for e.g.~\(i = 1\%\) in the corresponding cell
+  (i.e.~the cell B9)
+\item
+  \textbf{Construct year-by-year cashflows} Use the guessing value of \(i\)
+  to construct year-by-year cashflow to calculate the present value of
+  the cashflows (in cell E12 in our example)
+\item
+  \textbf{Use Goal Seek to calculate the interest rate}. Choose
+
+  \textbf{Data \(\rightarrow\) Data Tools \(\rightarrow\) What-If Analysis \(\rightarrow\) Goal Seek}
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \item
+    Then in the \textbf{Set cell} box, enter the reference for the cell
+    that contains the formula (or the goal we want to match), i.e.
+    cell E12.
+  \item
+    In the \textbf{To value} box, enter the result of the the formula,
+    i.e.~the value of the present value of the cashflows which is 0.
+  \item
+    In the \textbf{By changing cell} box, enter the reference for the
+    cell that you want to adjust, i.e.~cell B9.
+  \end{enumerate}
+\item
+  \textbf{Goal Seek status box} then displays the target value and the
+  value that excel calculated.
+\end{enumerate}
+
+\textbf{Note}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  In case that Goal Seek cannot find a solution but there is a
+  solution to the problem.
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \item
+    You should change the value used in the by changing cell box to
+    a value that should be close to the solution.
+  \item
+    Increase the Maximum Iterations setting which allows Excel to
+    try more possible solutions. To set the Maximum Iterations, go
+    to
+
+    \textbf{File \(\rightarrow\) Excel \(\rightarrow\) Options\(\rightarrow\) Formula tab}
+  \end{enumerate}
+\item
+  In order to increase the accuracy of the (approximated) solution,
+  set the option value for Maximum Change (located in \textbf{Excel Options
+  Formula tab}) to a small value. The defaul value is 0.001 which
+  gives only 3 decimals accuracy.
+\end{enumerate}
+
+\begin{example}
+\protect\hypertarget{exm:exampleYield}{}\label{exm:exampleYield}
+
+\emph{Consider a transaction from an investment that offers}
+
+\begin{itemize}
+\item
+  \emph{to pay an investor of amounts \(B_1, B_2, \ldots, B_n\) at time
+  \(t_1, t_2, \ldots ,t_n\)}
+\item
+  \emph{in return for outlays (amounts to be paid by the investor) of
+  amounts \(A_1, A_2, \ldots, A_n\) at these times, respectively.}
+\end{itemize}
+
+\emph{Only one of \(A_i\) and \(B_i\) will be non-zero in general. Make all the
+important variables of the problem input variables. Build the model to
+calculate the yield of the investment for the two examples in the
+lecture note.}
+
+\end{example}
+
+\hypertarget{analysing-data-using-solver}{%
+\subsection{Analysing data using Solver}\label{analysing-data-using-solver}}
+
+Goal Seek has a limitation that can solve for only one adjustable cell.
+Solver extends this Goal Seek function and can do the following:
+
+\begin{itemize}
+\item
+  work with multiple adjustable cells.
+\item
+  specify constrains for the values of adjustable cells.
+\item
+  find an optimum value for a formula.
+\item
+  generate multiple solutions to a problem.
+\end{itemize}
+
+\hypertarget{a-simple-solver-example}{%
+\subsection{A simple Solver example}\label{a-simple-solver-example}}
+
+We will describe how to use Solver to solve same the problem as Goal
+Seek.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Set up input variables} This is similar to Goal Seek section.
+\item
+  \textbf{Set up a formula for the output variable} This is similar to Goal
+  Seek section.
+\item
+  \textbf{Use Goal Seek to calculate the interest rate}. Choose
+
+  \textbf{Data \(\rightarrow\) Analysis \(\rightarrow\) Solver}
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \item
+    Then in the \textbf{Set Objective} box, enter the reference for the
+    cell that contains the formula, i.e.~cell B6.
+  \item
+    In the \textbf{To} box, choose \textbf{Value of} box and then enter the
+    result of the the formula.
+  \item
+    In the \textbf{By Changing Variable cells} box, enter the reference
+    for the cell that you want to adjust, i.e.~cell B5.
+  \end{enumerate}
+\end{enumerate}
+
+\hypertarget{analysing-data-with-pivot-tables}{%
+\section{Analysing data with pivot tables}\label{analysing-data-with-pivot-tables}}
+
+Excel provides a powerful tool namely \textbf{pivot table} to summarise,
+analyse, explore and present data.
+
+\begin{itemize}
+\item
+  Users can simply create useful summary of data and rearrange the
+  information in any form with a few mouse clicks.
+\item
+  Pivot tables can create frequency distributions and
+  cross-tabulations of several different data dimensions.
+\item
+  The users can also create \textbf{pivot charts} based on pivot tables,
+  which provide meaningful, graphical data representation.
+\end{itemize}
+
+The following examples illustrate how to create pivot tables in Excel.
+The dataset used in the examples contains data on sales from a
+superstore The information on this data includes
+
+\begin{itemize}
+\item
+  Order and ship dates,
+\item
+  Ship modes,
+\item
+  Customer details,
+\item
+  Product details,
+\item
+  Sale and profit amounts.
+\end{itemize}
+
+The file can be downloaded from
+\url{https://community.tableau.com/docs/DOC-1236}.
+
+\hypertarget{example-1}{%
+\paragraph*{Example 1}\label{example-1}}
+\addcontentsline{toc}{paragraph}{Example 1}
+
+Suppose that the manager is interested in profits, broken down by region
+and sub-category. Instead of sorting the data and creating formulas to
+answer the question, you can summarise the data by creating a pivot
+table, which can be done in the following steps:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Select any cell or table containing the data.
+\item
+  From the \textbf{Insert} tab and click \textbf{PivotTable}.
+\item
+  Specify the data and location for the pivot table in the
+  \textbf{PivotTable dialog box}.
+\item
+  A blank \textbf{PivotTable} and \textbf{PivotTable Fields List} will appear.
+\item
+  Drag the field names (or column headers) at the top to one of the
+  four boxes at the bottom of the \textbf{PivotTable Fields List}.
+
+  For this example,
+
+  \begin{itemize}
+  \item
+    \textbf{Drag the Profit field into the Values area}. At this point,
+    the pivot table displays the total of all the values in the
+    Profit column.
+  \item
+    \textbf{Drag the Sub-Category field into the Row Labels area}. The
+    pivot table shows the total profit for each of the sub
+    categories.
+  \item
+    \textbf{Drag the Region field into the Column Labels area}. The pivot
+    table shows the total profit for each of the sub categories,
+    cross-tabulated by region.
+  \end{itemize}
+\item
+  The pivot table will calculate and summarise the selected fields.
+  The result is shown in the Table \protect\hyperlink{Table1}{1}.
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  The pivot table automatically updates the table with every change
+  you make in the PivotTable Field List.
+\item
+  You can sort data in a PivotTable. Just right-click any cell in the
+  column to sort and choose Sort from the short-cut menu.
+\item
+  You can apply number formatting, for example changing the Number
+  Format to Currency.
+\item
+  Pivot table data is usually summarised using a sum. You can also
+  summarise your data using different summary techniques, such as Sum,
+  Count, Average, etc.
+\end{enumerate}
+
+\hypertarget{Table1}{}
+\begin{longtable}[]{@{}crllll@{}}
+\caption{Table 1: The pivot table from Example 1.}\tabularnewline
+\toprule
+Sum of Profit & Region & & & & \\
+\midrule
+\endfirsthead
+\toprule
+Sum of Profit & Region & & & & \\
+\midrule
+\endhead
+Sub-Category & Central & East & South & West & Grand Total \\
+Accessories & 7251.63 & 11195.86 & 7004.54 & 16484.6 & 41936.64 \\
+Appliances & -2638.62 & 8391.41 & 4123.94 & 8261.27 & 18138.01 \\
+Art & 1195.16 & 1899.94 & 1058.59 & 2374.1 & 6527.79 \\
+Binders & -1043.64 & 11267.93 & 3900.66 & 16096.8 & 30221.76 \\
+Bookcases & -1997.9 & -1167.63 & 1339.49 & -1646.51 & -3472.56 \\
+Chairs & 6592.72 & 9357.77 & 6612.09 & 4027.58 & 26590.17 \\
+Copiers & 15608.84 & 17022.84 & 3658.91 & 19327.24 & 55617.82 \\
+Envelopes & 1777.53 & 1812.41 & 1465.48 & 1908.76 & 6964.18 \\
+Fasteners & 236.62 & 263.99 & 173.72 & 275.19 & 949.52 \\
+Furnishings & -3906.22 & 5881.41 & 3442.68 & 7641.27 & 13059.14 \\
+Labels & 1073.08 & 1129.28 & 1040.77 & 2303.12 & 5546.25 \\
+Machines & -1486.07 & 6928.64 & -1438.89 & -618.93 & 3384.76 \\
+Paper & 6971.9 & 9015.37 & 5947.06 & 12119.24 & 34053.57 \\
+Phones & 12323.03 & 12314.69 & 10767.28 & 9110.74 & 44515.73 \\
+Storage & 1969.84 & 8389.37 & 2274.3 & 8645.32 & 21278.83 \\
+Supplies & -661.89 & -1155.14 & 1.88 & 626.05 & -1189.1 \\
+Tables & -3559.65 & -11025.38 & -4623.06 & 1482.61 & -17725.48 \\
+Grand Total & 39706.36 & 91522.78 & 46749.43 & 108418.45 & 286397.02 \\
+\bottomrule
+\end{longtable}
+
+\hypertarget{filters}{%
+\subsection{Filters}\label{filters}}
+
+Filters can be used to display part of your data that you need. For
+example, you can determine how various discount rates affect the
+profits.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Drag a field to the \textbf{Filters} section. In this example, we will
+  use Discount field.
+\item
+  The \textbf{filter} will appear above the pivot table. Then use a
+  drop-down list to filter the displayed data by one or more items.
+\end{enumerate}
+
+The pivot table filltered by discount field is shown in Table
+\protect\hyperlink{Table2}{2}.
+
+\hypertarget{Table2}{}
+\begin{longtable}[]{@{}crllll@{}}
+\caption{Table 2: The pivot table is filtered by discount.}\tabularnewline
+\toprule
+Discount & 0.5 & & & & \\
+\midrule
+\endfirsthead
+\toprule
+Discount & 0.5 & & & & \\
+\midrule
+\endhead
+Sum of Profit & Region & & & & \\
+Sub-Category & Central & East & South & West & Grand Total \\
+Bookcases & & -4255.81 & & & -4255.81 \\
+Machines & & & -7635.23 & & -7635.23 \\
+Tables & -4309.74 & & & -4305.64 & -8615.39 \\
+Grand Total & -4309.74 & -4255.81 & -7635.23 & -4305.64 & -20506.43 \\
+\bottomrule
+\end{longtable}
+
+\hypertarget{modifying-the-pivot-table}{%
+\subsection{Modifying the pivot table}\label{modifying-the-pivot-table}}
+
+You can add further summary information by using the \textbf{PivotTable Fields
+List}. For example, you can add a second field (category) to the Row
+Label area. Here you also need to change the order in which the fields
+are listed, i.e.~Category should be on the top level followed by
+sub-category. Table \protect\hyperlink{Table3}{3} shows the pivot table when two fields are added in
+row labels.
+
+\hypertarget{Table3}{}
+\begin{longtable}[]{@{}clrllll@{}}
+\caption{Table 3: Two fields are used for row labels.}\tabularnewline
+\toprule
+Sum of Profit & & Region & & & & \\
+\midrule
+\endfirsthead
+\toprule
+Sum of Profit & & Region & & & & \\
+\midrule
+\endhead
+Category & Sub-Category & Central & East & South & West & Grand Total \\
+Furniture & Bookcases & -1997.9 & -1167.63 & 1339.49 & -1646.51 & -3472.56 \\
+& Chairs & 6592.72 & 9357.77 & 6612.09 & 4027.58 & 26590.17 \\
+& Furnishings & -3906.22 & 5881.41 & 3442.68 & 7641.27 & 13059.14 \\
+& Tables & -3559.65 & -11025.38 & -4623.06 & 1482.61 & -17725.48 \\
+Furniture Total & & -2871.05 & 3046.17 & 6771.21 & 11504.95 & 18451.27 \\
+Office Supplies & Appliances & -2638.62 & 8391.41 & 4123.94 & 8261.27 & 18138.01 \\
+& Art & 1195.16 & 1899.94 & 1058.59 & 2374.1 & 6527.79 \\
+& Binders & -1043.64 & 11267.93 & 3900.66 & 16096.8 & 30221.76 \\
+& Envelopes & 1777.53 & 1812.41 & 1465.48 & 1908.76 & 6964.18 \\
+& Fasteners & 236.62 & 263.99 & 173.72 & 275.19 & 949.52 \\
+& Labels & 1073.08 & 1129.28 & 1040.77 & 2303.12 & 5546.25 \\
+& Paper & 6971.9 & 9015.37 & 5947.06 & 12119.24 & 34053.57 \\
+& Storage & 1969.84 & 8389.37 & 2274.3 & 8645.32 & 21278.83 \\
+& Supplies & -661.89 & -1155.14 & 1.88 & 626.05 & -1189.1 \\
+Office Supplies Total & & 8879.98 & 41014.58 & 19986.39 & 52609.85 & 122490.8 \\
+Technology & Accessories & 7251.63 & 11195.86 & 7004.54 & 16484.6 & 41936.64 \\
+& Copiers & 15608.84 & 17022.84 & 3658.91 & 19327.24 & 55617.82 \\
+& Machines & -1486.07 & 6928.64 & -1438.89 & -618.93 & 3384.76 \\
+& Phones & 12323.03 & 12314.69 & 10767.28 & 9110.74 & 44515.73 \\
+Technology Total & & 33697.43 & 47462.04 & 19991.83 & 44303.65 & 145454.95 \\
+Grand Total & & 39706.36 & 91522.78 & 46749.43 & 108418.45 & 286397.02 \\
+\bottomrule
+\end{longtable}
+
+\hypertarget{example-2}{%
+\paragraph*{Example 2}\label{example-2}}
+\addcontentsline{toc}{paragraph}{Example 2}
+
+Create a pivot table to answer the following questions
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  What are the total sales obtained from the top 5 customer who have
+  spent the most, broken down by sub-category? How many orders did
+  each customer have for each product?
+\item
+  How does the sales in the Central region compared with the other
+  regions combined?
+\item
+  In which region does the superstore obtain the highest profit for
+  each year?
+\item
+  Create a frequency distribution of the profit, filtered by year.
+\end{enumerate}
+
+\hypertarget{working-with-nonnumeric-data}{%
+\subsection{Working with Nonnumeric Data}\label{working-with-nonnumeric-data}}
+
+Pivot tables can be used for nonnumeric data. In this case, a useful
+pivot table can be created that counts the items rather than sums of
+them.
+
+The following Pivot table cross-tabulates the segment for each
+combination of segment and region. Here, we specify each of the Pivot
+table fields as follows:
+
+\begin{itemize}
+\item
+  The Segment field is used for the Columns.
+\item
+  The Region field is used for the Rows.
+\item
+  The Segment field is also used for the Values and is summarised by
+  Count.
+\item
+  A second instance of the Segment field is added to the Values
+  section. To display percentages, in Field Setting, choose Show
+  Values As Percent of Column Total.
+\end{itemize}
+
+width=1
+
+\begin{longtable}[]{@{}lllllllll@{}}
+\caption{Table 4: The Pivot Table for Nonnumeric Data}\tabularnewline
+\toprule
+& Segment & & & & & & & \\
+\midrule
+\endfirsthead
+\toprule
+& Segment & & & & & & & \\
+\midrule
+\endhead
+& Consumer & & Corporate & & Home Office & & Total Count & Total Percentage \\
+& Count of Segment & Count of Segment by Percentage & Count of Segment & Count of Segment by Percentage & Count of Segment & Count of Segment by Percentage & & \\
+Central & 1212 & 23.35\% & 673 & 22.28\% & 438 & 24.57\% & 2323 & 23.24\% \\
+East & 1469 & 28.30\% & 877 & 29.04\% & 502 & 28.15\% & 2848 & 28.50\% \\
+South & 838 & 16.14\% & 510 & 16.89\% & 272 & 15.26\% & 1620 & 16.21\% \\
+West & 1672 & 32.21\% & 960 & 31.79\% & 571 & 32.02\% & 3203 & 32.05\% \\
+Grand Total & 5191 & 100.00\% & 3020 & 100.00\% & 1783 & 100.00\% & 9994 & 100.00\% \\
+\bottomrule
+\end{longtable}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 

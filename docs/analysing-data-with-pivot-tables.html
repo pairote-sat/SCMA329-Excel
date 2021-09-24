@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Section 6 Analysing data with pivot tables | Pivot Tables</title>
+  <meta name="description" content="Section 6 Analysing data with pivot tables | Pivot Tables" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Section 6 Analysing data with pivot tables | Pivot Tables" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Section 6 Analysing data with pivot tables | Pivot Tables" />
+  
+  
+  
+
+<meta name="author" content="Pairote Satiracoo" />
+
+
+<meta name="date" content="2021-09-24" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="analysing-data-using-goal-seeking-and-solver.html"/>
+<link rel="next" href="tutorial-1.html"/>
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">SCMA329-Excel</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Dates and date functions</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#inconsistent-date-entries"><i class="fa fa-check"></i><b>1.1</b> Inconsistent date entries</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#date-serial-number"><i class="fa fa-check"></i><b>1.2</b> Date serial number</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#date-functions"><i class="fa fa-check"></i><b>1.3</b> Date functions</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="working-with-texts.html"><a href="working-with-texts.html"><i class="fa fa-check"></i><b>2</b> Working with Texts</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="working-with-texts.html"><a href="working-with-texts.html#text-functions"><i class="fa fa-check"></i><b>2.1</b> Text functions</a></li>
+<li class="chapter" data-level="2.2" data-path="working-with-texts.html"><a href="working-with-texts.html#character-codes"><i class="fa fa-check"></i><b>2.2</b> Character codes</a></li>
+<li class="chapter" data-level="2.3" data-path="working-with-texts.html"><a href="working-with-texts.html#determining-whether-two-string-are-identical"><i class="fa fa-check"></i><b>2.3</b> Determining whether two string are identical</a></li>
+<li class="chapter" data-level="2.4" data-path="working-with-texts.html"><a href="working-with-texts.html#joining-two-or-more-cells"><i class="fa fa-check"></i><b>2.4</b> Joining two or more cells</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="interest-rate-present-values-and-cashflows.html"><a href="interest-rate-present-values-and-cashflows.html"><i class="fa fa-check"></i><b>3</b> Interest Rate, Present Values and Cashflows</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="interest-rate-present-values-and-cashflows.html"><a href="interest-rate-present-values-and-cashflows.html#working-with-a-single-cashflow-in-excel"><i class="fa fa-check"></i><b>3.1</b> Working with a single cashflow in Excel</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="interest-rate-present-values-and-cashflows.html"><a href="interest-rate-present-values-and-cashflows.html#how-to-calculate-the-future-value-of-a-single-cashflow"><i class="fa fa-check"></i><b>3.1.1</b> How to calculate the future value of a single cashflow</a></li>
+<li class="chapter" data-level="3.1.2" data-path="interest-rate-present-values-and-cashflows.html"><a href="interest-rate-present-values-and-cashflows.html#how-to-calculate-the-present-value-of-a-single-cashflow"><i class="fa fa-check"></i><b>3.1.2</b> How to calculate the present value of a single cashflow</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="interest-rate-present-values-and-cashflows.html"><a href="interest-rate-present-values-and-cashflows.html#present-values-of-a-series-of-cashflows"><i class="fa fa-check"></i><b>3.2</b> Present values of a series of cashflows</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="interest-rate-present-values-and-cashflows.html"><a href="interest-rate-present-values-and-cashflows.html#level-annuities-certain"><i class="fa fa-check"></i><b>3.2.1</b> Level Annuities certain</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="lookup-formulas-and-data-tables.html"><a href="lookup-formulas-and-data-tables.html"><i class="fa fa-check"></i><b>4</b> Lookup Formulas and Data Tables</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="lookup-formulas-and-data-tables.html"><a href="lookup-formulas-and-data-tables.html#lookup-function"><i class="fa fa-check"></i><b>4.1</b> Lookup function</a></li>
+<li class="chapter" data-level="4.2" data-path="lookup-formulas-and-data-tables.html"><a href="lookup-formulas-and-data-tables.html#match-and-index-functions"><i class="fa fa-check"></i><b>4.2</b> MATCH and INDEX functions</a></li>
+<li class="chapter" data-level="4.3" data-path="lookup-formulas-and-data-tables.html"><a href="lookup-formulas-and-data-tables.html#data-tables"><i class="fa fa-check"></i><b>4.3</b> Data tables</a>
+<ul>
+<li class="chapter" data-level="" data-path="lookup-formulas-and-data-tables.html"><a href="lookup-formulas-and-data-tables.html#model-formulation"><i class="fa fa-check"></i>Model formulation</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="analysing-data-using-goal-seeking-and-solver.html"><a href="analysing-data-using-goal-seeking-and-solver.html"><i class="fa fa-check"></i><b>5</b> Analysing data using Goal Seeking and Solver</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="analysing-data-using-goal-seeking-and-solver.html"><a href="analysing-data-using-goal-seeking-and-solver.html#analysing-data-using-goal-seeking"><i class="fa fa-check"></i><b>5.1</b> Analysing data using Goal Seeking</a></li>
+<li class="chapter" data-level="5.2" data-path="analysing-data-using-goal-seeking-and-solver.html"><a href="analysing-data-using-goal-seeking-and-solver.html#analysing-data-using-solver"><i class="fa fa-check"></i><b>5.2</b> Analysing data using Solver</a></li>
+<li class="chapter" data-level="5.3" data-path="analysing-data-using-goal-seeking-and-solver.html"><a href="analysing-data-using-goal-seeking-and-solver.html#a-simple-solver-example"><i class="fa fa-check"></i><b>5.3</b> A simple Solver example</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="analysing-data-with-pivot-tables.html"><a href="analysing-data-with-pivot-tables.html"><i class="fa fa-check"></i><b>6</b> Analysing data with pivot tables</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="analysing-data-with-pivot-tables.html"><a href="analysing-data-with-pivot-tables.html#filters"><i class="fa fa-check"></i><b>6.1</b> Filters</a></li>
+<li class="chapter" data-level="6.2" data-path="analysing-data-with-pivot-tables.html"><a href="analysing-data-with-pivot-tables.html#modifying-the-pivot-table"><i class="fa fa-check"></i><b>6.2</b> Modifying the pivot table</a></li>
+<li class="chapter" data-level="6.3" data-path="analysing-data-with-pivot-tables.html"><a href="analysing-data-with-pivot-tables.html#working-with-nonnumeric-data"><i class="fa fa-check"></i><b>6.3</b> Working with Nonnumeric Data</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="tutorial-1.html"><a href="tutorial-1.html"><i class="fa fa-check"></i><b>7</b> Tutorial 1</a></li>
+<li class="chapter" data-level="8" data-path="tutorial-2.html"><a href="tutorial-2.html"><i class="fa fa-check"></i><b>8</b> Tutorial 2</a></li>
+<li class="chapter" data-level="9" data-path="tutorial-3.html"><a href="tutorial-3.html"><i class="fa fa-check"></i><b>9</b> Tutorial 3</a></li>
+<li class="chapter" data-level="10" data-path="tutorial-4.html"><a href="tutorial-4.html"><i class="fa fa-check"></i><b>10</b> Tutorial 4</a></li>
+<li class="chapter" data-level="11" data-path="tutorial-5.html"><a href="tutorial-5.html"><i class="fa fa-check"></i><b>11</b> Tutorial 5</a></li>
+<li class="chapter" data-level="12" data-path="solutions-to-tutorial-1.html"><a href="solutions-to-tutorial-1.html"><i class="fa fa-check"></i><b>12</b> Solutions to Tutorial 1</a></li>
+<li class="chapter" data-level="13" data-path="solutions-to-tutorial-2.html"><a href="solutions-to-tutorial-2.html"><i class="fa fa-check"></i><b>13</b> Solutions to Tutorial 2</a></li>
+<li class="chapter" data-level="14" data-path="solutions-to-tutorial-3.html"><a href="solutions-to-tutorial-3.html"><i class="fa fa-check"></i><b>14</b> Solutions to Tutorial 3</a></li>
+<li class="chapter" data-level="15" data-path="solutions-to-tutorial-4.html"><a href="solutions-to-tutorial-4.html"><i class="fa fa-check"></i><b>15</b> Solutions to Tutorial 4</a></li>
+<li class="chapter" data-level="16" data-path="solutions-to-tutorial-5.html"><a href="solutions-to-tutorial-5.html"><i class="fa fa-check"></i><b>16</b> Solutions to Tutorial 5</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><strong>Pivot Tables</strong></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="analysing-data-with-pivot-tables" class="section level1" number="6">
+<h1><span class="header-section-number">Section 6</span> Analysing data with pivot tables</h1>
+<p>Excel provides a powerful tool namely <strong>pivot table</strong> to summarise,
+analyse, explore and present data.</p>
+<ul>
+<li><p>Users can simply create useful summary of data and rearrange the
+information in any form with a few mouse clicks.</p></li>
+<li><p>Pivot tables can create frequency distributions and
+cross-tabulations of several different data dimensions.</p></li>
+<li><p>The users can also create <strong>pivot charts</strong> based on pivot tables,
+which provide meaningful, graphical data representation.</p></li>
+</ul>
+<p>The following examples illustrate how to create pivot tables in Excel.
+The dataset used in the examples contains data on sales from a
+superstore The information on this data includes</p>
+<ul>
+<li><p>Order and ship dates,</p></li>
+<li><p>Ship modes,</p></li>
+<li><p>Customer details,</p></li>
+<li><p>Product details,</p></li>
+<li><p>Sale and profit amounts.</p></li>
+</ul>
+<p>The file can be downloaded from
+<a href="https://community.tableau.com/docs/DOC-1236" class="uri">https://community.tableau.com/docs/DOC-1236</a>.</p>
+<div id="example-1" class="section level4 unnumbered">
+<h4>Example 1</h4>
+<p>Suppose that the manager is interested in profits, broken down by region
+and sub-category. Instead of sorting the data and creating formulas to
+answer the question, you can summarise the data by creating a pivot
+table, which can be done in the following steps:</p>
+<ol style="list-style-type: decimal">
+<li><p>Select any cell or table containing the data.</p></li>
+<li><p>From the <strong>Insert</strong> tab and click <strong>PivotTable</strong>.</p></li>
+<li><p>Specify the data and location for the pivot table in the
+<strong>PivotTable dialog box</strong>.</p></li>
+<li><p>A blank <strong>PivotTable</strong> and <strong>PivotTable Fields List</strong> will appear.</p></li>
+<li><p>Drag the field names (or column headers) at the top to one of the
+four boxes at the bottom of the <strong>PivotTable Fields List</strong>.</p>
+<p>For this example,</p>
+<ul>
+<li><p><strong>Drag the Profit field into the Values area</strong>. At this point,
+the pivot table displays the total of all the values in the
+Profit column.</p></li>
+<li><p><strong>Drag the Sub-Category field into the Row Labels area</strong>. The
+pivot table shows the total profit for each of the sub
+categories.</p></li>
+<li><p><strong>Drag the Region field into the Column Labels area</strong>. The pivot
+table shows the total profit for each of the sub categories,
+cross-tabulated by region.</p></li>
+</ul></li>
+<li><p>The pivot table will calculate and summarise the selected fields.
+The result is shown in the Table <a href="analysing-data-with-pivot-tables.html#Table1" reference-type="ref" reference="Table1">1</a>.</p></li>
+</ol>
+<!-- -->
+<ol style="list-style-type: decimal">
+<li><p>The pivot table automatically updates the table with every change
+you make in the PivotTable Field List.</p></li>
+<li><p>You can sort data in a PivotTable. Just right-click any cell in the
+column to sort and choose Sort from the short-cut menu.</p></li>
+<li><p>You can apply number formatting, for example changing the Number
+Format to Currency.</p></li>
+<li><p>Pivot table data is usually summarised using a sum. You can also
+summarise your data using different summary techniques, such as Sum,
+Count, Average, etc.</p></li>
+</ol>
+<div id="Table1">
+<table>
+<caption>Table 1: The pivot table from Example 1.</caption>
+<thead>
+<tr class="header">
+<th align="center">Sum of Profit</th>
+<th align="right">Region</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Sub-Category</td>
+<td align="right">Central</td>
+<td>East</td>
+<td>South</td>
+<td>West</td>
+<td>Grand Total</td>
+</tr>
+<tr class="even">
+<td align="center">Accessories</td>
+<td align="right">7251.63</td>
+<td>11195.86</td>
+<td>7004.54</td>
+<td>16484.6</td>
+<td>41936.64</td>
+</tr>
+<tr class="odd">
+<td align="center">Appliances</td>
+<td align="right">-2638.62</td>
+<td>8391.41</td>
+<td>4123.94</td>
+<td>8261.27</td>
+<td>18138.01</td>
+</tr>
+<tr class="even">
+<td align="center">Art</td>
+<td align="right">1195.16</td>
+<td>1899.94</td>
+<td>1058.59</td>
+<td>2374.1</td>
+<td>6527.79</td>
+</tr>
+<tr class="odd">
+<td align="center">Binders</td>
+<td align="right">-1043.64</td>
+<td>11267.93</td>
+<td>3900.66</td>
+<td>16096.8</td>
+<td>30221.76</td>
+</tr>
+<tr class="even">
+<td align="center">Bookcases</td>
+<td align="right">-1997.9</td>
+<td>-1167.63</td>
+<td>1339.49</td>
+<td>-1646.51</td>
+<td>-3472.56</td>
+</tr>
+<tr class="odd">
+<td align="center">Chairs</td>
+<td align="right">6592.72</td>
+<td>9357.77</td>
+<td>6612.09</td>
+<td>4027.58</td>
+<td>26590.17</td>
+</tr>
+<tr class="even">
+<td align="center">Copiers</td>
+<td align="right">15608.84</td>
+<td>17022.84</td>
+<td>3658.91</td>
+<td>19327.24</td>
+<td>55617.82</td>
+</tr>
+<tr class="odd">
+<td align="center">Envelopes</td>
+<td align="right">1777.53</td>
+<td>1812.41</td>
+<td>1465.48</td>
+<td>1908.76</td>
+<td>6964.18</td>
+</tr>
+<tr class="even">
+<td align="center">Fasteners</td>
+<td align="right">236.62</td>
+<td>263.99</td>
+<td>173.72</td>
+<td>275.19</td>
+<td>949.52</td>
+</tr>
+<tr class="odd">
+<td align="center">Furnishings</td>
+<td align="right">-3906.22</td>
+<td>5881.41</td>
+<td>3442.68</td>
+<td>7641.27</td>
+<td>13059.14</td>
+</tr>
+<tr class="even">
+<td align="center">Labels</td>
+<td align="right">1073.08</td>
+<td>1129.28</td>
+<td>1040.77</td>
+<td>2303.12</td>
+<td>5546.25</td>
+</tr>
+<tr class="odd">
+<td align="center">Machines</td>
+<td align="right">-1486.07</td>
+<td>6928.64</td>
+<td>-1438.89</td>
+<td>-618.93</td>
+<td>3384.76</td>
+</tr>
+<tr class="even">
+<td align="center">Paper</td>
+<td align="right">6971.9</td>
+<td>9015.37</td>
+<td>5947.06</td>
+<td>12119.24</td>
+<td>34053.57</td>
+</tr>
+<tr class="odd">
+<td align="center">Phones</td>
+<td align="right">12323.03</td>
+<td>12314.69</td>
+<td>10767.28</td>
+<td>9110.74</td>
+<td>44515.73</td>
+</tr>
+<tr class="even">
+<td align="center">Storage</td>
+<td align="right">1969.84</td>
+<td>8389.37</td>
+<td>2274.3</td>
+<td>8645.32</td>
+<td>21278.83</td>
+</tr>
+<tr class="odd">
+<td align="center">Supplies</td>
+<td align="right">-661.89</td>
+<td>-1155.14</td>
+<td>1.88</td>
+<td>626.05</td>
+<td>-1189.1</td>
+</tr>
+<tr class="even">
+<td align="center">Tables</td>
+<td align="right">-3559.65</td>
+<td>-11025.38</td>
+<td>-4623.06</td>
+<td>1482.61</td>
+<td>-17725.48</td>
+</tr>
+<tr class="odd">
+<td align="center">Grand Total</td>
+<td align="right">39706.36</td>
+<td>91522.78</td>
+<td>46749.43</td>
+<td>108418.45</td>
+<td>286397.02</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="filters" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> Filters</h2>
+<p>Filters can be used to display part of your data that you need. For
+example, you can determine how various discount rates affect the
+profits.</p>
+<ol style="list-style-type: decimal">
+<li><p>Drag a field to the <strong>Filters</strong> section. In this example, we will
+use Discount field.</p></li>
+<li><p>The <strong>filter</strong> will appear above the pivot table. Then use a
+drop-down list to filter the displayed data by one or more items.</p></li>
+</ol>
+<p>The pivot table filltered by discount field is shown in Table
+<a href="analysing-data-with-pivot-tables.html#Table2" reference-type="ref" reference="Table2">2</a>.</p>
+<div id="Table2">
+<table>
+<caption>Table 2: The pivot table is filtered by discount.</caption>
+<thead>
+<tr class="header">
+<th align="center">Discount</th>
+<th align="right">0.5</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Sum of Profit</td>
+<td align="right">Region</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td align="center">Sub-Category</td>
+<td align="right">Central</td>
+<td>East</td>
+<td>South</td>
+<td>West</td>
+<td>Grand Total</td>
+</tr>
+<tr class="odd">
+<td align="center">Bookcases</td>
+<td align="right"></td>
+<td>-4255.81</td>
+<td></td>
+<td></td>
+<td>-4255.81</td>
+</tr>
+<tr class="even">
+<td align="center">Machines</td>
+<td align="right"></td>
+<td></td>
+<td>-7635.23</td>
+<td></td>
+<td>-7635.23</td>
+</tr>
+<tr class="odd">
+<td align="center">Tables</td>
+<td align="right">-4309.74</td>
+<td></td>
+<td></td>
+<td>-4305.64</td>
+<td>-8615.39</td>
+</tr>
+<tr class="even">
+<td align="center">Grand Total</td>
+<td align="right">-4309.74</td>
+<td>-4255.81</td>
+<td>-7635.23</td>
+<td>-4305.64</td>
+<td>-20506.43</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="modifying-the-pivot-table" class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> Modifying the pivot table</h2>
+<p>You can add further summary information by using the <strong>PivotTable Fields
+List</strong>. For example, you can add a second field (category) to the Row
+Label area. Here you also need to change the order in which the fields
+are listed, i.e. Category should be on the top level followed by
+sub-category. Table <a href="analysing-data-with-pivot-tables.html#Table3" reference-type="ref" reference="Table3">3</a> shows the pivot table when two fields are added in
+row labels.</p>
+<div id="Table3">
+<table>
+<caption>Table 3: Two fields are used for row labels.</caption>
+<thead>
+<tr class="header">
+<th align="center">Sum of Profit</th>
+<th></th>
+<th align="right">Region</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Category</td>
+<td>Sub-Category</td>
+<td align="right">Central</td>
+<td>East</td>
+<td>South</td>
+<td>West</td>
+<td>Grand Total</td>
+</tr>
+<tr class="even">
+<td align="center">Furniture</td>
+<td>Bookcases</td>
+<td align="right">-1997.9</td>
+<td>-1167.63</td>
+<td>1339.49</td>
+<td>-1646.51</td>
+<td>-3472.56</td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td>Chairs</td>
+<td align="right">6592.72</td>
+<td>9357.77</td>
+<td>6612.09</td>
+<td>4027.58</td>
+<td>26590.17</td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td>Furnishings</td>
+<td align="right">-3906.22</td>
+<td>5881.41</td>
+<td>3442.68</td>
+<td>7641.27</td>
+<td>13059.14</td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td>Tables</td>
+<td align="right">-3559.65</td>
+<td>-11025.38</td>
+<td>-4623.06</td>
+<td>1482.61</td>
+<td>-17725.48</td>
+</tr>
+<tr class="even">
+<td align="center">Furniture Total</td>
+<td></td>
+<td align="right">-2871.05</td>
+<td>3046.17</td>
+<td>6771.21</td>
+<td>11504.95</td>
+<td>18451.27</td>
+</tr>
+<tr class="odd">
+<td align="center">Office Supplies</td>
+<td>Appliances</td>
+<td align="right">-2638.62</td>
+<td>8391.41</td>
+<td>4123.94</td>
+<td>8261.27</td>
+<td>18138.01</td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td>Art</td>
+<td align="right">1195.16</td>
+<td>1899.94</td>
+<td>1058.59</td>
+<td>2374.1</td>
+<td>6527.79</td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td>Binders</td>
+<td align="right">-1043.64</td>
+<td>11267.93</td>
+<td>3900.66</td>
+<td>16096.8</td>
+<td>30221.76</td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td>Envelopes</td>
+<td align="right">1777.53</td>
+<td>1812.41</td>
+<td>1465.48</td>
+<td>1908.76</td>
+<td>6964.18</td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td>Fasteners</td>
+<td align="right">236.62</td>
+<td>263.99</td>
+<td>173.72</td>
+<td>275.19</td>
+<td>949.52</td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td>Labels</td>
+<td align="right">1073.08</td>
+<td>1129.28</td>
+<td>1040.77</td>
+<td>2303.12</td>
+<td>5546.25</td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td>Paper</td>
+<td align="right">6971.9</td>
+<td>9015.37</td>
+<td>5947.06</td>
+<td>12119.24</td>
+<td>34053.57</td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td>Storage</td>
+<td align="right">1969.84</td>
+<td>8389.37</td>
+<td>2274.3</td>
+<td>8645.32</td>
+<td>21278.83</td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td>Supplies</td>
+<td align="right">-661.89</td>
+<td>-1155.14</td>
+<td>1.88</td>
+<td>626.05</td>
+<td>-1189.1</td>
+</tr>
+<tr class="even">
+<td align="center">Office Supplies Total</td>
+<td></td>
+<td align="right">8879.98</td>
+<td>41014.58</td>
+<td>19986.39</td>
+<td>52609.85</td>
+<td>122490.8</td>
+</tr>
+<tr class="odd">
+<td align="center">Technology</td>
+<td>Accessories</td>
+<td align="right">7251.63</td>
+<td>11195.86</td>
+<td>7004.54</td>
+<td>16484.6</td>
+<td>41936.64</td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td>Copiers</td>
+<td align="right">15608.84</td>
+<td>17022.84</td>
+<td>3658.91</td>
+<td>19327.24</td>
+<td>55617.82</td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td>Machines</td>
+<td align="right">-1486.07</td>
+<td>6928.64</td>
+<td>-1438.89</td>
+<td>-618.93</td>
+<td>3384.76</td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td>Phones</td>
+<td align="right">12323.03</td>
+<td>12314.69</td>
+<td>10767.28</td>
+<td>9110.74</td>
+<td>44515.73</td>
+</tr>
+<tr class="odd">
+<td align="center">Technology Total</td>
+<td></td>
+<td align="right">33697.43</td>
+<td>47462.04</td>
+<td>19991.83</td>
+<td>44303.65</td>
+<td>145454.95</td>
+</tr>
+<tr class="even">
+<td align="center">Grand Total</td>
+<td></td>
+<td align="right">39706.36</td>
+<td>91522.78</td>
+<td>46749.43</td>
+<td>108418.45</td>
+<td>286397.02</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="example-2" class="section level4 unnumbered">
+<h4>Example 2</h4>
+<p>Create a pivot table to answer the following questions</p>
+<ol style="list-style-type: decimal">
+<li><p>What are the total sales obtained from the top 5 customer who have
+spent the most, broken down by sub-category? How many orders did
+each customer have for each product?</p></li>
+<li><p>How does the sales in the Central region compared with the other
+regions combined?</p></li>
+<li><p>In which region does the superstore obtain the highest profit for
+each year?</p></li>
+<li><p>Create a frequency distribution of the profit, filtered by year.</p></li>
+</ol>
+</div>
+</div>
+<div id="working-with-nonnumeric-data" class="section level2" number="6.3">
+<h2><span class="header-section-number">6.3</span> Working with Nonnumeric Data</h2>
+<p>Pivot tables can be used for nonnumeric data. In this case, a useful
+pivot table can be created that counts the items rather than sums of
+them.</p>
+<p>The following Pivot table cross-tabulates the segment for each
+combination of segment and region. Here, we specify each of the Pivot
+table fields as follows:</p>
+<ul>
+<li><p>The Segment field is used for the Columns.</p></li>
+<li><p>The Region field is used for the Rows.</p></li>
+<li><p>The Segment field is also used for the Values and is summarised by
+Count.</p></li>
+<li><p>A second instance of the Segment field is added to the Values
+section. To display percentages, in Field Setting, choose Show
+Values As Percent of Column Total.</p></li>
+</ul>
+<p>width=1</p>
+<table>
+<caption>Table 4: The Pivot Table for Nonnumeric Data</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="left">Segment</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td align="left">Consumer</td>
+<td></td>
+<td>Corporate</td>
+<td></td>
+<td>Home Office</td>
+<td></td>
+<td>Total Count</td>
+<td>Total Percentage</td>
+</tr>
+<tr class="even">
+<td></td>
+<td align="left">Count of Segment</td>
+<td>Count of Segment by Percentage</td>
+<td>Count of Segment</td>
+<td>Count of Segment by Percentage</td>
+<td>Count of Segment</td>
+<td>Count of Segment by Percentage</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Central</td>
+<td align="left">1212</td>
+<td>23.35%</td>
+<td>673</td>
+<td>22.28%</td>
+<td>438</td>
+<td>24.57%</td>
+<td>2323</td>
+<td>23.24%</td>
+</tr>
+<tr class="even">
+<td>East</td>
+<td align="left">1469</td>
+<td>28.30%</td>
+<td>877</td>
+<td>29.04%</td>
+<td>502</td>
+<td>28.15%</td>
+<td>2848</td>
+<td>28.50%</td>
+</tr>
+<tr class="odd">
+<td>South</td>
+<td align="left">838</td>
+<td>16.14%</td>
+<td>510</td>
+<td>16.89%</td>
+<td>272</td>
+<td>15.26%</td>
+<td>1620</td>
+<td>16.21%</td>
+</tr>
+<tr class="even">
+<td>West</td>
+<td align="left">1672</td>
+<td>32.21%</td>
+<td>960</td>
+<td>31.79%</td>
+<td>571</td>
+<td>32.02%</td>
+<td>3203</td>
+<td>32.05%</td>
+</tr>
+<tr class="odd">
+<td>Grand Total</td>
+<td align="left">5191</td>
+<td>100.00%</td>
+<td>3020</td>
+<td>100.00%</td>
+<td>1783</td>
+<td>100.00%</td>
+<td>9994</td>
+<td>100.00%</td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="analysing-data-using-goal-seeking-and-solver.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tutorial-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/pairote-sat/SCMA329-Excel/edit/master/06-pivot-tables.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/pairote-sat/SCMA329-Excel/blob/master/06-pivot-tables.Rmd",
+"text": null
+},
+"download": ["SCMA329ExcelBookdownproj.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

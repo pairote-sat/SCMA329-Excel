@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Section 7 Tutorial 1 | Pivot Tables</title>
-  <meta name="description" content="Section 7 Tutorial 1 | Pivot Tables" />
+  <title>Section 5 Analysing data using Goal Seeking and Solver | Pivot Tables</title>
+  <meta name="description" content="Section 5 Analysing data using Goal Seeking and Solver | Pivot Tables" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Section 7 Tutorial 1 | Pivot Tables" />
+  <meta property="og:title" content="Section 5 Analysing data using Goal Seeking and Solver | Pivot Tables" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Section 7 Tutorial 1 | Pivot Tables" />
+  <meta name="twitter:title" content="Section 5 Analysing data using Goal Seeking and Solver | Pivot Tables" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="analysing-data-with-pivot-tables.html"/>
-<link rel="next" href="tutorial-2.html"/>
+<link rel="prev" href="lookup-formulas-and-data-tables.html"/>
+<link rel="next" href="analysing-data-with-pivot-tables.html"/>
 <script src="libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -149,79 +149,130 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="tutorial-1" class="section level1" number="7">
-<h1><span class="header-section-number">Section 7</span> Tutorial 1</h1>
+<div id="analysing-data-using-goal-seeking-and-solver" class="section level1" number="5">
+<h1><span class="header-section-number">Section 5</span> Analysing data using Goal Seeking and Solver</h1>
+<div id="analysing-data-using-goal-seeking" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Analysing data using Goal Seeking</h2>
+<p>Goal Seek feature allows a user to find the value that is an input for a
+formula (a single input cell) to produce a required result. For example,
+given a series of cashflows <span class="math inline">\(C_1, C_2, \ldots C_n\)</span> (positive and
+negative) payable at times <span class="math inline">\(t_1, t_2, \ldots, t_n\)</span>, you can set up your
+worksheet to calculate the present value at time 0 defined by
+<span class="math display">\[PV_i(0) = \sum_{i=1}^n C_i \left( \frac{1}{1+i} \right)^{t_i}.\]</span> The
+solution <span class="math inline">\(i\)</span> of the equation <span class="math display">\[PV_i(0) = 0,\]</span> which is the yield of the
+cashflows, can be directly obtained by using Goal Seek. Here the yield
+<span class="math inline">\(i\)</span> is the value for a worksheet input that makes the value of the
+formula <span class="math inline">\(PV_i(0)\)</span> (or the present value function expressed in terms of
+<span class="math inline">\(i\)</span>) match the goal, which is zero in this case.</p>
+<p><strong>Note</strong> Goal Seek works only with one variable input value. You can use the
+Solver add-in when more than one input value is needed; for example,
+both the loan amount and the monthly payment amount for a loan.</p>
+<p>We first illustrate how to use Goal Seek to find the interest rate from
+a loan in the following example.</p>
+<div class="example">
+<p><span id="exm:exampleGoalSeek" class="example"><strong>Example 5.1  </strong></span><em>Suppose that you borrow 5,000 for a term of 3 years. The
+loan is to be repaid by 3 level annual repayments of 2,010.57 at the end
+of each year. Calculate the interest rate for this loan.</em></p>
+</div>
+<div id="model-formulation-for-example-examplegoalseek" class="section level4 unnumbered">
+<h4>Model formulation for Example <a href="#exampleGoalSeek" reference-type="ref" reference="exampleGoalSeek">5.1</a></h4>
 <ol style="list-style-type: decimal">
-<li><p>Calculate the following accumulation:</p>
+<li><p><strong>Set up input variables</strong> Create the labels for the input variables
+in cells A4:A6 for loan amount, term of the loan, and payment,
+respectively. Then enter the values 5,000, 3 and 2,010.57 in cells
+B4-B6, respectively. Create the label for the output variable (i.e.
+the interest rate <span class="math inline">\(i\)</span>). You may enter the guessing value for the
+interest rate, say for e.g. <span class="math inline">\(i = 1\%\)</span> in the corresponding cell
+(i.e. the cell B9)</p></li>
+<li><p><strong>Construct year-by-year cashflows</strong> Use the guessing value of <span class="math inline">\(i\)</span>
+to construct year-by-year cashflow to calculate the present value of
+the cashflows (in cell E12 in our example)</p></li>
+<li><p><strong>Use Goal Seek to calculate the interest rate</strong>. Choose</p>
+<p><strong>Data <span class="math inline">\(\rightarrow\)</span> Data Tools <span class="math inline">\(\rightarrow\)</span> What-If Analysis <span class="math inline">\(\rightarrow\)</span> Goal Seek</strong></p>
 <ol style="list-style-type: decimal">
-<li><p>Accumulate $5,000 for 4 years at 7.5% per annum effective.</p></li>
-<li><p>Accumulate $800 for 2.7 years at 3% per quarter-year effective.</p></li>
-<li><p>Accumulate $10,000 for 27 months at 4.25% per half-year
-effective.</p></li>
+<li><p>Then in the <strong>Set cell</strong> box, enter the reference for the cell
+that contains the formula (or the goal we want to match), i.e.
+cell E12.</p></li>
+<li><p>In the <strong>To value</strong> box, enter the result of the the formula,
+i.e. the value of the present value of the cashflows which is 0.</p></li>
+<li><p>In the <strong>By changing cell</strong> box, enter the reference for the
+cell that you want to adjust, i.e. cell B9.</p></li>
 </ol></li>
-<li><p>Calculate the present values on 1 January 2015 of the following
-payments at the given rates of interest:</p>
-<ol style="list-style-type: decimal">
-<li><p>$1,000 on 1 January 2016, at 7.5% per annum effective.</p></li>
-<li><p>$100 on 1 October 2016, at 3% per quarter-year effective.</p></li>
-<li><p>$10,000 on 1 April 2016, at 4.25% per half-year effective.</p></li>
-</ol></li>
-<li><ol style="list-style-type: decimal">
-<li><p>If the effective rate of interest is 4% per annum, calculate the
-effective rate of interest per month?</p></li>
-<li><p>If the effective rate of interest is 6.5% per half-year,
-calculate the effective rate of interest per quarter-year?</p></li>
-</ol></li>
-<li><p>The effective rate of interest per annum was 4% during 2015, 5%
-during 2016 and 6% thereafter.</p>
-<ol style="list-style-type: decimal">
-<li><p>Calculate the accumulation of $500 from 1 January 2015 to 1
-January 2018.</p></li>
-<li><p>Calculate the accumulation of $2000 from 1 April 2015 to 1
-October 2017.</p></li>
-<li><p>Calculate the accumulation factor from 1 January 2015 to 1
-January 2018.</p></li>
-</ol></li>
-<li><p>You deposit $ 3000 to an account that earn 2.5% compounded
-annually. How much will you have in three years?</p></li>
-<li><p>A person borrows a sum of $5,000 and agrees to pay this back at the
-end of 1 year with interest calculated at an effective rate of 10%
-per annum. Calculate the amount to be repaid for the loan.</p></li>
-<li><p>You want to have $1000 in 2 years and $2000 in 4 years. How much
-should you deposit now into an account earning the effective rate of
-5.75% semiannually?</p></li>
-<li><p>Katy deposits 100 into a saving account which pays interest at <span class="math inline">\(i\)</span>
-<strong>per quarter</strong> effective.</p>
-<p>At the same time, Taylor deposits 500 into a different saving
-account which pays a simple interest at an annual rate of <span class="math inline">\(i\)</span>.</p>
-<p>During the last 3 months of the 4th year, they both earn the same
-amount of interest. Calculate <span class="math inline">\(i\)</span>.</p></li>
-<li><p>An ordinary annuity is a series of equal payments made at the end of
-consecutive periods over a fixed length of time. Draw a timeline for
-the following annuity having cashflow of 1 unit at the end of each
-of the next n time units.</p></li>
-<li><p>Draw a timeline to illustrate this insurance benefit: Whole Life
-Insurance - payable immediately on death - has following conditions:</p>
-<ul>
-<li><p>death benefit (sum insured) of 1</p></li>
-<li><p>payable immediately on the death</p></li>
-<li><p>of an individual currently aged x</p></li>
-<li><p>for death occurring any time in the future.</p></li>
-</ul></li>
-<li><p>(Excel) It is a good exercise to check whether the Excel worksheet
-you have developed so far for calculating the present value and
-future value can be applied to the questions in this Tutorial. What
-would you do to improve the Excel worksheet that can be applied to a
-more general scenario?</p></li>
+<li><p><strong>Goal Seek status box</strong> then displays the target value and the
+value that excel calculated.</p></li>
 </ol>
+<p><strong>Note</strong></p>
+<ol style="list-style-type: decimal">
+<li><p>In case that Goal Seek cannot find a solution but there is a
+solution to the problem.</p>
+<ol style="list-style-type: decimal">
+<li><p>You should change the value used in the by changing cell box to
+a value that should be close to the solution.</p></li>
+<li><p>Increase the Maximum Iterations setting which allows Excel to
+try more possible solutions. To set the Maximum Iterations, go
+to</p>
+<p><strong>File <span class="math inline">\(\rightarrow\)</span> Excel <span class="math inline">\(\rightarrow\)</span> Options<span class="math inline">\(\rightarrow\)</span> Formula tab</strong></p></li>
+</ol></li>
+<li><p>In order to increase the accuracy of the (approximated) solution,
+set the option value for Maximum Change (located in <strong>Excel Options
+Formula tab</strong>) to a small value. The defaul value is 0.001 which
+gives only 3 decimals accuracy.</p></li>
+</ol>
+<div class="example">
+<p><span id="exm:exampleYield" class="example"><strong>Example 5.2  </strong></span><em>Consider a transaction from an investment that offers</em></p>
+<ul>
+<li><p><em>to pay an investor of amounts <span class="math inline">\(B_1, B_2, \ldots, B_n\)</span> at time
+<span class="math inline">\(t_1, t_2, \ldots ,t_n\)</span></em></p></li>
+<li><p><em>in return for outlays (amounts to be paid by the investor) of
+amounts <span class="math inline">\(A_1, A_2, \ldots, A_n\)</span> at these times, respectively.</em></p></li>
+</ul>
+<p><em>Only one of <span class="math inline">\(A_i\)</span> and <span class="math inline">\(B_i\)</span> will be non-zero in general. Make all the
+important variables of the problem input variables. Build the model to
+calculate the yield of the investment for the two examples in the
+lecture note.</em></p>
+</div>
+</div>
+</div>
+<div id="analysing-data-using-solver" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Analysing data using Solver</h2>
+<p>Goal Seek has a limitation that can solve for only one adjustable cell.
+Solver extends this Goal Seek function and can do the following:</p>
+<ul>
+<li><p>work with multiple adjustable cells.</p></li>
+<li><p>specify constrains for the values of adjustable cells.</p></li>
+<li><p>find an optimum value for a formula.</p></li>
+<li><p>generate multiple solutions to a problem.</p></li>
+</ul>
+</div>
+<div id="a-simple-solver-example" class="section level2" number="5.3">
+<h2><span class="header-section-number">5.3</span> A simple Solver example</h2>
+<p>We will describe how to use Solver to solve same the problem as Goal
+Seek.</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Set up input variables</strong> This is similar to Goal Seek section.</p></li>
+<li><p><strong>Set up a formula for the output variable</strong> This is similar to Goal
+Seek section.</p></li>
+<li><p><strong>Use Goal Seek to calculate the interest rate</strong>. Choose</p>
+<p><strong>Data <span class="math inline">\(\rightarrow\)</span> Analysis <span class="math inline">\(\rightarrow\)</span> Solver</strong></p>
+<ol style="list-style-type: decimal">
+<li><p>Then in the <strong>Set Objective</strong> box, enter the reference for the
+cell that contains the formula, i.e. cell B6.</p></li>
+<li><p>In the <strong>To</strong> box, choose <strong>Value of</strong> box and then enter the
+result of the the formula.</p></li>
+<li><p>In the <strong>By Changing Variable cells</strong> box, enter the reference
+for the cell that you want to adjust, i.e. cell B5.</p></li>
+</ol></li>
+</ol>
+
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="analysing-data-with-pivot-tables.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="tutorial-2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="lookup-formulas-and-data-tables.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="analysing-data-with-pivot-tables.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -253,7 +304,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/pairote-sat/SCMA329-Excel/edit/master/07-Tutorials.Rmd",
+"link": "https://github.com/pairote-sat/SCMA329-Excel/edit/master/05-goal-seek.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -261,7 +312,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/pairote-sat/SCMA329-Excel/blob/master/07-Tutorials.Rmd",
+"link": "https://github.com/pairote-sat/SCMA329-Excel/blob/master/05-goal-seek.Rmd",
 "text": null
 },
 "download": ["SCMA329ExcelBookdownproj.pdf"],
