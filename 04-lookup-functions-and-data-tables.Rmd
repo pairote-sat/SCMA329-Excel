@@ -1,6 +1,4 @@
----
-title: " **Lookup Formulas and Data Tables**"
----
+
 
 # Lookup Formulas and Data Tables
 

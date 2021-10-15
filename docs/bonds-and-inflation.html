@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Section 9 Tutorial 2 | SCMA329 Practical Mathematical Financial Modeling</title>
-  <meta name="description" content="Section 9 Tutorial 2 | SCMA329 Practical Mathematical Financial Modeling" />
+  <title>Section 7 Bonds and Inflation | SCMA329 Practical Mathematical Financial Modeling</title>
+  <meta name="description" content="Section 7 Bonds and Inflation | SCMA329 Practical Mathematical Financial Modeling" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Section 9 Tutorial 2 | SCMA329 Practical Mathematical Financial Modeling" />
+  <meta property="og:title" content="Section 7 Bonds and Inflation | SCMA329 Practical Mathematical Financial Modeling" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Section 9 Tutorial 2 | SCMA329 Practical Mathematical Financial Modeling" />
+  <meta name="twitter:title" content="Section 7 Bonds and Inflation | SCMA329 Practical Mathematical Financial Modeling" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="tutorial-1.html"/>
-<link rel="next" href="tutorial-3.html"/>
+<link rel="prev" href="analysing-data-with-pivot-tables.html"/>
+<link rel="next" href="tutorial-1.html"/>
 <script src="libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -156,76 +156,165 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="tutorial-2" class="section level1" number="9">
-<h1><span class="header-section-number">Section 9</span> Tutorial 2</h1>
+<div id="bonds-and-inflation" class="section level1" number="7">
+<h1><span class="header-section-number">Section 7</span> Bonds and Inflation</h1>
+<div id="zero-coupon-bonds" class="section level2" number="7.1">
+<h2><span class="header-section-number">7.1</span> Zero-Coupon Bonds</h2>
+<p>The simplest type of bond is the one without coupons. Such bonds are
+referred to as <strong>zero-coupon bonds</strong>. More precisely,</p>
+<p>An <strong><span class="math inline">\(n\)</span>-year zero-coupon bond</strong> is a fixed interest security, redeemed
+at par with term <span class="math inline">\(n\)</span> and no coupon payments.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-13" class="example"><strong>Example 7.1  </strong></span><em>What cash flows will an investor receive if the investor
+holds an <span class="math inline">\(n\)</span>-year zero-coupon per 100 THB face value until maturity? (Here
+we let <span class="math inline">\(P_n\)</span> denote the price now of the <span class="math inline">\(n\)</span>-year zero-coupon)</em></p>
+</div>
+<div class="figure" style="text-align: center"><span id="fig:tikz-bond"></span>
+<img src="SCMA329ExcelBookdownproj_files/figure-html/tikz-bond-1.png" alt="cashflows of a zero-coupon bond" width="672" />
+<p class="caption">
+Figure 7.1: cashflows of a zero-coupon bond
+</p>
+</div>
+<p>To calculate the rate of return of buying a bond and holding it until
+maturity, it is simply the discount rate that equate the present value
+of the investment to its costs (or bond price). Recall that <span class="math inline">\(P_n\)</span>
+denotes the price now of the <span class="math inline">\(n\)</span>-year zero-coupon with FV face value and
+<span class="math inline">\(y_n\)</span> is the <strong>yield to maturity</strong>. The yield to maturity satisfies the
+following equation <span class="math display">\[\begin{aligned}
+    P_n = \frac{FV}{(1+y_n)^n}.\end{aligned}\]</span> Hence,
+<span class="math display">\[y_n = \left(\frac{FV}{P_n}\right)^{1/n} - 1.\]</span></p>
+<div class="example">
+<p><span id="exm:yieldCurve" class="example"><strong>Example 7.2  </strong></span><em>(Excel) Download the yields to maturity of zero-coupon
+bonds per THB 100 face value with the terms ranging from 0.08 to 47
+years from the following website (as of 11/03/2020)</em></p>
+<p><em><a href="http://www.thaibma.or.th/EN/Market/YieldCurve/Zero.aspx" class="uri">http://www.thaibma.or.th/EN/Market/YieldCurve/Zero.aspx</a></em></p>
 <ol style="list-style-type: decimal">
-<li><p>Starting at 1 January 2015, the effective rate of interest per annum
-was 3% per quarter-year for 9 months, 4% per half-year for 15 months
-and and 2% per month thereafter.</p>
-<ol style="list-style-type: decimal">
-<li><p>Calculate the accumulation factor from 1 January 2015 to 1
-January 2018.</p></li>
-<li><p>Calculate the accumulation of $5,000 from 1 July 2015 to 1
-October 2017.</p></li>
-<li><p>Calculate the accumulation of $100 from 1 March 2016 to 1
-August 2018.</p></li>
-<li><p>Calculate the present value at 1 January 2015 of $ 25,000
-receivable on 1 July 2016.</p></li>
-<li><p>Calculate the present value at 1 April 2015 of $ 8,000
-receivable on 1 October 2017.</p></li>
-<li><p>Calculate the discount factor from 1 July 2015 to 1
-October 2016.</p></li>
-</ol></li>
-<li><p>The effective rate of interest is 7.25% per time unit. Cashflows are
-shown in the following time line.</p>
-<ol style="list-style-type: decimal">
-<li><p>Calculate the accumulation at time time t = 4 units of these
-cashflows.</p></li>
-<li><p>Calculate the accumulation at time time t = 8 units of these
-cashflows.</p></li>
-<li><p>Calculate the present value at time time t = 0 units of these
-cashflows.</p></li>
-</ol></li>
+<li><p><em>Using the zero-coupon rates provided from the given website, plot
+the interest rates (i.e. yield to maturity) as a function of their
+maturities at any point in time. Give a brief explanation regarding
+to the shape of the plot.</em></p></li>
+<li><p><em>Determine the price now of the zero-coupon bond corresponding to
+the given yields to maturity.</em></p></li>
 </ol>
-<p><img src="SCMA329ExcelBookdownproj_files/figure-html/tikz-exam1-1.png" width="672" style="display: block; margin: auto;" /></p>
-<ol start="3" style="list-style-type: decimal">
-<li><p>The effective rate of interest is 6% per time unit. Cashflows are
-shown in the following time line.</p>
+</div>
+<p><strong>Notes</strong>
+1. We will often refer to the yield to maturity of the appropriate
+maturity, zero-coupon risk-free bond as the <strong>risk-free interest
+rate</strong>.</p>
+<ol start="2" style="list-style-type: decimal">
+<li><p>The term <strong>spot interest rate</strong> is also used to refer to these
+risk-free interest rate.</p></li>
+<li><p>All <span class="math inline">\(n\)</span>-year risk-free investments must earn the same return as the
+risk-free interest rate.</p></li>
+<li><p>The plot in Example <a href="bonds-and-inflation.html#exm:yieldCurve">7.2</a> is known as the <strong>yield curve</strong>, which plots
+the risk-free interest rate for different maturities.</p></li>
+<li><p>The yield curve is also called the <strong>term structure of interest
+rates</strong>.</p></li>
+<li><p>Yield curves very from day to day, and could be increasing, or
+decreasing in shape, or even humped, depending on market
+expectations.</p></li>
+</ol>
+</div>
+<div id="bond-pricing-using-yield-to-maturity" class="section level2" number="7.2">
+<h2><span class="header-section-number">7.2</span> Bond pricing using yield to maturity</h2>
+<p>Recall that a tax-exempt investor receives the full amount of the coupon
+and redemption payments. The price of an <span class="math inline">\(n\)</span> year fixed interest bond
+which pays coupons of <span class="math inline">\(D\)</span> per annum payable <span class="math inline">\(p\)</span> thly in arrears and has
+redemption amount <span class="math inline">\(R\)</span> is <span class="math display">\[P = D a_{\angln}^{(p)} + R v^n\]</span> at rate <span class="math inline">\(i\)</span>
+per annum.</p>
+<p>In practice, we can calculate by using a suitable time period, for
+example a period of half a year as shown in the previous examples. Then
+the formula can be written as
+<span class="math display">\[P = \frac{D}{2} a_{\angl{2n}} + R v^{2n}\]</span></p>
+<div class="example">
+<p><span id="exm:unlabeled-div-14" class="example"><strong>Example 7.3  </strong></span><em>(Excel) (Modified from Financial Modeling Using Excel
+and VBA) The bond price is the present value of its expected future
+cashflows discounted at a rate appropriate for its risk. There are five
+key bond variables including price, redemption rate, coupon rate,
+remaining life, and discount rate, and any four of them determine the
+fifth. Add suitable spinners to the annual coupon rate and yield to
+maturity so that you can study how these variables affect the price of a
+bond. (Hint :
+<a href="https://support.office.com/en-us/article/add-a-scroll-bar-or-spin-button" class="uri">https://support.office.com/en-us/article/add-a-scroll-bar-or-spin-button</a></em></p>
 <ol style="list-style-type: decimal">
-<li><p>Calculate the accumulation at time time t = 5 units of these
-cashflows.</p></li>
-<li><p>Calculate the value at time time t = 2 units of these cashflows.</p></li>
-<li><p>Calculate the present value at time time t = 0 units of these
-cashflows.</p></li>
-</ol></li>
+<li><p><em>Create an Excel model to calculate the price of a bond given its
+yield to maturity, redemption rate, annual coupon rate, frequency of
+coupon payments, and remaining life (and also face value). Make all
+of these input variables so that a user can use the model to value
+any bond for which these data are available.</em></p></li>
+<li><p><em>Create a chart to show how the price of a bond grows or declines to
+redemption amount as it approaches maturity.</em></p></li>
 </ol>
-<p><img src="SCMA329ExcelBookdownproj_files/figure-html/tikz-exam2-1.png" width="672" style="display: block; margin: auto;" /></p>
-<ol start="4" style="list-style-type: decimal">
-<li><p>The effective rate of interest per annum was 4% during 2015, 3% per
-half-year until 1 October 2017 and 1.5% per month thereafter.
-Cashflows are shown in the following time line.</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-15" class="example"><strong>Example 7.4  </strong></span><em>Make a copy of your Excel worksheet for bond pricing
+calculation. The Excel model can be used to investigate how the value of
+a bond changes with changes in the values of the other variables.</em></p>
+<p><em>Use the spinner to change the yield to maturity from a value less than
+the coupon rate to a value greater than the coupon rate to see how the
+valuation curve changes. What conclusion can you make regarding the
+change in the values of the bond in respect of the change of the yield
+to maturity? Write your conclusion in cell D1.</em></p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-16" class="example"><strong>Example 7.5  </strong></span><em>Make a copy of your Excel worksheet for bond pricing
+calculation. The Excel model can be used to investigate how the value of
+a bond changes with changes in the values of the other variables.</em></p>
+<p><em>Change the coupon rate to zero for a zero-coupon bond and notice that
+the longer the remaining life, the lower the price of the bond. Then use
+the spinner to vary the yields to maturity to see how valuation curve
+changes. What conclusion can you make regarding the changes occurring?
+Write your conclusion in cell D1.</em></p>
+</div>
+</div>
+<div id="interest-rate-risk-and-bond-prices" class="section level2" number="7.3">
+<h2><span class="header-section-number">7.3</span> Interest rate risk and bond prices</h2>
+<p>While the effect of time on bond prices is predictable, unpredictable
+changes in interest rates will also affect bond prices. Further, bonds
+with different characteristics will respond differently to changes in
+interest rates—some bonds will react more strongly than others.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-17" class="example"><strong>Example 7.6  </strong></span><em>Consider a 10-year coupon bond and a 30-year coupon
+bond, both with 10% annual coupons and redeemable at par.</em></p>
 <ol style="list-style-type: decimal">
-<li><p>Calculate the accumulation on 1/1/2019 of these cashflows.</p></li>
-<li><p>Calculate the present value on 1/1/2015 of these cashflows.</p></li>
-<li><p>Calculate the value at time time 1/7/2017 of these cashflows.</p></li>
-</ol></li>
+<li><p><em>By what percentage will the price of each bond change if its yield
+to maturity increases from 5% to 6%? Answer in cells D1 and D2
+respectively.</em></p></li>
+<li><p><em>Plot the values of the 10-year and 30-year coupon bonds as the
+function of yield to maturity. Which of the bonds is more sensitive
+to a change in the yield? Why?</em></p></li>
 </ol>
-<p><img src="SCMA329ExcelBookdownproj_files/figure-html/tikz-exam3-1.png" width="672" style="display: block; margin: auto;" /></p>
-<ol start="5" style="list-style-type: decimal">
-<li>(Excel) It is a good exercise to check whether the Excel worksheet
-you have developed so far for calculating the present value and
-future value can be applied to the questions in this Tutorial. What
-would you do to improve the Excel worksheet for a more general
-scenario?</li>
+</div>
+</div>
+<div id="inflation" class="section level2" number="7.4">
+<h2><span class="header-section-number">7.4</span> Inflation</h2>
+<p>Create an Excel model to calculate the required quantities as given in
+the following questions. Look for the sheet CPI containing the CPI index
+from the Bureau of Trade and Economic Indices.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-18" class="example"><strong>Example 7.7  </strong></span><em>A 5-year bond with nominal value of ฿100 was issued in
+1/1/2013. The coupon rate was 8% p.a. payable yearly in arrears. The
+redemption was 100% after 5 years. The bond was issued at 100%.</em></p>
+<ol style="list-style-type: decimal">
+<li><p><em>Calculate the monetary yield to a non-tax paying investor.</em></p></li>
+<li><p><em>With reference to the monthly CPI, calculate the real yield to a
+non-tax paying investor.</em></p></li>
+<li><p><em>Assuming that over the period of the transaction the annual rate of
+inflation will be constant and equal to 3.01%, calculate the
+investor?s real yield on the transaction.</em></p></li>
 </ol>
+</div>
+
+<hr />
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="tutorial-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="tutorial-3.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="analysing-data-with-pivot-tables.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tutorial-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -257,7 +346,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/pairote-sat/SCMA329-Excel/edit/master/08-Tutorials.Rmd",
+"link": "https://github.com/pairote-sat/SCMA329-Excel/edit/master/07-Bonds-Inflation.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -265,7 +354,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/pairote-sat/SCMA329-Excel/blob/master/08-Tutorials.Rmd",
+"link": "https://github.com/pairote-sat/SCMA329-Excel/blob/master/07-Bonds-Inflation.Rmd",
 "text": null
 },
 "download": ["SCMA329ExcelBookdownproj.pdf"],

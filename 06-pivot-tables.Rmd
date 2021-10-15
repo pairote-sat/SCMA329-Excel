@@ -1,6 +1,4 @@
----
-title: " **Pivot Tables**"
----
+
 
 # Analysing data with pivot tables
 

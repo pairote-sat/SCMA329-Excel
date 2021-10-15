@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Section 9 Questions: | SCMA329 Practical Mathematical Financial Modeling</title>
+  <meta name="description" content="Section 9 Questions: | SCMA329 Practical Mathematical Financial Modeling" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Section 9 Questions: | SCMA329 Practical Mathematical Financial Modeling" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Section 9 Questions: | SCMA329 Practical Mathematical Financial Modeling" />
+  
+  
+  
+
+<meta name="author" content="Pairote Satiracoo" />
+
+
+<meta name="date" content="2021-10-15" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="zero-coupon-bonds.html"/>
+<link rel="next" href="tutorial-1.html"/>
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">SCMA329-Excel</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Dates and date functions</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#inconsistent-date-entries"><i class="fa fa-check"></i><b>1.1</b> Inconsistent date entries</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#date-serial-number"><i class="fa fa-check"></i><b>1.2</b> Date serial number</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#date-functions"><i class="fa fa-check"></i><b>1.3</b> Date functions</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="working-with-texts.html"><a href="working-with-texts.html"><i class="fa fa-check"></i><b>2</b> Working with Texts</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="working-with-texts.html"><a href="working-with-texts.html#text-functions"><i class="fa fa-check"></i><b>2.1</b> Text functions</a></li>
+<li class="chapter" data-level="2.2" data-path="working-with-texts.html"><a href="working-with-texts.html#character-codes"><i class="fa fa-check"></i><b>2.2</b> Character codes</a></li>
+<li class="chapter" data-level="2.3" data-path="working-with-texts.html"><a href="working-with-texts.html#determining-whether-two-string-are-identical"><i class="fa fa-check"></i><b>2.3</b> Determining whether two string are identical</a></li>
+<li class="chapter" data-level="2.4" data-path="working-with-texts.html"><a href="working-with-texts.html#joining-two-or-more-cells"><i class="fa fa-check"></i><b>2.4</b> Joining two or more cells</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="interest-rate-present-values-and-cashflows.html"><a href="interest-rate-present-values-and-cashflows.html"><i class="fa fa-check"></i><b>3</b> Interest Rate, Present Values and Cashflows</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="interest-rate-present-values-and-cashflows.html"><a href="interest-rate-present-values-and-cashflows.html#working-with-a-single-cashflow-in-excel"><i class="fa fa-check"></i><b>3.1</b> Working with a single cashflow in Excel</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="interest-rate-present-values-and-cashflows.html"><a href="interest-rate-present-values-and-cashflows.html#how-to-calculate-the-future-value-of-a-single-cashflow"><i class="fa fa-check"></i><b>3.1.1</b> How to calculate the future value of a single cashflow</a></li>
+<li class="chapter" data-level="3.1.2" data-path="interest-rate-present-values-and-cashflows.html"><a href="interest-rate-present-values-and-cashflows.html#how-to-calculate-the-present-value-of-a-single-cashflow"><i class="fa fa-check"></i><b>3.1.2</b> How to calculate the present value of a single cashflow</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="interest-rate-present-values-and-cashflows.html"><a href="interest-rate-present-values-and-cashflows.html#present-values-of-a-series-of-cashflows"><i class="fa fa-check"></i><b>3.2</b> Present values of a series of cashflows</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="interest-rate-present-values-and-cashflows.html"><a href="interest-rate-present-values-and-cashflows.html#level-annuities-certain"><i class="fa fa-check"></i><b>3.2.1</b> Level Annuities certain</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="lookup-formulas-and-data-tables.html"><a href="lookup-formulas-and-data-tables.html"><i class="fa fa-check"></i><b>4</b> Lookup Formulas and Data Tables</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="lookup-formulas-and-data-tables.html"><a href="lookup-formulas-and-data-tables.html#lookup-function"><i class="fa fa-check"></i><b>4.1</b> Lookup function</a></li>
+<li class="chapter" data-level="4.2" data-path="lookup-formulas-and-data-tables.html"><a href="lookup-formulas-and-data-tables.html#match-and-index-functions"><i class="fa fa-check"></i><b>4.2</b> MATCH and INDEX functions</a></li>
+<li class="chapter" data-level="4.3" data-path="lookup-formulas-and-data-tables.html"><a href="lookup-formulas-and-data-tables.html#data-tables"><i class="fa fa-check"></i><b>4.3</b> Data tables</a>
+<ul>
+<li class="chapter" data-level="" data-path="lookup-formulas-and-data-tables.html"><a href="lookup-formulas-and-data-tables.html#model-formulation"><i class="fa fa-check"></i>Model formulation</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="analysing-data-using-goal-seeking-and-solver.html"><a href="analysing-data-using-goal-seeking-and-solver.html"><i class="fa fa-check"></i><b>5</b> Analysing data using Goal Seeking and Solver</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="analysing-data-using-goal-seeking-and-solver.html"><a href="analysing-data-using-goal-seeking-and-solver.html#analysing-data-using-goal-seeking"><i class="fa fa-check"></i><b>5.1</b> Analysing data using Goal Seeking</a></li>
+<li class="chapter" data-level="5.2" data-path="analysing-data-using-goal-seeking-and-solver.html"><a href="analysing-data-using-goal-seeking-and-solver.html#analysing-data-using-solver"><i class="fa fa-check"></i><b>5.2</b> Analysing data using Solver</a></li>
+<li class="chapter" data-level="5.3" data-path="analysing-data-using-goal-seeking-and-solver.html"><a href="analysing-data-using-goal-seeking-and-solver.html#a-simple-solver-example"><i class="fa fa-check"></i><b>5.3</b> A simple Solver example</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="analysing-data-with-pivot-tables.html"><a href="analysing-data-with-pivot-tables.html"><i class="fa fa-check"></i><b>6</b> Analysing data with pivot tables</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="analysing-data-with-pivot-tables.html"><a href="analysing-data-with-pivot-tables.html#filters"><i class="fa fa-check"></i><b>6.1</b> Filters</a></li>
+<li class="chapter" data-level="6.2" data-path="analysing-data-with-pivot-tables.html"><a href="analysing-data-with-pivot-tables.html#modifying-the-pivot-table"><i class="fa fa-check"></i><b>6.2</b> Modifying the pivot table</a></li>
+<li class="chapter" data-level="6.3" data-path="analysing-data-with-pivot-tables.html"><a href="analysing-data-with-pivot-tables.html#working-with-nonnumeric-data"><i class="fa fa-check"></i><b>6.3</b> Working with Nonnumeric Data</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="bonds-and-inflation.html"><a href="bonds-and-inflation.html"><i class="fa fa-check"></i><b>7</b> Bonds and Inflation</a></li>
+<li class="chapter" data-level="8" data-path="zero-coupon-bonds.html"><a href="zero-coupon-bonds.html"><i class="fa fa-check"></i><b>8</b> Zero-Coupon Bonds</a></li>
+<li class="chapter" data-level="9" data-path="questions.html"><a href="questions.html"><i class="fa fa-check"></i><b>9</b> Questions:</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="questions.html"><a href="questions.html#bond-pricing-using-yield-to-maturity"><i class="fa fa-check"></i><b>9.1</b> Bond pricing using yield to maturity</a></li>
+<li class="chapter" data-level="9.2" data-path="questions.html"><a href="questions.html#interest-rate-risk-and-bond-prices"><i class="fa fa-check"></i><b>9.2</b> Interest rate risk and bond prices</a></li>
+<li class="chapter" data-level="9.3" data-path="questions.html"><a href="questions.html#inflation"><i class="fa fa-check"></i><b>9.3</b> Inflation</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="tutorial-1.html"><a href="tutorial-1.html"><i class="fa fa-check"></i><b>10</b> Tutorial 1</a></li>
+<li class="chapter" data-level="11" data-path="tutorial-2.html"><a href="tutorial-2.html"><i class="fa fa-check"></i><b>11</b> Tutorial 2</a></li>
+<li class="chapter" data-level="12" data-path="tutorial-3.html"><a href="tutorial-3.html"><i class="fa fa-check"></i><b>12</b> Tutorial 3</a></li>
+<li class="chapter" data-level="13" data-path="tutorial-4.html"><a href="tutorial-4.html"><i class="fa fa-check"></i><b>13</b> Tutorial 4</a></li>
+<li class="chapter" data-level="14" data-path="tutorial-5.html"><a href="tutorial-5.html"><i class="fa fa-check"></i><b>14</b> Tutorial 5</a></li>
+<li class="chapter" data-level="15" data-path="solutions-to-tutorial-1.html"><a href="solutions-to-tutorial-1.html"><i class="fa fa-check"></i><b>15</b> Solutions to Tutorial 1</a></li>
+<li class="chapter" data-level="16" data-path="solutions-to-tutorial-2.html"><a href="solutions-to-tutorial-2.html"><i class="fa fa-check"></i><b>16</b> Solutions to Tutorial 2</a></li>
+<li class="chapter" data-level="17" data-path="solutions-to-tutorial-3.html"><a href="solutions-to-tutorial-3.html"><i class="fa fa-check"></i><b>17</b> Solutions to Tutorial 3</a></li>
+<li class="chapter" data-level="18" data-path="solutions-to-tutorial-4.html"><a href="solutions-to-tutorial-4.html"><i class="fa fa-check"></i><b>18</b> Solutions to Tutorial 4</a></li>
+<li class="chapter" data-level="19" data-path="solutions-to-tutorial-5.html"><a href="solutions-to-tutorial-5.html"><i class="fa fa-check"></i><b>19</b> Solutions to Tutorial 5</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">SCMA329 Practical Mathematical Financial Modeling</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="questions" class="section level1" number="9">
+<h1><span class="header-section-number">Section 9</span> Questions:</h1>
+<div class="example">
+<p><span id="exm:yieldCurve" class="example"><strong>Example 9.1  </strong></span><strong>Example 2</strong>. <em>(Excel) Download the yields to maturity of zero-coupon
+bonds per THB 100 face value with the terms ranging from 0.08 to 47
+years from the following website (as of 11/03/2020)</em></p>
+<p><em><a href="http://www.thaibma.or.th/EN/Market/YieldCurve/Zero.aspx" class="uri">http://www.thaibma.or.th/EN/Market/YieldCurve/Zero.aspx</a></em></p>
+<ol style="list-style-type: decimal">
+<li><p><em>Using the zero-coupon rates provided from the given website, plot
+the interest rates (i.e. yield to maturity) as a function of their
+maturities at any point in time. Give a brief explanation regarding
+to the shape of the plot.</em></p></li>
+<li><p><em>Determine the price now of the zero-coupon bond corresponding to
+the given yields to maturity.</em></p></li>
+</ol>
+</div>
+<ol style="list-style-type: decimal">
+<li><p>We will often refer to the yield to maturity of the appropriate
+maturity, zero-coupon risk-free bond as the <strong>risk-free interest
+rate</strong>.</p></li>
+<li><p>The term <strong>spot interest rate</strong> is also used to refer to these
+risk-free interest rate.</p></li>
+<li><p>All <span class="math inline">\(n\)</span>-year risk-free investments must earn the same return as the
+risk-free interest rate.</p></li>
+<li><p>The plot in Example <a href="questions.html#exm:yieldCurve">9.1</a> is known as the <strong>yield curve</strong>, which plots
+the risk-free interest rate for different maturities.</p></li>
+<li><p>The yield curve is also called the <strong>term structure of interest
+rates</strong>.</p></li>
+<li><p>Yield curves very from day to day, and could be increasing, or
+decreasing in shape, or even humped, depending on market
+expectations.</p></li>
+</ol>
+<div id="bond-pricing-using-yield-to-maturity" class="section level2" number="9.1">
+<h2><span class="header-section-number">9.1</span> Bond pricing using yield to maturity</h2>
+<p>Recall that a tax-exempt investor receives the full amount of the coupon
+and redemption payments. The price of an <span class="math inline">\(n\)</span> year fixed interest bond
+which pays coupons of <span class="math inline">\(D\)</span> per annum payable <span class="math inline">\(p\)</span> thly in arrears and has
+redemption amount <span class="math inline">\(R\)</span> is <span class="math display">\[P = D a_{\angln}^{(p)} + R v^n\]</span> at rate <span class="math inline">\(i\)</span>
+per annum.</p>
+<p>In practice, we can calculate by using a suitable time period, for
+example a period of half a year as shown in the previous examples. Then
+the formula can be written as
+<span class="math display">\[P = \frac{D}{2} a_{\angl{2n}} + R v^{2n}\]</span></p>
+<div class="example">
+<p><span id="exm:unlabeled-div-14" class="example"><strong>Example 9.2  </strong></span><strong>Example 3</strong>. <em>(Excel) (Modified from Financial Modeling Using Excel
+and VBA) The bond price is the present value of its expected future
+cashflows discounted at a rate appropriate for its risk. There are five
+key bond variables including price, redemption rate, coupon rate,
+remaining life, and discount rate, and any four of them determine the
+fifth. Add suitable spinners to the annual coupon rate and yield to
+maturity so that you can study how these variables affect the price of a
+bond. (Hint :
+<a href="https://support.office.com/en-us/article/add-a-scroll-bar-or-spin-button" class="uri">https://support.office.com/en-us/article/add-a-scroll-bar-or-spin-button</a></em></p>
+<ol style="list-style-type: decimal">
+<li><p><em>Create an Excel model to calculate the price of a bond given its
+yield to maturity, redemption rate, annual coupon rate, frequency of
+coupon payments, and remaining life (and also face value). Make all
+of these input variables so that a user can use the model to value
+any bond for which these data are available.</em></p></li>
+<li><p><em>Create a chart to show how the price of a bond grows or declines to
+redemption amount as it approaches maturity.</em></p></li>
+</ol>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-15" class="example"><strong>Example 9.3  </strong></span><strong>Example 4</strong>. <em>Make a copy of your Excel worksheet for bond pricing
+calculation. The Excel model can be used to investigate how the value of
+a bond changes with changes in the values of the other variables.</em></p>
+<p><em>Use the spinner to change the yield to maturity from a value less than
+the coupon rate to a value greater than the coupon rate to see how the
+valuation curve changes. What conclusion can you make regarding the
+change in the values of the bond in respect of the change of the yield
+to maturity? Write your conclusion in cell D1.</em></p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-16" class="example"><strong>Example 9.4  </strong></span><strong>Example 5</strong>. <em>Make a copy of your Excel worksheet for bond pricing
+calculation. The Excel model can be used to investigate how the value of
+a bond changes with changes in the values of the other variables.</em></p>
+<p><em>Change the coupon rate to zero for a zero-coupon bond and notice that
+the longer the remaining life, the lower the price of the bond. Then use
+the spinner to vary the yields to maturity to see how valuation curve
+changes. What conclusion can you make regarding the changes occurring?
+Write your conclusion in cell D1.</em></p>
+</div>
+</div>
+<div id="interest-rate-risk-and-bond-prices" class="section level2" number="9.2">
+<h2><span class="header-section-number">9.2</span> Interest rate risk and bond prices</h2>
+<p>While the effect of time on bond prices is predictable, unpredictable
+changes in interest rates will also affect bond prices. Further, bonds
+with different characteristics will respond differently to changes in
+interest rates—some bonds will react more strongly than others.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-17" class="example"><strong>Example 9.5  </strong></span><strong>Example 6</strong>. <em>Consider a 10-year coupon bond and a 30-year coupon
+bond, both with 10% annual coupons and redeemable at par.</em></p>
+<ol style="list-style-type: decimal">
+<li><p><em>By what percentage will the price of each bond change if its yield
+to maturity increases from 5% to 6%? Answer in cells D1 and D2
+respectively.</em></p></li>
+<li><p><em>Plot the values of the 10-year and 30-year coupon bonds as the
+function of yield to maturity. Which of the bonds is more sensitive
+to a change in the yield? Why?</em></p></li>
+</ol>
+</div>
+</div>
+<div id="inflation" class="section level2" number="9.3">
+<h2><span class="header-section-number">9.3</span> Inflation</h2>
+<p>Create an Excel model to calculate the required quantities as given in
+the following questions. Look for the sheet CPI containing the CPI index
+from the Bureau of Trade and Economic Indices.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-18" class="example"><strong>Example 9.6  </strong></span><strong>Example 7</strong>. <em>A 5-year bond with nominal value of ฿100 was issued in
+1/1/2013. The coupon rate was 8% p.a. payable yearly in arrears. The
+redemption was 100% after 5 years. The bond was issued at 100%.</em></p>
+<ol style="list-style-type: decimal">
+<li><p><em>Calculate the monetary yield to a non-tax paying investor.</em></p></li>
+<li><p><em>With reference to the monthly CPI, calculate the real yield to a
+non-tax paying investor.</em></p></li>
+<li><p><em>Assuming that over the period of the transaction the annual rate of
+inflation will be constant and equal to 3.01%, calculate the
+investor?s real yield on the transaction.</em></p></li>
+</ol>
+</div>
+
+<hr />
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="zero-coupon-bonds.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tutorial-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/pairote-sat/SCMA329-Excel/edit/master/07-Bonds-Inflation.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/pairote-sat/SCMA329-Excel/blob/master/07-Bonds-Inflation.Rmd",
+"text": null
+},
+"download": ["SCMA329ExcelBookdownproj.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,6 +1,3 @@
----
-title: " **Analysing data using Goal Seeking and Solver**"
----
 
 # Analysing data using Goal Seeking and Solver
 

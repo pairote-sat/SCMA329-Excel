@@ -1,0 +1,195 @@
+# Bonds and Inflation
+
+## Zero-Coupon Bonds
+
+The simplest type of bond is the one without coupons. Such bonds are
+referred to as **zero-coupon bonds**. More precisely,
+
+An **$n$-year zero-coupon bond** is a fixed interest security, redeemed
+at par with term $n$ and no coupon payments.
+
+::: {.example}
+*What cash flows will an investor receive if the investor
+holds an $n$-year zero-coupon per 100 THB face value until maturity? (Here
+we let $P_n$ denote the price now of the $n$-year zero-coupon)*
+:::
+
+```{tikz, tikz-bond, fig.cap = "cashflows of a zero-coupon bond", fig.ext = 'png',fig.align="center", cache=TRUE, echo = FALSE}
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,163); %set diagram left start at 0, and has height of 163
+
+%Straight Lines [id:da5388033357472914] 
+\draw    (181,68) -- (505,68) ;
+\draw [shift={(507,68)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da7718588289869264] 
+\draw    (181,57.5) -- (181,78.5) ;
+%Straight Lines [id:da19402397480072664] 
+\draw    (420,57.5) -- (420,78.5) ;
+
+% Text Node
+\draw (181,91) node    {$0$};
+% Text Node
+\draw (421,89) node    {$n$};
+% Text Node
+\draw (176,37) node    {$-P_{n}$};
+% Text Node
+\draw (422,36) node    {$100$};
+
+
+\end{tikzpicture}
+
+```
+
+
+
+To calculate the rate of return of buying a bond and holding it until
+maturity, it is simply the discount rate that equate the present value
+of the investment to its costs (or bond price). Recall that $P_n$
+denotes the price now of the $n$-year zero-coupon with FV face value and
+$y_n$ is the **yield to maturity**. The yield to maturity satisfies the
+following equation $$\begin{aligned}
+    P_n = \frac{FV}{(1+y_n)^n}.\end{aligned}$$ Hence,
+$$y_n = \left(\frac{FV}{P_n}\right)^{1/n} - 1.$$
+
+
+::: {#yieldCurve .example}
+*(Excel) Download the yields to maturity of zero-coupon
+bonds per THB 100 face value with the terms ranging from 0.08 to 47
+years from the following website (as of 11/03/2020)*
+
+*<http://www.thaibma.or.th/EN/Market/YieldCurve/Zero.aspx>*
+
+1.  *Using the zero-coupon rates provided from the given website, plot
+    the interest rates (i.e. yield to maturity) as a function of their
+    maturities at any point in time. Give a brief explanation regarding
+    to the shape of the plot.*
+
+2.  *Determine the price now of the zero-coupon bond corresponding to
+    the given yields to maturity.*
+:::
+
+**Notes**
+1.  We will often refer to the yield to maturity of the appropriate
+    maturity, zero-coupon risk-free bond as the **risk-free interest
+    rate**.
+
+2.  The term **spot interest rate** is also used to refer to these
+    risk-free interest rate.
+
+3.  All $n$-year risk-free investments must earn the same return as the
+    risk-free interest rate.
+
+4.  The plot in Example \@ref(exm:yieldCurve)  is known as the **yield curve**, which plots
+    the risk-free interest rate for different maturities.
+
+5.  The yield curve is also called the **term structure of interest
+    rates**.
+
+6.  Yield curves very from day to day, and could be increasing, or
+    decreasing in shape, or even humped, depending on market
+    expectations.
+
+Bond pricing using yield to maturity
+------------------------------------
+
+Recall that a tax-exempt investor receives the full amount of the coupon
+and redemption payments. The price of an $n$ year fixed interest bond
+which pays coupons of $D$ per annum payable $p$ thly in arrears and has
+redemption amount $R$ is $$P = D a_{\angln}^{(p)} + R v^n$$ at rate $i$
+per annum.
+
+In practice, we can calculate by using a suitable time period, for
+example a period of half a year as shown in the previous examples. Then
+the formula can be written as
+$$P = \frac{D}{2} a_{\angl{2n}} + R v^{2n}$$
+
+::: {.example}
+*(Excel) (Modified from Financial Modeling Using Excel
+and VBA) The bond price is the present value of its expected future
+cashflows discounted at a rate appropriate for its risk. There are five
+key bond variables including price, redemption rate, coupon rate,
+remaining life, and discount rate, and any four of them determine the
+fifth. Add suitable spinners to the annual coupon rate and yield to
+maturity so that you can study how these variables affect the price of a
+bond. (Hint :
+<https://support.office.com/en-us/article/add-a-scroll-bar-or-spin-button>*
+
+1.  *Create an Excel model to calculate the price of a bond given its
+    yield to maturity, redemption rate, annual coupon rate, frequency of
+    coupon payments, and remaining life (and also face value). Make all
+    of these input variables so that a user can use the model to value
+    any bond for which these data are available.*
+
+2.  *Create a chart to show how the price of a bond grows or declines to
+    redemption amount as it approaches maturity.*
+:::
+
+::: {.example}
+*Make a copy of your Excel worksheet for bond pricing
+calculation. The Excel model can be used to investigate how the value of
+a bond changes with changes in the values of the other variables.*
+
+*Use the spinner to change the yield to maturity from a value less than
+the coupon rate to a value greater than the coupon rate to see how the
+valuation curve changes. What conclusion can you make regarding the
+change in the values of the bond in respect of the change of the yield
+to maturity? Write your conclusion in cell D1.*
+:::
+
+::: {.example}
+*Make a copy of your Excel worksheet for bond pricing
+calculation. The Excel model can be used to investigate how the value of
+a bond changes with changes in the values of the other variables.*
+
+*Change the coupon rate to zero for a zero-coupon bond and notice that
+the longer the remaining life, the lower the price of the bond. Then use
+the spinner to vary the yields to maturity to see how valuation curve
+changes. What conclusion can you make regarding the changes occurring?
+Write your conclusion in cell D1.*
+:::
+
+Interest rate risk and bond prices
+----------------------------------
+
+While the effect of time on bond prices is predictable, unpredictable
+changes in interest rates will also affect bond prices. Further, bonds
+with different characteristics will respond differently to changes in
+interest rates---some bonds will react more strongly than others.
+
+::: {.example}
+*Consider a 10-year coupon bond and a 30-year coupon
+bond, both with 10% annual coupons and redeemable at par.*
+
+1.  *By what percentage will the price of each bond change if its yield
+    to maturity increases from 5% to 6%? Answer in cells D1 and D2
+    respectively.*
+
+2.  *Plot the values of the 10-year and 30-year coupon bonds as the
+    function of yield to maturity. Which of the bonds is more sensitive
+    to a change in the yield? Why?*
+:::
+
+Inflation
+---------
+
+Create an Excel model to calculate the required quantities as given in
+the following questions. Look for the sheet CPI containing the CPI index
+from the Bureau of Trade and Economic Indices.
+
+::: {.example}
+*A 5-year bond with nominal value of ฿100 was issued in
+1/1/2013. The coupon rate was 8% p.a. payable yearly in arrears. The
+redemption was 100% after 5 years. The bond was issued at 100%.*
+
+1.  *Calculate the monetary yield to a non-tax paying investor.*
+
+2.  *With reference to the monthly CPI, calculate the real yield to a
+    non-tax paying investor.*
+
+3.  *Assuming that over the period of the transaction the annual rate of
+    inflation will be constant and equal to 3.01%, calculate the
+    investor?s real yield on the transaction.*
+:::

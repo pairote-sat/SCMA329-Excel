@@ -377,7 +377,7 @@ Tutorial 4
     each calendar year 2024 to 2029 inclusive. Calculate the yield of
     this investment. ANS = 5.7285486%
 
-6.  (Modified from CT1 2014 IFoA Exam)
+6.  (Modified from CT1 2012 IFoA Exam)
 
     An investor is considering two projects, Project A and Project B.
     Project A involves the investment of 2,000,000 in a retail outlet.
@@ -395,7 +395,7 @@ Tutorial 4
     expenses. After 25 years the property reverts to its original owner
     for no payment.
 
-    Calculate the annual effective internal reate of return for both
+    Calculate the annual effective internal rate of return for both
     Projects A and B. Which project is preferable?
 
 7.  (Excel) Use Excel worksheet you have developed to calculate the
