@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Section 8 Introducing Visual Basic | SCMA329 Practical Mathematical Financial Modeling</title>
+  <meta name="description" content="Section 8 Introducing Visual Basic | SCMA329 Practical Mathematical Financial Modeling" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Section 8 Introducing Visual Basic | SCMA329 Practical Mathematical Financial Modeling" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Section 8 Introducing Visual Basic | SCMA329 Practical Mathematical Financial Modeling" />
+  
+  
+  
+
+<meta name="author" content="Pairote Satiracoo" />
+
+
+<meta name="date" content="2021-10-22" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="bonds-and-inflation.html"/>
+<link rel="next" href="tutorial-1.html"/>
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">SCMA329-Excel</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Dates and date functions</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#inconsistent-date-entries"><i class="fa fa-check"></i><b>1.1</b> Inconsistent date entries</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#date-serial-number"><i class="fa fa-check"></i><b>1.2</b> Date serial number</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#date-functions"><i class="fa fa-check"></i><b>1.3</b> Date functions</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="working-with-texts.html"><a href="working-with-texts.html"><i class="fa fa-check"></i><b>2</b> Working with Texts</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="working-with-texts.html"><a href="working-with-texts.html#text-functions"><i class="fa fa-check"></i><b>2.1</b> Text functions</a></li>
+<li class="chapter" data-level="2.2" data-path="working-with-texts.html"><a href="working-with-texts.html#character-codes"><i class="fa fa-check"></i><b>2.2</b> Character codes</a></li>
+<li class="chapter" data-level="2.3" data-path="working-with-texts.html"><a href="working-with-texts.html#determining-whether-two-string-are-identical"><i class="fa fa-check"></i><b>2.3</b> Determining whether two string are identical</a></li>
+<li class="chapter" data-level="2.4" data-path="working-with-texts.html"><a href="working-with-texts.html#joining-two-or-more-cells"><i class="fa fa-check"></i><b>2.4</b> Joining two or more cells</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="interest-rate-present-values-and-cashflows.html"><a href="interest-rate-present-values-and-cashflows.html"><i class="fa fa-check"></i><b>3</b> Interest Rate, Present Values and Cashflows</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="interest-rate-present-values-and-cashflows.html"><a href="interest-rate-present-values-and-cashflows.html#working-with-a-single-cashflow-in-excel"><i class="fa fa-check"></i><b>3.1</b> Working with a single cashflow in Excel</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="interest-rate-present-values-and-cashflows.html"><a href="interest-rate-present-values-and-cashflows.html#how-to-calculate-the-future-value-of-a-single-cashflow"><i class="fa fa-check"></i><b>3.1.1</b> How to calculate the future value of a single cashflow</a></li>
+<li class="chapter" data-level="3.1.2" data-path="interest-rate-present-values-and-cashflows.html"><a href="interest-rate-present-values-and-cashflows.html#how-to-calculate-the-present-value-of-a-single-cashflow"><i class="fa fa-check"></i><b>3.1.2</b> How to calculate the present value of a single cashflow</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="interest-rate-present-values-and-cashflows.html"><a href="interest-rate-present-values-and-cashflows.html#present-values-of-a-series-of-cashflows"><i class="fa fa-check"></i><b>3.2</b> Present values of a series of cashflows</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="interest-rate-present-values-and-cashflows.html"><a href="interest-rate-present-values-and-cashflows.html#level-annuities-certain"><i class="fa fa-check"></i><b>3.2.1</b> Level Annuities certain</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="lookup-formulas-and-data-tables.html"><a href="lookup-formulas-and-data-tables.html"><i class="fa fa-check"></i><b>4</b> Lookup Formulas and Data Tables</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="lookup-formulas-and-data-tables.html"><a href="lookup-formulas-and-data-tables.html#lookup-function"><i class="fa fa-check"></i><b>4.1</b> Lookup function</a></li>
+<li class="chapter" data-level="4.2" data-path="lookup-formulas-and-data-tables.html"><a href="lookup-formulas-and-data-tables.html#match-and-index-functions"><i class="fa fa-check"></i><b>4.2</b> MATCH and INDEX functions</a></li>
+<li class="chapter" data-level="4.3" data-path="lookup-formulas-and-data-tables.html"><a href="lookup-formulas-and-data-tables.html#data-tables"><i class="fa fa-check"></i><b>4.3</b> Data tables</a>
+<ul>
+<li class="chapter" data-level="" data-path="lookup-formulas-and-data-tables.html"><a href="lookup-formulas-and-data-tables.html#model-formulation"><i class="fa fa-check"></i>Model formulation</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="analysing-data-using-goal-seeking-and-solver.html"><a href="analysing-data-using-goal-seeking-and-solver.html"><i class="fa fa-check"></i><b>5</b> Analysing data using Goal Seeking and Solver</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="analysing-data-using-goal-seeking-and-solver.html"><a href="analysing-data-using-goal-seeking-and-solver.html#analysing-data-using-goal-seeking"><i class="fa fa-check"></i><b>5.1</b> Analysing data using Goal Seeking</a></li>
+<li class="chapter" data-level="5.2" data-path="analysing-data-using-goal-seeking-and-solver.html"><a href="analysing-data-using-goal-seeking-and-solver.html#analysing-data-using-solver"><i class="fa fa-check"></i><b>5.2</b> Analysing data using Solver</a></li>
+<li class="chapter" data-level="5.3" data-path="analysing-data-using-goal-seeking-and-solver.html"><a href="analysing-data-using-goal-seeking-and-solver.html#a-simple-solver-example"><i class="fa fa-check"></i><b>5.3</b> A simple Solver example</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="analysing-data-with-pivot-tables.html"><a href="analysing-data-with-pivot-tables.html"><i class="fa fa-check"></i><b>6</b> Analysing data with pivot tables</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="analysing-data-with-pivot-tables.html"><a href="analysing-data-with-pivot-tables.html#filters"><i class="fa fa-check"></i><b>6.1</b> Filters</a></li>
+<li class="chapter" data-level="6.2" data-path="analysing-data-with-pivot-tables.html"><a href="analysing-data-with-pivot-tables.html#modifying-the-pivot-table"><i class="fa fa-check"></i><b>6.2</b> Modifying the pivot table</a></li>
+<li class="chapter" data-level="6.3" data-path="analysing-data-with-pivot-tables.html"><a href="analysing-data-with-pivot-tables.html#working-with-nonnumeric-data"><i class="fa fa-check"></i><b>6.3</b> Working with Nonnumeric Data</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="bonds-and-inflation.html"><a href="bonds-and-inflation.html"><i class="fa fa-check"></i><b>7</b> Bonds and Inflation</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="bonds-and-inflation.html"><a href="bonds-and-inflation.html#zero-coupon-bonds"><i class="fa fa-check"></i><b>7.1</b> Zero-Coupon Bonds</a></li>
+<li class="chapter" data-level="7.2" data-path="bonds-and-inflation.html"><a href="bonds-and-inflation.html#bond-pricing-using-yield-to-maturity"><i class="fa fa-check"></i><b>7.2</b> Bond pricing using yield to maturity</a></li>
+<li class="chapter" data-level="7.3" data-path="bonds-and-inflation.html"><a href="bonds-and-inflation.html#interest-rate-risk-and-bond-prices"><i class="fa fa-check"></i><b>7.3</b> Interest rate risk and bond prices</a></li>
+<li class="chapter" data-level="7.4" data-path="bonds-and-inflation.html"><a href="bonds-and-inflation.html#inflation"><i class="fa fa-check"></i><b>7.4</b> Inflation</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="introducing-visual-basic.html"><a href="introducing-visual-basic.html"><i class="fa fa-check"></i><b>8</b> Introducing Visual Basic</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="introducing-visual-basic.html"><a href="introducing-visual-basic.html#components-of-vba-editor-vbe"><i class="fa fa-check"></i><b>8.1</b> Components of VBA editor (VBE)</a></li>
+<li class="chapter" data-level="8.2" data-path="introducing-visual-basic.html"><a href="introducing-visual-basic.html#two-types-of-vba-macros"><i class="fa fa-check"></i><b>8.2</b> Two Types of VBA Macros</a></li>
+<li class="chapter" data-level="8.3" data-path="introducing-visual-basic.html"><a href="introducing-visual-basic.html#creating-vba-macros"><i class="fa fa-check"></i><b>8.3</b> Creating VBA Macros</a></li>
+<li class="chapter" data-level="8.4" data-path="introducing-visual-basic.html"><a href="introducing-visual-basic.html#how-vba-works"><i class="fa fa-check"></i><b>8.4</b> How VBA works</a></li>
+<li class="chapter" data-level="8.5" data-path="introducing-visual-basic.html"><a href="introducing-visual-basic.html#essential-vba-language-elements"><i class="fa fa-check"></i><b>8.5</b> Essential VBA Language Elements</a></li>
+<li class="chapter" data-level="8.6" data-path="introducing-visual-basic.html"><a href="introducing-visual-basic.html#working-with-variables"><i class="fa fa-check"></i><b>8.6</b> Working with Variables</a></li>
+<li class="chapter" data-level="8.7" data-path="introducing-visual-basic.html"><a href="introducing-visual-basic.html#data-types-and-declaring-variables"><i class="fa fa-check"></i><b>8.7</b> Data types and declaring variables</a></li>
+<li class="chapter" data-level="" data-path="introducing-visual-basic.html"><a href="introducing-visual-basic.html#module-level-variables"><i class="fa fa-check"></i>Module-level variables</a></li>
+<li class="chapter" data-level="8.8" data-path="introducing-visual-basic.html"><a href="introducing-visual-basic.html#working-with-constants"><i class="fa fa-check"></i><b>8.8</b> Working with constants</a></li>
+<li class="chapter" data-level="8.9" data-path="introducing-visual-basic.html"><a href="introducing-visual-basic.html#working-with-dates"><i class="fa fa-check"></i><b>8.9</b> Working with dates</a></li>
+<li class="chapter" data-level="8.10" data-path="introducing-visual-basic.html"><a href="introducing-visual-basic.html#working-with-arrays"><i class="fa fa-check"></i><b>8.10</b> Working with Arrays</a>
+<ul>
+<li class="chapter" data-level="8.10.1" data-path="introducing-visual-basic.html"><a href="introducing-visual-basic.html#dynamic-arrays"><i class="fa fa-check"></i><b>8.10.1</b> Dynamic arrays</a></li>
+</ul></li>
+<li class="chapter" data-level="8.11" data-path="introducing-visual-basic.html"><a href="introducing-visual-basic.html#the-text-property"><i class="fa fa-check"></i><b>8.11</b> The Text property</a></li>
+<li class="chapter" data-level="8.12" data-path="introducing-visual-basic.html"><a href="introducing-visual-basic.html#the-column-and-row-properties"><i class="fa fa-check"></i><b>8.12</b> The Column and Row properties</a></li>
+<li class="chapter" data-level="8.13" data-path="introducing-visual-basic.html"><a href="introducing-visual-basic.html#the-address-property"><i class="fa fa-check"></i><b>8.13</b> The Address property</a></li>
+<li class="chapter" data-level="8.14" data-path="introducing-visual-basic.html"><a href="introducing-visual-basic.html#the-formula-property"><i class="fa fa-check"></i><b>8.14</b> The Formula property</a></li>
+<li class="chapter" data-level="8.15" data-path="introducing-visual-basic.html"><a href="introducing-visual-basic.html#the-clear-method"><i class="fa fa-check"></i><b>8.15</b> The Clear method</a></li>
+<li class="chapter" data-level="8.16" data-path="introducing-visual-basic.html"><a href="introducing-visual-basic.html#using-built-in-vba-functions"><i class="fa fa-check"></i><b>8.16</b> Using Built-In VBA Functions</a></li>
+<li class="chapter" data-level="" data-path="introducing-visual-basic.html"><a href="introducing-visual-basic.html#discovering-vba-functions"><i class="fa fa-check"></i>Discovering VBA functions</a></li>
+<li class="chapter" data-level="8.17" data-path="introducing-visual-basic.html"><a href="introducing-visual-basic.html#controlling-execution"><i class="fa fa-check"></i><b>8.17</b> Controlling execution</a></li>
+<li class="chapter" data-level="8.18" data-path="introducing-visual-basic.html"><a href="introducing-visual-basic.html#the-if-then-construct"><i class="fa fa-check"></i><b>8.18</b> The If-Then construct</a></li>
+<li class="chapter" data-level="8.19" data-path="introducing-visual-basic.html"><a href="introducing-visual-basic.html#the-with-end-with-construct"><i class="fa fa-check"></i><b>8.19</b> The With-End With construct</a></li>
+<li class="chapter" data-level="8.20" data-path="introducing-visual-basic.html"><a href="introducing-visual-basic.html#the-select-case-construct"><i class="fa fa-check"></i><b>8.20</b> The Select Case construct</a></li>
+<li class="chapter" data-level="8.21" data-path="introducing-visual-basic.html"><a href="introducing-visual-basic.html#vba-examples"><i class="fa fa-check"></i><b>8.21</b> VBA Examples</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="tutorial-1.html"><a href="tutorial-1.html"><i class="fa fa-check"></i><b>9</b> Tutorial 1</a></li>
+<li class="chapter" data-level="10" data-path="tutorial-2.html"><a href="tutorial-2.html"><i class="fa fa-check"></i><b>10</b> Tutorial 2</a></li>
+<li class="chapter" data-level="11" data-path="tutorial-3.html"><a href="tutorial-3.html"><i class="fa fa-check"></i><b>11</b> Tutorial 3</a></li>
+<li class="chapter" data-level="12" data-path="tutorial-4.html"><a href="tutorial-4.html"><i class="fa fa-check"></i><b>12</b> Tutorial 4</a></li>
+<li class="chapter" data-level="13" data-path="tutorial-5.html"><a href="tutorial-5.html"><i class="fa fa-check"></i><b>13</b> Tutorial 5</a></li>
+<li class="chapter" data-level="14" data-path="solutions-to-tutorial-1.html"><a href="solutions-to-tutorial-1.html"><i class="fa fa-check"></i><b>14</b> Solutions to Tutorial 1</a></li>
+<li class="chapter" data-level="15" data-path="solutions-to-tutorial-2.html"><a href="solutions-to-tutorial-2.html"><i class="fa fa-check"></i><b>15</b> Solutions to Tutorial 2</a></li>
+<li class="chapter" data-level="16" data-path="solutions-to-tutorial-3.html"><a href="solutions-to-tutorial-3.html"><i class="fa fa-check"></i><b>16</b> Solutions to Tutorial 3</a></li>
+<li class="chapter" data-level="17" data-path="solutions-to-tutorial-4.html"><a href="solutions-to-tutorial-4.html"><i class="fa fa-check"></i><b>17</b> Solutions to Tutorial 4</a></li>
+<li class="chapter" data-level="18" data-path="solutions-to-tutorial-5.html"><a href="solutions-to-tutorial-5.html"><i class="fa fa-check"></i><b>18</b> Solutions to Tutorial 5</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">SCMA329 Practical Mathematical Financial Modeling</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="introducing-visual-basic" class="section level1" number="8">
+<h1><span class="header-section-number">Section 8</span> Introducing Visual Basic</h1>
+<p>The notes are obtained from the textbook <strong>"Excel VBA Programming For
+Dummies"</strong> written by <strong>Michael Alexander and John Walkenbach</strong></p>
+<p>A macro is a sequence of instructions that automates some aspect of
+Excel so that you can work more efficiently and with fewer errors.</p>
+<ul>
+<li><p>Excel records your actions and converts them into a VBA macro.</p></li>
+<li><p>When you execute this macro, Excel performs the actions again.</p></li>
+<li><p>More advanced users, though, can write code that tells Excel to
+perform tasks that can’t be recorded.</p></li>
+</ul>
+<div id="components-of-vba-editor-vbe" class="section level2" number="8.1">
+<h2><span class="header-section-number">8.1</span> Components of VBA editor (VBE)</h2>
+<p>The VBE consists of many parts including</p>
+<dl>
+<dt>Project (Explorer) window</dt>
+<dd><p>displays a hierarchical list of the projects and all of the items
+contained and referenced by each project.</p>
+</dd>
+</dl>
+<p>If the project has any VBA modules, the project listing also shows a
+<strong>Modules node</strong>. A project may also contain a node called
+<strong>Forms</strong>, which contains UserForm objects (which hold custom dialog
+boxes).</p>
+<p>With the project window, you can also add and remove a VBA module,
+export and import objects.</p>
+<dl>
+<dt>Properties window</dt>
+<dd><p>lists the properties for selected objects and their current
+settings. You can change these properties at the time during which
+you build an application in the development environment.</p>
+</dd>
+<dt>Immediate window</dt>
+<dd><p>displays information resulting from debugging statements in your
+code or from commands typed directly into the window.</p>
+</dd>
+<dt>Locals window</dt>
+<dd><p>displays all of the declared variables in the current procedure and
+their values.</p>
+</dd>
+</dl>
+<p>::: {.example}
+(Project (Explorer) window). <em>In the VBE, select the
+project, namely Book1 and</em></p>
+<ol style="list-style-type: decimal">
+<li><p><em>add a new VBA module,</em></p></li>
+<li><p><em>then remove the VBA module you have just created from the project.</em>
+:::</p></li>
+</ol>
+<p><strong>Note</strong> User can also add a new UserForm (try it yourself). The
+UserFrom will be discussed later.</p>
+<p>::: {.example}
+<em>(Properties window) In workbook Book1, add at least 2
+new worksheets into it.</em></p>
+<p><em>Then in the VBE, perform the following tasks in the project Book1 by
+using the Properties window :</em></p>
+<ol style="list-style-type: decimal">
+<li><p><em>Select Sheet1 from the project Book1 and change the name of Sheet1
+to Sheet2. What are the obtained results?</em></p></li>
+<li><p><em>Change the visible property from -1 to 0 and observe the outputs.
+What will happen if the visible property value is set to be 2?</em></p></li>
+<li><p><em>Insert a new Module and rename it as MyFirstModule.</em>
+:::</p></li>
+</ol>
+</div>
+<div id="two-types-of-vba-macros" class="section level2" number="8.2">
+<h2><span class="header-section-number">8.2</span> Two Types of VBA Macros</h2>
+<p>A VBA macro (also known as a VBA procedure) can be one of two types: a
+Sub or a Function.</p>
+<ul>
+<li><p>VBA Sub procedures. You can think of a Sub procedure as a new
+command that either the user or another macro can execute.</p></li>
+<li><p>VBA functions. A function always returns a single value (just as a
+worksheet function always returns a single value). A VBA function
+can be executed by other VBA procedures or used in worksheet
+formulas, just as you would use Excel’s built-in worksheet
+functions.</p></li>
+</ul>
+</div>
+<div id="creating-vba-macros" class="section level2" number="8.3">
+<h2><span class="header-section-number">8.3</span> Creating VBA Macros</h2>
+<p>Excel provides two ways to create macros:</p>
+<ul>
+<li><p>Turn on the macro recorder and record your actions. To start the
+macro recorder, choose</p>
+<p>Developer <span class="math inline">\(\rightarrow\)</span> Code <span class="math inline">\(\rightarrow\)</span> Record Macro</p></li>
+<li><p>Enter the code directly into a VBA module. The easiest way to create
+a simple macro is to record your actions. To develop more complex
+macros, however, you have to enter the VBA code manually, or write a
+program. To save time, you can often combine recording with manual
+code entry.</p></li>
+</ul>
+<div class="example">
+<p><span id="exm:unlabeled-div-19" class="example"><strong>Example 8.1  </strong></span><em>Write a simple macro which uses the VBA builtin MsgBox
+function to display a message in a dialog box. Name it as MyFirstMacro.</em></p>
+</div>
+<p>Here is a possible answer.</p>
+<pre><code>Sub MyFirstMacro()
+    &#39;This is my first macro.</code></pre>
+<p>MsgBox “This is my first macro”
+End Sub</p>
+<p>The following procedure shows how to run a procedure from another
+procedure.</p>
+<p>::: {.example}
+<em>(Executing the procedure from another procedure) Enter
+this new procedure (either above or below MyFirstMacro code, it makes no
+difference) to execute a procedure from another procedure.</em>
+:::</p>
+<p>Sub MySecondMacro()
+’Use the Call keyword to execute a procedure from another procedure.
+MyFirstMacro
+End Sub</p>
+</div>
+<div id="how-vba-works" class="section level2" number="8.4">
+<h2><span class="header-section-number">8.4</span> How VBA works</h2>
+<p>A concise summary of how VBA works:</p>
+<ul>
+<li><p>You perform actions in VBA by writing (or recording) code in a VBA
+module sheet and then executing the macro in any one of various
+ways. VBA modules are stored in an Excel workbook, and a workbook
+can hold any number of VBA modules. To view or edit a VBA module,
+you must activate the VB Editor window. (Press Alt+F11 to toggle
+between Excel and the VB Editor window.)</p></li>
+<li><p>A VBA module consists of procedures. A procedure is basically
+computer code that performs some action.</p></li>
+<li><p>A VBA module also can store function procedures. A function
+procedure performs calculations and returns a single value. A
+function can be called from another VBA procedure or can even be
+used in a worksheet formula.</p></li>
+<li><p>VBA manipulates objects. Excel provides more than 100 classes of
+objects that you can manipulate. Examples of objects include a
+workbook, a worksheet, a range on a worksheet, a chart, and a
+rectangle shape.</p></li>
+<li><p>Objects are arranged in a hierarchy and can act as containers for
+other objects.</p>
+<p>For example,</p>
+<ul>
+<li><p>Excel itself is an object called Application, and it contains
+other objects, such as Workbook objects.</p></li>
+<li><p>The Workbook object can contain other objects, such as Worksheet
+objects and Chart objects.</p></li>
+<li><p>A Worksheet object can contain objects such as Range objects,
+PivotTable objects, and so on. The arrangement of all these
+objects is referred to as an object model.</p></li>
+</ul></li>
+<li><p>Objects that are alike form a collection. For example,</p>
+<ul>
+<li><p>the Worksheets collection consists of all worksheets in a
+particular workbook.</p></li>
+<li><p>The ChartObjects collection consists of all ChartObjects on a
+worksheet.</p></li>
+<li><p>Collections are objects in themselves.</p></li>
+</ul></li>
+<li><p>You refer to an object in your VBA code by specifying its position
+in the object hierarchy, using a period as a separator.</p>
+<p>For example, you can refer to a workbook named Book1.xlsx as</p>
+<pre><code>Application.Workbooks(&quot;Book1.xlsx&quot;)</code></pre>
+<p>This expression refers to the Book1.xlsx workbook in the Workbooks
+collection. The Workbooks collection is contained in the Application
+object (that is, Excel). Extending this to another level, you can
+refer to Sheet1 in Book1 as follows:</p>
+<pre><code>Application.Workbooks(&quot;Book1.xlsx&quot;).Worksheets(&quot;Sheet1&quot;)</code></pre>
+<p>You can take it to still another level and refer to a specific cell
+as follows:</p>
+<pre><code>Application.Workbooks(&quot;Book1.xlsx&quot;).Worksheets(&quot;Sheet1&quot;). \_
+
+    Range(&quot;A1&quot;)</code></pre></li>
+<li><p>If you omit specific references, Excel uses the active objects.</p>
+<p>If Book1.xlsx is the active workbook, the preceding reference can be
+simplified as follows:</p>
+<pre><code>    Worksheets(&quot;Sheet1&quot;).Range(&quot;A1&quot;)</code></pre>
+<p>If you know that Sheet1 is the active sheet, you can simplify the
+reference even more:</p>
+<pre><code>    Range(&quot;A1&quot;)</code></pre></li>
+<li><p>Objects have properties. A property can be thought of as a setting
+for an object. For example,</p>
+<ul>
+<li><p>a Range object has properties, such as Value and Address.</p></li>
+<li><p>A Chart object has properties such as HasTitle and Type.</p></li>
+</ul>
+<p>You can use VBA both to determine object properties and to change
+them.</p></li>
+<li><p>You refer to properties by combining the object with the property,
+separated by a period. For example, you can refer to the value in
+cell A1 on Sheet1 as follows:</p>
+<pre><code>    Worksheets(&quot;Sheet1&quot;).Range(&quot;A1&quot;).Value</code></pre></li>
+<li><p>You can assign values to variables. To assign the value in cell A1
+on Sheet1 to a variable called Interest, use the following VBA
+statement:</p>
+<pre><code>    Interest = Worksheets(&quot;Sheet1&quot;).Range(&quot;A1&quot;).Value</code></pre></li>
+<li><p>Objects have methods. A method is an action that is performed with
+the object. For example, one of the methods for a Range object is
+ClearContents. This method clears the contents of the range.</p></li>
+<li><p>You specify methods by combining the object with the method,
+separated by a period. For example, to clear the contents of range
+A1:C12, use the following statement:</p>
+<pre><code>    Worksheets(&quot;Sheet1&quot;).Range(&quot;A1:C12&quot;).ClearContents</code></pre></li>
+<li><p>VBA also includes all the constructs of modern programming
+languages, including variables, arrays, looping, and so on.</p></li>
+</ul>
+</div>
+<div id="essential-vba-language-elements" class="section level2" number="8.5">
+<h2><span class="header-section-number">8.5</span> Essential VBA Language Elements</h2>
+</div>
+<div id="working-with-variables" class="section level2" number="8.6">
+<h2><span class="header-section-number">8.6</span> Working with Variables</h2>
+<p>VBA’s main purpose is to manipulate data. VBA stores the data in your
+computer’s memory. Some data, such as worksheet ranges, resides in
+objects. Other data is stored in variables that you create.</p>
+<p>A variable is simply a named storage location in your computer’s
+memory that’s used by a program. Here are examples of variables</p>
+<pre><code>x = 1
+InterestRate = 0.025
+FaceValue = 1000
+DataEntered = False
+x = x + 1
+UserName = &quot;Peter Rabbit&quot;
+Date_Started = #1/15/2015#</code></pre>
+</div>
+<div id="data-types-and-declaring-variables" class="section level2" number="8.7">
+<h2><span class="header-section-number">8.7</span> Data types and declaring variables</h2>
+<p>In this section, you discover how to declare a variable as a certain
+data type. A variable’s scope determines which modules and procedures
+can use the variable.</p>
+<p>Data types {#data-types .unnumbered}
+———-</p>
+<pre><code>A data type is the characteristic of a variable that determines what</code></pre>
+<p>kind of data it can hold. Data types include numerical and non-numerical
+as well as user-defined types and specific types of objects. For details
+about the supported data types, storage sizes and ranges, please see</p>
+<p><a href="https://docs.microsoft.com/en-us/office/vba/language/reference/user-interface-help/data-type-summary" class="uri">https://docs.microsoft.com/en-us/office/vba/language/reference/user-interface-help/data-type-summary</a></p>
+<ol style="list-style-type: decimal">
+<li><p>Numeric Data Types are types of data that consist of numbers, which
+can be computed mathematically with various standard operators such
+as addition, subtraction, multiplication, division and more. Numeric
+data types include <strong>Byte, Integer, Long, Single, Double, Currency
+and Decimal</strong>.</p></li>
+<li><p>Non-Numeric Data Types are data that cannot be manipulated
+mathematically using standard arithmetic operators. The non-numeric
+data comprises text or <strong>string</strong> data types, the <strong>Date</strong> data
+types, the <strong>Boolean</strong> data types that store only two values (true
+or false), <strong>Object</strong> data type and <strong>Variant</strong> data type.</p></li>
+</ol>
+<p><strong>Note</strong> The <strong>Variant</strong> data type is the data type for all variables
+that are not explicitly declared as some other type (using statements
+such as Dim, Private, Public, or Static).</p>
+<p>Procedure-level variables {#procedure-level-variables .unnumbered}
+————————-</p>
+<pre><code>  The lowest level of scope for a variable is at the procedure level. (A
+                                                                       procedure is either a Sub or a Function procedure.) Variables declared
+with this scope can be used only in the procedure in which they&#39;re</code></pre>
+<p>declared. When the procedure ends, the variable no longer exists, and
+Excel frees up its memory. If you execute the procedure again, the
+variable comes back to life, but its previous value is lost.</p>
+<p>The following example shows some procedure-only variables declared by
+using Dim statements:</p>
+<pre><code>Sub declaringVariables()
+    Dim x As Integer
+    Dim First As Long
+    Dim InterestRate As Single
+    Dim IssueDate As Date
+    Dim UserName As String
+    Dim MyValue
+    &#39;... [The procedure&#39;s code goes here] ...
+End Sub</code></pre>
+<p><strong>Note</strong></p>
+<ol style="list-style-type: decimal">
+<li><p>A declaration statement can be placed within a procedure to create a
+<strong>procedure-level variable</strong>. Or it may be placed at the top of a
+module, in the Declarations section, to create a <strong>module-level
+variable</strong>.</p></li>
+<li><p>If a declaration statement is given within a procedure, the variable
+can be used only in that procedure. If the statement appears in the
+<strong>Declarations section</strong> of the module, the variable is available to
+all procedures within the module, but not to procedures in other
+modules in the project.</p></li>
+</ol>
+<p>You can declare several variables in one statement. To specify a data
+type, you <strong>must include the data type for each variable</strong>.</p>
+<p>The following statement declares intX, intY and intZ as integer.</p>
+<pre><code>Dim intX As Integer, intY As Integer, intZ As Integer</code></pre>
+<p>However, the following statement declares intZ as integer, while intX,
+intY are as Variant type.</p>
+<pre><code>Dim intX, intY, intZ As Integer</code></pre>
+<p><strong>Note</strong> VBA has three other keywords that are used to declare
+variables: <strong>Static, Public and Private</strong>. For more details, follow from
+the following link:</p>
+<p><a href="https://docs.microsoft.com/en-us/office/vba/language/" class="uri">https://docs.microsoft.com/en-us/office/vba/language/</a>
+concepts/getting-started/declaring-variables</p>
+<p>Recall that the Locals window is very useful when we want to display all
+of the declared variables in the current procedure and their values.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-20" class="example"><strong>Example 8.2  </strong></span><em>(Locals window) Place a cursor anyway in the
+declaringVariables procedure. On the debug menu, click Step Into command
+in the debug menu once. Report the outputs obtained from the Locals
+window.</em></p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-21" class="example"><strong>Example 8.3  </strong></span><em>Copy the following code and paste it before any
+procedures in a module. What happens if you run the procedure?</em></p>
+</div>
+<pre><code>Option Explicit
+
+Sub WithOptionExplicit()
+    Dim x As Integer
+    x = 20
+    y = 5
+End Sub</code></pre>
+<p><strong>Note</strong> The <strong>Option Explicit</strong> statement is used at the module level
+to force explicit declaration of all variables in that module. When this
+statement is present, you will not be able to run your code if it
+contains any undeclared variables.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-22" class="example"><strong>Example 8.4  </strong></span><em>Procedure-level variables) Step into (by pressing F8)
+the following macro to observe the values of the variables in the Locals
+window. What are the values of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> when the procedure is
+completely run?</em></p>
+</div>
+<pre><code>Option Explicit
+
+Sub VariableScope()
+    Dim x As Integer
+    Dim y As Integer
+    x = x + 1
+    y = y + 1
+End Sub</code></pre>
+<p><strong>Note</strong> Variables declared at the procedure level are the most
+efficient because VBA frees up the memory they use when the procedure
+ends.</p>
+</div>
+<div id="module-level-variables" class="section level2 unnumbered">
+<h2>Module-level variables</h2>
+<p>Sometimes, you want a variable to be available to all procedures in a
+module. If so, just declare the variable (using Dim or Private) before
+the module’s first Sub or Function statement, outside any procedures.
+You do this in the Declarations section, at the beginning of your
+module. (This is also where the Option Explicit statement is located.)</p>
+<pre><code>          Public variables {#public-variables .unnumbered}
+            ----------------
+
+              If you need to make a variable available to all the procedures in all
+            your VBA modules in a workbook, declare the variable at the module level
+            (in the Declarations section) by using the Public keyword. Here&#39;s an</code></pre>
+<p>example:</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-23" class="example"><strong>Example 8.5  </strong></span><em>(Public variables)</em></p>
+<ol style="list-style-type: decimal">
+<li><p><em>Run the first macro three times. What are the values of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>
+when the procedure is completely run?</em></p></li>
+<li><p><em>Then run the second macro. Is the value of <span class="math inline">\(x\)</span> available to the
+second macro and what is the output observed from the Message box?</em></p></li>
+</ol>
+</div>
+<pre><code>Option Explicit
+Public y As Integer
+
+
+Sub VariableScope2()
+    Dim x As Integer
+
+    x = x + 1
+    y = y + 1
+    MsgBox &quot;The value of y is &quot; &amp; y
+
+End Sub
+
+Sub yValue()
+    MsgBox &quot;The value of y is &quot; &amp; y
+End Sub</code></pre>
+</div>
+<div id="working-with-constants" class="section level2" number="8.8">
+<h2><span class="header-section-number">8.8</span> Working with constants</h2>
+<p>Sometimes you need to refer to a value or string that never changes. In
+such a case, you need a constant - a named element whose value
+doesn’t change.</p>
+<p>As shown in the following examples, you declare constants by using the
+Const statement.</p>
+<pre><code>Const NumQuarters As Integer = 4
+Const Rate = .0725, Period = 12</code></pre>
+</div>
+<div id="working-with-dates" class="section level2" number="8.9">
+<h2><span class="header-section-number">8.9</span> Working with dates</h2>
+<p>In VBA, place dates and times between two hash marks, as shown in the
+preceding examples.</p>
+<pre><code>Dim Today As Date
+Dim StartTime As Date
+Const FirstDay As Date = #1/1/2013#
+Const Noon = #12:00:00#</code></pre>
+</div>
+<div id="working-with-arrays" class="section level2" number="8.10">
+<h2><span class="header-section-number">8.10</span> Working with Arrays</h2>
+<p>An array is a group of variables that share a common name. You refer to
+a specific variable in the array by using the array name and an index
+number in parentheses.</p>
+<p>The following example shows how to declare an array of 100 integers:</p>
+<pre><code>Dim MyArray(1 To 100) As Integer</code></pre>
+<p>When you declare an array, you can choose to specify only the upper
+index. If you omit the lower index, VBA assumes that it’s 0.
+Therefore, both of the following statements declare the same 101-element
+array:</p>
+<pre><code>              Dim MyArray (0 To 100) As Integer
+            Dim MyArray (100) As Integer
+
+            If you want VBA to assume that 1 (rather than 0) is the lower index for
+            your arrays, include the following statement in the Declarations section
+            of your module:
+
+              Option Base 1
+
+            This statement forces VBA to use 1 as the first index number for arrays
+            that declare only the upper index. If this statement is present, the
+            following statements are identical, both declaring a 100-element array:
+
+              Dim MyArray (1 To 100) As Integer
+            Dim MyArray (100) As Integer
+
+            ### Multidimensional arrays
+
+            The arrays created in the previous examples are all one-dimensional
+            arrays. Think of one-dimensional arrays as a single line of values.
+            Arrays you create in VBA can have as many as 60 dimensions - although</code></pre>
+<p>you rarely need more than two or three dimensions in an array. The
+following example declares an 81-integer array with two dimensions:</p>
+<pre><code>Dim MyArray (1 To 9, 1 To 9) As Integer</code></pre>
+<p>You can think of this array as occupying a 9 x 9 matrix. To refer to a
+specific element in this array, you need to specify two index numbers
+(similar to its “row” and its “column” in the matrix). The
+following example shows how you can assign a value to an element in this
+array:</p>
+<pre><code>MyArray (3, 4)= 100</code></pre>
+<div id="dynamic-arrays" class="section level3" number="8.10.1">
+<h3><span class="header-section-number">8.10.1</span> Dynamic arrays</h3>
+<p>You can also create dynamic arrays. A dynamic array doesn’t have a
+preset number of elements. Declare a dynamic array with an empty set of
+parentheses:</p>
+<pre><code>              Dim MyArray () As Integer
+
+            Before you can use this array, you must use the ReDim statement to tell
+            VBA how many elements the array has. Usually, the number of elements in
+            the array is determined while your code is running. You can use the
+            ReDim statement any number of times, changing the array&#39;s size as</code></pre>
+<p>often as needed. The following example demonstrates how to change the
+number of elements in a dynamic array. It assumes that the NumElements
+variable contains a value, which your code calculated.</p>
+<pre><code>ReDim MyArray (1 To NumElements)</code></pre>
+<p>When you redimension an array by using ReDim, you wipe out any values
+currently stored in the array elements. You can avoid destroying the old
+values by using the Preserve keyword. The following example shows how
+you can preserve an array’s values when you redimension the array:</p>
+<pre><code>              ReDim Preserve MyArray(1 To NumElements)
+
+            Working with Range Objects
+            ==========================
+
+              A Range object represents a range contained in a Worksheet object. Range
+            objects, like all other objects, have properties (which you can examine
+                                                              and sometimes change) and methods (which perform actions on the object).
+
+            When you refer to a Range object, the address is always surrounded by
+            double quotes, like this:
+
+              Range(&quot;A1:C5&quot;)
+
+            If the range consists of one cell, you still need the quotes:
+
+              Range(&quot;K9&quot;)
+
+            A Range object can consist of one or more entire rows or columns. You
+            can refer to an entire row (in this case, row 3) by using syntax like
+            this:
+
+              Range(&quot;3:3&quot;)
+
+            You can refer to an entire column (the fourth column in this example)
+            like this:
+
+              Range(&quot;D:D&quot;)
+
+            The following expression refers to a two-area noncontiguous range.
+            Notice that a comma separates the two areas.
+
+            Range(&quot;A1:B8,D9:G16&quot;)
+
+            The Cells property
+            ------------------
+
+              Rather than use the VBA Range keyword, you can refer to a range via the
+            Cells property.
+
+            The Cells property takes two arguments: a row number and a column
+            number. Both of these arguments are numbers, even though we usually
+            refer to columns by using letters. For example, the following expression
+            refers to cell C2 on Sheet2:
+
+              Worksheets(&quot;Sheet2&quot;).Cells(2, 3)
+
+            You can also use the Cells property to refer to a multi-cell range. The
+            following example demonstrates the syntax you use:
+
+              Range(Cells(1, 1), Cells(10, 8))
+
+            This expression refers to an 80-cell range that extends from cell A1
+            (row 1, column 1) to cell H10 (row 10, column 8). The following
+            statements both produce the same result; they enter a value of 99 into a
+            10-by-8 range of cells. More specifically, these statements set the
+            Value property of the Range object:
+
+              Range(&quot;A1:H10&quot;).Value = 99
+            Range(Cells(1, 1), Cells(10, 8)).Value = 99
+
+            The advantage of using the Cells property to refer to ranges becomes
+            apparent when you use variables rather than actual numbers as the Cells
+            arguments. And things really start to click when you understand looping.
+
+            The Offset property
+            -------------------
+
+              The Offset property provides another handy means for referring to
+            ranges. This property, which operates on a Range object and returns
+            another Range object, lets you refer to a cell that is a particular
+            number of rows and columns away from another cell.
+
+            Like the Cells property, the Offset property takes two arguments. The
+            first argument represents the number of rows to offset; the second
+            represents the number of columns to offset.
+
+            The following expression refers to a cell one row below cell A1 and two
+            columns to the right of cell A1. In other words, this refers to the cell
+            commonly known as C2:
+
+              Range(&quot;A1&quot;).Offset(1, 2)
+
+            The Offset property can also use negative arguments. A negative row
+            offset refers to a row above the range. A negative column offset refers
+            to a column to the left of the range. The following example refers to
+            cell A1:
+
+              Range(&quot;C2&quot;).Offset(-1, -2)
+
+            And, as you may expect, you can use 0 as one or both of the arguments
+            for Offset. The following expression refers to cell A1:
+
+              Range(&quot;A1&quot;).Offset(0, 0)
+
+            Some Useful Range Object Properties
+            -----------------------------------
+
+              The Value property The Value property represents the value contained in
+            a cell. It&#39;s a read-write property, so your VBA code can either read</code></pre>
+<p>or change the value. The following statement displays a message box that
+shows the value in cell A1 on Sheet1:</p>
+<pre><code>MsgBox Worksheets(&quot;Sheet1&quot;).Range(&quot;A1&quot;).Value</code></pre>
+<p>It stands to reason that you can read the Value property only for a
+single-cell Range object. For example, the following statement generates
+an error:</p>
+<pre><code>MsgBox Worksheets(&quot;Sheet1&quot;).Range(&quot;A1:C3&quot;).Value</code></pre>
+<p>You can, however, change the Value property for a range of any size. The
+following statement enters the number 123 into each cell in a range:</p>
+<pre><code>Worksheets(&quot;Sheet1&quot;).Range(&quot;A1:C3&quot;).Value = 123</code></pre>
+</div>
+</div>
+<div id="the-text-property" class="section level2" number="8.11">
+<h2><span class="header-section-number">8.11</span> The Text property</h2>
+<p>The Text property returns a string that represents the text as it’s
+displayed in a cell - the formatted value. The Text property is
+read-only. For example, suppose that cell A1 contains the value 12.3 and
+is formatted to display two decimals and a dollar sign ($12.30). The
+following statement displays a message box containing $12.30:</p>
+<pre><code>MsgBox Worksheets(&quot;Sheet1&quot;).Range(&quot;A1&quot;).Text</code></pre>
+<p>But the next statement displays a message box containing 12.3:</p>
+<pre><code>MsgBox Worksheets(&quot;Sheet1&quot;).Range(&quot;A1&quot;).Value</code></pre>
+<p>If the cell contains a formula, the Text property returns the result of
+the formula. If a cell contains text, then the Text property and the
+Value property will always return the same thing, because text (unlike a
+number) can’t be formatted to display differently.</p>
+<pre><code>            The Count property
+            ------------------
+
+              The Count property returns the number of cells in a range. It counts all
+            cells, not just the nonblank cells. Count is a read-only property, just
+            as you would expect. The following statement accesses a range&#39;s Count</code></pre>
+<p>property and displays the result (9) in a message box:</p>
+<pre><code>MsgBox Range(&quot;A1:C3&quot;).Count</code></pre>
+</div>
+<div id="the-column-and-row-properties" class="section level2" number="8.12">
+<h2><span class="header-section-number">8.12</span> The Column and Row properties</h2>
+<p>The Column property returns the column number of a single-cell range.
+Its sidekick, the Row property, returns the row number of a single-cell
+range. Both are read-only properties. For example, the following
+statement displays 6 because cell F3 is in the sixth column:</p>
+<pre><code>MsgBox Sheets(&quot;Sheet1&quot;).Range(&quot;F3&quot;).Column</code></pre>
+<p>The next expression displays 3 because cell F3 is in the third row:</p>
+<pre><code>MsgBox Sheets(&quot;Sheet1&quot;).Range(&quot;F3&quot;).Row</code></pre>
+<p>If the Range object consists of more than one cell, the Column property
+returns the column number of the first column in the range, and the Row
+property returns the row number of the first row in the range.</p>
+</div>
+<div id="the-address-property" class="section level2" number="8.13">
+<h2><span class="header-section-number">8.13</span> The Address property</h2>
+<p>Address, a read-only property, displays the cell address for a Range
+object as an absolute reference (a dollar sign before the column letter
+and before the row number).</p>
+<pre><code>MsgBox Range(Cells(1, 1), Cells(5, 5)).Address</code></pre>
+</div>
+<div id="the-formula-property" class="section level2" number="8.14">
+<h2><span class="header-section-number">8.14</span> The Formula property</h2>
+<p>The Formula property represents the formula in a cell. This is a
+read-write property, so you can access it to either view the formula in
+a cell or insert a formula into a cell. For example, the following
+statement enters a SUM formula into cell A13:</p>
+<pre><code>Range(&quot;A13&quot;).Formula = &quot;=SUM(A1:A12)&quot;</code></pre>
+<p>Notice that the formula is a text string and is enclosed.</p>
+<p>Here”s a statement that will enter a formula that contains quotes:</p>
+<pre><code>              Range(&quot;A13&quot;).Formula = &quot;=SUM(A1:A12)&amp;&quot;&quot; Stores&quot;&quot;&quot;
+
+              The NumberFormat property
+            -------------------------
+
+              The NumberFormat property represents the number format (expressed as a
+                                                                      text string) of the Range object. This is a read-write property, so your
+            VBA code can either examine the number format or change it. The
+            following statement changes the number format of column A to a percent
+            with two decimal places:
+
+              Columns(&quot;A:A&quot;).NumberFormat = &quot;0.00%&quot;
+
+              Some Useful Range Object Methods
+            --------------------------------
+
+              As you know, a VBA method performs an action. A Range object has dozens
+            of methods but, again, you won&#39;t need most of these. In this section,</code></pre>
+<p>I point out some of the more commonly used Range object methods. The
+Select method Use the Select method to select a range of cells. The
+following statement selects a range on the active worksheet:</p>
+<pre><code>Range(&quot;A1:C12&quot;).Select</code></pre>
+<p>Before selecting a range, it”s often a good idea to use one additional
+statement to ensure that the correct worksheet is active. For example,
+if Sheet1 contains the range you want to select, use the following
+statements to select the range:</p>
+<pre><code>              Sheets(&quot;Sheet1&quot;).Activate
+            Range(&quot;A1:C12&quot;).Select
+
+            **Contrary to what you may expect, the following statement generates an
+            error if Sheet1 is not already the active sheet. In other words, you
+            must use two statements rather than just one: one to activate the sheet
+            and another to select the range.**
+
+              Sheets(&quot;Sheet1&quot;).Range(&quot;A1:C12&quot;).Select
+
+            If you use the GoTo method of the Application object to select a range,
+            you can forget about selecting the correct worksheet first. This
+            statement activates Sheet1 and then selects the range:
+
+              Application.Goto Sheets(&quot;Sheet1&quot;).Range(&quot;A1:C12&quot;)
+
+            The GoTo method is the VBA equivalent of pressing F5 in Excel, which
+            displays the GoTo dialog box.
+
+            The Copy and Paste methods
+            --------------------------
+
+              You can perform copy and paste operations in VBA by using the Copy and
+            Paste methods. Note that two different objects come into play. The Copy
+            method is applicable to the Range object, but the Paste method applies
+            to the Worksheet object. It actually makes sense: You copy a range and
+            paste it to a worksheet. This short macro (courtesy of the macro
+                                                       recorder) copies range A1:A12 and pastes it to the same worksheet,
+            beginning at cell C1:
+
+              Sub CopyRange()
+            Range(&quot;A1:A12&quot;).Select
+            Selection.Copy
+            Range(&quot;C1&quot;).Select
+            ActiveSheet.Paste
+            End Sub
+
+            Notice that in the preceding example, the ActiveSheet object is used
+            with the Paste method. This is a special version of the Worksheet object
+            that refers to the currently active worksheet. Also notice that the
+            macro selects the range before copying it. However, you don&#39;t have to</code></pre>
+<p>select a range before doing something with it. In fact, the following
+procedure accomplishes the same task as the preceding example by using a
+single statement:</p>
+<pre><code>Sub CopyRange2()
+    Range(&quot;A1:A12&quot;).Copy Range(&quot;C1&quot;)
+End Sub</code></pre>
+</div>
+<div id="the-clear-method" class="section level2" number="8.15">
+<h2><span class="header-section-number">8.15</span> The Clear method</h2>
+<p>The Clear method deletes the contents of a range, plus all the cell
+formatting. For example, if you want to zap everything in column D, the
+following statement does the trick:</p>
+<pre><code>Columns(&quot;D:D&quot;).Clear</code></pre>
+</div>
+<div id="using-built-in-vba-functions" class="section level2" number="8.16">
+<h2><span class="header-section-number">8.16</span> Using Built-In VBA Functions</h2>
+<p>VBA provides numerous built-in functions. Some of these functions take
+arguments, and some do not.</p>
+<p>The first example uses VBA?s Date function to display the current system
+date in a message box:</p>
+<pre><code>Sub ShowDate()
+MsgBox &quot;Today is: &quot; &amp; Date
+End Sub</code></pre>
+<p>The following procedure uses the VBA Len function, which returns the
+length of a text string.</p>
+<pre><code>Sub GetLength()
+Dim MyName As String
+Dim StringLength As Long
+MyName = Application.UserName
+StringLength = Len(MyName)
+MsgBox MyName &amp; &quot; has &quot; &amp; StringLength &amp; &quot; characters.&quot;
+End Sub</code></pre>
+</div>
+<div id="discovering-vba-functions" class="section level2 unnumbered">
+<h2>Discovering VBA functions</h2>
+<p>How do you find out which functions VBA provides? You can type VBA,
+followed by a period. You get a list of items. Those with a green icon
+are functions. If this feature isn?t working, choose VBE’s Tools -&gt;
+Options, click the Editor tab, and place a check next to Auto List
+Members.</p>
+<pre><code>            Using Worksheet Functions in VBA
+            ================================
+
+              Although VBA offers a decent assortment of built-in functions, you might
+            not always find exactly what you need. Fortunately, you can also use
+            most of Excel&#39;s worksheet functions in your VBA procedures. The only</code></pre>
+<p>worksheet functions that you cannot use are those that have an
+equivalent VBA function. VBA makes Excel’s worksheet functions
+available through the WorksheetFunction object, which is contained in
+the Application object. Here’s an example of how you can use Excel’s
+SUM function in a VBA statement:</p>
+<pre><code>              Total = Application.WorksheetFunction.Sum(Range(&quot;A1:A12&quot;))
+
+            You can omit the Application part or the WorksheetFunction part of the
+            expression. In either case, VBA will figure out what you&#39;re doing. In</code></pre>
+<p>other words, these three expressions all work exactly the same:</p>
+<pre><code>Total = Application.WorksheetFunction.Sum(Range(&quot;A1:A12&quot;))
+Total = WorksheetFunction.Sum(Range(&quot;A1:A12&quot;))
+Total = Application.Sum(Range(&quot;A1:A12&quot;))</code></pre>
+<p>My personal preference is to use the WorksheetFunction part just to make
+it perfectly clear that the code is using an Excel function.</p>
+</div>
+<div id="controlling-execution" class="section level2" number="8.17">
+<h2><span class="header-section-number">8.17</span> Controlling execution</h2>
+<p>VBA uses many constructs that are found in most other programming
+languages. These constructs are used to control the flow of execution.
+This section introduces a few of the more common programming constructs.</p>
+</div>
+<div id="the-if-then-construct" class="section level2" number="8.18">
+<h2><span class="header-section-number">8.18</span> The If-Then construct</h2>
+<p>One of the most important control structures in VBA is the If-Then
+construct, which gives your applications decision-making capability. The
+basic syntax of the If-Then structure is as follows:</p>
+<pre><code>    If condition Then statements [Else else statements]</code></pre>
+<p>In plain English, if a condition is true, then a group of statement will
+be executed. If you include the Else clause, then another group of
+statements will be executed if the condition is not true.</p>
+<p>This procedure checks the active cell. If it contains a negative value,
+the cell’s colour is changed to red. Otherwise, nothing happens.</p>
+<pre><code>            Sub CheckCell()
+            If ActiveCell.Value &lt; 0 Then ActiveCell.Font.ColorIndex = 3
+            End Sub
+
+            **Note** See
+            https://docs.microsoft.com/en-us/office/vba/api/excel.colorindex for
+            colorindex property.
+
+            For-Next loops
+            --------------
+
+              You can use a For-Next loop to execute one or more statements a number
+            of times. Here&#39;s an example of a For-Next loop:
+
+Sub SumSquared()
+    Total = 0
+    For Num = 1 To 10
+        Total = Total + (Num ^ 2)
+    Next Num
+    MsgBox Total
+End Sub</code></pre>
+</div>
+<div id="the-with-end-with-construct" class="section level2" number="8.19">
+<h2><span class="header-section-number">8.19</span> The With-End With construct</h2>
+<p>Another construct that you encounter if you record macros is the
+With-End With construct. This is a useful when dealing with several
+properties or methods of the same object. The following is an example:</p>
+<pre><code>Sub AlignCells()
+    With Selection
+        .HorizontalAlignment = xlCenter
+        .VerticalAlignment = xlCenter
+        .WrapText = False
+        .Orientation = xlHorizontal
+    End With
+End Sub</code></pre>
+</div>
+<div id="the-select-case-construct" class="section level2" number="8.20">
+<h2><span class="header-section-number">8.20</span> The Select Case construct</h2>
+<p>The Select Case construct is useful for choosing among two or more
+options. The following example demonstrates the use of a Select Case
+construct. In this example, the active cell is checked. If its value is
+less than 0, it’s coloured red. If it’s equal to 0, it’s coloured blue.
+If the value is greater than 0, it’s coloured black.</p>
+<pre><code>Sub CheckCell()
+    Select Case ActiveCell.Value
+        Case Is &lt; 0
+            ActiveCell.Font.Color = vbRed
+        Case 0
+            ActiveCell.Font.Color = vbBlue
+        Case Is &gt; 0
+            ActiveCell.Font.Color = vbBlack
+        End Select
+End Sub</code></pre>
+<p>Any number of statements can go below each Case statement, and they all
+get executed if the case is true.</p>
+<p><strong>Note</strong> See Color constants for example vbRed, vbBlue etc. for more
+details:</p>
+<p><a href="https://docs.microsoft.com/en-us/office/vba/language/reference/user-interface-help/color-constants" class="uri">https://docs.microsoft.com/en-us/office/vba/language/reference/user-interface-help/color-constants</a></p>
+</div>
+<div id="vba-examples" class="section level2" number="8.21">
+<h2><span class="header-section-number">8.21</span> VBA Examples</h2>
+<p>::: {.example}
+<em>The NumSign function uses the Select Case construct to
+take a different action, depending on the value of num. If num is less
+than 0, NumSign is assigned the text Negative. If num is equal to 0,
+NumSign is Zero. If num is greater than 0, NumSign is Positive. The
+value returned by a function is always assigned to the function’s name.</em>
+:::</p>
+<pre><code>              Function NumSign(num)
+            Select Case num
+            Case Is &lt; 0
+            NumSign = &quot;Negative&quot;
+            Case 0
+            NumSign = &quot;Zero&quot;
+            Case Is &gt; 0
+            NumSign = &quot;Positive&quot;
+            End Select
+            End Function
+
+            If you work with this function, you might notice a problem if the
+            argument is non-numeric. In such a case, the function returns Positive.
+            In other words, the function has a bug. Following is a revised version
+            that returns an empty string if the argument is non-numeric. This code
+            uses the VBA IsNumeric function to check the argument. If it&#39;s numeric,</code></pre>
+<p>the code checks the sign. If the argument is not numeric, the Else part
+of the If-Then-Else structure is executed.</p>
+<pre><code>Function NumSign(num)
+    If IsNumeric(num) Then
+        Select Case num
+            Case Is &lt; 0
+                NumSign = &quot;Negative&quot;
+            Case 0
+                NumSign = &quot;Zero&quot;
+            Case Is &gt; 0
+                NumSign = &quot;Positive&quot;
+        End Select
+    Else
+        NumSign = &quot;&quot;
+    End If
+End Function</code></pre>
+<p>::: {.example}
+<em>Create a macro that copies a variable-sized range (you
+don’t know the exact row and column dimension).</em></p>
+<p><em>The following macro demonstrates how to copy this range from Sheet1 to
+Sheet2 (beginning at cell A1). It uses the <strong>CurrentRegion property,
+which returns a Range object that corresponds to the block of cells
+around a particular cell</strong>. In this case, that cell is A1.</em>
+:::</p>
+<p>Sub CopyCurrentRegion()
+Range(“A1”).CurrentRegion.Copy
+Sheets(“Sheet2”).Select
+Range(“A1”).Select
+ActiveSheet.Paste
+Sheets(“Sheet1”).Select
+Application.CutCopyMode = False
+End Sub</p>
+<p>You can make this macro even more efficient by not selecting the
+destination. The following macro takes advantage of the fact that the
+<strong>Copy method can use an argument for the destination range</strong>:</p>
+<p>Sub CopyCurrentRegion2()
+Range(“A1”).CurrentRegion.Copy _
+Sheets(“Sheet2”).Range(“A1”)
+End Sub</p>
+<p>It’s even a bit easier if the data is in the form of a table (created in
+Excel using Insert <span class="math inline">\(\rightarrow\)</span> Tables <span class="math inline">\(\rightarrow\)</span> Table). The table
+has a name (such as Table1) and expands automatically when new data is
+added.</p>
+<pre><code>Sub CopyTable()
+    Range(&quot;Table1&quot;).Copy Sheets(&quot;Sheet2&quot;).Range(&quot;A1&quot;)
+End Sub</code></pre>
+<div class="example">
+<p><span id="exm:unlabeled-div-24" class="example"><strong>Example 8.6  </strong></span><em>The following VBA procedure selects the range beginning
+at the active cell and extending down to the cell just above the first
+blank cell in the column. After selecting the range, you can do whatever
+you want with it</em></p>
+</div>
+<pre><code>Sub SelectDown()
+    Range(ActiveCell, ActiveCell.End(xlDown)).Select
+End Sub</code></pre>
+<p>This example uses the End method of the ActiveCell object, which returns
+a Range object. The End method takes one argument, which can be any of
+the following constants:</p>
+<ul>
+<li><p>xlUp</p></li>
+<li><p>xlDown</p></li>
+<li><p>xlToLeft</p></li>
+<li><p>xlToRight</p></li>
+</ul>
+<p>It is not necessary to select a range before doing something with it.
+The following macro applies bold formatting to a variable-sized (single
+column) range without selecting the range:</p>
+<pre><code>Sub MakeBold()
+    Range(ActiveCell, ActiveCell.End(xlDown)) _
+    .Font.Bold = True
+End Sub</code></pre>
+<div class="example">
+<p><span id="exm:unlabeled-div-25" class="example"><strong>Example 8.7  </strong></span><em>The following procedure demonstrates how to select the
+column that contains the active cell. It uses the <strong>EntireColumn
+property, which returns a Range object that consists of a full
+column</strong>:</em></p>
+</div>
+<pre><code>Sub SelectColumn()
+    ActiveCell.EntireColumn.Select
+End Sub</code></pre>
+<p>::: {.example}
+<em>Many macros perform an operation on each cell in a
+range, or they might perform selected actions based on each cell’s
+content. These macros usually include a For-Next loop that processes
+each cell in the range.</em></p>
+<p><em>The following example demonstrates how to loop through a range of
+cells. In this case, the range is the current selection. An object
+variable named Cell refers to the cell being processed. Within the For
+Each-Next loop, the single statement evaluates the cell and applies bold
+formatting if the cell contains a positive value.</em>
+:::</p>
+<p>Sub ProcessCells()
+Dim Cell As Range
+For Each Cell In Selection
+If Cell.Value &gt; 0 Then Cell.Font.Bold = True
+Next Cell
+End Sub</p>
+<p>This example works, but what if the user’s selection consists of an
+entire column or row?</p>
+<p>::: {.example}
+<em>(Prompting for a cell value) You can use <strong>VBA’s
+InputBox function to get a value from the user</strong>. Then you can insert
+that value into a cell. The following procedure demonstrates how to ask
+the user for a value and place the value in cell A1 of the active
+worksheet, using only one statement:</em>
+:::</p>
+<p>Sub GetValue()
+Range(“A1”).Value = InputBox( _
+“Enter the value for cell A1”)
+End Sub</p>
+<p><strong>Note</strong> See
+<a href="https://docs.microsoft.com/en-us/office/vba/api/excel.application.inputbox" class="uri">https://docs.microsoft.com/en-us/office/vba/api/excel.application.inputbox</a>
+for details about InputBox.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-26" class="example"><strong>Example 8.8  </strong></span><em>Create a model with VBA to produce a (year-by-year)
+loan schedule for a fixed rate loan. The loan is to be repaid in equal
+annual instalments over its life and the first payment is to be made at
+the end of the first year. Format the output data in the table with a
+dollar sign and two decimal points, i.e "$#,##0.00".</em></p>
+</div>
+
+<hr />
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="bonds-and-inflation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tutorial-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/pairote-sat/SCMA329-Excel/edit/master/08-VBA.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/pairote-sat/SCMA329-Excel/blob/master/08-VBA.Rmd",
+"text": null
+},
+"download": ["SCMA329ExcelBookdownproj.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Section 12 How VBA works | SCMA329 Practical Mathematical Financial Modeling</title>
+  <meta name="description" content="Section 12 How VBA works | SCMA329 Practical Mathematical Financial Modeling" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Section 12 How VBA works | SCMA329 Practical Mathematical Financial Modeling" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Section 12 How VBA works | SCMA329 Practical Mathematical Financial Modeling" />
+  
+  
+  
+
+<meta name="author" content="Pairote Satiracoo" />
+
+
+<meta name="date" content="2021-10-22" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="creating-vba-macros.html"/>
+<link rel="next" href="essential-vba-language-elements.html"/>
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">SCMA329-Excel</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Dates and date functions</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#inconsistent-date-entries"><i class="fa fa-check"></i><b>1.1</b> Inconsistent date entries</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#date-serial-number"><i class="fa fa-check"></i><b>1.2</b> Date serial number</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#date-functions"><i class="fa fa-check"></i><b>1.3</b> Date functions</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="working-with-texts.html"><a href="working-with-texts.html"><i class="fa fa-check"></i><b>2</b> Working with Texts</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="working-with-texts.html"><a href="working-with-texts.html#text-functions"><i class="fa fa-check"></i><b>2.1</b> Text functions</a></li>
+<li class="chapter" data-level="2.2" data-path="working-with-texts.html"><a href="working-with-texts.html#character-codes"><i class="fa fa-check"></i><b>2.2</b> Character codes</a></li>
+<li class="chapter" data-level="2.3" data-path="working-with-texts.html"><a href="working-with-texts.html#determining-whether-two-string-are-identical"><i class="fa fa-check"></i><b>2.3</b> Determining whether two string are identical</a></li>
+<li class="chapter" data-level="2.4" data-path="working-with-texts.html"><a href="working-with-texts.html#joining-two-or-more-cells"><i class="fa fa-check"></i><b>2.4</b> Joining two or more cells</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="interest-rate-present-values-and-cashflows.html"><a href="interest-rate-present-values-and-cashflows.html"><i class="fa fa-check"></i><b>3</b> Interest Rate, Present Values and Cashflows</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="interest-rate-present-values-and-cashflows.html"><a href="interest-rate-present-values-and-cashflows.html#working-with-a-single-cashflow-in-excel"><i class="fa fa-check"></i><b>3.1</b> Working with a single cashflow in Excel</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="interest-rate-present-values-and-cashflows.html"><a href="interest-rate-present-values-and-cashflows.html#how-to-calculate-the-future-value-of-a-single-cashflow"><i class="fa fa-check"></i><b>3.1.1</b> How to calculate the future value of a single cashflow</a></li>
+<li class="chapter" data-level="3.1.2" data-path="interest-rate-present-values-and-cashflows.html"><a href="interest-rate-present-values-and-cashflows.html#how-to-calculate-the-present-value-of-a-single-cashflow"><i class="fa fa-check"></i><b>3.1.2</b> How to calculate the present value of a single cashflow</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="interest-rate-present-values-and-cashflows.html"><a href="interest-rate-present-values-and-cashflows.html#present-values-of-a-series-of-cashflows"><i class="fa fa-check"></i><b>3.2</b> Present values of a series of cashflows</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="interest-rate-present-values-and-cashflows.html"><a href="interest-rate-present-values-and-cashflows.html#level-annuities-certain"><i class="fa fa-check"></i><b>3.2.1</b> Level Annuities certain</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="lookup-formulas-and-data-tables.html"><a href="lookup-formulas-and-data-tables.html"><i class="fa fa-check"></i><b>4</b> Lookup Formulas and Data Tables</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="lookup-formulas-and-data-tables.html"><a href="lookup-formulas-and-data-tables.html#lookup-function"><i class="fa fa-check"></i><b>4.1</b> Lookup function</a></li>
+<li class="chapter" data-level="4.2" data-path="lookup-formulas-and-data-tables.html"><a href="lookup-formulas-and-data-tables.html#match-and-index-functions"><i class="fa fa-check"></i><b>4.2</b> MATCH and INDEX functions</a></li>
+<li class="chapter" data-level="4.3" data-path="lookup-formulas-and-data-tables.html"><a href="lookup-formulas-and-data-tables.html#data-tables"><i class="fa fa-check"></i><b>4.3</b> Data tables</a>
+<ul>
+<li class="chapter" data-level="" data-path="lookup-formulas-and-data-tables.html"><a href="lookup-formulas-and-data-tables.html#model-formulation"><i class="fa fa-check"></i>Model formulation</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="analysing-data-using-goal-seeking-and-solver.html"><a href="analysing-data-using-goal-seeking-and-solver.html"><i class="fa fa-check"></i><b>5</b> Analysing data using Goal Seeking and Solver</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="analysing-data-using-goal-seeking-and-solver.html"><a href="analysing-data-using-goal-seeking-and-solver.html#analysing-data-using-goal-seeking"><i class="fa fa-check"></i><b>5.1</b> Analysing data using Goal Seeking</a></li>
+<li class="chapter" data-level="5.2" data-path="analysing-data-using-goal-seeking-and-solver.html"><a href="analysing-data-using-goal-seeking-and-solver.html#analysing-data-using-solver"><i class="fa fa-check"></i><b>5.2</b> Analysing data using Solver</a></li>
+<li class="chapter" data-level="5.3" data-path="analysing-data-using-goal-seeking-and-solver.html"><a href="analysing-data-using-goal-seeking-and-solver.html#a-simple-solver-example"><i class="fa fa-check"></i><b>5.3</b> A simple Solver example</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="analysing-data-with-pivot-tables.html"><a href="analysing-data-with-pivot-tables.html"><i class="fa fa-check"></i><b>6</b> Analysing data with pivot tables</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="analysing-data-with-pivot-tables.html"><a href="analysing-data-with-pivot-tables.html#filters"><i class="fa fa-check"></i><b>6.1</b> Filters</a></li>
+<li class="chapter" data-level="6.2" data-path="analysing-data-with-pivot-tables.html"><a href="analysing-data-with-pivot-tables.html#modifying-the-pivot-table"><i class="fa fa-check"></i><b>6.2</b> Modifying the pivot table</a></li>
+<li class="chapter" data-level="6.3" data-path="analysing-data-with-pivot-tables.html"><a href="analysing-data-with-pivot-tables.html#working-with-nonnumeric-data"><i class="fa fa-check"></i><b>6.3</b> Working with Nonnumeric Data</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="bonds-and-inflation.html"><a href="bonds-and-inflation.html"><i class="fa fa-check"></i><b>7</b> Bonds and Inflation</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="bonds-and-inflation.html"><a href="bonds-and-inflation.html#zero-coupon-bonds"><i class="fa fa-check"></i><b>7.1</b> Zero-Coupon Bonds</a></li>
+<li class="chapter" data-level="7.2" data-path="bonds-and-inflation.html"><a href="bonds-and-inflation.html#bond-pricing-using-yield-to-maturity"><i class="fa fa-check"></i><b>7.2</b> Bond pricing using yield to maturity</a></li>
+<li class="chapter" data-level="7.3" data-path="bonds-and-inflation.html"><a href="bonds-and-inflation.html#interest-rate-risk-and-bond-prices"><i class="fa fa-check"></i><b>7.3</b> Interest rate risk and bond prices</a></li>
+<li class="chapter" data-level="7.4" data-path="bonds-and-inflation.html"><a href="bonds-and-inflation.html#inflation"><i class="fa fa-check"></i><b>7.4</b> Inflation</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="introducing-visual-basic.html"><a href="introducing-visual-basic.html"><i class="fa fa-check"></i><b>8</b> Introducing Visual Basic</a></li>
+<li class="chapter" data-level="9" data-path="components-of-vba-editor-vbe.html"><a href="components-of-vba-editor-vbe.html"><i class="fa fa-check"></i><b>9</b> Components of VBA editor (VBE)</a></li>
+<li class="chapter" data-level="10" data-path="two-types-of-vba-macros.html"><a href="two-types-of-vba-macros.html"><i class="fa fa-check"></i><b>10</b> Two Types of VBA Macros</a></li>
+<li class="chapter" data-level="11" data-path="creating-vba-macros.html"><a href="creating-vba-macros.html"><i class="fa fa-check"></i><b>11</b> Creating VBA Macros</a></li>
+<li class="chapter" data-level="12" data-path="how-vba-works.html"><a href="how-vba-works.html"><i class="fa fa-check"></i><b>12</b> How VBA works</a></li>
+<li class="chapter" data-level="13" data-path="essential-vba-language-elements.html"><a href="essential-vba-language-elements.html"><i class="fa fa-check"></i><b>13</b> Essential VBA Language Elements</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="essential-vba-language-elements.html"><a href="essential-vba-language-elements.html#working-with-variables"><i class="fa fa-check"></i><b>13.1</b> Working with Variables</a></li>
+<li class="chapter" data-level="13.2" data-path="essential-vba-language-elements.html"><a href="essential-vba-language-elements.html#data-types-and-declaring-variables"><i class="fa fa-check"></i><b>13.2</b> Data types and declaring variables</a></li>
+<li class="chapter" data-level="" data-path="essential-vba-language-elements.html"><a href="essential-vba-language-elements.html#module-level-variables"><i class="fa fa-check"></i>Module-level variables</a></li>
+<li class="chapter" data-level="13.3" data-path="essential-vba-language-elements.html"><a href="essential-vba-language-elements.html#working-with-constants"><i class="fa fa-check"></i><b>13.3</b> Working with constants</a></li>
+<li class="chapter" data-level="13.4" data-path="essential-vba-language-elements.html"><a href="essential-vba-language-elements.html#working-with-dates"><i class="fa fa-check"></i><b>13.4</b> Working with dates</a></li>
+<li class="chapter" data-level="13.5" data-path="essential-vba-language-elements.html"><a href="essential-vba-language-elements.html#working-with-arrays"><i class="fa fa-check"></i><b>13.5</b> Working with Arrays</a>
+<ul>
+<li class="chapter" data-level="13.5.1" data-path="essential-vba-language-elements.html"><a href="essential-vba-language-elements.html#dynamic-arrays"><i class="fa fa-check"></i><b>13.5.1</b> Dynamic arrays</a></li>
+</ul></li>
+<li class="chapter" data-level="13.6" data-path="essential-vba-language-elements.html"><a href="essential-vba-language-elements.html#the-text-property"><i class="fa fa-check"></i><b>13.6</b> The Text property</a></li>
+<li class="chapter" data-level="13.7" data-path="essential-vba-language-elements.html"><a href="essential-vba-language-elements.html#the-column-and-row-properties"><i class="fa fa-check"></i><b>13.7</b> The Column and Row properties</a></li>
+<li class="chapter" data-level="13.8" data-path="essential-vba-language-elements.html"><a href="essential-vba-language-elements.html#the-address-property"><i class="fa fa-check"></i><b>13.8</b> The Address property</a></li>
+<li class="chapter" data-level="13.9" data-path="essential-vba-language-elements.html"><a href="essential-vba-language-elements.html#the-formula-property"><i class="fa fa-check"></i><b>13.9</b> The Formula property</a></li>
+<li class="chapter" data-level="13.10" data-path="essential-vba-language-elements.html"><a href="essential-vba-language-elements.html#the-clear-method"><i class="fa fa-check"></i><b>13.10</b> The Clear method</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="using-built-in-vba-functions.html"><a href="using-built-in-vba-functions.html"><i class="fa fa-check"></i><b>14</b> Using Built-In VBA Functions</a>
+<ul>
+<li class="chapter" data-level="" data-path="using-built-in-vba-functions.html"><a href="using-built-in-vba-functions.html#discovering-vba-functions"><i class="fa fa-check"></i>Discovering VBA functions</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="controlling-execution.html"><a href="controlling-execution.html"><i class="fa fa-check"></i><b>15</b> Controlling execution</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="controlling-execution.html"><a href="controlling-execution.html#the-if-then-construct"><i class="fa fa-check"></i><b>15.1</b> The If-Then construct</a></li>
+<li class="chapter" data-level="15.2" data-path="controlling-execution.html"><a href="controlling-execution.html#the-with-end-with-construct"><i class="fa fa-check"></i><b>15.2</b> The With-End With construct</a></li>
+<li class="chapter" data-level="15.3" data-path="controlling-execution.html"><a href="controlling-execution.html#the-select-case-construct"><i class="fa fa-check"></i><b>15.3</b> The Select Case construct</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="vba-examples.html"><a href="vba-examples.html"><i class="fa fa-check"></i><b>16</b> VBA Examples</a></li>
+<li class="chapter" data-level="17" data-path="tutorial-1.html"><a href="tutorial-1.html"><i class="fa fa-check"></i><b>17</b> Tutorial 1</a></li>
+<li class="chapter" data-level="18" data-path="tutorial-2.html"><a href="tutorial-2.html"><i class="fa fa-check"></i><b>18</b> Tutorial 2</a></li>
+<li class="chapter" data-level="19" data-path="tutorial-3.html"><a href="tutorial-3.html"><i class="fa fa-check"></i><b>19</b> Tutorial 3</a></li>
+<li class="chapter" data-level="20" data-path="tutorial-4.html"><a href="tutorial-4.html"><i class="fa fa-check"></i><b>20</b> Tutorial 4</a></li>
+<li class="chapter" data-level="21" data-path="tutorial-5.html"><a href="tutorial-5.html"><i class="fa fa-check"></i><b>21</b> Tutorial 5</a></li>
+<li class="chapter" data-level="22" data-path="solutions-to-tutorial-1.html"><a href="solutions-to-tutorial-1.html"><i class="fa fa-check"></i><b>22</b> Solutions to Tutorial 1</a></li>
+<li class="chapter" data-level="23" data-path="solutions-to-tutorial-2.html"><a href="solutions-to-tutorial-2.html"><i class="fa fa-check"></i><b>23</b> Solutions to Tutorial 2</a></li>
+<li class="chapter" data-level="24" data-path="solutions-to-tutorial-3.html"><a href="solutions-to-tutorial-3.html"><i class="fa fa-check"></i><b>24</b> Solutions to Tutorial 3</a></li>
+<li class="chapter" data-level="25" data-path="solutions-to-tutorial-4.html"><a href="solutions-to-tutorial-4.html"><i class="fa fa-check"></i><b>25</b> Solutions to Tutorial 4</a></li>
+<li class="chapter" data-level="26" data-path="solutions-to-tutorial-5.html"><a href="solutions-to-tutorial-5.html"><i class="fa fa-check"></i><b>26</b> Solutions to Tutorial 5</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">SCMA329 Practical Mathematical Financial Modeling</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="how-vba-works" class="section level1" number="12">
+<h1><span class="header-section-number">Section 12</span> How VBA works</h1>
+<p>A concise summary of how VBA works:</p>
+<ul>
+<li><p>You perform actions in VBA by writing (or recording) code in a VBA
+module sheet and then executing the macro in any one of various
+ways. VBA modules are stored in an Excel workbook, and a workbook
+can hold any number of VBA modules. To view or edit a VBA module,
+you must activate the VB Editor window. (Press Alt+F11 to toggle
+between Excel and the VB Editor window.)</p></li>
+<li><p>A VBA module consists of procedures. A procedure is basically
+computer code that performs some action.</p></li>
+<li><p>A VBA module also can store function procedures. A function
+procedure performs calculations and returns a single value. A
+function can be called from another VBA procedure or can even be
+used in a worksheet formula.</p></li>
+<li><p>VBA manipulates objects. Excel provides more than 100 classes of
+objects that you can manipulate. Examples of objects include a
+workbook, a worksheet, a range on a worksheet, a chart, and a
+rectangle shape.</p></li>
+<li><p>Objects are arranged in a hierarchy and can act as containers for
+other objects.</p>
+<p>For example,</p>
+<ul>
+<li><p>Excel itself is an object called Application, and it contains
+other objects, such as Workbook objects.</p></li>
+<li><p>The Workbook object can contain other objects, such as Worksheet
+objects and Chart objects.</p></li>
+<li><p>A Worksheet object can contain objects such as Range objects,
+PivotTable objects, and so on. The arrangement of all these
+objects is referred to as an object model.</p></li>
+</ul></li>
+<li><p>Objects that are alike form a collection. For example,</p>
+<ul>
+<li><p>the Worksheets collection consists of all worksheets in a
+particular workbook.</p></li>
+<li><p>The ChartObjects collection consists of all ChartObjects on a
+worksheet.</p></li>
+<li><p>Collections are objects in themselves.</p></li>
+</ul></li>
+<li><p>You refer to an object in your VBA code by specifying its position
+in the object hierarchy, using a period as a separator.</p>
+<p>For example, you can refer to a workbook named Book1.xlsx as</p>
+<pre><code>Application.Workbooks(&#39;??Book1.xlsx&#39;??)</code></pre>
+<p>This expression refers to the Book1.xlsx workbook in the Workbooks
+collection. The Workbooks collection is contained in the Application
+object (that is, Excel). Extending this to another level, you can
+refer to Sheet1 in Book1 as follows:</p>
+<pre><code>Application.Workbooks(&#39;??Book1.xlsx&#39;??).Worksheets(&#39;??Sheet1&#39;??)</code></pre>
+<p>You can take it to still another level and refer to a specific cell
+as follows:</p>
+<pre><code>Application.Workbooks(&#39;??Book1.xlsx&#39;??).Worksheets(&#39;??Sheet1&#39;??). \_
+
+    Range(&#39;??A1&#39;??)</code></pre></li>
+<li><p>If you omit specific references, Excel uses the active objects.</p>
+<p>If Book1.xlsx is the active workbook, the preceding reference can be
+simplified as follows:</p>
+<pre><code>    Worksheets(&#39;??Sheet1&#39;??).Range(&#39;??A1&#39;??)</code></pre>
+<p>If you know that Sheet1 is the active sheet, you can simplify the
+reference even more:</p>
+<pre><code>    Range(&#39;??A1&#39;??)</code></pre></li>
+<li><p>Objects have properties. A property can be thought of as a setting
+for an object. For example,</p>
+<ul>
+<li><p>a Range object has properties, such as Value and Address.</p></li>
+<li><p>A Chart object has properties such as HasTitle and Type.</p></li>
+</ul>
+<p>You can use VBA both to determine object properties and to change
+them.</p></li>
+<li><p>You refer to properties by combining the object with the property,
+separated by a period. For example, you can refer to the value in
+cell A1 on Sheet1 as follows:</p>
+<pre><code>    Worksheets(&#39;??Sheet1&#39;??).Range(&#39;??A1&#39;??).Value</code></pre></li>
+<li><p>You can assign values to variables. To assign the value in cell A1
+on Sheet1 to a variable called Interest, use the following VBA
+statement:</p>
+<pre><code>    Interest = Worksheets(&#39;??Sheet1&#39;??).Range(&#39;??A1&#39;??).Value</code></pre></li>
+<li><p>Objects have methods. A method is an action that is performed with
+the object. For example, one of the methods for a Range object is
+ClearContents. This method clears the contents of the range.</p></li>
+<li><p>You specify methods by combining the object with the method,
+separated by a period. For example, to clear the contents of range
+A1:C12, use the following statement:</p>
+<pre><code>    Worksheets(&#39;??Sheet1&#39;??).Range(&#39;??A1:C12&#39;??).ClearContents</code></pre></li>
+<li><p>VBA also includes all the constructs of modern programming
+languages, including variables, arrays, looping, and so on.</p></li>
+</ul>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="creating-vba-macros.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="essential-vba-language-elements.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/pairote-sat/SCMA329-Excel/edit/master/08-VBA.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/pairote-sat/SCMA329-Excel/blob/master/08-VBA.Rmd",
+"text": null
+},
+"download": ["SCMA329ExcelBookdownproj.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
