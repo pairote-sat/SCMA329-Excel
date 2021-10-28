@@ -54,7 +54,7 @@ project, namely Book1 and*
   1.  *add a new VBA module,*
 
   2.  *then remove the VBA module you have just created from the project.*
-  :::
+:::
 
   **Note** User can also add a new UserForm (try it yourself). The
 UserFrom will be discussed later.
@@ -73,7 +73,7 @@ to Sheet2. What are the obtained results?*
 What will happen if the visible property value is set to be 2?*
 
   3.  *Insert a new Module and rename it as MyFirstModule.*
-  :::
+:::
 
 ##   Two Types of VBA Macros
 
@@ -113,8 +113,8 @@ Here is a possible answer.
 
     Sub MyFirstMacro()
         'This is my first macro.
-MsgBox "This is my first macro"
-End Sub
+    MsgBox "This is my first macro"
+    End Sub
 
 The following procedure shows how to run a procedure from another
 procedure.
@@ -123,10 +123,10 @@ procedure.
 *(Executing the procedure from another procedure) Enter
 this new procedure (either above or below MyFirstMacro code, it makes no
                     difference) to execute a procedure from another procedure.*
-  :::
+:::
 
-  Sub MySecondMacro()
-'Use the Call keyword to execute a procedure from another procedure.
+    Sub MySecondMacro()
+        'Use the Call keyword to execute a procedure from another procedure.
         MyFirstMacro
     End Sub
 
@@ -250,8 +250,7 @@ A concise summary of how VBA works:
 
 ## Essential VBA Language Elements
 
-Working with Variables
-----------------------
+### Working with Variables
 
 VBA's main purpose is to manipulate data. VBA stores the data in your
 computer's memory. Some data, such as worksheet ranges, resides in
@@ -268,18 +267,15 @@ memory that's used by a program. Here are examples of variables
     UserName = "Peter Rabbit"
     Date_Started = #1/15/2015#
 
-Data types and declaring variables
-----------------------------------
+### Data types and declaring variables
 
 In this section, you discover how to declare a variable as a certain
 data type. A variable's scope determines which modules and procedures
 can use the variable.
 
-Data types {#data-types .unnumbered}
-  ----------
+#### Data types 
 
-    A data type is the characteristic of a variable that determines what
-  kind of data it can hold. Data types include numerical and non-numerical
+A data type is the characteristic of a variable that determines what kind of data it can hold. Data types include numerical and non-numerical
   as well as user-defined types and specific types of objects. For details
   about the supported data types, storage sizes and ranges, please see
 
@@ -301,10 +297,9 @@ Data types {#data-types .unnumbered}
   that are not explicitly declared as some other type (using statements
                                                        such as Dim, Private, Public, or Static).
 
-  Procedure-level variables {#procedure-level-variables .unnumbered}
-    -------------------------
+####  Procedure-level variables 
 
-      The lowest level of scope for a variable is at the procedure level. (A
+The lowest level of scope for a variable is at the procedure level. (A
                                                                            procedure is either a Sub or a Function procedure.) Variables declared
     with this scope can be used only in the procedure in which they're
 declared. When the procedure ends, the variable no longer exists, and
@@ -404,8 +399,7 @@ completely run?*
 efficient because VBA frees up the memory they use when the procedure
 ends.
 
-Module-level variables {#module-level-variables .unnumbered}
-----------------------
+#### Module-level variables 
 
 Sometimes, you want a variable to be available to all procedures in a
 module. If so, just declare the variable (using Dim or Private) before
@@ -413,12 +407,10 @@ the module's first Sub or Function statement, outside any procedures.
               You do this in the Declarations section, at the beginning of your
               module. (This is also where the Option Explicit statement is located.)
 
-              Public variables {#public-variables .unnumbered}
-                ----------------
+#### Public variables 
 
-                  If you need to make a variable available to all the procedures in all
-                your VBA modules in a workbook, declare the variable at the module level
-                (in the Declarations section) by using the Public keyword. Here's an
+If you need to make a variable available to all the procedures in all your VBA modules in a workbook, declare the variable at the module level
+(in the Declarations section) by using the Public keyword. Here's an
 example:
 
 ::: {.example}
@@ -448,12 +440,10 @@ example:
         MsgBox "The value of y is " & y
     End Sub
 
-Working with constants
-----------------------
+## Working with constants
 
-Sometimes you need to refer to a value or string that never changes. In
-such a case, you need a constant - a named element whose value
-                doesn't change.
+
+Sometimes you need to refer to a value or string that never changes. In such a case, you need a constant - a named element whose value doesn't change.
 
 As shown in the following examples, you declare constants by using the
 Const statement.
@@ -461,8 +451,7 @@ Const statement.
     Const NumQuarters As Integer = 4
     Const Rate = .0725, Period = 12
 
-Working with dates
-------------------
+## Working with dates
 
 In VBA, place dates and times between two hash marks, as shown in the
 preceding examples.
@@ -472,8 +461,8 @@ preceding examples.
     Const FirstDay As Date = #1/1/2013#
     Const Noon = #12:00:00#
 
-Working with Arrays
--------------------
+##  Working with Arrays
+
 
 An array is a group of variables that share a common name. You refer to
 a specific variable in the array by using the array name and an index
@@ -488,29 +477,22 @@ index. If you omit the lower index, VBA assumes that it's 0.
                 Therefore, both of the following statements declare the same 101-element
                 array:
 
-                  Dim MyArray (0 To 100) As Integer
-                Dim MyArray (100) As Integer
+    Dim MyArray (0 To 100) As Integer
+    Dim MyArray (100) As Integer
 
-                If you want VBA to assume that 1 (rather than 0) is the lower index for
-                your arrays, include the following statement in the Declarations section
-                of your module:
+If you want VBA to assume that 1 (rather than 0) is the lower index for your arrays, include the following statement in the Declarations section of your module:
 
-                  Option Base 1
+    Option Base 1
 
-                This statement forces VBA to use 1 as the first index number for arrays
-                that declare only the upper index. If this statement is present, the
-                following statements are identical, both declaring a 100-element array:
+This statement forces VBA to use 1 as the first index number for arrays that declare only the upper index. If this statement is present, the following statements are identical, both declaring a 100-element array:
 
-                  Dim MyArray (1 To 100) As Integer
-                Dim MyArray (100) As Integer
+    Dim MyArray (1 To 100) As Integer
+    Dim MyArray (100) As Integer
 
-                ### Multidimensional arrays
+### Multidimensional arrays
 
-                The arrays created in the previous examples are all one-dimensional
-                arrays. Think of one-dimensional arrays as a single line of values.
-                Arrays you create in VBA can have as many as 60 dimensions - although
-you rarely need more than two or three dimensions in an array. The
-following example declares an 81-integer array with two dimensions:
+The arrays created in the previous examples are all one-dimensional arrays. Think of one-dimensional arrays as a single line of values. Arrays you create in VBA can have as many as 60 dimensions - although
+you rarely need more than two or three dimensions in an array. The following example declares an 81-integer array with two dimensions:
 
     Dim MyArray (1 To 9, 1 To 9) As Integer
 
@@ -524,134 +506,92 @@ array:
 
 ### Dynamic arrays
 
-You can also create dynamic arrays. A dynamic array doesn't have a
-                preset number of elements. Declare a dynamic array with an empty set of
-                parentheses:
+You can also create dynamic arrays. A dynamic array doesn't have a preset number of elements. Declare a dynamic array with an empty set of parentheses:
 
-                  Dim MyArray () As Integer
+    Dim MyArray () As Integer
 
-                Before you can use this array, you must use the ReDim statement to tell
-                VBA how many elements the array has. Usually, the number of elements in
-                the array is determined while your code is running. You can use the
-                ReDim statement any number of times, changing the array's size as
-often as needed. The following example demonstrates how to change the
-number of elements in a dynamic array. It assumes that the NumElements
-variable contains a value, which your code calculated.
+Before you can use this array, you must use the ReDim statement to tell VBA how many elements the array has. Usually, the number of elements in the array is determined while your code is running. You can use the ReDim statement any number of times, changing the array's size as often as needed. The following example demonstrates how to change the
+number of elements in a dynamic array. It assumes that the NumElements variable contains a value, which your code calculated.
 
     ReDim MyArray (1 To NumElements)
 
-When you redimension an array by using ReDim, you wipe out any values
-currently stored in the array elements. You can avoid destroying the old
-values by using the Preserve keyword. The following example shows how
-you can preserve an array's values when you redimension the array:
+When you redimension an array by using ReDim, you wipe out any values currently stored in the array elements. You can avoid destroying the old
+values by using the Preserve keyword. The following example shows how you can preserve an array's values when you redimension the array:
 
-                  ReDim Preserve MyArray(1 To NumElements)
+    ReDim Preserve MyArray(1 To NumElements)
 
-                Working with Range Objects
-                ==========================
+## Working with Range Objects
 
-                  A Range object represents a range contained in a Worksheet object. Range
-                objects, like all other objects, have properties (which you can examine
-                                                                  and sometimes change) and methods (which perform actions on the object).
+A Range object represents a range contained in a Worksheet object. Range objects, like all other objects, have properties (which you can examine and sometimes change) and methods (which perform actions on the object).
 
-                When you refer to a Range object, the address is always surrounded by
-                double quotes, like this:
+When you refer to a Range object, the address is always surrounded by double quotes, like this:
 
-                  Range("A1:C5")
+    Range("A1:C5")
 
-                If the range consists of one cell, you still need the quotes:
+If the range consists of one cell, you still need the quotes:
 
-                  Range("K9")
+    Range("K9")
 
-                A Range object can consist of one or more entire rows or columns. You
-                can refer to an entire row (in this case, row 3) by using syntax like
-                this:
+A Range object can consist of one or more entire rows or columns. You can refer to an entire row (in this case, row 3) by using syntax like this:
 
-                  Range("3:3")
+    Range("3:3")
 
-                You can refer to an entire column (the fourth column in this example)
-                like this:
+You can refer to an entire column (the fourth column in this example) like this:
 
-                  Range("D:D")
+    Range("D:D")
 
-                The following expression refers to a two-area noncontiguous range.
-                Notice that a comma separates the two areas.
+The following expression refers to a two-area noncontiguous range. Notice that a comma separates the two areas.
 
-                Range("A1:B8,D9:G16")
+    Range("A1:B8,D9:G16")
 
-                The Cells property
-                ------------------
+## The Cells property
 
-                  Rather than use the VBA Range keyword, you can refer to a range via the
-                Cells property.
+Rather than use the VBA Range keyword, you can refer to a range via the Cells property.
 
-                The Cells property takes two arguments: a row number and a column
-                number. Both of these arguments are numbers, even though we usually
-                refer to columns by using letters. For example, the following expression
-                refers to cell C2 on Sheet2:
+The Cells property takes two arguments: a row number and a column number. Both of these arguments are numbers, even though we usually refer to columns by using letters. For example, the following expression
+refers to cell C2 on Sheet2:
 
-                  Worksheets("Sheet2").Cells(2, 3)
+    Worksheets("Sheet2").Cells(2, 3)
 
-                You can also use the Cells property to refer to a multi-cell range. The
-                following example demonstrates the syntax you use:
+You can also use the Cells property to refer to a multi-cell range. The following example demonstrates the syntax you use:
 
-                  Range(Cells(1, 1), Cells(10, 8))
+    Range(Cells(1, 1), Cells(10, 8))
 
-                This expression refers to an 80-cell range that extends from cell A1
-                (row 1, column 1) to cell H10 (row 10, column 8). The following
-                statements both produce the same result; they enter a value of 99 into a
-                10-by-8 range of cells. More specifically, these statements set the
-                Value property of the Range object:
+This expression refers to an 80-cell range that extends from cell A1 (row 1, column 1) to cell H10 (row 10, column 8). The following statements both produce the same result; they enter a value of 99 into a 10-by-8 range of cells. More specifically, these statements set the Value property of the Range object:
 
-                  Range("A1:H10").Value = 99
-                Range(Cells(1, 1), Cells(10, 8)).Value = 99
+    Range("A1:H10").Value = 99
+    Range(Cells(1, 1), Cells(10, 8)).Value = 99
 
-                The advantage of using the Cells property to refer to ranges becomes
-                apparent when you use variables rather than actual numbers as the Cells
-                arguments. And things really start to click when you understand looping.
+The advantage of using the Cells property to refer to ranges becomes apparent when you use variables rather than actual numbers as the Cells arguments. And things really start to click when you understand looping.
 
-                The Offset property
-                -------------------
+## The Offset property
 
-                  The Offset property provides another handy means for referring to
-                ranges. This property, which operates on a Range object and returns
-                another Range object, lets you refer to a cell that is a particular
-                number of rows and columns away from another cell.
 
-                Like the Cells property, the Offset property takes two arguments. The
-                first argument represents the number of rows to offset; the second
-                represents the number of columns to offset.
+The Offset property provides another handy means for referring to ranges. This property, which operates on a Range object and returns another Range object, lets you refer to a cell that is a particular number of rows and columns away from another cell.
 
-                The following expression refers to a cell one row below cell A1 and two
-                columns to the right of cell A1. In other words, this refers to the cell
-                commonly known as C2:
+Like the Cells property, the Offset property takes two arguments. The first argument represents the number of rows to offset; the second represents the number of columns to offset.
 
-                  Range("A1").Offset(1, 2)
+The following expression refers to a cell one row below cell A1 and two columns to the right of cell A1. In other words, this refers to the cell commonly known as C2:
 
-                The Offset property can also use negative arguments. A negative row
-                offset refers to a row above the range. A negative column offset refers
-                to a column to the left of the range. The following example refers to
-                cell A1:
+    Range("A1").Offset(1, 2)
 
-                  Range("C2").Offset(-1, -2)
+The Offset property can also use negative arguments. A negative row offset refers to a row above the range. A negative column offset refers to a column to the left of the range. The following example refers to cell A1:
 
-                And, as you may expect, you can use 0 as one or both of the arguments
-                for Offset. The following expression refers to cell A1:
+    Range("C2").Offset(-1, -2)
 
-                  Range("A1").Offset(0, 0)
+And, as you may expect, you can use 0 as one or both of the arguments for Offset. The following expression refers to cell A1:
 
-                Some Useful Range Object Properties
-                -----------------------------------
+    Range("A1").Offset(0, 0)
 
-                  The Value property The Value property represents the value contained in
-                a cell. It's a read-write property, so your VBA code can either read
+## Some Useful Range Object Properties
+
+The Value property The Value property represents the value contained in a cell. It's a read-write property, so your VBA code can either read
 or change the value. The following statement displays a message box that
 shows the value in cell A1 on Sheet1:
 
     MsgBox Worksheets("Sheet1").Range("A1").Value
 
-It stands to reason that you can read the Value property only for a
-single-cell Range object. For example, the following statement generates
+It stands to reason that you can read the Value property only for a single-cell Range object. For example, the following statement generates
 an error:
 
     MsgBox Worksheets("Sheet1").Range("A1:C3").Value
@@ -661,14 +601,11 @@ following statement enters the number 123 into each cell in a range:
 
     Worksheets("Sheet1").Range("A1:C3").Value = 123
 
-The Text property
------------------
+## The Text property
 
-The Text property returns a string that represents the text as it's
-                displayed in a cell - the formatted value. The Text property is
-read-only. For example, suppose that cell A1 contains the value 12.3 and
-is formatted to display two decimals and a dollar sign (\$12.30). The
-following statement displays a message box containing \$12.30:
+
+The Text property returns a string that represents the text as it's displayed in a cell - the formatted value. The Text property is read-only. For example, suppose that cell A1 contains the value 12.3 and
+is formatted to display two decimals and a dollar sign (\$12.30). The following statement displays a message box containing \$12.30:
 
     MsgBox Worksheets("Sheet1").Range("A1").Text
 
@@ -676,27 +613,20 @@ But the next statement displays a message box containing 12.3:
 
     MsgBox Worksheets("Sheet1").Range("A1").Value
 
-If the cell contains a formula, the Text property returns the result of
-the formula. If a cell contains text, then the Text property and the
-Value property will always return the same thing, because text (unlike a
-number) can't be formatted to display differently.
+If the cell contains a formula, the Text property returns the result of the formula. If a cell contains text, then the Text property and the
+Value property will always return the same thing, because text (unlike a number) can't be formatted to display differently.
 
-                The Count property
-                ------------------
+## The Count property
+                
 
-                  The Count property returns the number of cells in a range. It counts all
-                cells, not just the nonblank cells. Count is a read-only property, just
-                as you would expect. The following statement accesses a range's Count
-property and displays the result (9) in a message box:
+The Count property returns the number of cells in a range. It counts all cells, not just the nonblank cells. Count is a read-only property, just as you would expect. The following statement accesses a range's Count property and displays the result (9) in a message box:
 
     MsgBox Range("A1:C3").Count
 
-The Column and Row properties
------------------------------
+## The Column and Row properties
 
-The Column property returns the column number of a single-cell range.
-Its sidekick, the Row property, returns the row number of a single-cell
-range. Both are read-only properties. For example, the following
+
+The Column property returns the column number of a single-cell range. Its sidekick, the Row property, returns the row number of a single-cell range. Both are read-only properties. For example, the following
 statement displays 6 because cell F3 is in the sixth column:
 
     MsgBox Sheets("Sheet1").Range("F3").Column
@@ -709,8 +639,8 @@ If the Range object consists of more than one cell, the Column property
 returns the column number of the first column in the range, and the Row
 property returns the row number of the first row in the range.
 
-The Address property
---------------------
+## The Address property
+
 
 Address, a read-only property, displays the cell address for a Range
 object as an absolute reference (a dollar sign before the column letter
@@ -732,86 +662,59 @@ Notice that the formula is a text string and is enclosed.
 
 Here"s a statement that will enter a formula that contains quotes:
 
-                  Range("A13").Formula = "=SUM(A1:A12)&"" Stores"""
+    Range("A13").Formula = "=SUM(A1:A12)&"" Stores"""
 
-                  The NumberFormat property
-                -------------------------
+## The NumberFormat property
 
-                  The NumberFormat property represents the number format (expressed as a
-                                                                          text string) of the Range object. This is a read-write property, so your
-                VBA code can either examine the number format or change it. The
-                following statement changes the number format of column A to a percent
-                with two decimal places:
+The NumberFormat property represents the number format (expressed as a text string) of the Range object. This is a read-write property, so your
+VBA code can either examine the number format or change it. The following statement changes the number format of column A to a percent with two decimal places:
 
-                  Columns("A:A").NumberFormat = "0.00%"
+    Columns("A:A").NumberFormat = "0.00%"
 
-                  Some Useful Range Object Methods
-                --------------------------------
+## Some Useful Range Object Methods
 
-                  As you know, a VBA method performs an action. A Range object has dozens
-                of methods but, again, you won't need most of these. In this section,
+As you know, a VBA method performs an action. A Range object has dozens of methods but, again, you won't need most of these. In this section,
 I point out some of the more commonly used Range object methods. The
 Select method Use the Select method to select a range of cells. The
 following statement selects a range on the active worksheet:
 
     Range("A1:C12").Select
 
-Before selecting a range, it"s often a good idea to use one additional
-                statement to ensure that the correct worksheet is active. For example,
-                if Sheet1 contains the range you want to select, use the following
-                statements to select the range:
+Before selecting a range, it"s often a good idea to use one additional statement to ensure that the correct worksheet is active. For example, if Sheet1 contains the range you want to select, use the following statements to select the range:
 
-                  Sheets("Sheet1").Activate
-                Range("A1:C12").Select
+    Sheets("Sheet1").Activate
+    Range("A1:C12").Select
 
-                **Contrary to what you may expect, the following statement generates an
-                error if Sheet1 is not already the active sheet. In other words, you
-                must use two statements rather than just one: one to activate the sheet
-                and another to select the range.**
+Contrary to what you may expect, the following statement generates an error if Sheet1 is not already the active sheet. In other words, you must use two statements rather than just one: one to activate the sheet and another to select the range.
 
-                  Sheets("Sheet1").Range("A1:C12").Select
+    Sheets("Sheet1").Range("A1:C12").Select
 
-                If you use the GoTo method of the Application object to select a range,
-                you can forget about selecting the correct worksheet first. This
-                statement activates Sheet1 and then selects the range:
+If you use the GoTo method of the Application object to select a range, you can forget about selecting the correct worksheet first. This tatement activates Sheet1 and then selects the range:
 
-                  Application.Goto Sheets("Sheet1").Range("A1:C12")
+    Application.Goto Sheets("Sheet1").Range("A1:C12")
 
-                The GoTo method is the VBA equivalent of pressing F5 in Excel, which
-                displays the GoTo dialog box.
+The GoTo method is the VBA equivalent of pressing F5 in Excel, which displays the GoTo dialog box.
 
-                The Copy and Paste methods
-                --------------------------
+## The Copy and Paste methods
 
-                  You can perform copy and paste operations in VBA by using the Copy and
-                Paste methods. Note that two different objects come into play. The Copy
-                method is applicable to the Range object, but the Paste method applies
-                to the Worksheet object. It actually makes sense: You copy a range and
-                paste it to a worksheet. This short macro (courtesy of the macro
-                                                           recorder) copies range A1:A12 and pastes it to the same worksheet,
-                beginning at cell C1:
 
-                  Sub CopyRange()
-                Range("A1:A12").Select
-                Selection.Copy
-                Range("C1").Select
-                ActiveSheet.Paste
-                End Sub
+You can perform copy and paste operations in VBA by using the Copy and Paste methods. Note that two different objects come into play. The Copy method is applicable to the Range object, but the Paste method applies to the Worksheet object. It actually makes sense: You copy a range and paste it to a worksheet. This short macro (courtesy of the macro recorder) copies range A1:A12 and pastes it to the same worksheet, beginning at cell C1:
 
-                Notice that in the preceding example, the ActiveSheet object is used
-                with the Paste method. This is a special version of the Worksheet object
-                that refers to the currently active worksheet. Also notice that the
-                macro selects the range before copying it. However, you don't have to
-select a range before doing something with it. In fact, the following
-procedure accomplishes the same task as the preceding example by using a
-single statement:
+    Sub CopyRange()
+        Range("A1:A12").Select
+        Selection.Copy
+        Range("C1").Select
+        ActiveSheet.Paste
+    End Sub
+
+Notice that in the preceding example, the ActiveSheet object is used with the Paste method. This is a special version of the Worksheet object that refers to the currently active worksheet. Also notice that the macro selects the range before copying it. However, you don't have to select a range before doing something with it. In fact, the following
+procedure accomplishes the same task as the preceding example by using a single statement:
 
     Sub CopyRange2()
         Range("A1:A12").Copy Range("C1")
     End Sub
 
-The Clear method
-----------------
+## The Clear method
 
 The Clear method deletes the contents of a range, plus all the cell
 formatting. For example, if you want to zap everything in column D, the
@@ -845,31 +748,19 @@ length of a text string.
     MsgBox MyName & " has " & StringLength & " characters."
     End Sub
 
-Discovering VBA functions {#discovering-vba-functions .unnumbered}
--------------------------
+## Discovering VBA functions 
 
-How do you find out which functions VBA provides? You can type VBA,
-followed by a period. You get a list of items. Those with a green icon
-are functions. If this feature isn?t working, choose VBE's Tools -\>
-                  Options, click the Editor tab, and place a check next to Auto List
-                Members.
+How do you find out which functions VBA provides? You can type VBA, followed by a period. You get a list of items. Those with a green icon
+are functions. If this feature isn?t working, choose VBE's Tools -\> Options, click the Editor tab, and place a check next to Auto List Members.
 
-                Using Worksheet Functions in VBA
-                ================================
+### Using Worksheet Functions in VBA
 
-                  Although VBA offers a decent assortment of built-in functions, you might
-                not always find exactly what you need. Fortunately, you can also use
-                most of Excel's worksheet functions in your VBA procedures. The only
-worksheet functions that you cannot use are those that have an
-equivalent VBA function. VBA makes Excel's worksheet functions
-                available through the WorksheetFunction object, which is contained in
-                the Application object. Here's an example of how you can use Excel's
-                SUM function in a VBA statement:
+Although VBA offers a decent assortment of built-in functions, you might not always find exactly what you need. Fortunately, you can also use most of Excel's worksheet functions in your VBA procedures. The only
+worksheet functions that you cannot use are those that have an equivalent VBA function. VBA makes Excel's worksheet functions available through the WorksheetFunction object, which is contained in the Application object. Here's an example of how you can use Excel's SUM function in a VBA statement:
 
-                  Total = Application.WorksheetFunction.Sum(Range("A1:A12"))
+    Total = Application.WorksheetFunction.Sum(Range("A1:A12"))
 
-                You can omit the Application part or the WorksheetFunction part of the
-                expression. In either case, VBA will figure out what you're doing. In
+You can omit the Application part or the WorksheetFunction part of the expression. In either case, VBA will figure out what you're doing. In
 other words, these three expressions all work exactly the same:
 
     Total = Application.WorksheetFunction.Sum(Range("A1:A12"))
@@ -885,14 +776,12 @@ VBA uses many constructs that are found in most other programming
 languages. These constructs are used to control the flow of execution.
 This section introduces a few of the more common programming constructs.
 
-The If-Then construct
----------------------
+### The If-Then construct
 
-One of the most important control structures in VBA is the If-Then
-construct, which gives your applications decision-making capability. The
+One of the most important control structures in VBA is the If-Then construct, which gives your applications decision-making capability. The
 basic syntax of the If-Then structure is as follows:
 
-        If condition Then statements [Else else statements]
+    If condition Then statements [Else else statements]
 
 In plain English, if a condition is true, then a group of statement will
 be executed. If you include the Else clause, then another group of
@@ -901,19 +790,16 @@ statements will be executed if the condition is not true.
 This procedure checks the active cell. If it contains a negative value,
 the cell's colour is changed to red. Otherwise, nothing happens.
 
-                Sub CheckCell()
-                If ActiveCell.Value < 0 Then ActiveCell.Font.ColorIndex = 3
-                End Sub
+    Sub CheckCell()
+    If ActiveCell.Value < 0 Then ActiveCell.Font.ColorIndex = 3
+    End Sub
 
-                **Note** See
-                https://docs.microsoft.com/en-us/office/vba/api/excel.colorindex for
-                colorindex property.
+**Note** See
+                https://docs.microsoft.com/en-us/office/vba/api/excel.colorindex for colorindex property.
 
-                For-Next loops
-                --------------
+### For-Next loops
 
-                  You can use a For-Next loop to execute one or more statements a number
-                of times. Here's an example of a For-Next loop:
+You can use a For-Next loop to execute one or more statements a number of times. Here's an example of a For-Next loop:
 
     Sub SumSquared()
         Total = 0
@@ -923,11 +809,10 @@ the cell's colour is changed to red. Otherwise, nothing happens.
         MsgBox Total
     End Sub
 
-The With-End With construct
----------------------------
+### The With-End With construct
 
-Another construct that you encounter if you record macros is the
-With-End With construct. This is a useful when dealing with several
+
+Another construct that you encounter if you record macros is the With-End With construct. This is a useful when dealing with several
 properties or methods of the same object. The following is an example:
 
     Sub AlignCells()
@@ -939,14 +824,10 @@ properties or methods of the same object. The following is an example:
         End With
     End Sub
 
-The Select Case construct
--------------------------
+### The Select Case construct
 
-The Select Case construct is useful for choosing among two or more
-options. The following example demonstrates the use of a Select Case
-construct. In this example, the active cell is checked. If its value is
-less than 0, it's coloured red. If it's equal to 0, it's coloured blue.
-                If the value is greater than 0, it's coloured black.
+The Select Case construct is useful for choosing among two or more options. The following example demonstrates the use of a Select Case construct. In this example, the active cell is checked. If its value is
+less than 0, it's coloured red. If it's equal to 0, it's coloured blue. If the value is greater than 0, it's coloured black.
 
     Sub CheckCell()
         Select Case ActiveCell.Value
@@ -975,24 +856,20 @@ take a different action, depending on the value of num. If num is less
 than 0, NumSign is assigned the text Negative. If num is equal to 0,
 NumSign is Zero. If num is greater than 0, NumSign is Positive. The
 value returned by a function is always assigned to the function's name.*
-                  :::
+:::
 
-                  Function NumSign(num)
-                Select Case num
-                Case Is < 0
+    Function NumSign(num)
+        Select Case num
+            Case Is < 0
                 NumSign = "Negative"
-                Case 0
+            Case 0
                 NumSign = "Zero"
-                Case Is > 0
+            Case Is > 0
                 NumSign = "Positive"
-                End Select
-                End Function
+            End Select
+    End Function
 
-                If you work with this function, you might notice a problem if the
-                argument is non-numeric. In such a case, the function returns Positive.
-                In other words, the function has a bug. Following is a revised version
-                that returns an empty string if the argument is non-numeric. This code
-                uses the VBA IsNumeric function to check the argument. If it's numeric,
+If you work with this function, you might notice a problem if the argument is non-numeric. In such a case, the function returns Positive. In other words, the function has a bug. Following is a revised version that returns an empty string if the argument is non-numeric. This code uses the VBA IsNumeric function to check the argument. If it's numeric,
 the code checks the sign. If the argument is not numeric, the Else part
 of the If-Then-Else structure is executed.
 
@@ -1014,38 +891,35 @@ of the If-Then-Else structure is executed.
 ::: {.example}
 *Create a macro that copies a variable-sized range (you
 don't know the exact row and column dimension).*
+:::
 
-  *The following macro demonstrates how to copy this range from Sheet1 to
-Sheet2 (beginning at cell A1). It uses the **CurrentRegion property,
-which returns a Range object that corresponds to the block of cells
-around a particular cell**. In this case, that cell is A1.*
-  :::
+The following macro demonstrates how to copy this range from Sheet1 to Sheet2 (beginning at cell A1). It uses the CurrentRegion property,
+which returns a Range object that corresponds to the block of cells around a particular cell. In this case, that cell is A1.*
 
-  Sub CopyCurrentRegion()
-Range("A1").CurrentRegion.Copy
-Sheets("Sheet2").Select
-Range("A1").Select
-ActiveSheet.Paste
-Sheets("Sheet1").Select
-Application.CutCopyMode = False
-End Sub
+
+    Sub CopyCurrentRegion()
+        Range("A1").CurrentRegion.Copy
+        Sheets("Sheet2").Select
+        Range("A1").Select
+        ActiveSheet.Paste
+        Sheets("Sheet1").Select
+        Application.CutCopyMode = False
+    End Sub
 
 You can make this macro even more efficient by not selecting the
 destination. The following macro takes advantage of the fact that the
 **Copy method can use an argument for the destination range**:
 
-  Sub CopyCurrentRegion2()
-Range("A1").CurrentRegion.Copy _
-Sheets("Sheet2").Range("A1")
-End Sub
+    Sub CopyCurrentRegion2()
+        Range("A1").CurrentRegion.Copy _
+        Sheets("Sheet2").Range("A1")
+    End Sub
 
-It's even a bit easier if the data is in the form of a table (created in
-Excel using Insert $\rightarrow$ Tables $\rightarrow$ Table). The table
-has a name (such as Table1) and expands automatically when new data is
+It's even a bit easier if the data is in the form of a table (created in Excel using Insert $\rightarrow$ Tables $\rightarrow$ Table). The table has a name (such as Table1) and expands automatically when new data is
 added.
 
     Sub CopyTable()
-        Range("Table1").Copy Sheets("Sheet2").Range("A1")
+        Range("Table1").Copy  Sheets("Sheet2").Range("A1")
     End Sub
 
 ::: {.example}
@@ -1056,7 +930,7 @@ you want with it*
 :::
 
     Sub SelectDown()
-        Range(ActiveCell, ActiveCell.End(xlDown)).Select
+        Range(ActiveCell,ActiveCell.End(xlDown)).Select
     End Sub
 
 This example uses the End method of the ActiveCell object, which returns
@@ -1097,35 +971,34 @@ range, or they might perform selected actions based on each cell's
 content. These macros usually include a For-Next loop that processes
 each cell in the range.*
 
-  *The following example demonstrates how to loop through a range of
+*The following example demonstrates how to loop through a range of
 cells. In this case, the range is the current selection. An object
 variable named Cell refers to the cell being processed. Within the For
 Each-Next loop, the single statement evaluates the cell and applies bold
 formatting if the cell contains a positive value.*
-  :::
+:::
 
-  Sub ProcessCells()
-Dim Cell As Range
-For Each Cell In Selection
-If Cell.Value > 0 Then Cell.Font.Bold = True
-Next Cell
-End Sub
+    Sub ProcessCells()
+        Dim Cell As Range
+        For Each Cell In Selection
+            If Cell.Value > 0 Then Cell.Font.Bold = True
+        Next Cell
+    End Sub
 
 This example works, but what if the user's selection consists of an
 entire column or row?
 
 ::: {.example}
-*(Prompting for a cell value) You can use **VBA's
-InputBox function to get a value from the user**. Then you can insert
-that value into a cell. The following procedure demonstrates how to ask
-the user for a value and place the value in cell A1 of the active
-worksheet, using only one statement:*
-  :::
+(Prompting for a cell value) You can use  VBA's
+InputBox function to get a value from the user. Then you can insert
+that value into a cell. The following procedure demonstrates how to ask the user for a value and place the value in cell A1 of the active
+worksheet, using only one statement:
+:::
 
-  Sub GetValue()
-Range("A1").Value = InputBox( _
-                             "Enter the value for cell A1")
-End Sub
+    Sub GetValue()
+        Range("A1").Value = InputBox( _
+        "Enter the value for cell A1")
+    End Sub
 
 **Note** See
 https://docs.microsoft.com/en-us/office/vba/api/excel.application.inputbox
@@ -1133,8 +1006,5 @@ for details about InputBox.
 
 ::: {.example}
  *Create a model with VBA to produce a (year-by-year)
-loan schedule for a fixed rate loan. The loan is to be repaid in equal
-annual instalments over its life and the first payment is to be made at
-the end of the first year. Format the output data in the table with a
-dollar sign and two decimal points, i.e \"\$\#,\#\#0.00\".*
+loan schedule for a fixed rate loan. The loan is to be repaid in equal annual instalments over its life and the first payment is to be made at the end of the first year. Format the output data in the table with a dollar sign and two decimal points, i.e \"\$\#,\#\#0.00\".*
 :::
