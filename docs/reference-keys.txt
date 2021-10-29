@@ -120,3 +120,6 @@ solutions-to-tutorial-2
 solutions-to-tutorial-3
 solutions-to-tutorial-4
 solutions-to-tutorial-5
+tutorial-6
+tutorial-7
+tutorial-8

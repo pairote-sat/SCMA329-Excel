@@ -848,3 +848,301 @@ where $v$ and $i'$ are the same as above.
     
   3. The interest content of the 8th repayment is
 $$ L_7 * i = 15919.94 \times 0.065 = 1034.80.$$
+
+
+
+
+
+
+Tutorial 6
+==========
+
+1.  A company issues a bond of nominal amount ,000 with a term of 5
+    years and a coupon of 6% convertible semiannually, to be redeemed at
+    110%. Calculate the price of the bond to give a redemption yield of
+    8% pa effective to an investor who pays no tax.
+
+2.  A 10-year bond of nominal amount ,000 paying a half-yearly coupon of
+    10% per annum and redeemable at par. Calculate the price of this
+    bond to give a redemption yield of 7% per annum effective after
+    taxes to
+
+    1.  an investor who pays no taxes.
+
+    2.  an investor who is subject to income tax at 15% but no CGT.
+
+    3.  an investor who is subject to
+        income tax at 15% and CGT at 20%.
+
+    4.  If the investor question 2.3 would like to secure a redemption yield of 9%
+        pa, calculate the price for the bond.
+
+3.  An investor who pays income tax at 20%, but no CGT buys a 15-year
+    bond to be redeemed at 105%, bearing semi-annual coupons of 10% pa.
+
+    1.  Calculate the price per nominal to give a yield of 9% pa
+        effective.
+
+    2.  Just after the 20th coupon payment, the income tax rate changes
+        to 15%. If the investor holds the bond to redemption, calculate
+        the realised yield on the whole transaction.
+
+4.  A 15-bond of a nominal amount of ,000, bearing semi-annual coupons
+    of 6% pa, to be redeemed at 98%.
+
+    1.  An investor who is subject to income tax at 30% and CGT at 20%
+        buys this bond for ,000. Calculate the net yield per annum for
+        this transaction.
+
+    2.  If the investor wishes to obtain a net redemption yield of 7%
+        pa, calculate the price that the investor should pay for the
+        bond.
+
+5.  A company issues a bond of nominal amount with a term of 15 years
+    and a coupon of 7% convertible semiannually, to be redeemed at par.
+
+    1.  Calculate the price of the bond if it is priced at issue to give
+        a redemption yield of 8% pa effective to a non-tax paying
+        investor.
+
+    2.  Investor A liable to income tax at 25% and capital gain tax at
+        20% bought the bond on the issue date. Just after the 15th
+        coupon payment, the investor A sold the bond to Investor B. The
+        investor B, subject to income tax at 30% and capital gain tax at
+        30% paid the price that gives a net redemption yield of 6.5%.
+        Calculate the price that investor B paid.
+
+    3.  Calculate the realised yield for Investor A's transaction.
+
+Tutorial 7
+==========
+
+1.  Consider a 5-year bond of a nominal amount of , bearing annual
+    coupons of 8% pa, to be redeemed at 110%. The bond was issued in
+    July 2012 and its issue price was 100%. With reference to the CPI
+    given in the lecture note, show that the real yield to an investor
+    who is not subject to tax is 8.82%.
+
+2.  A particular transaction will provide an effective rate of interest
+    of 6% per annum. The period of the transaction is one year.
+
+    1.  If the annual inflation rate over this one year period will be
+        constant and equal to 2.5%, calculate the real yield on this
+        transaction.
+
+    2.  Calculate the constant annual rate of inflation at which the
+        investor will obtain a real yield on this transaction of at
+        least 4.25% per annum.
+
+    3.  Calculate the real yield on this transaction if inflation will
+        be 3% pa for the first nine months of the year and then 3.25%pa
+        for the remaining three months.
+
+3.  Consider a 3-year bond of a nominal amount of , bearing annual
+    coupons of 6% pa, to be redeemed at par. The bond was issued in 15
+    January 2015 and its issue price was 95%.
+
+    An investor who pays no tax purchased this bond on the issue date
+    and held it until redemption.
+
+    1.  Show that the yield obtained by this investor is approximately
+        7.94%.
+
+    2.  Show that the real yield on this investment is approximately
+        1.80% assuming the CPI values are given below:
+
+                         Year   2015    2016    2017    2018
+          ------------------- ------ ------- ------- -------
+            CPI on 15 January    100   103.3   111.0   119.5
+
+4.  An investor who is not liable to tax had the choice of purchasing
+    two investments made on 1 Apr 2018.
+
+    (A) A 10-year bond of a nominal of , bearing a half-yearly coupon of
+        9% per annum and redeemable at par. The issue price was at 110%.
+
+    (B) A 10-year index linked bond at a price of per nominal, bearing a
+        half-yearly coupon of 4% per annum and redeemable at par. The
+        CPI base figure for indexing is 100.24 and the CPI figure
+        applicable to the next coupon (payable on 1 Oct 2018) is 145.68.
+        (Here 145.68 is the CPI index on 1 Apr 2018).
+
+    Assume that CPI will grow at a rate of 2.5% per annum from its
+    latest known value of 145.68 on 1 Apr 2018.
+
+    1.  Calculate the real rate of return (yield) per annum earned on
+        both investments A and B.
+
+    2.  Determine which of the two investments yielded the highest real
+        rate of return per annum.
+
+5.  An investor who is not liable to tax had the choice of purchasing
+    two investments made on 15 Jan 2013.
+
+    (A) ,000 was placed in a 5-year term special saving account. The
+        effective rate of interest was 2.5% p.a. for the first year, 3.5
+        % p.a. for the second year, 4.5 % p.a. for the third year, 5.5%
+        p.a. for the fourth year and 6.5% p.a. for the fifth year.
+
+    (B) ,000 was used to purchase an annuity payable annually in arrears
+        for 5 years to yield 6% p.a. effective.
+
+    Assume that the values of CPI are as follows:
+
+                     Year   2013     2014     2015     2016     2017     2018
+      ------------------- ------ -------- -------- -------- -------- --------
+        CPI on 15 January    100   104.17   110.17   111.08   112.67   114.83
+
+    1.  Calculate the real rate of return (yield) per annum earned on
+        both investments A and B.
+
+    2.  Determine which of the two investments yielded the highest real
+        rate of return per annum.
+
+Tutorial 8
+==========
+
+1.  10,000 was placed in a 3-year term special saving account on 15
+    Jan 2015. The effective rate of interest was 2.5% p.a. for the first
+    year, 3.5 % p.a. for the second year, 4.5 % p.a. for the third year.
+    Assume that the values of CPI are as follows:
+
+                     Year   2015     2016     2017     2018    
+      ------------------- ------ -------- -------- -------- -- --
+        CPI on 15 January    100   104.08   106.67   108.83    
+
+    What is the real rate of return (yield) per annum earned on this
+    investment?
+
+    A.  0.618%
+
+    B.  0.629%
+
+    C.  0.724%
+
+    D.  0.762%
+
+    E.  none of the above
+
+2.  [\[Tutorial8-2\]]{#Tutorial8-2 label="Tutorial8-2"} A company's cash position, measured in
+    million of bahts, follows a generalised Wiener process with a drift
+    rate of 0.25 per quarter and a variance rate of 9 per quarter. The
+    initial cash position is 35. What is the expected cash position at
+    the end of 6 months?
+
+    A.  35.25
+
+    B.  35.5
+
+    C.  35.75
+
+    D.  36
+
+    E.  none of the above
+
+3.  [\[Tutorial8-3\]]{#Tutorial8-3 label="Tutorial8-3"} Suppose that data on a stock price at
+    the end of 63 consecutive trading days gives the sum of the daily
+    returns $$\sum_{i=1}^{62} \ln(S_i/S_{i-1}) = 0.25$$ and the sum of
+    the daily returns squared
+    $$\sum_{i=1}^{62} \left( \ln(S_i/S_{i-1}) \right)^2= 0.0042.$$
+    Assume that there are 252 trading days per year. What is the
+    estimated value of the stock price volatility per annum?
+
+    A.  9.28%
+
+    B.  10.72%
+
+    C.  11.42%
+
+    D.  12.37%
+
+    E.  none of the above
+
+4.  What is the standard error (per annum) of the estimate obtained in
+    Question [\[Tutorial8-3\]](#Tutorial8-3){reference-type="ref" reference="Tutorial8-3"}?
+
+    A.  0.72%
+
+    B.  0.85%
+
+    C.  0.93%
+
+    D.  1.02%
+
+    E.  none of the above
+
+5.  With the drift rate and the variance rate as given in the Question
+    [\[Tutorial8-2\]](#Tutorial8-2){reference-type="ref" reference="Tutorial8-2"}, What is the
+    company's initial cash position so that the company has a less than
+    5% chance of a negative cash position by the end of 1 year? Note
+    that $\Pr( Z \le 1.645) = 0.95$ for a standard normal random number
+    $Z$.
+
+    A.  6.48
+
+    B.  6.84
+
+    C.  7.29
+
+    D.  7.92
+
+    E.  none of the above
+
+6.  Suppose that a stock price follow geometric Brownian motion with an
+    initial price of 40 TBH, an expected return of 8% per annum and a
+    volatility of 30% per annum. Using monthly time steps and the random
+    samples from a normal distribution given in the table below, what is
+    the simulated value of the stock price path at time 3 months?
+
+      Period (n)                                        1      2       3       
+      -------------------------------------------- ------ ------ ------- -- -- --
+      Random sample from $N(0,1)$ for period $n$     0.62   1.34   -0.76       
+
+    A.  45.92
+
+    B.  46.78
+
+    C.  47.40
+
+    D.  48.80
+
+    E.  none of the above
+
+7.  An investor who was not subject to tax purchased an index-linked
+    bond issued on 15 January 2016 with a term of 2 years. The annual
+    coupon rate was 2% p.a. payable half-yearly in arrears and the
+    redemption rate was 100%. The coupons and redemption payments were
+    adjusted with reference to the CPI value of 3 months before the
+    payments were made.
+
+    The value of the inflation index at particular dates are as follows:
+
+      Date           Oct 15   Jan 16   Apr 16   Jul 16   Oct 16   Jan 17   Apr 17   Jul 17   Oct 17   Jan 18
+      ------------ -------- -------- -------- -------- -------- -------- -------- -------- -------- --------
+      CPI (Date)         96       97       99      100      102      104      105      109      111      112
+
+    1.  Write down the value of the base CPI figure.
+
+    2.  Calculate the actual payments per 100 THB nominal received by
+        the investor. Clearly state the date on which each payment was
+        received.
+
+    3.  Calculate the real payments per 100 THB nominal in terms of
+        their purchasing power at 15 January 2016.
+
+    4.  Calculate the purchase price of the bond per 100 THB nominal if
+        the investor obtained a [**real**]{.ul} redemption yield of
+        0.79% p.a. effective on the bond.
+
+8.  Consider a stock that pays no dividends, provides an expected return
+    of 10% per annum with continuous compounding and has a volatility of
+    25% per annum. Assume that the stock price follows geometric
+    Brownian motion and its current stock price is 40 THB.
+
+    1.  Find the probability distribution of the logarithm of the stock
+        price $S_T$ in 6 months' time.
+
+    2.  Calculate the mean and the standard deviation of $\ln S_T$ in 6
+        months' time.
+
+    3.  Find the 95% confidence interval of $S_T$ in 6 months' time.

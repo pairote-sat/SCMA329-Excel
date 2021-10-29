@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Section 16 Solutions to Tutorial 3 | SCMA329 Practical Mathematical Financial Modeling</title>
-  <meta name="description" content="Section 16 Solutions to Tutorial 3 | SCMA329 Practical Mathematical Financial Modeling" />
+  <title>Section 19 Tutorial 6 | SCMA329 Practical Mathematical Financial Modeling</title>
+  <meta name="description" content="Section 19 Tutorial 6 | SCMA329 Practical Mathematical Financial Modeling" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Section 16 Solutions to Tutorial 3 | SCMA329 Practical Mathematical Financial Modeling" />
+  <meta property="og:title" content="Section 19 Tutorial 6 | SCMA329 Practical Mathematical Financial Modeling" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Section 16 Solutions to Tutorial 3 | SCMA329 Practical Mathematical Financial Modeling" />
+  <meta name="twitter:title" content="Section 19 Tutorial 6 | SCMA329 Practical Mathematical Financial Modeling" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="solutions-to-tutorial-2.html"/>
-<link rel="next" href="solutions-to-tutorial-4.html"/>
+<link rel="prev" href="solutions-to-tutorial-5.html"/>
+<link rel="next" href="tutorial-7.html"/>
 <script src="libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -204,67 +204,58 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="solutions-to-tutorial-3" class="section level1" number="16">
-<h1><span class="header-section-number">Section 16</span> Solutions to Tutorial 3</h1>
+<div id="tutorial-6" class="section level1" number="19">
+<h1><span class="header-section-number">Section 19</span> Tutorial 6</h1>
 <ol style="list-style-type: decimal">
-<li>Let <span class="math inline">\(j\)</span> be the effective rate per month equivalent to <span class="math inline">\(i = 2\)</span>%. We have
-<span class="math display">\[ j = (1.02)^{1/12}  - 1= 0.001652. \]</span>
-Hence,</li>
-</ol>
-<p><span class="math display">\[ PV(0) = 200 \ddot{a}^{j}_{120} + 300 \ddot{a}^{j}_{180} \left( \frac{1}{1.02} \right)^{10} = 60148.03. \]</span></p>
-<ol start="2" style="list-style-type: decimal">
-<li><p>The solutions to each question are as follows:</p>
+<li><p>A company issues a bond of nominal amount ,000 with a term of 5
+years and a coupon of 6% convertible semiannually, to be redeemed at
+110%. Calculate the price of the bond to give a redemption yield of
+8% pa effective to an investor who pays no tax.</p></li>
+<li><p>A 10-year bond of nominal amount ,000 paying a half-yearly coupon of
+10% per annum and redeemable at par. Calculate the price of this
+bond to give a redemption yield of 7% per annum effective after
+taxes to</p>
 <ol style="list-style-type: decimal">
-<li><p>The cashflows have been splitted into three periods: (a) from time point 0-5, (b) 5-10 and (c) time point 10 onward.
-<span class="math display">\[PV(0) = 1000 ( a^{3\%}_{5} + 1.03^{-5} a^{4\%}_{5} +  1.03^{-5} 1.04^{-5} a^{5\%}_{5}) = 11489.49  \]</span></p></li>
-<li><p>We have
-<span class="math display">\[PV(0) = 500 ( \ddot{a}^{3\%}_{5} + 1.03^{-5} \ddot{a}^{4\%}_{5} +  1.03^{-5} 1.04^{-5} \ddot{a}^{5\%}_{10}) = 7229.67  \]</span></p></li>
-<li><p>The accumuated value is
-<span class="math display">\[100 (Is)^{3\%}_{5} (1.04)^5 (1.05)^{20} + \left[100 (Is)^{4\%}_{5} + 500 s^{4\%}_{5} \right] (1.05)^{20}  + \left[100 (Is)^{5\%}_{20} + 1000 s^{5\%}_{20} \right]= 78929.01  \]</span></p></li>
-<li><p>Let <span class="math inline">\(i_1 = 3\%, i_2 = 4\%\)</span> and <span class="math inline">\(i_3 = 5\%\)</span>. The accumuated value is given by
-<span class="math display">\[\begin{aligned} 
- V(18) &amp;= \left[1000(1+i_1)^5 + 1000(1.02)(1+i_1)^4 + 1000(1.02)^2(1+i_1)^3 + \ldots + 1000(1.02)^4(1+i_1)\right](1.04)^5(1.05)^8   \\
- &amp;+ \left[1000(1.02)^5(1+i_2)^5 + 1000(1.02)^6(1+i_2)^4 + 1000(1.02)^7(1+i_2)^3 + \ldots + 1000(1.02)^9(1+i_2)\right](1.05)^8   \\
- &amp;+ \left[1000(1.02)^{10}(1+i_3)^8 + 1000(1.02)^{11}(1+i_3)^7 + 1000(1.02)^{12}(1+i_3)^6 + \ldots + 1000(1.02)^{17}(1+i_3)\right]  \\
- &amp;= 1000(1.02)^5 \left[ \left(\frac{1+i_1}{1.02}\right)^5   + \left(\frac{1+i_1}{1.02}\right)^4 + \ldots + \left(\frac{1+i_1}{1.02}\right) \right](1.04)^5(1.05)^8 \\
- &amp;+ 1000(1.02)^{10} \left[ \left(\frac{1+i_2}{1.02}\right)^5   + \left(\frac{1+i_2}{1.02}\right)^4 + \ldots + \left(\frac{1+i_2}{1.02}\right) \right](1.05)^8 \\
-  &amp;+ 1000(1.02)^{18} \left[ \left(\frac{1+i_3}{1.02}\right)^8   + \left(\frac{1+i_3}{1.02}\right)^7 + \ldots + \left(\frac{1+i_3}{1.02}\right) \right] 
- \end{aligned}\]</span>
-Let <span class="math inline">\(1+j_1 = \frac{1+i_1}{1.02}\)</span>. Then, <span class="math inline">\(j_1 = 0.009804\)</span> and
-<span class="math display">\[ \left[ \left(\frac{1+i_1}{1.02}\right)^5   + \left(\frac{1+i_1}{1.02}\right)^4 + \ldots + \left(\frac{1+i_1}{1.02}\right) \right] = \frac{(1+j_1)^5 - 1}{j_1/(1+j_1)} = 5.148995.\]</span>
-Let <span class="math inline">\(1+j_2 = \frac{1+i_2}{1.02}\)</span>. Then, <span class="math inline">\(j_2 = 0.019608\)</span> and
-<span class="math display">\[ \left[ \left(\frac{1+i_2}{1.02}\right)^5   + \left(\frac{1+i_2}{1.02}\right)^4 + \ldots + \left(\frac{1+i_2}{1.02}\right) \right] = 5.301921.\]</span>
-Let <span class="math inline">\(1+j_3 = \frac{1+i_3}{1.02}\)</span>. Then, <span class="math inline">\(j_3 = 0.029412\)</span> and
-<span class="math display">\[ \left[ \left(\frac{1+i_3}{1.02}\right)^8   + \left(\frac{1+i_3}{1.02}\right)^7 + \ldots + \left(\frac{1+i_3}{1.02}\right) \right]  = 9.134790.\]</span>
-Therefore, <span class="math inline">\(V(18) = 32814.45\)</span>.</p></li>
-<li><p>The present value is</p></li>
+<li><p>an investor who pays no taxes.</p></li>
+<li><p>an investor who is subject to income tax at 15% but no CGT.</p></li>
+<li><p>an investor who is subject to
+income tax at 15% and CGT at 20%.</p></li>
+<li><p>If the investor question 2.3 would like to secure a redemption yield of 9%
+pa, calculate the price for the bond.</p></li>
 </ol></li>
-</ol>
-<p><span class="math display">\[\begin{aligned}
-    PV(0) &amp;= \left( \frac{200}{(1.03)^4} + \frac{200}{(1.03)^5}\right) + 200 a^{0.04}_5 (1.03)^{-5} + 200 a^{0.05}_{3} (1.03)^{-5} (1.04)^{-5} \\
-    &amp;= 350.2192 + 768.0362 + 386.1574 = 1504.413
-\end{aligned}\]</span></p>
-<ol start="3" style="list-style-type: decimal">
-<li><p>The solutions to each question are as follows:</p>
+<li><p>An investor who pays income tax at 20%, but no CGT buys a 15-year
+bond to be redeemed at 105%, bearing semi-annual coupons of 10% pa.</p>
 <ol style="list-style-type: decimal">
-<li><span class="math inline">\(240000 (1.04)^5 = 291996.7\)</span></li>
-<li>The interest amounts are <span class="math inline">\(0.04\times 240000 = 9600.\)</span></li>
-<li>By the Principle of Equivalence, we have
-<span class="math display">\[ 240000 = X a^{0.04}_{5}. \]</span>
-This gives X = 53910.51.</li>
-<li>Level installments are payable monthly, which follows
-<span class="math display">\[ 240000 = Y a^{j}_{60}, \]</span>
-where <span class="math inline">\(j = (1.04)^{1/12} - 1\)</span>. This gives Y = 4412.23.</li>
+<li><p>Calculate the price per nominal to give a yield of 9% pa
+effective.</p></li>
+<li><p>Just after the 20th coupon payment, the income tax rate changes
+to 15%. If the investor holds the bond to redemption, calculate
+the realised yield on the whole transaction.</p></li>
 </ol></li>
-<li><p>The person retires in 30 years, when his salary is expected to be
-<span class="math inline">\(20000 \times (1.03)^{30} = 48545.25.\)</span>
-The first payment will be half of this which is equal to 24272.62.
-The present value at age 60 of his pension is
-<span class="math display">\[  24272.62 \times \ddot{a}^{0.029412}_{26} = 449717.9\]</span> (the precise value is 449719.051954).
-Here we use <span class="math inline">\(\frac{1.05}{1.02} = 1.029412\)</span> and the annuity is paid from the 60th to the 85th birthday inclusive so there are 26 payments made in advance.
-Therefore, the present value of this at age 30 is
-<span class="math display">\[ 449717.9 \times (1.05)^{-10} \times (1.04)^{-20} = 126002.9. \]</span>
-(the precise value is 126003.181173)</p></li>
+<li><p>A 15-bond of a nominal amount of ,000, bearing semi-annual coupons
+of 6% pa, to be redeemed at 98%.</p>
+<ol style="list-style-type: decimal">
+<li><p>An investor who is subject to income tax at 30% and CGT at 20%
+buys this bond for ,000. Calculate the net yield per annum for
+this transaction.</p></li>
+<li><p>If the investor wishes to obtain a net redemption yield of 7%
+pa, calculate the price that the investor should pay for the
+bond.</p></li>
+</ol></li>
+<li><p>A company issues a bond of nominal amount with a term of 15 years
+and a coupon of 7% convertible semiannually, to be redeemed at par.</p>
+<ol style="list-style-type: decimal">
+<li><p>Calculate the price of the bond if it is priced at issue to give
+a redemption yield of 8% pa effective to a non-tax paying
+investor.</p></li>
+<li><p>Investor A liable to income tax at 25% and capital gain tax at
+20% bought the bond on the issue date. Just after the 15th
+coupon payment, the investor A sold the bond to Investor B. The
+investor B, subject to income tax at 30% and capital gain tax at
+30% paid the price that gives a net redemption yield of 6.5%.
+Calculate the price that investor B paid.</p></li>
+<li><p>Calculate the realised yield for Investor A’s transaction.</p></li>
+</ol></li>
 </ol>
 </div>
             </section>
@@ -272,8 +263,8 @@ Therefore, the present value of this at age 30 is
           </div>
         </div>
       </div>
-<a href="solutions-to-tutorial-2.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="solutions-to-tutorial-4.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="solutions-to-tutorial-5.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tutorial-7.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

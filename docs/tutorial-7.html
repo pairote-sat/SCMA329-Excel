@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Section 16 Solutions to Tutorial 3 | SCMA329 Practical Mathematical Financial Modeling</title>
-  <meta name="description" content="Section 16 Solutions to Tutorial 3 | SCMA329 Practical Mathematical Financial Modeling" />
+  <title>Section 20 Tutorial 7 | SCMA329 Practical Mathematical Financial Modeling</title>
+  <meta name="description" content="Section 20 Tutorial 7 | SCMA329 Practical Mathematical Financial Modeling" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Section 16 Solutions to Tutorial 3 | SCMA329 Practical Mathematical Financial Modeling" />
+  <meta property="og:title" content="Section 20 Tutorial 7 | SCMA329 Practical Mathematical Financial Modeling" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Section 16 Solutions to Tutorial 3 | SCMA329 Practical Mathematical Financial Modeling" />
+  <meta name="twitter:title" content="Section 20 Tutorial 7 | SCMA329 Practical Mathematical Financial Modeling" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="solutions-to-tutorial-2.html"/>
-<link rel="next" href="solutions-to-tutorial-4.html"/>
+<link rel="prev" href="tutorial-6.html"/>
+<link rel="next" href="tutorial-8.html"/>
 <script src="libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -204,67 +204,118 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="solutions-to-tutorial-3" class="section level1" number="16">
-<h1><span class="header-section-number">Section 16</span> Solutions to Tutorial 3</h1>
+<div id="tutorial-7" class="section level1" number="20">
+<h1><span class="header-section-number">Section 20</span> Tutorial 7</h1>
 <ol style="list-style-type: decimal">
-<li>Let <span class="math inline">\(j\)</span> be the effective rate per month equivalent to <span class="math inline">\(i = 2\)</span>%. We have
-<span class="math display">\[ j = (1.02)^{1/12}  - 1= 0.001652. \]</span>
-Hence,</li>
-</ol>
-<p><span class="math display">\[ PV(0) = 200 \ddot{a}^{j}_{120} + 300 \ddot{a}^{j}_{180} \left( \frac{1}{1.02} \right)^{10} = 60148.03. \]</span></p>
-<ol start="2" style="list-style-type: decimal">
-<li><p>The solutions to each question are as follows:</p>
+<li><p>Consider a 5-year bond of a nominal amount of , bearing annual
+coupons of 8% pa, to be redeemed at 110%. The bond was issued in
+July 2012 and its issue price was 100%. With reference to the CPI
+given in the lecture note, show that the real yield to an investor
+who is not subject to tax is 8.82%.</p></li>
+<li><p>A particular transaction will provide an effective rate of interest
+of 6% per annum. The period of the transaction is one year.</p>
 <ol style="list-style-type: decimal">
-<li><p>The cashflows have been splitted into three periods: (a) from time point 0-5, (b) 5-10 and (c) time point 10 onward.
-<span class="math display">\[PV(0) = 1000 ( a^{3\%}_{5} + 1.03^{-5} a^{4\%}_{5} +  1.03^{-5} 1.04^{-5} a^{5\%}_{5}) = 11489.49  \]</span></p></li>
-<li><p>We have
-<span class="math display">\[PV(0) = 500 ( \ddot{a}^{3\%}_{5} + 1.03^{-5} \ddot{a}^{4\%}_{5} +  1.03^{-5} 1.04^{-5} \ddot{a}^{5\%}_{10}) = 7229.67  \]</span></p></li>
-<li><p>The accumuated value is
-<span class="math display">\[100 (Is)^{3\%}_{5} (1.04)^5 (1.05)^{20} + \left[100 (Is)^{4\%}_{5} + 500 s^{4\%}_{5} \right] (1.05)^{20}  + \left[100 (Is)^{5\%}_{20} + 1000 s^{5\%}_{20} \right]= 78929.01  \]</span></p></li>
-<li><p>Let <span class="math inline">\(i_1 = 3\%, i_2 = 4\%\)</span> and <span class="math inline">\(i_3 = 5\%\)</span>. The accumuated value is given by
-<span class="math display">\[\begin{aligned} 
- V(18) &amp;= \left[1000(1+i_1)^5 + 1000(1.02)(1+i_1)^4 + 1000(1.02)^2(1+i_1)^3 + \ldots + 1000(1.02)^4(1+i_1)\right](1.04)^5(1.05)^8   \\
- &amp;+ \left[1000(1.02)^5(1+i_2)^5 + 1000(1.02)^6(1+i_2)^4 + 1000(1.02)^7(1+i_2)^3 + \ldots + 1000(1.02)^9(1+i_2)\right](1.05)^8   \\
- &amp;+ \left[1000(1.02)^{10}(1+i_3)^8 + 1000(1.02)^{11}(1+i_3)^7 + 1000(1.02)^{12}(1+i_3)^6 + \ldots + 1000(1.02)^{17}(1+i_3)\right]  \\
- &amp;= 1000(1.02)^5 \left[ \left(\frac{1+i_1}{1.02}\right)^5   + \left(\frac{1+i_1}{1.02}\right)^4 + \ldots + \left(\frac{1+i_1}{1.02}\right) \right](1.04)^5(1.05)^8 \\
- &amp;+ 1000(1.02)^{10} \left[ \left(\frac{1+i_2}{1.02}\right)^5   + \left(\frac{1+i_2}{1.02}\right)^4 + \ldots + \left(\frac{1+i_2}{1.02}\right) \right](1.05)^8 \\
-  &amp;+ 1000(1.02)^{18} \left[ \left(\frac{1+i_3}{1.02}\right)^8   + \left(\frac{1+i_3}{1.02}\right)^7 + \ldots + \left(\frac{1+i_3}{1.02}\right) \right] 
- \end{aligned}\]</span>
-Let <span class="math inline">\(1+j_1 = \frac{1+i_1}{1.02}\)</span>. Then, <span class="math inline">\(j_1 = 0.009804\)</span> and
-<span class="math display">\[ \left[ \left(\frac{1+i_1}{1.02}\right)^5   + \left(\frac{1+i_1}{1.02}\right)^4 + \ldots + \left(\frac{1+i_1}{1.02}\right) \right] = \frac{(1+j_1)^5 - 1}{j_1/(1+j_1)} = 5.148995.\]</span>
-Let <span class="math inline">\(1+j_2 = \frac{1+i_2}{1.02}\)</span>. Then, <span class="math inline">\(j_2 = 0.019608\)</span> and
-<span class="math display">\[ \left[ \left(\frac{1+i_2}{1.02}\right)^5   + \left(\frac{1+i_2}{1.02}\right)^4 + \ldots + \left(\frac{1+i_2}{1.02}\right) \right] = 5.301921.\]</span>
-Let <span class="math inline">\(1+j_3 = \frac{1+i_3}{1.02}\)</span>. Then, <span class="math inline">\(j_3 = 0.029412\)</span> and
-<span class="math display">\[ \left[ \left(\frac{1+i_3}{1.02}\right)^8   + \left(\frac{1+i_3}{1.02}\right)^7 + \ldots + \left(\frac{1+i_3}{1.02}\right) \right]  = 9.134790.\]</span>
-Therefore, <span class="math inline">\(V(18) = 32814.45\)</span>.</p></li>
-<li><p>The present value is</p></li>
+<li><p>If the annual inflation rate over this one year period will be
+constant and equal to 2.5%, calculate the real yield on this
+transaction.</p></li>
+<li><p>Calculate the constant annual rate of inflation at which the
+investor will obtain a real yield on this transaction of at
+least 4.25% per annum.</p></li>
+<li><p>Calculate the real yield on this transaction if inflation will
+be 3% pa for the first nine months of the year and then 3.25%pa
+for the remaining three months.</p></li>
 </ol></li>
-</ol>
-<p><span class="math display">\[\begin{aligned}
-    PV(0) &amp;= \left( \frac{200}{(1.03)^4} + \frac{200}{(1.03)^5}\right) + 200 a^{0.04}_5 (1.03)^{-5} + 200 a^{0.05}_{3} (1.03)^{-5} (1.04)^{-5} \\
-    &amp;= 350.2192 + 768.0362 + 386.1574 = 1504.413
-\end{aligned}\]</span></p>
-<ol start="3" style="list-style-type: decimal">
-<li><p>The solutions to each question are as follows:</p>
+<li><p>Consider a 3-year bond of a nominal amount of , bearing annual
+coupons of 6% pa, to be redeemed at par. The bond was issued in 15
+January 2015 and its issue price was 95%.</p>
+<p>An investor who pays no tax purchased this bond on the issue date
+and held it until redemption.</p>
 <ol style="list-style-type: decimal">
-<li><span class="math inline">\(240000 (1.04)^5 = 291996.7\)</span></li>
-<li>The interest amounts are <span class="math inline">\(0.04\times 240000 = 9600.\)</span></li>
-<li>By the Principle of Equivalence, we have
-<span class="math display">\[ 240000 = X a^{0.04}_{5}. \]</span>
-This gives X = 53910.51.</li>
-<li>Level installments are payable monthly, which follows
-<span class="math display">\[ 240000 = Y a^{j}_{60}, \]</span>
-where <span class="math inline">\(j = (1.04)^{1/12} - 1\)</span>. This gives Y = 4412.23.</li>
+<li><p>Show that the yield obtained by this investor is approximately
+7.94%.</p></li>
+<li><p>Show that the real yield on this investment is approximately
+1.80% assuming the CPI values are given below:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="right">Year</th>
+<th align="right">2015</th>
+<th align="right">2016</th>
+<th align="right">2017</th>
+<th align="right">2018</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">CPI on 15 January</td>
+<td align="right">100</td>
+<td align="right">103.3</td>
+<td align="right">111.0</td>
+<td align="right">119.5</td>
+</tr>
+</tbody>
+</table></li>
 </ol></li>
-<li><p>The person retires in 30 years, when his salary is expected to be
-<span class="math inline">\(20000 \times (1.03)^{30} = 48545.25.\)</span>
-The first payment will be half of this which is equal to 24272.62.
-The present value at age 60 of his pension is
-<span class="math display">\[  24272.62 \times \ddot{a}^{0.029412}_{26} = 449717.9\]</span> (the precise value is 449719.051954).
-Here we use <span class="math inline">\(\frac{1.05}{1.02} = 1.029412\)</span> and the annuity is paid from the 60th to the 85th birthday inclusive so there are 26 payments made in advance.
-Therefore, the present value of this at age 30 is
-<span class="math display">\[ 449717.9 \times (1.05)^{-10} \times (1.04)^{-20} = 126002.9. \]</span>
-(the precise value is 126003.181173)</p></li>
+<li><p>An investor who is not liable to tax had the choice of purchasing
+two investments made on 1 Apr 2018.</p>
+<ol style="list-style-type: upper-alpha">
+<li><p>A 10-year bond of a nominal of , bearing a half-yearly coupon of
+9% per annum and redeemable at par. The issue price was at 110%.</p></li>
+<li><p>A 10-year index linked bond at a price of per nominal, bearing a
+half-yearly coupon of 4% per annum and redeemable at par. The
+CPI base figure for indexing is 100.24 and the CPI figure
+applicable to the next coupon (payable on 1 Oct 2018) is 145.68.
+(Here 145.68 is the CPI index on 1 Apr 2018).</p></li>
+</ol>
+<p>Assume that CPI will grow at a rate of 2.5% per annum from its
+latest known value of 145.68 on 1 Apr 2018.</p>
+<ol style="list-style-type: decimal">
+<li><p>Calculate the real rate of return (yield) per annum earned on
+both investments A and B.</p></li>
+<li><p>Determine which of the two investments yielded the highest real
+rate of return per annum.</p></li>
+</ol></li>
+<li><p>An investor who is not liable to tax had the choice of purchasing
+two investments made on 15 Jan 2013.</p>
+<ol style="list-style-type: upper-alpha">
+<li><p>,000 was placed in a 5-year term special saving account. The
+effective rate of interest was 2.5% p.a. for the first year, 3.5
+% p.a. for the second year, 4.5 % p.a. for the third year, 5.5%
+p.a. for the fourth year and 6.5% p.a. for the fifth year.</p></li>
+<li><p>,000 was used to purchase an annuity payable annually in arrears
+for 5 years to yield 6% p.a. effective.</p></li>
+</ol>
+<p>Assume that the values of CPI are as follows:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="right">Year</th>
+<th align="right">2013</th>
+<th align="right">2014</th>
+<th align="right">2015</th>
+<th align="right">2016</th>
+<th align="right">2017</th>
+<th align="right">2018</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">CPI on 15 January</td>
+<td align="right">100</td>
+<td align="right">104.17</td>
+<td align="right">110.17</td>
+<td align="right">111.08</td>
+<td align="right">112.67</td>
+<td align="right">114.83</td>
+</tr>
+</tbody>
+</table>
+<ol style="list-style-type: decimal">
+<li><p>Calculate the real rate of return (yield) per annum earned on
+both investments A and B.</p></li>
+<li><p>Determine which of the two investments yielded the highest real
+rate of return per annum.</p></li>
+</ol></li>
 </ol>
 </div>
             </section>
@@ -272,8 +323,8 @@ Therefore, the present value of this at age 30 is
           </div>
         </div>
       </div>
-<a href="solutions-to-tutorial-2.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="solutions-to-tutorial-4.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="tutorial-6.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tutorial-8.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
