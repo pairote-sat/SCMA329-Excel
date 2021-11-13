@@ -36,7 +36,7 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
-  pdftitle={Pivot Tables},
+  pdftitle={SCMA329 Practical Mathematical Financial Modeling},
   pdfauthor={Pairote Satiracoo},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
@@ -87,9 +87,9 @@
 \usepackage[]{natbib}
 \bibliographystyle{plainnat}
 
-\title{\textbf{Pivot Tables}}
+\title{SCMA329 Practical Mathematical Financial Modeling}
 \author{Pairote Satiracoo}
-\date{2021-09-25}
+\date{2021-11-13}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[section]
@@ -1368,6 +1368,1498 @@ Grand Total & 5191 & 100.00\% & 3020 & 100.00\% & 1783 & 100.00\% & 9994 & 100.0
 \bottomrule
 \end{longtable}
 
+\hypertarget{bonds-and-inflation}{%
+\section{Bonds and Inflation}\label{bonds-and-inflation}}
+
+\hypertarget{zero-coupon-bonds}{%
+\subsection{Zero-Coupon Bonds}\label{zero-coupon-bonds}}
+
+The simplest type of bond is the one without coupons. Such bonds are
+referred to as \textbf{zero-coupon bonds}. More precisely,
+
+An \textbf{\(n\)-year zero-coupon bond} is a fixed interest security, redeemed
+at par with term \(n\) and no coupon payments.
+
+\begin{example}
+\protect\hypertarget{exm:unlabeled-div-13}{}\label{exm:unlabeled-div-13}
+
+\emph{What cash flows will an investor receive if the investor
+holds an \(n\)-year zero-coupon per 100 THB face value until maturity? (Here
+we let \(P_n\) denote the price now of the \(n\)-year zero-coupon)}
+
+\end{example}
+
+\begin{figure}
+
+{\centering \includegraphics{SCMA329ExcelBookdownproj_files/figure-latex/tikz-bond-1} 
+
+}
+
+\caption{cashflows of a zero-coupon bond}\label{fig:tikz-bond}
+\end{figure}
+
+To calculate the rate of return of buying a bond and holding it until
+maturity, it is simply the discount rate that equate the present value
+of the investment to its costs (or bond price). Recall that \(P_n\)
+denotes the price now of the \(n\)-year zero-coupon with FV face value and
+\(y_n\) is the \textbf{yield to maturity}. The yield to maturity satisfies the
+following equation \[\begin{aligned}
+    P_n = \frac{FV}{(1+y_n)^n}.\end{aligned}\] Hence,
+\[y_n = \left(\frac{FV}{P_n}\right)^{1/n} - 1.\]
+
+\begin{example}
+\protect\hypertarget{exm:yieldCurve}{}\label{exm:yieldCurve}
+
+\emph{(Excel) Download the yields to maturity of zero-coupon
+bonds per THB 100 face value with the terms ranging from 0.08 to 47
+years from the following website (as of 11/03/2020)}
+
+\emph{\url{http://www.thaibma.or.th/EN/Market/YieldCurve/Zero.aspx}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \emph{Using the zero-coupon rates provided from the given website, plot
+  the interest rates (i.e.~yield to maturity) as a function of their
+  maturities at any point in time. Give a brief explanation regarding
+  to the shape of the plot.}
+\item
+  \emph{Determine the price now of the zero-coupon bond corresponding to
+  the given yields to maturity.}
+\end{enumerate}
+
+\end{example}
+
+\textbf{Notes}
+1. We will often refer to the yield to maturity of the appropriate
+maturity, zero-coupon risk-free bond as the \textbf{risk-free interest
+rate}.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\item
+  The term \textbf{spot interest rate} is also used to refer to these
+  risk-free interest rate.
+\item
+  All \(n\)-year risk-free investments must earn the same return as the
+  risk-free interest rate.
+\item
+  The plot in Example \ref{exm:yieldCurve} is known as the \textbf{yield curve}, which plots
+  the risk-free interest rate for different maturities.
+\item
+  The yield curve is also called the \textbf{term structure of interest
+  rates}.
+\item
+  Yield curves very from day to day, and could be increasing, or
+  decreasing in shape, or even humped, depending on market
+  expectations.
+\end{enumerate}
+
+\hypertarget{bond-pricing-using-yield-to-maturity}{%
+\subsection{Bond pricing using yield to maturity}\label{bond-pricing-using-yield-to-maturity}}
+
+Recall that a tax-exempt investor receives the full amount of the coupon
+and redemption payments. The price of an \(n\) year fixed interest bond
+which pays coupons of \(D\) per annum payable \(p\) thly in arrears and has
+redemption amount \(R\) is \[P = D a_{\angln}^{(p)} + R v^n\] at rate \(i\)
+per annum.
+
+In practice, we can calculate by using a suitable time period, for
+example a period of half a year as shown in the previous examples. Then
+the formula can be written as
+\[P = \frac{D}{2} a_{\angl{2n}} + R v^{2n}\]
+
+\begin{example}
+\protect\hypertarget{exm:unlabeled-div-14}{}\label{exm:unlabeled-div-14}
+
+\emph{(Excel) (Modified from Financial Modeling Using Excel
+and VBA) The bond price is the present value of its expected future
+cashflows discounted at a rate appropriate for its risk. There are five
+key bond variables including price, redemption rate, coupon rate,
+remaining life, and discount rate, and any four of them determine the
+fifth. Add suitable spinners to the annual coupon rate and yield to
+maturity so that you can study how these variables affect the price of a
+bond. (Hint :
+\url{https://support.office.com/en-us/article/add-a-scroll-bar-or-spin-button}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \emph{Create an Excel model to calculate the price of a bond given its
+  yield to maturity, redemption rate, annual coupon rate, frequency of
+  coupon payments, and remaining life (and also face value). Make all
+  of these input variables so that a user can use the model to value
+  any bond for which these data are available.}
+\item
+  \emph{Create a chart to show how the price of a bond grows or declines to
+  redemption amount as it approaches maturity.}
+\end{enumerate}
+
+\end{example}
+
+\begin{example}
+\protect\hypertarget{exm:unlabeled-div-15}{}\label{exm:unlabeled-div-15}
+
+\emph{Make a copy of your Excel worksheet for bond pricing
+calculation. The Excel model can be used to investigate how the value of
+a bond changes with changes in the values of the other variables.}
+
+\emph{Use the spinner to change the yield to maturity from a value less than
+the coupon rate to a value greater than the coupon rate to see how the
+valuation curve changes. What conclusion can you make regarding the
+change in the values of the bond in respect of the change of the yield
+to maturity? Write your conclusion in cell D1.}
+
+\end{example}
+
+\begin{example}
+\protect\hypertarget{exm:unlabeled-div-16}{}\label{exm:unlabeled-div-16}
+
+\emph{Make a copy of your Excel worksheet for bond pricing
+calculation. The Excel model can be used to investigate how the value of
+a bond changes with changes in the values of the other variables.}
+
+\emph{Change the coupon rate to zero for a zero-coupon bond and notice that
+the longer the remaining life, the lower the price of the bond. Then use
+the spinner to vary the yields to maturity to see how valuation curve
+changes. What conclusion can you make regarding the changes occurring?
+Write your conclusion in cell D1.}
+
+\end{example}
+
+\hypertarget{interest-rate-risk-and-bond-prices}{%
+\subsection{Interest rate risk and bond prices}\label{interest-rate-risk-and-bond-prices}}
+
+While the effect of time on bond prices is predictable, unpredictable
+changes in interest rates will also affect bond prices. Further, bonds
+with different characteristics will respond differently to changes in
+interest rates---some bonds will react more strongly than others.
+
+\begin{example}
+\protect\hypertarget{exm:unlabeled-div-17}{}\label{exm:unlabeled-div-17}
+
+\emph{Consider a 10-year coupon bond and a 30-year coupon
+bond, both with 10\% annual coupons and redeemable at par.}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \emph{By what percentage will the price of each bond change if its yield
+  to maturity increases from 5\% to 6\%? Answer in cells D1 and D2
+  respectively.}
+\item
+  \emph{Plot the values of the 10-year and 30-year coupon bonds as the
+  function of yield to maturity. Which of the bonds is more sensitive
+  to a change in the yield? Why?}
+\end{enumerate}
+
+\end{example}
+
+\hypertarget{inflation}{%
+\subsection{Inflation}\label{inflation}}
+
+Create an Excel model to calculate the required quantities as given in
+the following questions. Look for the sheet CPI containing the CPI index
+from the Bureau of Trade and Economic Indices.
+
+\begin{example}
+\protect\hypertarget{exm:unlabeled-div-18}{}\label{exm:unlabeled-div-18}
+
+\emph{A 5-year bond with nominal value of ฿100 was issued in
+1/1/2013. The coupon rate was 8\% p.a. payable yearly in arrears. The
+redemption was 100\% after 5 years. The bond was issued at 100\%.}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \emph{Calculate the monetary yield to a non-tax paying investor.}
+\item
+  \emph{With reference to the monthly CPI, calculate the real yield to a
+  non-tax paying investor.}
+\item
+  \emph{Assuming that over the period of the transaction the annual rate of
+  inflation will be constant and equal to 3.01\%, calculate the
+  investor?s real yield on the transaction.}
+\end{enumerate}
+
+\end{example}
+
+\hypertarget{introducing-visual-basic}{%
+\section{Introducing Visual Basic}\label{introducing-visual-basic}}
+
+The notes are obtained from the textbook \textbf{"Excel VBA Programming For
+Dummies"} written by \textbf{Michael Alexander and John Walkenbach}
+
+A macro is a sequence of instructions that automates some aspect of
+Excel so that you can work more efficiently and with fewer errors.
+
+\begin{itemize}
+\item
+  Excel records your actions and converts them into a VBA macro.
+\item
+  When you execute this macro, Excel performs the actions again.
+\item
+  More advanced users, though, can write code that tells Excel to
+  perform tasks that can't be recorded.
+\end{itemize}
+
+\hypertarget{components-of-vba-editor-vbe}{%
+\subsection{Components of VBA editor (VBE)}\label{components-of-vba-editor-vbe}}
+
+The VBE consists of many parts including
+
+\begin{description}
+\item[Project (Explorer) window]
+displays a hierarchical list of the projects and all of the items
+contained and referenced by each project.
+\end{description}
+
+If the project has any VBA modules, the project listing also shows a
+\textbf{Modules node}. A project may also contain a node called
+\textbf{Forms}, which contains UserForm objects (which hold custom dialog
+boxes).
+
+With the project window, you can also add and remove a VBA module,
+export and import objects.
+
+\begin{description}
+\item[Properties window]
+lists the properties for selected objects and their current
+settings. You can change these properties at the time during which
+you build an application in the development environment.
+\item[Immediate window]
+displays information resulting from debugging statements in your
+code or from commands typed directly into the window.
+\item[Locals window]
+displays all of the declared variables in the current procedure and
+their values.
+\end{description}
+
+\begin{example}
+\protect\hypertarget{exm:unlabeled-div-19}{}\label{exm:unlabeled-div-19}
+
+(Project (Explorer) window). \emph{In the VBE, select the
+project, namely Book1 and}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \emph{add a new VBA module,}
+\item
+  \emph{then remove the VBA module you have just created from the project.}
+\end{enumerate}
+
+\end{example}
+
+\textbf{Note} User can also add a new UserForm (try it yourself). The
+UserFrom will be discussed later.
+
+\begin{example}
+\protect\hypertarget{exm:unlabeled-div-20}{}\label{exm:unlabeled-div-20}
+
+\emph{(Properties window) In workbook Book1, add at least 2
+new worksheets into it.}
+
+\emph{Then in the VBE, perform the following tasks in the project Book1 by
+using the Properties window :}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \emph{Select Sheet1 from the project Book1 and change the name of Sheet1
+  to Sheet2. What are the obtained results?}
+\item
+  \emph{Change the visible property from -1 to 0 and observe the outputs.
+  What will happen if the visible property value is set to be 2?}
+\item
+  \emph{Insert a new Module and rename it as MyFirstModule.}
+\end{enumerate}
+
+\end{example}
+
+\hypertarget{two-types-of-vba-macros}{%
+\subsection{Two Types of VBA Macros}\label{two-types-of-vba-macros}}
+
+A VBA macro (also known as a VBA procedure) can be one of two types: a
+Sub or a Function.
+
+\begin{itemize}
+\item
+  VBA Sub procedures. You can think of a Sub procedure as a new
+  command that either the user or another macro can execute.
+\item
+  VBA functions. A function always returns a single value (just as a
+  worksheet function always returns a single value). A VBA function
+  can be executed by other VBA procedures or used in worksheet
+  formulas, just as you would use Excel's built-in worksheet
+  functions.
+\end{itemize}
+
+\hypertarget{creating-vba-macros}{%
+\subsection{Creating VBA Macros}\label{creating-vba-macros}}
+
+Excel provides two ways to create macros:
+
+\begin{itemize}
+\item
+  Turn on the macro recorder and record your actions. To start the
+  macro recorder, choose
+
+  Developer \(\rightarrow\) Code \(\rightarrow\) Record Macro
+\item
+  Enter the code directly into a VBA module. The easiest way to create
+  a simple macro is to record your actions. To develop more complex
+  macros, however, you have to enter the VBA code manually, or write a
+  program. To save time, you can often combine recording with manual
+  code entry.
+\end{itemize}
+
+\begin{example}
+\protect\hypertarget{exm:unlabeled-div-21}{}\label{exm:unlabeled-div-21}
+
+\emph{Write a simple macro which uses the VBA builtin MsgBox
+function to display a message in a dialog box. Name it as MyFirstMacro.}
+
+\end{example}
+
+Here is a possible answer.
+
+\begin{verbatim}
+Sub MyFirstMacro()
+    'This is my first macro.
+MsgBox "This is my first macro"
+End Sub
+\end{verbatim}
+
+The following procedure shows how to run a procedure from another
+procedure.
+
+\begin{example}
+\protect\hypertarget{exm:unlabeled-div-22}{}\label{exm:unlabeled-div-22}
+
+\emph{(Executing the procedure from another procedure) Enter
+this new procedure (either above or below MyFirstMacro code, it makes no
+difference) to execute a procedure from another procedure.}
+
+\end{example}
+
+\begin{verbatim}
+Sub MySecondMacro()
+    'Use the Call keyword to execute a procedure from another procedure.
+    MyFirstMacro
+End Sub
+\end{verbatim}
+
+\hypertarget{how-vba-works}{%
+\subsection{How VBA works}\label{how-vba-works}}
+
+A concise summary of how VBA works:
+
+\begin{itemize}
+\item
+  You perform actions in VBA by writing (or recording) code in a VBA
+  module sheet and then executing the macro in any one of various
+  ways. VBA modules are stored in an Excel workbook, and a workbook
+  can hold any number of VBA modules. To view or edit a VBA module,
+  you must activate the VB Editor window. (Press Alt+F11 to toggle
+  between Excel and the VB Editor window.)
+\item
+  A VBA module consists of procedures. A procedure is basically
+  computer code that performs some action.
+\item
+  A VBA module also can store function procedures. A function
+  procedure performs calculations and returns a single value. A
+  function can be called from another VBA procedure or can even be
+  used in a worksheet formula.
+\item
+  VBA manipulates objects. Excel provides more than 100 classes of
+  objects that you can manipulate. Examples of objects include a
+  workbook, a worksheet, a range on a worksheet, a chart, and a
+  rectangle shape.
+\item
+  Objects are arranged in a hierarchy and can act as containers for
+  other objects.
+
+  For example,
+
+  \begin{itemize}
+  \item
+    Excel itself is an object called Application, and it contains
+    other objects, such as Workbook objects.
+  \item
+    The Workbook object can contain other objects, such as Worksheet
+    objects and Chart objects.
+  \item
+    A Worksheet object can contain objects such as Range objects,
+    PivotTable objects, and so on. The arrangement of all these
+    objects is referred to as an object model.
+  \end{itemize}
+\item
+  Objects that are alike form a collection. For example,
+
+  \begin{itemize}
+  \item
+    the Worksheets collection consists of all worksheets in a
+    particular workbook.
+  \item
+    The ChartObjects collection consists of all ChartObjects on a
+    worksheet.
+  \item
+    Collections are objects in themselves.
+  \end{itemize}
+\item
+  You refer to an object in your VBA code by specifying its position
+  in the object hierarchy, using a period as a separator.
+
+  For example, you can refer to a workbook named Book1.xlsx as
+
+\begin{verbatim}
+Application.Workbooks("Book1.xlsx")
+\end{verbatim}
+
+  This expression refers to the Book1.xlsx workbook in the Workbooks
+  collection. The Workbooks collection is contained in the Application
+  object (that is, Excel). Extending this to another level, you can
+  refer to Sheet1 in Book1 as follows:
+
+\begin{verbatim}
+Application.Workbooks("Book1.xlsx").Worksheets("Sheet1")
+\end{verbatim}
+
+  You can take it to still another level and refer to a specific cell
+  as follows:
+
+\begin{verbatim}
+Application.Workbooks("Book1.xlsx").Worksheets("Sheet1"). \_
+
+    Range("A1")
+\end{verbatim}
+\item
+  If you omit specific references, Excel uses the active objects.
+
+  If Book1.xlsx is the active workbook, the preceding reference can be
+  simplified as follows:
+
+\begin{verbatim}
+    Worksheets("Sheet1").Range("A1")
+\end{verbatim}
+
+  If you know that Sheet1 is the active sheet, you can simplify the
+  reference even more:
+
+\begin{verbatim}
+    Range("A1")
+\end{verbatim}
+\item
+  Objects have properties. A property can be thought of as a setting
+  for an object. For example,
+
+  \begin{itemize}
+  \item
+    a Range object has properties, such as Value and Address.
+  \item
+    A Chart object has properties such as HasTitle and Type.
+  \end{itemize}
+
+  You can use VBA both to determine object properties and to change
+  them.
+\item
+  You refer to properties by combining the object with the property,
+  separated by a period. For example, you can refer to the value in
+  cell A1 on Sheet1 as follows:
+
+\begin{verbatim}
+    Worksheets("Sheet1").Range("A1").Value
+\end{verbatim}
+\item
+  You can assign values to variables. To assign the value in cell A1
+  on Sheet1 to a variable called Interest, use the following VBA
+  statement:
+
+\begin{verbatim}
+    Interest = Worksheets("Sheet1").Range("A1").Value
+\end{verbatim}
+\item
+  Objects have methods. A method is an action that is performed with
+  the object. For example, one of the methods for a Range object is
+  ClearContents. This method clears the contents of the range.
+\item
+  You specify methods by combining the object with the method,
+  separated by a period. For example, to clear the contents of range
+  A1:C12, use the following statement:
+
+\begin{verbatim}
+    Worksheets("Sheet1").Range("A1:C12").ClearContents
+\end{verbatim}
+\item
+  VBA also includes all the constructs of modern programming
+  languages, including variables, arrays, looping, and so on.
+\end{itemize}
+
+\hypertarget{essential-vba-language-elements}{%
+\subsection{Essential VBA Language Elements}\label{essential-vba-language-elements}}
+
+\hypertarget{working-with-variables}{%
+\subsubsection{Working with Variables}\label{working-with-variables}}
+
+VBA's main purpose is to manipulate data. VBA stores the data in your
+computer's memory. Some data, such as worksheet ranges, resides in
+objects. Other data is stored in variables that you create.
+
+A variable is simply a named storage location in your computer's
+memory that's used by a program. Here are examples of variables
+
+\begin{verbatim}
+x = 1
+InterestRate = 0.025
+FaceValue = 1000
+DataEntered = False
+x = x + 1
+UserName = "Peter Rabbit"
+Date_Started = #1/15/2015#
+\end{verbatim}
+
+\hypertarget{data-types-and-declaring-variables}{%
+\subsubsection{Data types and declaring variables}\label{data-types-and-declaring-variables}}
+
+In this section, you discover how to declare a variable as a certain
+data type. A variable's scope determines which modules and procedures
+can use the variable.
+
+\hypertarget{data-types}{%
+\paragraph{Data types}\label{data-types}}
+
+A data type is the characteristic of a variable that determines what kind of data it can hold. Data types include numerical and non-numerical
+as well as user-defined types and specific types of objects. For details
+about the supported data types, storage sizes and ranges, please see
+
+\url{https://docs.microsoft.com/en-us/office/vba/language/reference/user-interface-help/data-type-summary}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Numeric Data Types are types of data that consist of numbers, which
+  can be computed mathematically with various standard operators such
+  as addition, subtraction, multiplication, division and more. Numeric
+  data types include \textbf{Byte, Integer, Long, Single, Double, Currency
+  and Decimal}.
+\item
+  Non-Numeric Data Types are data that cannot be manipulated
+  mathematically using standard arithmetic operators. The non-numeric
+  data comprises text or \textbf{string} data types, the \textbf{Date} data
+  types, the \textbf{Boolean} data types that store only two values (true
+  or false), \textbf{Object} data type and \textbf{Variant} data type.
+\end{enumerate}
+
+\textbf{Note} The \textbf{Variant} data type is the data type for all variables
+that are not explicitly declared as some other type (using statements
+such as Dim, Private, Public, or Static).
+
+\hypertarget{procedure-level-variables}{%
+\paragraph{Procedure-level variables}\label{procedure-level-variables}}
+
+The lowest level of scope for a variable is at the procedure level. (A
+procedure is either a Sub or a Function procedure.) Variables declared
+with this scope can be used only in the procedure in which they're
+declared. When the procedure ends, the variable no longer exists, and
+Excel frees up its memory. If you execute the procedure again, the
+variable comes back to life, but its previous value is lost.
+
+The following example shows some procedure-only variables declared by
+using Dim statements:
+
+\begin{verbatim}
+Sub declaringVariables()
+    Dim x As Integer
+    Dim First As Long
+    Dim InterestRate As Single
+    Dim IssueDate As Date
+    Dim UserName As String
+    Dim MyValue
+    '... [The procedure's code goes here] ...
+End Sub
+\end{verbatim}
+
+\textbf{Note}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  A declaration statement can be placed within a procedure to create a
+  \textbf{procedure-level variable}. Or it may be placed at the top of a
+  module, in the Declarations section, to create a \textbf{module-level
+  variable}.
+\item
+  If a declaration statement is given within a procedure, the variable
+  can be used only in that procedure. If the statement appears in the
+  \textbf{Declarations section} of the module, the variable is available to
+  all procedures within the module, but not to procedures in other
+  modules in the project.
+\end{enumerate}
+
+You can declare several variables in one statement. To specify a data
+type, you \textbf{must include the data type for each variable}.
+
+The following statement declares intX, intY and intZ as integer.
+
+\begin{verbatim}
+Dim intX As Integer, intY As Integer, intZ As Integer
+\end{verbatim}
+
+However, the following statement declares intZ as integer, while intX,
+intY are as Variant type.
+
+\begin{verbatim}
+Dim intX, intY, intZ As Integer
+\end{verbatim}
+
+\textbf{Note} VBA has three other keywords that are used to declare
+variables: \textbf{Static, Public and Private}. For more details, follow from
+the following link:
+
+\url{https://docs.microsoft.com/en-us/office/vba/language/}
+concepts/getting-started/declaring-variables
+
+Recall that the Locals window is very useful when we want to display all
+of the declared variables in the current procedure and their values.
+
+\begin{example}
+\protect\hypertarget{exm:unlabeled-div-23}{}\label{exm:unlabeled-div-23}
+
+\emph{(Locals window) Place a cursor anyway in the
+declaringVariables procedure. On the debug menu, click Step Into command
+in the debug menu once. Report the outputs obtained from the Locals
+window.}
+
+\end{example}
+
+\begin{example}
+\protect\hypertarget{exm:unlabeled-div-24}{}\label{exm:unlabeled-div-24}
+
+\emph{Copy the following code and paste it before any
+procedures in a module. What happens if you run the procedure?}
+
+\end{example}
+
+\begin{verbatim}
+Option Explicit
+
+Sub WithOptionExplicit()
+    Dim x As Integer
+    x = 20
+    y = 5
+End Sub
+\end{verbatim}
+
+\textbf{Note} The \textbf{Option Explicit} statement is used at the module level
+to force explicit declaration of all variables in that module. When this
+statement is present, you will not be able to run your code if it
+contains any undeclared variables.
+
+\begin{example}
+\protect\hypertarget{exm:unlabeled-div-25}{}\label{exm:unlabeled-div-25}
+
+\emph{Procedure-level variables) Step into (by pressing F8)
+the following macro to observe the values of the variables in the Locals
+window. What are the values of \(x\) and \(y\) when the procedure is
+completely run?}
+
+\end{example}
+
+\begin{verbatim}
+Option Explicit
+
+Sub VariableScope()
+    Dim x As Integer
+    Dim y As Integer
+    x = x + 1
+    y = y + 1
+End Sub
+\end{verbatim}
+
+\textbf{Note} Variables declared at the procedure level are the most
+efficient because VBA frees up the memory they use when the procedure
+ends.
+
+\hypertarget{module-level-variables}{%
+\paragraph{Module-level variables}\label{module-level-variables}}
+
+Sometimes, you want a variable to be available to all procedures in a
+module. If so, just declare the variable (using Dim or Private) before
+the module's first Sub or Function statement, outside any procedures.
+You do this in the Declarations section, at the beginning of your
+module. (This is also where the Option Explicit statement is located.)
+
+\hypertarget{public-variables}{%
+\paragraph{Public variables}\label{public-variables}}
+
+If you need to make a variable available to all the procedures in all your VBA modules in a workbook, declare the variable at the module level
+(in the Declarations section) by using the Public keyword. Here's an
+example:
+
+\begin{example}
+\protect\hypertarget{exm:unlabeled-div-26}{}\label{exm:unlabeled-div-26}
+
+\emph{(Public variables)}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \emph{Run the first macro three times. What are the values of \(x\) and \(y\)
+  when the procedure is completely run?}
+\item
+  \emph{Then run the second macro. Is the value of \(x\) available to the
+  second macro and what is the output observed from the Message box?}
+\end{enumerate}
+
+\end{example}
+
+\begin{verbatim}
+Option Explicit
+Public y As Integer
+
+
+Sub VariableScope2()
+    Dim x As Integer
+
+    x = x + 1
+    y = y + 1
+    MsgBox "The value of y is " & y
+
+End Sub
+
+Sub yValue()
+    MsgBox "The value of y is " & y
+End Sub
+\end{verbatim}
+
+\hypertarget{working-with-constants}{%
+\subsection{Working with constants}\label{working-with-constants}}
+
+Sometimes you need to refer to a value or string that never changes. In such a case, you need a constant - a named element whose value doesn't change.
+
+As shown in the following examples, you declare constants by using the
+Const statement.
+
+\begin{verbatim}
+Const NumQuarters As Integer = 4
+Const Rate = .0725, Period = 12
+\end{verbatim}
+
+\hypertarget{working-with-dates}{%
+\subsection{Working with dates}\label{working-with-dates}}
+
+In VBA, place dates and times between two hash marks, as shown in the
+preceding examples.
+
+\begin{verbatim}
+Dim Today As Date
+Dim StartTime As Date
+Const FirstDay As Date = #1/1/2013#
+Const Noon = #12:00:00#
+\end{verbatim}
+
+\hypertarget{working-with-arrays}{%
+\subsection{Working with Arrays}\label{working-with-arrays}}
+
+An array is a group of variables that share a common name. You refer to
+a specific variable in the array by using the array name and an index
+number in parentheses.
+
+The following example shows how to declare an array of 100 integers:
+
+\begin{verbatim}
+Dim MyArray(1 To 100) As Integer
+\end{verbatim}
+
+When you declare an array, you can choose to specify only the upper
+index. If you omit the lower index, VBA assumes that it's 0.
+Therefore, both of the following statements declare the same 101-element
+array:
+
+\begin{verbatim}
+Dim MyArray (0 To 100) As Integer
+Dim MyArray (100) As Integer
+\end{verbatim}
+
+If you want VBA to assume that 1 (rather than 0) is the lower index for your arrays, include the following statement in the Declarations section of your module:
+
+\begin{verbatim}
+Option Base 1
+\end{verbatim}
+
+This statement forces VBA to use 1 as the first index number for arrays that declare only the upper index. If this statement is present, the following statements are identical, both declaring a 100-element array:
+
+\begin{verbatim}
+Dim MyArray (1 To 100) As Integer
+Dim MyArray (100) As Integer
+\end{verbatim}
+
+\hypertarget{multidimensional-arrays}{%
+\subsubsection{Multidimensional arrays}\label{multidimensional-arrays}}
+
+The arrays created in the previous examples are all one-dimensional arrays. Think of one-dimensional arrays as a single line of values. Arrays you create in VBA can have as many as 60 dimensions - although
+you rarely need more than two or three dimensions in an array. The following example declares an 81-integer array with two dimensions:
+
+\begin{verbatim}
+Dim MyArray (1 To 9, 1 To 9) As Integer
+\end{verbatim}
+
+You can think of this array as occupying a 9 x 9 matrix. To refer to a
+specific element in this array, you need to specify two index numbers
+(similar to its ``row'' and its ``column'' in the matrix). The
+following example shows how you can assign a value to an element in this
+array:
+
+\begin{verbatim}
+MyArray (3, 4)= 100
+\end{verbatim}
+
+\hypertarget{dynamic-arrays}{%
+\subsubsection{Dynamic arrays}\label{dynamic-arrays}}
+
+You can also create dynamic arrays. A dynamic array doesn't have a preset number of elements. Declare a dynamic array with an empty set of parentheses:
+
+\begin{verbatim}
+Dim MyArray () As Integer
+\end{verbatim}
+
+Before you can use this array, you must use the ReDim statement to tell VBA how many elements the array has. Usually, the number of elements in the array is determined while your code is running. You can use the ReDim statement any number of times, changing the array's size as often as needed. The following example demonstrates how to change the
+number of elements in a dynamic array. It assumes that the NumElements variable contains a value, which your code calculated.
+
+\begin{verbatim}
+ReDim MyArray (1 To NumElements)
+\end{verbatim}
+
+When you redimension an array by using ReDim, you wipe out any values currently stored in the array elements. You can avoid destroying the old
+values by using the Preserve keyword. The following example shows how you can preserve an array's values when you redimension the array:
+
+\begin{verbatim}
+ReDim Preserve MyArray(1 To NumElements)
+\end{verbatim}
+
+\hypertarget{working-with-range-objects}{%
+\subsection{Working with Range Objects}\label{working-with-range-objects}}
+
+A Range object represents a range contained in a Worksheet object. Range objects, like all other objects, have properties (which you can examine and sometimes change) and methods (which perform actions on the object).
+
+When you refer to a Range object, the address is always surrounded by double quotes, like this:
+
+\begin{verbatim}
+Range("A1:C5")
+\end{verbatim}
+
+If the range consists of one cell, you still need the quotes:
+
+\begin{verbatim}
+Range("K9")
+\end{verbatim}
+
+A Range object can consist of one or more entire rows or columns. You can refer to an entire row (in this case, row 3) by using syntax like this:
+
+\begin{verbatim}
+Range("3:3")
+\end{verbatim}
+
+You can refer to an entire column (the fourth column in this example) like this:
+
+\begin{verbatim}
+Range("D:D")
+\end{verbatim}
+
+The following expression refers to a two-area noncontiguous range. Notice that a comma separates the two areas.
+
+\begin{verbatim}
+Range("A1:B8,D9:G16")
+\end{verbatim}
+
+\hypertarget{the-cells-property}{%
+\subsection{The Cells property}\label{the-cells-property}}
+
+Rather than use the VBA Range keyword, you can refer to a range via the Cells property.
+
+The Cells property takes two arguments: a row number and a column number. Both of these arguments are numbers, even though we usually refer to columns by using letters. For example, the following expression
+refers to cell C2 on Sheet2:
+
+\begin{verbatim}
+Worksheets("Sheet2").Cells(2, 3)
+\end{verbatim}
+
+You can also use the Cells property to refer to a multi-cell range. The following example demonstrates the syntax you use:
+
+\begin{verbatim}
+Range(Cells(1, 1), Cells(10, 8))
+\end{verbatim}
+
+This expression refers to an 80-cell range that extends from cell A1 (row 1, column 1) to cell H10 (row 10, column 8). The following statements both produce the same result; they enter a value of 99 into a 10-by-8 range of cells. More specifically, these statements set the Value property of the Range object:
+
+\begin{verbatim}
+Range("A1:H10").Value = 99
+Range(Cells(1, 1), Cells(10, 8)).Value = 99
+\end{verbatim}
+
+The advantage of using the Cells property to refer to ranges becomes apparent when you use variables rather than actual numbers as the Cells arguments. And things really start to click when you understand looping.
+
+\hypertarget{the-offset-property}{%
+\subsection{The Offset property}\label{the-offset-property}}
+
+The Offset property provides another handy means for referring to ranges. This property, which operates on a Range object and returns another Range object, lets you refer to a cell that is a particular number of rows and columns away from another cell.
+
+Like the Cells property, the Offset property takes two arguments. The first argument represents the number of rows to offset; the second represents the number of columns to offset.
+
+The following expression refers to a cell one row below cell A1 and two columns to the right of cell A1. In other words, this refers to the cell commonly known as C2:
+
+\begin{verbatim}
+Range("A1").Offset(1, 2)
+\end{verbatim}
+
+The Offset property can also use negative arguments. A negative row offset refers to a row above the range. A negative column offset refers to a column to the left of the range. The following example refers to cell A1:
+
+\begin{verbatim}
+Range("C2").Offset(-1, -2)
+\end{verbatim}
+
+And, as you may expect, you can use 0 as one or both of the arguments for Offset. The following expression refers to cell A1:
+
+\begin{verbatim}
+Range("A1").Offset(0, 0)
+\end{verbatim}
+
+\hypertarget{some-useful-range-object-properties}{%
+\subsection{Some Useful Range Object Properties}\label{some-useful-range-object-properties}}
+
+The Value property The Value property represents the value contained in a cell. It's a read-write property, so your VBA code can either read
+or change the value. The following statement displays a message box that
+shows the value in cell A1 on Sheet1:
+
+\begin{verbatim}
+MsgBox Worksheets("Sheet1").Range("A1").Value
+\end{verbatim}
+
+It stands to reason that you can read the Value property only for a single-cell Range object. For example, the following statement generates
+an error:
+
+\begin{verbatim}
+MsgBox Worksheets("Sheet1").Range("A1:C3").Value
+\end{verbatim}
+
+You can, however, change the Value property for a range of any size. The
+following statement enters the number 123 into each cell in a range:
+
+\begin{verbatim}
+Worksheets("Sheet1").Range("A1:C3").Value = 123
+\end{verbatim}
+
+\hypertarget{the-text-property}{%
+\subsection{The Text property}\label{the-text-property}}
+
+The Text property returns a string that represents the text as it's displayed in a cell - the formatted value. The Text property is read-only. For example, suppose that cell A1 contains the value 12.3 and
+is formatted to display two decimals and a dollar sign (\$12.30). The following statement displays a message box containing \$12.30:
+
+\begin{verbatim}
+MsgBox Worksheets("Sheet1").Range("A1").Text
+\end{verbatim}
+
+But the next statement displays a message box containing 12.3:
+
+\begin{verbatim}
+MsgBox Worksheets("Sheet1").Range("A1").Value
+\end{verbatim}
+
+If the cell contains a formula, the Text property returns the result of the formula. If a cell contains text, then the Text property and the
+Value property will always return the same thing, because text (unlike a number) can't be formatted to display differently.
+
+\hypertarget{the-count-property}{%
+\subsection{The Count property}\label{the-count-property}}
+
+The Count property returns the number of cells in a range. It counts all cells, not just the nonblank cells. Count is a read-only property, just as you would expect. The following statement accesses a range's Count property and displays the result (9) in a message box:
+
+\begin{verbatim}
+MsgBox Range("A1:C3").Count
+\end{verbatim}
+
+\hypertarget{the-column-and-row-properties}{%
+\subsection{The Column and Row properties}\label{the-column-and-row-properties}}
+
+The Column property returns the column number of a single-cell range. Its sidekick, the Row property, returns the row number of a single-cell range. Both are read-only properties. For example, the following
+statement displays 6 because cell F3 is in the sixth column:
+
+\begin{verbatim}
+MsgBox Sheets("Sheet1").Range("F3").Column
+\end{verbatim}
+
+The next expression displays 3 because cell F3 is in the third row:
+
+\begin{verbatim}
+MsgBox Sheets("Sheet1").Range("F3").Row
+\end{verbatim}
+
+If the Range object consists of more than one cell, the Column property
+returns the column number of the first column in the range, and the Row
+property returns the row number of the first row in the range.
+
+\hypertarget{the-address-property}{%
+\subsection{The Address property}\label{the-address-property}}
+
+Address, a read-only property, displays the cell address for a Range
+object as an absolute reference (a dollar sign before the column letter
+and before the row number).
+
+\begin{verbatim}
+MsgBox Range(Cells(1, 1), Cells(5, 5)).Address
+\end{verbatim}
+
+\hypertarget{the-formula-property}{%
+\subsection{The Formula property}\label{the-formula-property}}
+
+The Formula property represents the formula in a cell. This is a
+read-write property, so you can access it to either view the formula in
+a cell or insert a formula into a cell. For example, the following
+statement enters a SUM formula into cell A13:
+
+\begin{verbatim}
+Range("A13").Formula = "=SUM(A1:A12)"
+\end{verbatim}
+
+Notice that the formula is a text string and is enclosed.
+
+Here''s a statement that will enter a formula that contains quotes:
+
+\begin{verbatim}
+Range("A13").Formula = "=SUM(A1:A12)&"" Stores"""
+\end{verbatim}
+
+\hypertarget{the-numberformat-property}{%
+\subsection{The NumberFormat property}\label{the-numberformat-property}}
+
+The NumberFormat property represents the number format (expressed as a text string) of the Range object. This is a read-write property, so your
+VBA code can either examine the number format or change it. The following statement changes the number format of column A to a percent with two decimal places:
+
+\begin{verbatim}
+Columns("A:A").NumberFormat = "0.00%"
+\end{verbatim}
+
+\hypertarget{some-useful-range-object-methods}{%
+\subsection{Some Useful Range Object Methods}\label{some-useful-range-object-methods}}
+
+As you know, a VBA method performs an action. A Range object has dozens of methods but, again, you won't need most of these. In this section,
+I point out some of the more commonly used Range object methods. The
+Select method Use the Select method to select a range of cells. The
+following statement selects a range on the active worksheet:
+
+\begin{verbatim}
+Range("A1:C12").Select
+\end{verbatim}
+
+Before selecting a range, it''s often a good idea to use one additional statement to ensure that the correct worksheet is active. For example, if Sheet1 contains the range you want to select, use the following statements to select the range:
+
+\begin{verbatim}
+Sheets("Sheet1").Activate
+Range("A1:C12").Select
+\end{verbatim}
+
+Contrary to what you may expect, the following statement generates an error if Sheet1 is not already the active sheet. In other words, you must use two statements rather than just one: one to activate the sheet and another to select the range.
+
+\begin{verbatim}
+Sheets("Sheet1").Range("A1:C12").Select
+\end{verbatim}
+
+If you use the GoTo method of the Application object to select a range, you can forget about selecting the correct worksheet first. This tatement activates Sheet1 and then selects the range:
+
+\begin{verbatim}
+Application.Goto Sheets("Sheet1").Range("A1:C12")
+\end{verbatim}
+
+The GoTo method is the VBA equivalent of pressing F5 in Excel, which displays the GoTo dialog box.
+
+\hypertarget{the-copy-and-paste-methods}{%
+\subsection{The Copy and Paste methods}\label{the-copy-and-paste-methods}}
+
+You can perform copy and paste operations in VBA by using the Copy and Paste methods. Note that two different objects come into play. The Copy method is applicable to the Range object, but the Paste method applies to the Worksheet object. It actually makes sense: You copy a range and paste it to a worksheet. This short macro (courtesy of the macro recorder) copies range A1:A12 and pastes it to the same worksheet, beginning at cell C1:
+
+\begin{verbatim}
+Sub CopyRange()
+    Range("A1:A12").Select
+    Selection.Copy
+    Range("C1").Select
+    ActiveSheet.Paste
+End Sub
+\end{verbatim}
+
+Notice that in the preceding example, the ActiveSheet object is used with the Paste method. This is a special version of the Worksheet object that refers to the currently active worksheet. Also notice that the macro selects the range before copying it. However, you don't have to select a range before doing something with it. In fact, the following
+procedure accomplishes the same task as the preceding example by using a single statement:
+
+\begin{verbatim}
+Sub CopyRange2()
+    Range("A1:A12").Copy Range("C1")
+End Sub
+\end{verbatim}
+
+\hypertarget{the-clear-method}{%
+\subsection{The Clear method}\label{the-clear-method}}
+
+The Clear method deletes the contents of a range, plus all the cell
+formatting. For example, if you want to zap everything in column D, the
+following statement does the trick:
+
+\begin{verbatim}
+Columns("D:D").Clear
+\end{verbatim}
+
+\hypertarget{using-built-in-vba-functions}{%
+\subsection{Using Built-In VBA Functions}\label{using-built-in-vba-functions}}
+
+VBA provides numerous built-in functions. Some of these functions take
+arguments, and some do not.
+
+The first example uses VBA?s Date function to display the current system
+date in a message box:
+
+\begin{verbatim}
+Sub ShowDate()
+MsgBox "Today is: " & Date
+End Sub
+\end{verbatim}
+
+The following procedure uses the VBA Len function, which returns the
+length of a text string.
+
+\begin{verbatim}
+Sub GetLength()
+Dim MyName As String
+Dim StringLength As Long
+MyName = Application.UserName
+StringLength = Len(MyName)
+MsgBox MyName & " has " & StringLength & " characters."
+End Sub
+\end{verbatim}
+
+\hypertarget{discovering-vba-functions}{%
+\subsection{Discovering VBA functions}\label{discovering-vba-functions}}
+
+How do you find out which functions VBA provides? You can type VBA, followed by a period. You get a list of items. Those with a green icon
+are functions. If this feature isn?t working, choose VBE's Tools -\textgreater{} Options, click the Editor tab, and place a check next to Auto List Members.
+
+\hypertarget{using-worksheet-functions-in-vba}{%
+\subsubsection{Using Worksheet Functions in VBA}\label{using-worksheet-functions-in-vba}}
+
+Although VBA offers a decent assortment of built-in functions, you might not always find exactly what you need. Fortunately, you can also use most of Excel's worksheet functions in your VBA procedures. The only
+worksheet functions that you cannot use are those that have an equivalent VBA function. VBA makes Excel's worksheet functions available through the WorksheetFunction object, which is contained in the Application object. Here's an example of how you can use Excel's SUM function in a VBA statement:
+
+\begin{verbatim}
+Total = Application.WorksheetFunction.Sum(Range("A1:A12"))
+\end{verbatim}
+
+You can omit the Application part or the WorksheetFunction part of the expression. In either case, VBA will figure out what you're doing. In
+other words, these three expressions all work exactly the same:
+
+\begin{verbatim}
+Total = Application.WorksheetFunction.Sum(Range("A1:A12"))
+Total = WorksheetFunction.Sum(Range("A1:A12"))
+Total = Application.Sum(Range("A1:A12"))
+\end{verbatim}
+
+My personal preference is to use the WorksheetFunction part just to make
+it perfectly clear that the code is using an Excel function.
+
+\hypertarget{controlling-execution}{%
+\subsection{Controlling execution}\label{controlling-execution}}
+
+VBA uses many constructs that are found in most other programming
+languages. These constructs are used to control the flow of execution.
+This section introduces a few of the more common programming constructs.
+
+\hypertarget{the-if-then-construct}{%
+\subsubsection{The If-Then construct}\label{the-if-then-construct}}
+
+One of the most important control structures in VBA is the If-Then construct, which gives your applications decision-making capability. The
+basic syntax of the If-Then structure is as follows:
+
+\begin{verbatim}
+If condition Then statements [Else else statements]
+\end{verbatim}
+
+In plain English, if a condition is true, then a group of statement will
+be executed. If you include the Else clause, then another group of
+statements will be executed if the condition is not true.
+
+This procedure checks the active cell. If it contains a negative value,
+the cell's colour is changed to red. Otherwise, nothing happens.
+
+\begin{verbatim}
+Sub CheckCell()
+If ActiveCell.Value < 0 Then ActiveCell.Font.ColorIndex = 3
+End Sub
+\end{verbatim}
+
+\textbf{Note} See
+\url{https://docs.microsoft.com/en-us/office/vba/api/excel.colorindex} for colorindex property.
+
+\hypertarget{for-next-loops}{%
+\subsubsection{For-Next loops}\label{for-next-loops}}
+
+You can use a For-Next loop to execute one or more statements a number of times. Here's an example of a For-Next loop:
+
+\begin{verbatim}
+Sub SumSquared()
+    Total = 0
+    For Num = 1 To 10
+        Total = Total + (Num ^ 2)
+    Next Num
+    MsgBox Total
+End Sub
+\end{verbatim}
+
+\hypertarget{the-with-end-with-construct}{%
+\subsubsection{The With-End With construct}\label{the-with-end-with-construct}}
+
+Another construct that you encounter if you record macros is the With-End With construct. This is a useful when dealing with several
+properties or methods of the same object. The following is an example:
+
+\begin{verbatim}
+Sub AlignCells()
+    With Selection
+        .HorizontalAlignment = xlCenter
+        .VerticalAlignment = xlCenter
+        .WrapText = False
+        .Orientation = xlHorizontal
+    End With
+End Sub
+\end{verbatim}
+
+\hypertarget{the-select-case-construct}{%
+\subsubsection{The Select Case construct}\label{the-select-case-construct}}
+
+The Select Case construct is useful for choosing among two or more options. The following example demonstrates the use of a Select Case construct. In this example, the active cell is checked. If its value is
+less than 0, it's coloured red. If it's equal to 0, it's coloured blue. If the value is greater than 0, it's coloured black.
+
+\begin{verbatim}
+Sub CheckCell()
+    Select Case ActiveCell.Value
+        Case Is < 0
+            ActiveCell.Font.Color = vbRed
+        Case 0
+            ActiveCell.Font.Color = vbBlue
+        Case Is > 0
+            ActiveCell.Font.Color = vbBlack
+        End Select
+End Sub
+\end{verbatim}
+
+Any number of statements can go below each Case statement, and they all
+get executed if the case is true.
+
+\textbf{Note} See Color constants for example vbRed, vbBlue etc. for more
+details:
+
+\url{https://docs.microsoft.com/en-us/office/vba/language/reference/user-interface-help/color-constants}
+
+\hypertarget{vba-examples}{%
+\subsection{VBA Examples}\label{vba-examples}}
+
+\begin{example}
+\protect\hypertarget{exm:unlabeled-div-27}{}\label{exm:unlabeled-div-27}
+
+\emph{The NumSign function uses the Select Case construct to
+take a different action, depending on the value of num. If num is less
+than 0, NumSign is assigned the text Negative. If num is equal to 0,
+NumSign is Zero. If num is greater than 0, NumSign is Positive. The
+value returned by a function is always assigned to the function's name.}
+
+\end{example}
+
+\begin{verbatim}
+Function NumSign(num)
+    Select Case num
+        Case Is < 0
+            NumSign = "Negative"
+        Case 0
+            NumSign = "Zero"
+        Case Is > 0
+            NumSign = "Positive"
+        End Select
+End Function
+\end{verbatim}
+
+If you work with this function, you might notice a problem if the argument is non-numeric. In such a case, the function returns Positive. In other words, the function has a bug. Following is a revised version that returns an empty string if the argument is non-numeric. This code uses the VBA IsNumeric function to check the argument. If it's numeric,
+the code checks the sign. If the argument is not numeric, the Else part
+of the If-Then-Else structure is executed.
+
+\begin{verbatim}
+Function NumSign(num)
+    If IsNumeric(num) Then
+        Select Case num
+            Case Is < 0
+                NumSign = "Negative"
+            Case 0
+                NumSign = "Zero"
+            Case Is > 0
+                NumSign = "Positive"
+        End Select
+    Else
+        NumSign = ""
+    End If
+End Function
+\end{verbatim}
+
+\begin{example}
+\protect\hypertarget{exm:unlabeled-div-28}{}\label{exm:unlabeled-div-28}
+
+\emph{Create a macro that copies a variable-sized range (you
+don't know the exact row and column dimension).}
+
+\end{example}
+
+The following macro demonstrates how to copy this range from Sheet1 to Sheet2 (beginning at cell A1). It uses the CurrentRegion property,
+which returns a Range object that corresponds to the block of cells around a particular cell. In this case, that cell is A1.*
+
+\begin{verbatim}
+Sub CopyCurrentRegion()
+    Range("A1").CurrentRegion.Copy
+    Sheets("Sheet2").Select
+    Range("A1").Select
+    ActiveSheet.Paste
+    Sheets("Sheet1").Select
+    Application.CutCopyMode = False
+End Sub
+\end{verbatim}
+
+You can make this macro even more efficient by not selecting the
+destination. The following macro takes advantage of the fact that the
+\textbf{Copy method can use an argument for the destination range}:
+
+\begin{verbatim}
+Sub CopyCurrentRegion2()
+    Range("A1").CurrentRegion.Copy _
+    Sheets("Sheet2").Range("A1")
+End Sub
+\end{verbatim}
+
+It's even a bit easier if the data is in the form of a table (created in Excel using Insert \(\rightarrow\) Tables \(\rightarrow\) Table). The table has a name (such as Table1) and expands automatically when new data is
+added.
+
+\begin{verbatim}
+Sub CopyTable()
+    Range("Table1").Copy  Sheets("Sheet2").Range("A1")
+End Sub
+\end{verbatim}
+
+\begin{example}
+\protect\hypertarget{exm:unlabeled-div-29}{}\label{exm:unlabeled-div-29}
+
+\emph{The following VBA procedure selects the range beginning
+at the active cell and extending down to the cell just above the first
+blank cell in the column. After selecting the range, you can do whatever
+you want with it}
+
+\end{example}
+
+\begin{verbatim}
+Sub SelectDown()
+    Range(ActiveCell,ActiveCell.End(xlDown)).Select
+End Sub
+\end{verbatim}
+
+This example uses the End method of the ActiveCell object, which returns
+a Range object. The End method takes one argument, which can be any of
+the following constants:
+
+\begin{itemize}
+\item
+  xlUp
+\item
+  xlDown
+\item
+  xlToLeft
+\item
+  xlToRight
+\end{itemize}
+
+It is not necessary to select a range before doing something with it.
+The following macro applies bold formatting to a variable-sized (single
+column) range without selecting the range:
+
+\begin{verbatim}
+Sub MakeBold()
+    Range(ActiveCell, ActiveCell.End(xlDown)) _
+    .Font.Bold = True
+End Sub
+\end{verbatim}
+
+\begin{example}
+\protect\hypertarget{exm:unlabeled-div-30}{}\label{exm:unlabeled-div-30}
+
+\emph{The following procedure demonstrates how to select the
+column that contains the active cell. It uses the \textbf{EntireColumn
+property, which returns a Range object that consists of a full
+column}:}
+
+\end{example}
+
+\begin{verbatim}
+Sub SelectColumn()
+    ActiveCell.EntireColumn.Select
+End Sub
+\end{verbatim}
+
+\begin{example}
+\protect\hypertarget{exm:unlabeled-div-31}{}\label{exm:unlabeled-div-31}
+
+\emph{Many macros perform an operation on each cell in a
+range, or they might perform selected actions based on each cell's
+content. These macros usually include a For-Next loop that processes
+each cell in the range.}
+
+\emph{The following example demonstrates how to loop through a range of
+cells. In this case, the range is the current selection. An object
+variable named Cell refers to the cell being processed. Within the For
+Each-Next loop, the single statement evaluates the cell and applies bold
+formatting if the cell contains a positive value.}
+
+\end{example}
+
+\begin{verbatim}
+Sub ProcessCells()
+    Dim Cell As Range
+    For Each Cell In Selection
+        If Cell.Value > 0 Then Cell.Font.Bold = True
+    Next Cell
+End Sub
+\end{verbatim}
+
+This example works, but what if the user's selection consists of an
+entire column or row?
+
+\begin{example}
+\protect\hypertarget{exm:unlabeled-div-32}{}\label{exm:unlabeled-div-32}
+
+(Prompting for a cell value) You can use VBA's
+InputBox function to get a value from the user. Then you can insert
+that value into a cell. The following procedure demonstrates how to ask the user for a value and place the value in cell A1 of the active
+worksheet, using only one statement:
+
+\end{example}
+
+\begin{verbatim}
+Sub GetValue()
+    Range("A1").Value = InputBox( _
+    "Enter the value for cell A1")
+End Sub
+\end{verbatim}
+
+\textbf{Note} See
+\url{https://docs.microsoft.com/en-us/office/vba/api/excel.application.inputbox}
+for details about InputBox.
+
+\begin{example}
+\protect\hypertarget{exm:unlabeled-div-33}{}\label{exm:unlabeled-div-33}
+
+\emph{Create a model with VBA to produce a (year-by-year)
+loan schedule for a fixed rate loan. The loan is to be repaid in equal annual instalments over its life and the first payment is to be made at the end of the first year. Format the output data in the table with a dollar sign and two decimal points, i.e "\$\#,\#\#0.00".}
+
+\end{example}
+
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{tutorial-1}{%
@@ -1698,7 +3190,7 @@ Grand Total & 5191 & 100.00\% & 3020 & 100.00\% & 1783 & 100.00\% & 9994 & 100.0
   each calendar year 2024 to 2029 inclusive. Calculate the yield of
   this investment. ANS = 5.7285486\%
 \item
-  (Modified from CT1 2014 IFoA Exam)
+  (Modified from CT1 2012 IFoA Exam)
 
   An investor is considering two projects, Project A and Project B.
   Project A involves the investment of 2,000,000 in a retail outlet.
@@ -1716,7 +3208,7 @@ Grand Total & 5191 & 100.00\% & 3020 & 100.00\% & 1783 & 100.00\% & 9994 & 100.0
   expenses. After 25 years the property reverts to its original owner
   for no payment.
 
-  Calculate the annual effective internal reate of return for both
+  Calculate the annual effective internal rate of return for both
   Projects A and B. Which project is preferable?
 \item
   (Excel) Use Excel worksheet you have developed to calculate the
@@ -2272,6 +3764,408 @@ where \(v\) and \(i'\) are the same as above.
 \item
   The interest content of the 8th repayment is
   \[ L_7 * i = 15919.94 \times 0.065 = 1034.80.\]
+\end{enumerate}
+
+\hypertarget{tutorial-6}{%
+\section{Tutorial 6}\label{tutorial-6}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  A company issues a bond of nominal amount 10,000 with a term of 5
+  years and a coupon of 6\% convertible semiannually, to be redeemed at
+  110\%. Calculate the price of the bond to give a redemption yield of
+  8\% pa effective to an investor who pays no tax.
+\item
+  A 10-year bond of nominal amount 1,000 paying a half-yearly coupon of
+  10\% per annum and redeemable at par. Calculate the price of this
+  bond to give a redemption yield of 7\% per annum effective after
+  taxes to
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \item
+    an investor who pays no taxes.
+  \item
+    an investor who is subject to income tax at 15\% but no CGT.
+  \item
+    an investor who is subject to
+    income tax at 15\% and CGT at 20\%.
+  \item
+    If the investor question 2.3 would like to secure a redemption yield of 9\%
+    pa, calculate the price for the bond.
+  \end{enumerate}
+\item
+  An investor who pays income tax at 20\%, but no CGT buys a 15-year
+  bond to be redeemed at 105\%, bearing semi-annual coupons of 10\% pa.
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \item
+    Calculate the price per 100 THB nominal to give a yield of 9\% pa
+    effective.
+  \item
+    Just after the 20th coupon payment, the income tax rate changes
+    to 15\%. If the investor holds the bond to redemption, calculate
+    the realised yield on the whole transaction.
+  \end{enumerate}
+\item
+  A 15-bond of a nominal amount of 10,000 THB, bearing semi-annual coupons
+  of 6\% pa, to be redeemed at 98\%.
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \item
+    An investor who is subject to income tax at 30\% and CGT at 20\%
+    buys this bond for 9,000 THB. Calculate the net yield per annum for
+    this transaction.
+  \item
+    If the investor wishes to obtain a net redemption yield of 7\%
+    pa, calculate the price that the investor should pay for the
+    bond.
+  \end{enumerate}
+\item
+  A company issues a bond of nominal 100 THB amount with a term of 15 years
+  and a coupon of 7\% convertible semiannually, to be redeemed at par.
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \item
+    Calculate the price of the bond if it is priced at issue to give
+    a redemption yield of 8\% pa effective to a non-tax paying
+    investor.
+  \item
+    Investor A liable to income tax at 25\% and capital gain tax at
+    20\% bought the bond on the issue date. Just after the 15th
+    coupon payment, the investor A sold the bond to Investor B. The
+    investor B, subject to income tax at 30\% and capital gain tax at
+    30\% paid the price that gives a net redemption yield of 6.5\%.
+    Calculate the price that investor B paid.
+  \item
+    Calculate the realised yield for Investor A's transaction.
+  \end{enumerate}
+\end{enumerate}
+
+\hypertarget{tutorial-7}{%
+\section{Tutorial 7}\label{tutorial-7}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Consider a 5-year bond of a nominal amount of 100 THB , bearing annual
+  coupons of 8\% pa, to be redeemed at 110\%. The bond was issued in
+  July 2012 and its issue price was 100\%. With reference to the CPI
+  given in the lecture note, show that the real yield to an investor
+  who is not subject to tax is 8.82\%.
+\item
+  A particular transaction will provide an effective rate of interest
+  of 6\% per annum. The period of the transaction is one year.
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \item
+    If the annual inflation rate over this one year period will be
+    constant and equal to 2.5\%, calculate the real yield on this
+    transaction.
+  \item
+    Calculate the constant annual rate of inflation at which the
+    investor will obtain a real yield on this transaction of at
+    least 4.25\% per annum.
+  \item
+    Calculate the real yield on this transaction if inflation will
+    be 3\% pa for the first nine months of the year and then 3.25\%pa
+    for the remaining three months.
+  \end{enumerate}
+\item
+  Consider a 3-year bond of a nominal amount of 100 THB, bearing annual
+  coupons of 6\% pa, to be redeemed at par. The bond was issued in 15
+  January 2015 and its issue price was 95\%.
+
+  An investor who pays no tax purchased this bond on the issue date
+  and held it until redemption.
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \item
+    Show that the yield obtained by this investor is approximately
+    7.94\%.
+  \item
+    Show that the real yield on this investment is approximately
+    1.80\% assuming the CPI values are given below:
+
+    \begin{longtable}[]{@{}rrrrr@{}}
+    \toprule
+    Year & 2015 & 2016 & 2017 & 2018 \\
+    \midrule
+    \endhead
+    CPI on 15 January & 100 & 103.3 & 111.0 & 119.5 \\
+    \bottomrule
+    \end{longtable}
+  \end{enumerate}
+\item
+  An investor who is not liable to tax had the choice of purchasing
+  two investments made on 1 Apr 2018.
+
+  \begin{enumerate}
+  \def\labelenumii{(\Alph{enumii})}
+  \item
+    A 10-year bond of a nominal of 100 THB, bearing a half-yearly coupon of
+    9\% per annum and redeemable at par. The issue price was at 110\%.
+  \item
+    A 10-year index linked bond at a price of 135 THB per 100 THB nominal, bearing a
+    half-yearly coupon of 4\% per annum and redeemable at par. The
+    CPI base figure for indexing is 100.24 and the CPI figure
+    applicable to the next coupon (payable on 1 Oct 2018) is 145.68.
+    (Here 145.68 is the CPI index on 1 Apr 2018).
+  \end{enumerate}
+
+  Assume that CPI will grow at a rate of 2.5\% per annum from its
+  latest known value of 145.68 on 1 Apr 2018.
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \item
+    Calculate the real rate of return (yield) per annum earned on
+    both investments A and B.
+  \item
+    Determine which of the two investments yielded the highest real
+    rate of return per annum.
+  \end{enumerate}
+\item
+  An investor who is not liable to tax had the choice of purchasing
+  two investments made on 15 Jan 2013.
+
+  \begin{enumerate}
+  \def\labelenumii{(\Alph{enumii})}
+  \item
+    50,000 was placed in a 5-year term special saving account. The
+    effective rate of interest was 2.5\% p.a. for the first year, 3.5
+    \% p.a. for the second year, 4.5 \% p.a. for the third year, 5.5\%
+    p.a. for the fourth year and 6.5\% p.a. for the fifth year.
+  \item
+    50,000 was used to purchase an annuity payable annually in arrears
+    for 5 years to yield 6\% p.a. effective.
+  \end{enumerate}
+
+  Assume that the values of CPI are as follows:
+
+  \begin{longtable}[]{@{}rrrrrrr@{}}
+  \toprule
+  Year & 2013 & 2014 & 2015 & 2016 & 2017 & 2018 \\
+  \midrule
+  \endhead
+  CPI on 15 January & 100 & 104.17 & 110.17 & 111.08 & 112.67 & 114.83 \\
+  \bottomrule
+  \end{longtable}
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \item
+    Calculate the real rate of return (yield) per annum earned on
+    both investments A and B.
+  \item
+    Determine which of the two investments yielded the highest real
+    rate of return per annum.
+  \end{enumerate}
+\end{enumerate}
+
+\hypertarget{tutorial-8}{%
+\section{Tutorial 8}\label{tutorial-8}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  10,000 was placed in a 3-year term special saving account on 15
+  Jan 2015. The effective rate of interest was 2.5\% p.a. for the first
+  year, 3.5 \% p.a. for the second year, 4.5 \% p.a. for the third year.
+  Assume that the values of CPI are as follows:
+
+  \begin{longtable}[]{@{}rrrrrll@{}}
+  \toprule
+  Year & 2015 & 2016 & 2017 & 2018 & & \\
+  \midrule
+  \endhead
+  CPI on 15 January & 100 & 104.08 & 106.67 & 108.83 & & \\
+  \bottomrule
+  \end{longtable}
+
+  What is the real rate of return (yield) per annum earned on this
+  investment?
+
+  \begin{enumerate}
+  \def\labelenumii{\Alph{enumii}.}
+  \item
+    0.618\%
+  \item
+    0.629\%
+  \item
+    0.724\%
+  \item
+    0.762\%
+  \item
+    none of the above
+  \end{enumerate}
+\item
+  \protect\hypertarget{Tutorial8-2}{}{\[Tutorial8-2\]} A company's cash position, measured in
+  million of bahts, follows a generalised Wiener process with a drift
+  rate of 0.25 per quarter and a variance rate of 9 per quarter. The
+  initial cash position is 35. What is the expected cash position at
+  the end of 6 months?
+
+  \begin{enumerate}
+  \def\labelenumii{\Alph{enumii}.}
+  \item
+    35.25
+  \item
+    35.5
+  \item
+    35.75
+  \item
+    36
+  \item
+    none of the above
+  \end{enumerate}
+\item
+  \protect\hypertarget{Tutorial8-3}{}{\[Tutorial8-3\]} Suppose that data on a stock price at
+  the end of 63 consecutive trading days gives the sum of the daily
+  returns \[\sum_{i=1}^{62} \ln(S_i/S_{i-1}) = 0.25\] and the sum of
+  the daily returns squared
+  \[\sum_{i=1}^{62} \left( \ln(S_i/S_{i-1}) \right)^2= 0.0042.\]
+  Assume that there are 252 trading days per year. What is the
+  estimated value of the stock price volatility per annum?
+
+  \begin{enumerate}
+  \def\labelenumii{\Alph{enumii}.}
+  \item
+    9.28\%
+  \item
+    10.72\%
+  \item
+    11.42\%
+  \item
+    12.37\%
+  \item
+    none of the above
+  \end{enumerate}
+\item
+  What is the standard error (per annum) of the estimate obtained in
+  Question \protect\hyperlink{Tutorial8-3}{\[Tutorial8-3\]}?
+
+  \begin{enumerate}
+  \def\labelenumii{\Alph{enumii}.}
+  \item
+    0.72\%
+  \item
+    0.85\%
+  \item
+    0.93\%
+  \item
+    1.02\%
+  \item
+    none of the above
+  \end{enumerate}
+\item
+  With the drift rate and the variance rate as given in the Question
+  \protect\hyperlink{Tutorial8-2}{\[Tutorial8-2\]}, What is the
+  company's initial cash position so that the company has a less than
+  5\% chance of a negative cash position by the end of 1 year? Note
+  that \(\Pr( Z \le 1.645) = 0.95\) for a standard normal random number
+  \(Z\).
+
+  \begin{enumerate}
+  \def\labelenumii{\Alph{enumii}.}
+  \item
+    6.48
+  \item
+    6.84
+  \item
+    7.29
+  \item
+    7.92
+  \item
+    none of the above
+  \end{enumerate}
+\item
+  Suppose that a stock price follow geometric Brownian motion with an
+  initial price of 40 TBH, an expected return of 8\% per annum and a
+  volatility of 30\% per annum. Using monthly time steps and the random
+  samples from a normal distribution given in the table below, what is
+  the simulated value of the stock price path at time 3 months?
+
+  \begin{longtable}[]{@{}lrrrlll@{}}
+  \toprule
+  Period (n) & 1 & 2 & 3 & & & \\
+  \midrule
+  \endhead
+  Random sample from \(N(0,1)\) for period \(n\) & 0.62 & 1.34 & -0.76 & & & \\
+  \bottomrule
+  \end{longtable}
+
+  \begin{enumerate}
+  \def\labelenumii{\Alph{enumii}.}
+  \item
+    45.92
+  \item
+    46.78
+  \item
+    47.40
+  \item
+    48.80
+  \item
+    none of the above
+  \end{enumerate}
+\item
+  An investor who was not subject to tax purchased an index-linked
+  bond issued on 15 January 2016 with a term of 2 years. The annual
+  coupon rate was 2\% p.a. payable half-yearly in arrears and the
+  redemption rate was 100\%. The coupons and redemption payments were
+  adjusted with reference to the CPI value of 3 months before the
+  payments were made.
+
+  The value of the inflation index at particular dates are as follows:
+
+  \begin{longtable}[]{@{}lrrrrrrrrrr@{}}
+  \toprule
+  Date & Oct 15 & Jan 16 & Apr 16 & Jul 16 & Oct 16 & Jan 17 & Apr 17 & Jul 17 & Oct 17 & Jan 18 \\
+  \midrule
+  \endhead
+  CPI (Date) & 96 & 97 & 99 & 100 & 102 & 104 & 105 & 109 & 111 & 112 \\
+  \bottomrule
+  \end{longtable}
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \item
+    Write down the value of the base CPI figure.
+  \item
+    Calculate the actual payments per 100 THB nominal received by
+    the investor. Clearly state the date on which each payment was
+    received.
+  \item
+    Calculate the real payments per 100 THB nominal in terms of
+    their purchasing power at 15 January 2016.
+  \item
+    Calculate the purchase price of the bond per 100 THB nominal if
+    the investor obtained a \underline{\textbf{real}} redemption yield of
+    0.79\% p.a. effective on the bond.
+  \end{enumerate}
+\item
+  Consider a stock that pays no dividends, provides an expected return
+  of 10\% per annum with continuous compounding and has a volatility of
+  25\% per annum. Assume that the stock price follows geometric
+  Brownian motion and its current stock price is 40 THB.
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \item
+    Find the probability distribution of the logarithm of the stock
+    price \(S_T\) in 6 months' time.
+  \item
+    Calculate the mean and the standard deviation of \(\ln S_T\) in 6
+    months' time.
+  \item
+    Find the 95\% confidence interval of \(S_T\) in 6 months' time.
+  \end{enumerate}
 \end{enumerate}
 
 \end{document}

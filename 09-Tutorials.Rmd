@@ -857,12 +857,12 @@ $$ L_7 * i = 15919.94 \times 0.065 = 1034.80.$$
 Tutorial 6
 ==========
 
-1.  A company issues a bond of nominal amount ,000 with a term of 5
+1.  A company issues a bond of nominal amount 10,000 with a term of 5
     years and a coupon of 6% convertible semiannually, to be redeemed at
     110%. Calculate the price of the bond to give a redemption yield of
     8% pa effective to an investor who pays no tax.
 
-2.  A 10-year bond of nominal amount ,000 paying a half-yearly coupon of
+2.  A 10-year bond of nominal amount 1,000 paying a half-yearly coupon of
     10% per annum and redeemable at par. Calculate the price of this
     bond to give a redemption yield of 7% per annum effective after
     taxes to
@@ -880,25 +880,25 @@ Tutorial 6
 3.  An investor who pays income tax at 20%, but no CGT buys a 15-year
     bond to be redeemed at 105%, bearing semi-annual coupons of 10% pa.
 
-    1.  Calculate the price per nominal to give a yield of 9% pa
+    1.  Calculate the price per 100 THB nominal to give a yield of 9% pa
         effective.
 
     2.  Just after the 20th coupon payment, the income tax rate changes
         to 15%. If the investor holds the bond to redemption, calculate
         the realised yield on the whole transaction.
 
-4.  A 15-bond of a nominal amount of ,000, bearing semi-annual coupons
+4.  A 15-bond of a nominal amount of 10,000 THB, bearing semi-annual coupons
     of 6% pa, to be redeemed at 98%.
 
     1.  An investor who is subject to income tax at 30% and CGT at 20%
-        buys this bond for ,000. Calculate the net yield per annum for
+        buys this bond for 9,000 THB. Calculate the net yield per annum for
         this transaction.
 
     2.  If the investor wishes to obtain a net redemption yield of 7%
         pa, calculate the price that the investor should pay for the
         bond.
 
-5.  A company issues a bond of nominal amount with a term of 15 years
+5.  A company issues a bond of nominal 100 THB amount with a term of 15 years
     and a coupon of 7% convertible semiannually, to be redeemed at par.
 
     1.  Calculate the price of the bond if it is priced at issue to give
@@ -917,7 +917,7 @@ Tutorial 6
 Tutorial 7
 ==========
 
-1.  Consider a 5-year bond of a nominal amount of , bearing annual
+1.  Consider a 5-year bond of a nominal amount of 100 THB , bearing annual
     coupons of 8% pa, to be redeemed at 110%. The bond was issued in
     July 2012 and its issue price was 100%. With reference to the CPI
     given in the lecture note, show that the real yield to an investor
@@ -938,7 +938,7 @@ Tutorial 7
         be 3% pa for the first nine months of the year and then 3.25%pa
         for the remaining three months.
 
-3.  Consider a 3-year bond of a nominal amount of , bearing annual
+3.  Consider a 3-year bond of a nominal amount of 100 THB, bearing annual
     coupons of 6% pa, to be redeemed at par. The bond was issued in 15
     January 2015 and its issue price was 95%.
 
@@ -958,10 +958,10 @@ Tutorial 7
 4.  An investor who is not liable to tax had the choice of purchasing
     two investments made on 1 Apr 2018.
 
-    (A) A 10-year bond of a nominal of , bearing a half-yearly coupon of
+    (A) A 10-year bond of a nominal of 100 THB,  bearing a half-yearly coupon of
         9% per annum and redeemable at par. The issue price was at 110%.
 
-    (B) A 10-year index linked bond at a price of per nominal, bearing a
+    (B) A 10-year index linked bond at a price of 135 THB per 100 THB nominal, bearing a
         half-yearly coupon of 4% per annum and redeemable at par. The
         CPI base figure for indexing is 100.24 and the CPI figure
         applicable to the next coupon (payable on 1 Oct 2018) is 145.68.
@@ -979,12 +979,12 @@ Tutorial 7
 5.  An investor who is not liable to tax had the choice of purchasing
     two investments made on 15 Jan 2013.
 
-    (A) ,000 was placed in a 5-year term special saving account. The
+    (A) 50,000 was placed in a 5-year term special saving account. The
         effective rate of interest was 2.5% p.a. for the first year, 3.5
         % p.a. for the second year, 4.5 % p.a. for the third year, 5.5%
         p.a. for the fourth year and 6.5% p.a. for the fifth year.
 
-    (B) ,000 was used to purchase an annuity payable annually in arrears
+    (B) 50,000 was used to purchase an annuity payable annually in arrears
         for 5 years to yield 6% p.a. effective.
 
     Assume that the values of CPI are as follows:
