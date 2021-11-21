@@ -1,3 +1,33 @@
+```{r echo = FALSE}
+an <- function(i,n){
+  an <- (1 - (1+i)^(-n))/i
+}
+
+adue <- function(i,n){
+  adue <- (1+i)*(1 - (1+i)^(-n))/i
+}
+
+sn <- function(i,n){
+  sn <- ((1+i)^n - 1)/i
+}
+
+
+sdue <- function(i,n){
+  sdue <- (1+i)*((1+i)^n - 1)/i
+}
+
+Is <- function(i,n){
+  Is <- (((1+i)*((1+i)^n - 1)/i)    - n)/i
+}
+
+Ia <- function(i,n){
+  Ia <- (((1+i)*    ( 1 - (1+i)^(-n))/i)    - n* (1+i)^(-n)  )/i
+}
+
+```
+
+
+
 ---
 Tutorial 1
 ==========
@@ -914,6 +944,184 @@ Tutorial 6
 
     3.  Calculate the realised yield for Investor A's transaction.
 
+
+Solutions to Tutorial 6
+==========
+
+1. Using a time unit of half a year, the effective yield per half year is 
+$$j = (1.08)^{1/2} - 1 = `r (1.08)^(1/2) - 1`.$$ 
+Then,
+
+$$
+\begin{aligned}
+P &= 300 a^j_{\angl{10}} + 11000 (\frac{1}{1.08})^{5} \\
+&= `r round(300*an((1.08)^{1/2} - 1,10) + 11000 *1.08^(-5),2)`.
+\end{aligned}
+$$
+
+
+
+2. Using a time unit of half a year, the effect yield per half year is 
+$$j = (1.07)^{1/2} - 1 = `r (1.07)^(1/2) - 1`.$$ 
+
+    1. Per 1000 nominal, 
+$$
+\begin{aligned}
+P &= 50 a^j_{\angl{20}} + 1000 (\frac{1}{1.07})^{10} \\
+&= `r round(50*an((1.07)^{1/2} - 1,20) + 1000 *1.07^(-10),2)`.
+\end{aligned}
+$$
+    2. With an income tax rate at 15%,
+
+$$
+\begin{aligned}
+P &= 42.5 a^j_{\angl{20}} + 1000 (\frac{1}{1.07})^{10} \\
+&= `r round(42.5*an((1.07)^{1/2} - 1,20) + 1000 *1.07^(-10),2)`.
+\end{aligned}
+$$
+
+    3. Since 
+    
+$i^{(2)} = 2 \times j = `r 2*((1.07)^(1/2) - 1)` < (1 - t_1)\frac{D}{R} = (1 - 0.15)\frac{0.1}{1} = `r (1 - 0.15)*0.1 `.$
+Therefore, no capital gain tax (CGT) is payable.
+$$
+\begin{aligned}
+P &= 42.5 a^j_{\angl{20}} + 1000 (\frac{1}{1.07})^{10} \\
+&= `r round(42.5*an((1.07)^{1/2} - 1,20) + 1000 *1.07^(-10),2)`,
+\end{aligned}
+$$
+which is similar to the previous result.
+
+
+    4. A redepmtion yield of 
+    
+9% p.a. is equivalent to a yield of 
+$$k = (1.09)^{1/2} - 1 = `r (1.09)^(1/2) - 1`.$$ 
+Since $k^{(2)} = 2 \times k = `r 2*((1.09)^(1/2) - 1)` < (1 - t_1)\frac{D}{R} = (1 - 0.15)\frac{0.1}{1} = `r (1 - 0.15)*0.1 `.$
+Therefore, no capital gain tax (CGT) is payable.
+$$
+\begin{aligned}
+P &= 42.5 a^k_{\angl{20}} + (1000 - 0.2(1000-P)) (\frac{1}{1.09})^{10} \\
+P &= 978.07 (< 1000).,
+\end{aligned}
+$$
+
+
+
+3. The solutions are given below:
+
+1. Using a time unit of half a year, the effect yield per half year is 
+$$j = (1.09)^{1/2} - 1 = `r (1.09)^(1/2) - 1`.$$ 
+Then,
+  
+$$
+\begin{aligned}
+P &= 4 a^j_{\angl{30}} + 105 (\frac{1}{1.09})^{15} \\
+&= `r round(4*an((1.09)^{1/2} - 1,30) + 105 *1.09^(-15),2)`.
+\end{aligned}
+$$
+2. In unit of half-year, the timeline of the transaction is shown in the table below:
+
+Time | 0 | 1 | 2 | $\cdots$   | 20 | 21 | $\cdots$   | 30 |
+:-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+  Payment  |-94.73 | 4 | 4 | $\cdots$  |  4  |  $4 + 0.25$ | $\cdots$ | $4 + 0.25 + 105$ | 
+
+The equation of value is
+$$ f(i) = -94.73 (1 + i)^{30} + 4 s^i_{\angl{30}} + 0.25 s^i_{\angl{10}} + 105 = 0.$$
+The change  in the tax rate is quite small, so we do not expect a large change in the yield.
+
+By trial and error, in time unit of half a year, we have
+
+$$
+\begin{aligned}
+f(0.044) &= 3.2373 \\
+f(0.045) &= -2.6999. \\
+\end{aligned}
+$$
+
+Therefore, the approximate of $i$ is 
+$$ i \approx 0.044545 \text{ per half-year,} $$
+and hence 9.107% effective per year.
+
+
+4. The solutions are as follows:
+
+    1. CGT is payable because the price paid is 9000 < 9800 (the redemption amount)
+
+In unit of half-year, the equation of value is
+$$ f(i) = -9000 (1 + i)^{30} + 0.7 \times 300  s^i_{\angl{30}} + 9800 - 0.2(9800 - 9000) = 0.$$
+
+By trial and error, we obtain
+
+$$
+\begin{aligned}
+f(0.024) &= 380.741 \\
+f(0.025) &= -18.541. \\
+\end{aligned}
+$$
+
+Therefore, the approximate of $i$ is 
+$$ i \approx 0.024954 \text{ per half-year,} $$
+and hence 5.05% effective per year.
+
+2. The investor wishes to obtain a net yield of 7% p.a. effective, which is greater than 5.05%. The price paide will be less than 9000. So CGT is payable.
+
+By the principle of equivalence,
+$$
+\begin{aligned}
+P &= 210 a^j_{\angl{30}} + (9800 - 0.2(9800 - P)) (\frac{1}{1.07})^{15}, 
+\end{aligned}
+$$
+where $$j = (1.07)^{1/2} - 1 = `r (1.07)^(1/2) - 1`.$$ 
+
+Solving for $P$ results in $P = 7258.90 \,( <9800)$.
+
+
+5. The solutions are as follows:
+
+    1. Using a time unit of half a year, the effect yield per half year is 
+$$j = (1.08)^{1/2} - 1 = `r (1.08)^(1/2) - 1`.$$ 
+Then,
+  
+$$
+\begin{aligned}
+P &= 3.5 a^j_{\angl{30}} + 100 (\frac{1}{1.08})^{15} \\
+&= `r round(3.5*an((1.08)^{1/2} - 1,30) + 100 *1.08^(-15),2)`.
+\end{aligned}
+$$
+
+
+    2. The bond sold to the investor B has 15 half-years to run.
+From B's tax position,
+$i^{(2)} = 2 \times (1.065^{1/2} - 1) = `r 2*((1.065)^(1/2) - 1)` < (1 - t_1)\frac{D}{R} = (1 - 0.3)\frac{7}{100} = `r (1 - 0.3)*7/100 `.$
+Therefore, capital gain tax (CGT) is payable.
+$$
+\begin{aligned}
+P &= 2.45 a^j_{\angl{15}} + (100 - 0.3(100-P)) (\frac{1}{1.065})^{7.5}, \\
+\end{aligned}
+$$
+where $$j = (1.065)^{1/2} - 1 = `r (1.065)^(1/2) - 1`.$$ 
+This results in $P = 89.16$.
+
+
+3. Investor A sold the bond for less than price paid for the bond, so A does not pay CGT.
+
+In unit of half-year, the equation of value is
+$$ f(i) = -96.62 (1 + i)^{15} + 0.75 \times 3.5  s^i_{\angl{15}} + 89.16 = 0.$$
+
+By trial and error, we obtain
+
+$$
+\begin{aligned}
+f(0.026) &= 0.463 \\
+f(0.027) &= -1.192. \\
+\end{aligned}
+$$
+
+Therefore, the approximate of $i$ is 
+$$ i \approx 0.026280 \text{ per half-year,} $$ and hence
+approximately 5.325% p.a. effective.
+
 Tutorial 7
 ==========
 
@@ -998,6 +1206,130 @@ Tutorial 7
 
     2.  Determine which of the two investments yielded the highest real
         rate of return per annum.
+
+
+Solutions to Tutorial 7
+==========
+
+1. The timeline of the transaction is given in the following table.
+
+Time | 0 | 1 | 2 | 3 | 4 | 5 
+  :-: | :-: | :-: | :-: | :-: | :-: | :-: 
+  Year | 2012 | 2013 | 2014 | 2015 | 2016 | 2017 | 
+  Cashflow | -100 | 8 | 8 | 8 | 8 | 18 + 100
+  CPI | 97.22 | 99.17 | 101.32 | 100.25 | 100.36 | 100.53
+  Real value of cashflow at $t = 0$ | -100 | $\frac{(8)(97.22)}{99.17}$ | $\frac{(8)(97.22)}{101.32}$ | $\frac{(8)(97.22)}{100.25}$ | $\frac{(8)(97.22)}{100.36}$  | $\frac{(8)(97.22)}{100.53}$
+  Real value of cashflow at $t = 0$   | -100 | = 7.84 | = 7.68 | = 7.76 | = 7.75 | = 114.11 
+
+
+  The real yield $i'$ p.a. effective solve the equation of value as
+    follows:
+    $$f(i') = -100 + 7.84 v  + 7.68v^2 + 7.76v^3 + 7.75v^4 + 114.11v^5 = 0,$$
+where $v = 1/(1 + i')$.    
+This gives $i' \approx 8.82\%$.
+
+2. We know that when the annual rate of inflation is constant and equal to $q$, the real yield $i'$ and the monetary yield $i$ satisfies $$(1 +i) = ( 1 + q)(1+i').$$
+
+    1. Given 
+    
+$i =0.06$ and $q = 0.025$, we have
+$$ i' = \frac{1.06}{1.025} - 1 = `r 1.06/1.025 - 1` = `r 100*(1.06/1.025 - 1)`\%.$$
+    2. Given 
+    
+$i =0.06$ and $i' = 0.0425$, we have
+$$ i' = \frac{1.06}{1.0425} - 1 = `r 1.06/1.0425 - 1` = `r 100*(1.06/1.0425 - 1)`\%.$$
+
+    3. Given 
+    
+$q = 0.03$ p.a. for 9 months and $q = 0.0325$ p.a. for the next 3 months, 
+$$ i' = \frac{1.06}{(1.03)^{9/12}(1.0325)^{3/12}} - 1 = `r 1.06/(1.03^(9/12) * 1.0325^(3/12)) - 1` = `r 100*(1.06/(1.03^(9/12) * 1.0325^(3/12)) - 1)`\%.$$
+
+
+3. The timeline of the transaction is given in the following table.
+
+Time | 0 | 1 | 2 | 3 | 
+  :-: | :-: | :-: | :-: | :-: | 
+  Year | 2015 | 2016 | 2017 | 2018 |
+  Cashflow | -95 | 6 | 6 | 106 |
+  Real value of cashflow at $t = 0$ | -95 | 5.81 | 5.41 | 88.70 | 
+    1. The equation of value is
+
+$$ f(i) = -95 + 6 a^i_{\angl{3}} + \frac{100}{(1+i)^3}  = 0.$$
+
+This gives $i \approx 7.938\%$. 
+
+
+    2. The real yield 
+    
+$i'$ p.a. effective solve the equation of value as
+    follows:
+    $$f(i') = -95 + 5.81 v  + 5.41v^2 + 88.70v^3  = 0,$$
+where $v = 1/(1 + i')$.    
+This gives $i' \approx 1.80\%$.
+
+4. Question 4 is not examinable.
+
+Investment A:
+
+Date  | Real payment (monetary payment $\times \frac{\text{Q(APR 2018)}}{\text{Q(Date)}}$)
+  :-: | :-:
+1 APR 2018 | $-110$  
+1 OCT 2018 | $4.5 \times \frac{\text{Q(APR 2018)}}{\text{Q(OCT 2018)} } = 4.5 \times \frac{\text{Q(APR 2018)}}{\text{Q(APR 2018)} \times (1.025)^{1/2}} = 4.5 \times \frac{1}{ (1.025)^{1/2}}$  
+1 APR 2019 | $4.5 \times \frac{\text{Q(APR 2018)}}{\text{Q(APR 2019)} } = 4.5 \times \frac{\text{Q(APR 2018)}}{\text{Q(APR 2018)} \times (1.025)^{1}} = 4.5 \times \frac{1}{ (1.025)^{1}}$   $\vdots$ | $\vdots$
+1 APR 2028 | $(100 + 4.5) \times \frac{\text{Q(APR 2018)}}{\text{Q(APR 2028)} } = (100 + 4.5) \times \frac{\text{Q(APR 2018)}}{\text{Q(APR 2018)} \times (1.025)^{10}} = (100 + 4.5) \times \frac{1}{ (1.025)^{10}}$  
+
+
+The real yield $i'$ p.a. effective solve the equation of value as
+    follows:
+    $$f(i') = -110 +  4.5\left( \frac{1}{((1+i')(1.025))^{1/2}} + \frac{1}{((1+i')(1.025))^{1}}  + \cdots + \frac{1}{((1+i')(1.025))^{10}}\right)= 0,$$
+Letting $(1+ j) = ((1+i')(1.025))^{1/2}$ gives the equation in terms of $j$ as follows:
+
+$$ f(j) = -110 + 4.5 a^j_{\angl{20}} + \frac{100}{(1+j)^{20}}  = 0.$$
+By linear approximation, we obtain
+  $$j \approx 0.0378$$ 
+and the real yield per annum is 
+  $$i' \approx 0.0507.$$ 
+
+Investment B:
+
+The coupon payment is 2 THB increased with inflation, paid every 6 months and the redemption payment is 100 THB also increased with inflation.
+
+We first increase the payments with inflation approximately lagged by 6 months to see how much is acually paid, which gives nominal payments and then calculate their real values in terms of their purchasing power at 1 APR 2018.
+
+Date  | CPI (Date $-$ 6/12) | Nominal payment at Date | Real payment 
+  :-: | :-: |  :-: | :-:
+1 OCT 2018 | $145.68$ | $2 \times \frac{145.68}{100.24}$ |  $2 \times \frac{145.68}{100.24} \frac{\text{Q(APR 2018)}}{\text{Q(OCT 2018)} } = 2 \times \frac{145.68}{100.24} \times \frac{1}{ (1.025)^{1/2}}$
+1 APR 2019 | $145.68 \times 1.025^{1/2}$ | $2 \times \frac{145.68  \times 1.025^{1/2}}{100.24}$ |  $2 \times \frac{145.68  \times 1.025^{1/2}}{100.24} \frac{\text{Q(APR 2018)}}{\text{Q(APR 2019)} } = 2 \times \frac{145.68  }{100.24} \times \frac{1}{ (1.025)^{1/2}}$
+$\vdots$ | $\vdots$ | $\vdots$ | $\vdots$ |
+1 OCT 2027 | $145.68 \times 1.025^{9}$ | $2 \times \frac{145.68  \times 1.025^{9}}{100.24}$ |  $2 \times \frac{145.68  \times 1.025^{9}}{100.24} \frac{\text{Q(APR 2018)}}{\text{Q(OCT 2027)} } = 2 \times \frac{145.68  }{100.24} \times \frac{1}{ (1.025)^{1/2}}$
+1 APR 2028 | $145.68 \times 1.025^{9.5}$ | $(100 + 2) \times \frac{145.68  \times 1.025^{9.5}}{100.24}$ |  $(100 + 2) \times \frac{145.68  \times 1.025^{9.5}}{100.24} \frac{\text{Q(APR 2018)}}{\text{Q(APR 2028)} } = (100 + 2) \times \frac{145.68  }{100.24} \times \frac{1}{ (1.025)^{1/2}}$
+
+The present value at 1 APR 2018 of the real payments at the real yield $i'$ p.a. is
+$$ f(i') = -135 + 2 \times \frac{145.68  }{100.24} \times \frac{1}{ (1.025)^{1/2}} \times(2 a^{2(i')}_{\angl{10}}) + 100 \times \frac{145.68  }{100.24} \times \frac{1}{ (1.025)^{1/2}} \times \frac{1}{(1+i')^{10}} = 0.$$
+We solve for $i'$, which results in 
+$$i' \approx 0.0481$$ per annum.
+
+    2. Investment A yields the higher real rate of return than investment B, hence investment A is preferred. 
+
+5. Investment A: The payment received in 5 years is
+$$50000(1.025)(1.035)(1.045)(1.055)(1.065) = A.$$
+Hence, the real payment in terms of its purchasing power at 15 Jan 2013 is
+$$ A \times \frac{Q(\text{Jan 13})}{Q(\text{Jan 18})}.$$
+
+Therefore, the real yield $i\%$ p.a. is
+$$50000 (1 + i')^5 = A \times \frac{Q(\text{Jan 13})}{Q(\text{Jan 18})} = A \times \frac{114.83}{100},$$
+which gives $i' = 1.64\%.$
+
+Investment B: First we find an annual income of the annuity.
+$$\text{Annual income } = \frac{50000}{a^{0.06}_{\angl{5}}} = `r round(50000/an(0.06,5),2)`.$$
+
+The real yield on investment B is the solution 
+$i'$ p.a. to the equation
+    follows:
+    $$50000 = \left( \frac{100}{104.17} v  + \frac{100}{110.17} v^2 +  \cdots + \frac{100}{114.83}v^3  \right)\times `r round(50000/an(0.06,5),2)`,$$
+At $1.64\%$, the RHS of the above equation is equal to the price of B at $1.64\% = 50614.35.$
+
+Therefore, the real yield of B is greater than 1.64\%. Hence B gives greater real yield.
 
 Tutorial 8
 ==========

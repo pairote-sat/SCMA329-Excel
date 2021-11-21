@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Section 17 Solutions to Tutorial 4 | SCMA329 Practical Mathematical Financial Modeling</title>
-  <meta name="description" content="Section 17 Solutions to Tutorial 4 | SCMA329 Practical Mathematical Financial Modeling" />
+  <title>Section 20 Solutions to Tutorial 6 | SCMA329 Practical Mathematical Financial Modeling</title>
+  <meta name="description" content="Section 20 Solutions to Tutorial 6 | SCMA329 Practical Mathematical Financial Modeling" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Section 17 Solutions to Tutorial 4 | SCMA329 Practical Mathematical Financial Modeling" />
+  <meta property="og:title" content="Section 20 Solutions to Tutorial 6 | SCMA329 Practical Mathematical Financial Modeling" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Section 17 Solutions to Tutorial 4 | SCMA329 Practical Mathematical Financial Modeling" />
+  <meta name="twitter:title" content="Section 20 Solutions to Tutorial 6 | SCMA329 Practical Mathematical Financial Modeling" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="solutions-to-tutorial-3.html"/>
-<link rel="next" href="solutions-to-tutorial-5.html"/>
+<link rel="prev" href="tutorial-6.html"/>
+<link rel="next" href="tutorial-7.html"/>
 <script src="libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -206,42 +206,191 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="solutions-to-tutorial-4" class="section level1" number="17">
-<h1><span class="header-section-number">Section 17</span> Solutions to Tutorial 4</h1>
+<div id="solutions-to-tutorial-6" class="section level1" number="20">
+<h1><span class="header-section-number">Section 20</span> Solutions to Tutorial 6</h1>
 <ol style="list-style-type: decimal">
-<li><p>To examine whether the cashflows are equivalent, we compare their present values.</p>
-<ol style="list-style-type: lower-alpha">
-<li><p>The present value of single payment of amount 14,802.44 at year 10 is
-<span class="math display">\[ PV(0) =  \frac{14,802.44}{1.04^{10}} = 10000.\]</span></p></li>
-<li><p>The present value of the level annuity of 400 payable yearly in arrears for the next 10 years plus a lump sum of 10,000 is
-<span class="math display">\[ PV(0) =  400 a^{0.04}_{10} +\frac{10000}{1.04^{10}} = 10000.\]</span></p></li>
-<li><p>The present value of the level annuity of 1,232.91 payable yearly in arrears for the next 10 years.
-<span class="math display">\[ PV(0) =  1,232.91 a^{0.04}_{10}  = 10000.\]</span></p></li>
+<li>Using a time unit of half a year, the effective yield per half year is
+<span class="math display">\[j = (1.08)^{1/2} - 1 = 0.0392305.\]</span>
+Then,</li>
+</ol>
+<p><span class="math display">\[
+\begin{aligned}
+P &amp;= 300 a^j_{\angl{10}} + 11000 (\frac{1}{1.08})^{5} \\
+&amp;= 9929.03.
+\end{aligned}
+\]</span></p>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Using a time unit of half a year, the effect yield per half year is
+<span class="math display">\[j = (1.07)^{1/2} - 1 = 0.034408.\]</span></p>
+<ol style="list-style-type: decimal">
+<li>Per 1000 nominal,
+<span class="math display">\[
+\begin{aligned}
+P &amp;= 50 a^j_{\angl{20}} + 1000 (\frac{1}{1.07})^{10} \\
+&amp;= 1222.79.
+\end{aligned}
+\]</span></li>
+<li>With an income tax rate at 15%,</li>
 </ol></li>
 </ol>
-<p>It follows that the values of these cashflows are the same, i.e. equivalent.</p>
-<ol start="2" style="list-style-type: decimal">
-<li><p>The annual yield of this investment <span class="math inline">\(i\)</span> is the solution of the equation of value:
-<span class="math display">\[ f(i) = -2000(1+i)^8 +300 s^i_8 = 0. \]</span>
-If we solve using software, we get <span class="math inline">\(i = 4.2394551%\)</span>. Instead of using software, you can also use linear interpolation to approximate the solution.</p></li>
-<li><p>Working in time unit of half year, the equation of value is
-<span class="math display">\[ f(i) = -5000(1+i)^{12 \times 2} + 300 s^i_{24} = 0. \]</span>
-The yield <span class="math inline">\(i\)</span> per half year is <span class="math inline">\(i = 3.1491266\%\)</span> and hence the annual yield is <span class="math inline">\(6.397423\%.\)</span></p></li>
-<li><p>The equation of value is
-<span class="math display">\[ f(i) = -100(1+i)^{7} + 20 s^i_{3}(1+i)^{4}  + 25 s^i_{4} = 0. \]</span>
-The annual yield is <span class="math inline">\(12.6209232\%.\)</span></p></li>
-<li><p>You are suggested to draw the time line for these cashflows. The equation of value is
-<span class="math display">\[ f(i) = -5 \ddot{s}^i_{3}(1+i)^{9}   + 4 s^i_{6} = 0. \]</span>
-The annual yield is <span class="math inline">\(5.7285486\%.\)</span></p></li>
+<p><span class="math display">\[
+\begin{aligned}
+P &amp;= 42.5 a^j_{\angl{20}} + 1000 (\frac{1}{1.07})^{10} \\
+&amp;= 1115.62.
+\end{aligned}
+\]</span></p>
+<pre><code>3. Since </code></pre>
+<p><span class="math inline">\(i^{(2)} = 2 \times j = 0.0688161 &lt; (1 - t_1)\frac{D}{R} = (1 - 0.15)\frac{0.1}{1} = 0.085.\)</span>
+Therefore, no capital gain tax (CGT) is payable.
+<span class="math display">\[
+\begin{aligned}
+P &amp;= 42.5 a^j_{\angl{20}} + 1000 (\frac{1}{1.07})^{10} \\
+&amp;= 1115.62,
+\end{aligned}
+\]</span>
+which is similar to the previous result.</p>
+<pre><code>4. A redepmtion yield of </code></pre>
+<p>9% p.a. is equivalent to a yield of
+<span class="math display">\[k = (1.09)^{1/2} - 1 = 0.0440307.\]</span>
+Since <span class="math inline">\(k^{(2)} = 2 \times k = 0.0880613 &lt; (1 - t_1)\frac{D}{R} = (1 - 0.15)\frac{0.1}{1} = 0.085.\)</span>
+Therefore, no capital gain tax (CGT) is payable.
+<span class="math display">\[
+\begin{aligned}
+P &amp;= 42.5 a^k_{\angl{20}} + (1000 - 0.2(1000-P)) (\frac{1}{1.09})^{10} \\
+P &amp;= 978.07 (&lt; 1000).,
+\end{aligned}
+\]</span></p>
+<ol start="3" style="list-style-type: decimal">
+<li><p>The solutions are given below:</p></li>
+<li><p>Using a time unit of half a year, the effect yield per half year is
+<span class="math display">\[j = (1.09)^{1/2} - 1 = 0.0440307.\]</span>
+Then,</p></li>
 </ol>
+<p><span class="math display">\[
+\begin{aligned}
+P &amp;= 4 a^j_{\angl{30}} + 105 (\frac{1}{1.09})^{15} \\
+&amp;= 94.73.
+\end{aligned}
+\]</span>
+2. In unit of half-year, the timeline of the transaction is shown in the table below:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Time</th>
+<th align="center">0</th>
+<th align="center">1</th>
+<th align="center">2</th>
+<th align="center"><span class="math inline">\(\cdots\)</span></th>
+<th align="center">20</th>
+<th align="center">21</th>
+<th align="center"><span class="math inline">\(\cdots\)</span></th>
+<th align="center">30</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Payment</td>
+<td align="center">-94.73</td>
+<td align="center">4</td>
+<td align="center">4</td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">4</td>
+<td align="center"><span class="math inline">\(4 + 0.25\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(4 + 0.25 + 105\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>The equation of value is
+<span class="math display">\[ f(i) = -94.73 (1 + i)^{30} + 4 s^i_{\angl{30}} + 0.25 s^i_{\angl{10}} + 105 = 0.\]</span>
+The change in the tax rate is quite small, so we do not expect a large change in the yield.</p>
+<p>By trial and error, in time unit of half a year, we have</p>
+<p><span class="math display">\[
+\begin{aligned}
+f(0.044) &amp;= 3.2373 \\
+f(0.045) &amp;= -2.6999. \\
+\end{aligned}
+\]</span></p>
+<p>Therefore, the approximate of <span class="math inline">\(i\)</span> is
+<span class="math display">\[ i \approx 0.044545 \text{ per half-year,} \]</span>
+and hence 9.107% effective per year.</p>
+<ol start="4" style="list-style-type: decimal">
+<li><p>The solutions are as follows:</p>
+<ol style="list-style-type: decimal">
+<li>CGT is payable because the price paid is 9000 &lt; 9800 (the redemption amount)</li>
+</ol></li>
+</ol>
+<p>In unit of half-year, the equation of value is
+<span class="math display">\[ f(i) = -9000 (1 + i)^{30} + 0.7 \times 300  s^i_{\angl{30}} + 9800 - 0.2(9800 - 9000) = 0.\]</span></p>
+<p>By trial and error, we obtain</p>
+<p><span class="math display">\[
+\begin{aligned}
+f(0.024) &amp;= 380.741 \\
+f(0.025) &amp;= -18.541. \\
+\end{aligned}
+\]</span></p>
+<p>Therefore, the approximate of <span class="math inline">\(i\)</span> is
+<span class="math display">\[ i \approx 0.024954 \text{ per half-year,} \]</span>
+and hence 5.05% effective per year.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>The investor wishes to obtain a net yield of 7% p.a. effective, which is greater than 5.05%. The price paide will be less than 9000. So CGT is payable.</li>
+</ol>
+<p>By the principle of equivalence,
+<span class="math display">\[
+\begin{aligned}
+P &amp;= 210 a^j_{\angl{30}} + (9800 - 0.2(9800 - P)) (\frac{1}{1.07})^{15}, 
+\end{aligned}
+\]</span>
+where <span class="math display">\[j = (1.07)^{1/2} - 1 = 0.034408.\]</span></p>
+<p>Solving for <span class="math inline">\(P\)</span> results in <span class="math inline">\(P = 7258.90 \,( &lt;9800)\)</span>.</p>
+<ol start="5" style="list-style-type: decimal">
+<li><p>The solutions are as follows:</p>
+<ol style="list-style-type: decimal">
+<li>Using a time unit of half a year, the effect yield per half year is
+<span class="math display">\[j = (1.08)^{1/2} - 1 = 0.0392305.\]</span>
+Then,</li>
+</ol></li>
+</ol>
+<p><span class="math display">\[
+\begin{aligned}
+P &amp;= 3.5 a^j_{\angl{30}} + 100 (\frac{1}{1.08})^{15} \\
+&amp;= 92.62.
+\end{aligned}
+\]</span></p>
+<pre><code>2. The bond sold to the investor B has 15 half-years to run.</code></pre>
+<p>From B’s tax position,
+<span class="math inline">\(i^{(2)} = 2 \times (1.065^{1/2} - 1) = 0.0639767 &lt; (1 - t_1)\frac{D}{R} = (1 - 0.3)\frac{7}{100} = 0.049.\)</span>
+Therefore, capital gain tax (CGT) is payable.
+<span class="math display">\[
+\begin{aligned}
+P &amp;= 2.45 a^j_{\angl{15}} + (100 - 0.3(100-P)) (\frac{1}{1.065})^{7.5}, \\
+\end{aligned}
+\]</span>
+where <span class="math display">\[j = (1.065)^{1/2} - 1 = 0.0319884.\]</span>
+This results in <span class="math inline">\(P = 89.16\)</span>.</p>
+<ol start="3" style="list-style-type: decimal">
+<li>Investor A sold the bond for less than price paid for the bond, so A does not pay CGT.</li>
+</ol>
+<p>In unit of half-year, the equation of value is
+<span class="math display">\[ f(i) = -96.62 (1 + i)^{15} + 0.75 \times 3.5  s^i_{\angl{15}} + 89.16 = 0.\]</span></p>
+<p>By trial and error, we obtain</p>
+<p><span class="math display">\[
+\begin{aligned}
+f(0.026) &amp;= 0.463 \\
+f(0.027) &amp;= -1.192. \\
+\end{aligned}
+\]</span></p>
+<p>Therefore, the approximate of <span class="math inline">\(i\)</span> is
+<span class="math display">\[ i \approx 0.026280 \text{ per half-year,} \]</span> and hence
+approximately 5.325% p.a. effective.</p>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="solutions-to-tutorial-3.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="solutions-to-tutorial-5.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="tutorial-6.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tutorial-7.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
