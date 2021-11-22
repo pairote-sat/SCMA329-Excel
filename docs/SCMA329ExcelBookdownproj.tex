@@ -89,7 +89,7 @@
 
 \title{SCMA329 Practical Mathematical Financial Modeling}
 \author{Pairote Satiracoo}
-\date{2021-11-13}
+\date{2021-11-22}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[section]
@@ -3846,6 +3846,239 @@ where \(v\) and \(i'\) are the same as above.
   \end{enumerate}
 \end{enumerate}
 
+\hypertarget{solutions-to-tutorial-6}{%
+\section{Solutions to Tutorial 6}\label{solutions-to-tutorial-6}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Using a time unit of half a year, the effective yield per half year is
+  \[j = (1.08)^{1/2} - 1 = 0.0392305.\]
+  Then,
+\end{enumerate}
+
+\[
+\begin{aligned}
+P &= 300 a^j_{\angl{10}} + 11000 (\frac{1}{1.08})^{5} \\
+&= 9929.03.
+\end{aligned}
+\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\item
+  Using a time unit of half a year, the effect yield per half year is
+  \[j = (1.07)^{1/2} - 1 = 0.034408.\]
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    Per 1000 nominal,
+    \[
+    \begin{aligned}
+    P &= 50 a^j_{\angl{20}} + 1000 (\frac{1}{1.07})^{10} \\
+    &= 1222.79.
+    \end{aligned}
+    \]
+  \item
+    With an income tax rate at 15\%,
+  \end{enumerate}
+\end{enumerate}
+
+\[
+\begin{aligned}
+P &= 42.5 a^j_{\angl{20}} + 1000 (\frac{1}{1.07})^{10} \\
+&= 1115.62.
+\end{aligned}
+\]
+
+\begin{verbatim}
+3. Since 
+\end{verbatim}
+
+\(i^{(2)} = 2 \times j = 0.0688161 < (1 - t_1)\frac{D}{R} = (1 - 0.15)\frac{0.1}{1} = 0.085.\)
+Therefore, no capital gain tax (CGT) is payable.
+\[
+\begin{aligned}
+P &= 42.5 a^j_{\angl{20}} + 1000 (\frac{1}{1.07})^{10} \\
+&= 1115.62,
+\end{aligned}
+\]
+which is similar to the previous result.
+
+\begin{verbatim}
+4. A redepmtion yield of 
+\end{verbatim}
+
+9\% p.a. is equivalent to a yield of
+\[k = (1.09)^{1/2} - 1 = 0.0440307.\]
+Since \(k^{(2)} = 2 \times k = 0.0880613 < (1 - t_1)\frac{D}{R} = (1 - 0.15)\frac{0.1}{1} = 0.085.\)
+Therefore, no capital gain tax (CGT) is payable.
+\[
+\begin{aligned}
+P &= 42.5 a^k_{\angl{20}} + (1000 - 0.2(1000-P)) (\frac{1}{1.09})^{10} \\
+P &= 978.07 (< 1000).,
+\end{aligned}
+\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\item
+  The solutions are given below:
+\item
+  Using a time unit of half a year, the effect yield per half year is
+  \[j = (1.09)^{1/2} - 1 = 0.0440307.\]
+  Then,
+\end{enumerate}
+
+\[
+\begin{aligned}
+P &= 4 a^j_{\angl{30}} + 105 (\frac{1}{1.09})^{15} \\
+&= 94.73.
+\end{aligned}
+\]
+2. In unit of half-year, the timeline of the transaction is shown in the table below:
+
+\begin{longtable}[]{@{}ccccccccc@{}}
+\toprule
+Time & 0 & 1 & 2 & \(\cdots\) & 20 & 21 & \(\cdots\) & 30 \\
+\midrule
+\endhead
+Payment & -94.73 & 4 & 4 & \(\cdots\) & 4 & \(4 + 0.25\) & \(\cdots\) & \(4 + 0.25 + 105\) \\
+\bottomrule
+\end{longtable}
+
+The equation of value is
+\[ f(i) = -94.73 (1 + i)^{30} + 4 s^i_{\angl{30}} + 0.25 s^i_{\angl{10}} + 105 = 0.\]
+The change in the tax rate is quite small, so we do not expect a large change in the yield.
+
+By trial and error, in time unit of half a year, we have
+
+\[
+\begin{aligned}
+f(0.044) &= 3.2373 \\
+f(0.045) &= -2.6999. \\
+\end{aligned}
+\]
+
+Therefore, the approximate of \(i\) is
+\[ i \approx 0.044545 \text{ per half-year,} \]
+and hence 9.107\% effective per year.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\item
+  The solutions are as follows:
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    CGT is payable because the price paid is 9000 \textless{} 9800 (the redemption amount)
+  \end{enumerate}
+\end{enumerate}
+
+In unit of half-year, the equation of value is
+\[ f(i) = -9000 (1 + i)^{30} + 0.7 \times 300  s^i_{\angl{30}} + 9800 - 0.2(9800 - 9000) = 0.\]
+
+By trial and error, we obtain
+
+\[
+\begin{aligned}
+f(0.024) &= 380.741 \\
+f(0.025) &= -18.541. \\
+\end{aligned}
+\]
+
+Therefore, the approximate of \(i\) is
+\[ i \approx 0.024954 \text{ per half-year,} \]
+and hence 5.05\% effective per year.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  The investor wishes to obtain a net yield of 7\% p.a. effective, which is greater than 5.05\%. The price paide will be less than 9000. So CGT is payable.
+\end{enumerate}
+
+By the principle of equivalence,
+\[
+\begin{aligned}
+P &= 210 a^j_{\angl{30}} + (9800 - 0.2(9800 - P)) (\frac{1}{1.07})^{15}, 
+\end{aligned}
+\]
+where \[j = (1.07)^{1/2} - 1 = 0.034408.\]
+
+Solving for \(P\) results in \(P = 7258.90 \,( <9800)\).
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\item
+  The solutions are as follows:
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    Using a time unit of half a year, the effect yield per half year is
+    \[j = (1.08)^{1/2} - 1 = 0.0392305.\]
+    Then,
+  \end{enumerate}
+\end{enumerate}
+
+\[
+\begin{aligned}
+P &= 3.5 a^j_{\angl{30}} + 100 (\frac{1}{1.08})^{15} \\
+&= 92.62.
+\end{aligned}
+\]
+
+\begin{verbatim}
+2. The bond sold to the investor B has 15 half-years to run.
+\end{verbatim}
+
+From B's tax position,
+\(i^{(2)} = 2 \times (1.065^{1/2} - 1) = 0.0639767 < (1 - t_1)\frac{D}{R} = (1 - 0.3)\frac{7}{100} = 0.049.\)
+Therefore, capital gain tax (CGT) is payable.
+\[
+\begin{aligned}
+P &= 2.45 a^j_{\angl{15}} + (100 - 0.3(100-P)) (\frac{1}{1.065})^{7.5}, \\
+\end{aligned}
+\]
+where \[j = (1.065)^{1/2} - 1 = 0.0319884.\]
+This results in \(P = 89.16\).
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Investor A sold the bond for less than price paid for the bond, so A does not pay CGT.
+\end{enumerate}
+
+In unit of half-year, the equation of value is
+\[ f(i) = -96.62 (1 + i)^{15} + 0.75 \times 3.5  s^i_{\angl{15}} + 89.16 = 0.\]
+
+By trial and error, we obtain
+
+\[
+\begin{aligned}
+f(0.026) &= 0.463 \\
+f(0.027) &= -1.192. \\
+\end{aligned}
+\]
+
+Therefore, the approximate of \(i\) is
+\[ i \approx 0.026280 \text{ per half-year,} \] and hence
+approximately 5.325\% p.a. effective.
+
 \hypertarget{tutorial-7}{%
 \section{Tutorial 7}\label{tutorial-7}}
 
@@ -3968,6 +4201,226 @@ where \(v\) and \(i'\) are the same as above.
     rate of return per annum.
   \end{enumerate}
 \end{enumerate}
+
+\hypertarget{solutions-to-tutorial-7}{%
+\section{Solutions to Tutorial 7}\label{solutions-to-tutorial-7}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  The timeline of the transaction is given in the following table.
+\end{enumerate}
+
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.14}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.14}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.14}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.14}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.14}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.14}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.14}}@{}}
+\toprule
+\begin{minipage}[b]{\linewidth}\centering
+Time
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+0
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+2
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+3
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+4
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+5
+\end{minipage} \\
+\midrule
+\endhead
+Year & 2012 & 2013 & 2014 & 2015 & 2016 & 2017 \\
+Cashflow & -100 & 8 & 8 & 8 & 8 & 18 + 100 \\
+CPI & 97.22 & 99.17 & 101.32 & 100.25 & 100.36 & 100.53 \\
+Real value of cashflow at \(t = 0\) & -100 & \(\frac{(8)(97.22)}{99.17}\) & \(\frac{(8)(97.22)}{101.32}\) & \(\frac{(8)(97.22)}{100.25}\) & \(\frac{(8)(97.22)}{100.36}\) & \(\frac{(8)(97.22)}{100.53}\) \\
+Real value of cashflow at \(t = 0\) & -100 & = 7.84 & = 7.68 & = 7.76 & = 7.75 & = 114.11 \\
+\bottomrule
+\end{longtable}
+
+The real yield \(i'\) p.a. effective solve the equation of value as
+follows:
+\[f(i') = -100 + 7.84 v  + 7.68v^2 + 7.76v^3 + 7.75v^4 + 114.11v^5 = 0,\]
+where \(v = 1/(1 + i')\).\\
+This gives \(i' \approx 8.82\%\).
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\item
+  We know that when the annual rate of inflation is constant and equal to \(q\), the real yield \(i'\) and the monetary yield \(i\) satisfies \[(1 +i) = ( 1 + q)(1+i').\]
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    Given
+  \end{enumerate}
+\end{enumerate}
+
+\(i =0.06\) and \(q = 0.025\), we have
+\[ i' = \frac{1.06}{1.025} - 1 = 0.0341463 = 3.4146341\%.\]
+2. Given
+
+\(i =0.06\) and \(i' = 0.0425\), we have
+\[ i' = \frac{1.06}{1.0425} - 1 = 0.0167866 = 1.6786571\%.\]
+
+\begin{verbatim}
+3. Given 
+\end{verbatim}
+
+\(q = 0.03\) p.a. for 9 months and \(q = 0.0325\) p.a. for the next 3 months,
+\[ i' = \frac{1.06}{(1.03)^{9/12}(1.0325)^{3/12}} - 1 = 0.0285027 = 2.8502689\%.\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  The timeline of the transaction is given in the following table.
+\end{enumerate}
+
+\begin{longtable}[]{@{}ccccc@{}}
+\toprule
+Time & 0 & 1 & 2 & 3 \\
+\midrule
+\endhead
+Year & 2015 & 2016 & 2017 & 2018 \\
+Cashflow & -95 & 6 & 6 & 106 \\
+Real value of cashflow at \(t = 0\) & -95 & 5.81 & 5.41 & 88.70 \\
+\bottomrule
+\end{longtable}
+
+\begin{verbatim}
+1. The equation of value is
+\end{verbatim}
+
+\[ f(i) = -95 + 6 a^i_{\angl{3}} + \frac{100}{(1+i)^3}  = 0.\]
+
+This gives \(i \approx 7.938\%\).
+
+\begin{verbatim}
+2. The real yield 
+\end{verbatim}
+
+\(i'\) p.a. effective solve the equation of value as
+follows:
+\[f(i') = -95 + 5.81 v  + 5.41v^2 + 88.70v^3  = 0,\]
+where \(v = 1/(1 + i')\).\\
+This gives \(i' \approx 1.80\%\).
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Question 4 is not examinable.
+\end{enumerate}
+
+Investment A:
+
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.50}}
+  >{\centering\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.50}}@{}}
+\toprule
+\begin{minipage}[b]{\linewidth}\centering
+Date
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Real payment (monetary payment \(\times \frac{\text{Q(APR 2018)}}{\text{Q(Date)}}\))
+\end{minipage} \\
+\midrule
+\endhead
+1 APR 2018 & \(-110\) \\
+1 OCT 2018 & \(4.5 \times \frac{\text{Q(APR 2018)}}{\text{Q(OCT 2018)} } = 4.5 \times \frac{\text{Q(APR 2018)}}{\text{Q(APR 2018)} \times (1.025)^{1/2}} = 4.5 \times \frac{1}{ (1.025)^{1/2}}\) \\
+1 APR 2019 & \(4.5 \times \frac{\text{Q(APR 2018)}}{\text{Q(APR 2019)} } = 4.5 \times \frac{\text{Q(APR 2018)}}{\text{Q(APR 2018)} \times (1.025)^{1}} = 4.5 \times \frac{1}{ (1.025)^{1}}\) \(\vdots\) \\
+1 APR 2028 & \((100 + 4.5) \times \frac{\text{Q(APR 2018)}}{\text{Q(APR 2028)} } = (100 + 4.5) \times \frac{\text{Q(APR 2018)}}{\text{Q(APR 2018)} \times (1.025)^{10}} = (100 + 4.5) \times \frac{1}{ (1.025)^{10}}\) \\
+\bottomrule
+\end{longtable}
+
+The real yield \(i'\) p.a. effective solve the equation of value as
+follows:
+\[f(i') = -110 +  4.5\left( \frac{1}{((1+i')(1.025))^{1/2}} + \frac{1}{((1+i')(1.025))^{1}}  + \cdots + \frac{1}{((1+i')(1.025))^{10}}\right)= 0,\]
+Letting \((1+ j) = ((1+i')(1.025))^{1/2}\) gives the equation in terms of \(j\) as follows:
+
+\[ f(j) = -110 + 4.5 a^j_{\angl{20}} + \frac{100}{(1+j)^{20}}  = 0.\]
+By linear approximation, we obtain
+\[j \approx 0.0378\]
+and the real yield per annum is
+\[i' \approx 0.0507.\]
+
+Investment B:
+
+The coupon payment is 2 THB increased with inflation, paid every 6 months and the redemption payment is 100 THB also increased with inflation.
+
+We first increase the payments with inflation approximately lagged by 6 months to see how much is acually paid, which gives nominal payments and then calculate their real values in terms of their purchasing power at 1 APR 2018.
+
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.25}}
+  >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.25}}
+  >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.25}}
+  >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.25}}@{}}
+\toprule
+\begin{minipage}[b]{\linewidth}\centering
+Date
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+CPI (Date \(-\) 6/12)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Nominal payment at Date
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Real payment
+\end{minipage} \\
+\midrule
+\endhead
+1 OCT 2018 & \(145.68\) & \(2 \times \frac{145.68}{100.24}\) & \(2 \times \frac{145.68}{100.24} \frac{\text{Q(APR 2018)}}{\text{Q(OCT 2018)} } = 2 \times \frac{145.68}{100.24} \times \frac{1}{ (1.025)^{1/2}}\) \\
+1 APR 2019 & \(145.68 \times 1.025^{1/2}\) & \(2 \times \frac{145.68 \times 1.025^{1/2}}{100.24}\) & \(2 \times \frac{145.68 \times 1.025^{1/2}}{100.24} \frac{\text{Q(APR 2018)}}{\text{Q(APR 2019)} } = 2 \times \frac{145.68 }{100.24} \times \frac{1}{ (1.025)^{1/2}}\) \\
+\(\vdots\) & \(\vdots\) & \(\vdots\) & \(\vdots\) \\
+1 OCT 2027 & \(145.68 \times 1.025^{9}\) & \(2 \times \frac{145.68 \times 1.025^{9}}{100.24}\) & \(2 \times \frac{145.68 \times 1.025^{9}}{100.24} \frac{\text{Q(APR 2018)}}{\text{Q(OCT 2027)} } = 2 \times \frac{145.68 }{100.24} \times \frac{1}{ (1.025)^{1/2}}\) \\
+1 APR 2028 & \(145.68 \times 1.025^{9.5}\) & \((100 + 2) \times \frac{145.68 \times 1.025^{9.5}}{100.24}\) & \((100 + 2) \times \frac{145.68 \times 1.025^{9.5}}{100.24} \frac{\text{Q(APR 2018)}}{\text{Q(APR 2028)} } = (100 + 2) \times \frac{145.68 }{100.24} \times \frac{1}{ (1.025)^{1/2}}\) \\
+\bottomrule
+\end{longtable}
+
+The present value at 1 APR 2018 of the real payments at the real yield \(i'\) p.a. is
+\[ f(i') = -135 + 2 \times \frac{145.68  }{100.24} \times \frac{1}{ (1.025)^{1/2}} \times(2 a^{2(i')}_{\angl{10}}) + 100 \times \frac{145.68  }{100.24} \times \frac{1}{ (1.025)^{1/2}} \times \frac{1}{(1+i')^{10}} = 0.\]
+We solve for \(i'\), which results in
+\[i' \approx 0.0481\] per annum.
+
+\begin{verbatim}
+2. Investment A yields the higher real rate of return than investment B, hence investment A is preferred. 
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  Investment A: The payment received in 5 years is
+  \[50000(1.025)(1.035)(1.045)(1.055)(1.065) = A.\]
+  Hence, the real payment in terms of its purchasing power at 15 Jan 2013 is
+  \[ A \times \frac{Q(\text{Jan 13})}{Q(\text{Jan 18})}.\]
+\end{enumerate}
+
+Therefore, the real yield \(i\%\) p.a. is
+\[50000 (1 + i')^5 = A \times \frac{Q(\text{Jan 13})}{Q(\text{Jan 18})} = A \times \frac{114.83}{100},\]
+which gives \(i' = 1.64\%.\)
+
+Investment B: First we find an annual income of the annuity.
+\[\text{Annual income } = \frac{50000}{a^{0.06}_{\angl{5}}} = \ensuremath{1.186982\times 10^{4}}.\]
+
+The real yield on investment B is the solution
+\(i'\) p.a. to the equation
+follows:
+\[50000 = \left( \frac{100}{104.17} v  + \frac{100}{110.17} v^2 +  \cdots + \frac{100}{114.83}v^3  \right)\times \ensuremath{1.186982\times 10^{4}},\]
+At \(1.64\%\), the RHS of the above equation is equal to the price of B at \(1.64\% = 50614.35.\)
+
+Therefore, the real yield of B is greater than 1.64\%. Hence B gives greater real yield.
 
 \hypertarget{tutorial-8}{%
 \section{Tutorial 8}\label{tutorial-8}}
@@ -4167,5 +4620,163 @@ where \(v\) and \(i'\) are the same as above.
     Find the 95\% confidence interval of \(S_T\) in 6 months' time.
   \end{enumerate}
 \end{enumerate}
+
+\hypertarget{solutions-to-tutorial-8}{%
+\section{Solutions to Tutorial 8}\label{solutions-to-tutorial-8}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Let \(i'\)\% be the real rate of return (yield) per annum earned on this investment. It follows that
+  \[(1 + i')^3 = (1.025)(1.035)(1.045)\frac{100}{108.83} = 0.00618.\]
+\item
+  The drift rate is \((0.24)(4) = 1\) per year and the variance rate is \((9)(4) = 36\) per year.
+\end{enumerate}
+
+At the end of 6 months, the probability distribution of the cash position is normally distributed with mean
+\[35 + 1(\frac{1}{2}) = 35.5\]
+and variance
+\[36(\frac{1}{2}) = 18.\]
+Therefore, the expected cash position at the end of 6 months is 35.5.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  The estimates of the standard deviation of the \textbf{daily returns} are given by
+  \[
+  \begin{aligned}
+   s &= \sqrt{\frac{1}{n-1} \sum_{i=1}^n (u_i - \bar{u})^2 } \\
+       &= \sqrt{\frac{1}{n-1} \sum_{i=1}^n    u_i^2 - \frac{1}{n(n-1)}  \left(\sum_{i=1}^n u_i  \right)^2 } \\
+       &= \sqrt{\frac{1}{62-1}(0.0042) - \frac{1}{62(62-1)}(0.25)   } \\
+       &= 0.0072337.
+  \end{aligned}
+  \]
+\end{enumerate}
+
+Because we are using observations at intervals of \(\tau\) measured in years, the estimate of the \textbf{annualised volatility} is given by
+\[ \hat{\sigma} = \frac{s}{\sqrt{\tau}}.= \sqrt{252}s = 0.1148319 = 11.48\%.\]
+4. The \textbf{standard error of this estimate} is approximately \[\hat{\sigma}/\sqrt{2n} = \frac{0.1148319}{\sqrt{2(62)}} = 0.0103122 = 1.03\%.\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  Recall that the drift rate is \((0.24)(4) = 1\) per year and the variance rate is \((9)(4) = 36\) per year. It follows that
+  \[X(1) \sim N(X(0) + 1, 36) = (X(0) + 1) + 6N(0,1),\]
+  where \(X(0)\) is the company's initial cash position.
+\end{enumerate}
+
+The company's initial cash position so that the company has a less than 5\% chance of a negative cash position by the end of 1 year satisfies
+\[
+\begin{aligned}
+\Pr((X(0) + 1) + 6Z < 0) &= 0.05 \\
+\Pr( Z < \frac{-(X(0) + 1)}{6}) &= 0.05 \\
+\frac{X(0) + 1}{6} = 1.645,
+\end{aligned}\]
+where \(Z \sim N(0,1)\).
+This implies that \(X(0) = 8.87.\)
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{6}
+\tightlist
+\item
+  Following that the proportional return on stocks are normally distributed, the discrete-time version of the model is \[\begin{aligned} 
+   \frac{\Delta S}{S} &= \mu \Delta t + \sigma \sqrt{\Delta t} \epsilon 
+  \end{aligned}
+  \]
+  where \(\epsilon\) has a standard normal distribution. Hence,
+  \[
+  \begin{aligned}
+  S_t &= S_{t-1} + \Delta S \\
+  &= S_{t-1} + S_{t-1}(\mu \Delta t + \sigma \sqrt{\Delta t}
+  \epsilon)\\
+  &= S_{t-1}\cdot(1+\mu \Delta t + \sigma \sqrt{\Delta t}
+  \epsilon)
+  \end{aligned}
+  \]
+  where in this case \(\Delta t = 1/12, \mu = 0.08\) and \(\sigma = 0.3\).
+\end{enumerate}
+
+The simulated values of the stock price path at time 3 months are shown in the following table.
+
+\begin{longtable}[]{@{}cc@{}}
+\toprule
+Time (t) & \(S_t\) \\
+\midrule
+\endhead
+\(\Delta t\) & \(40(1 + (0.08)(1/12) + (0.3) \sqrt{(1/12)} (0.62)) = 42.414\) \\
+\(2\Delta t\) & \(42.414(1 + (0.08)(1/12) + (0.3) \sqrt{(1/12)} (1.34)) = 47.619\) \\
+\(3\Delta t\) & \(42.414(1 + (0.08)(1/12) + (0.3) \sqrt{(1/12)} (-0.76)) = 44.803\) \\
+\bottomrule
+\end{longtable}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{7}
+\item
+  The questions are similar to the previous tutorial. Only answers are given here.
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \item
+    CPI(OCT 2015) = 96.
+  \item
+  \end{enumerate}
+\end{enumerate}
+
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.50}}
+  >{\centering\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.50}}@{}}
+\toprule
+\begin{minipage}[b]{\linewidth}\centering
+Date
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+(Monetary) Payment
+\end{minipage} \\
+\midrule
+\endhead
+Jul 2016 & \(\frac{2\%}{2}\frac{\text{Q(Date - 3/12)}}{\text{Q(Jan 16 - 3/12)}} = 1.03125 = M_1\) \\
+Jan 2017 & \(\frac{2\%}{2}\frac{\text{Q(Oct 16)}}{\text{Q(Oct 15)}} = 1.0625 = M_2\) \\
+Jul 2017 & \(\frac{2\%}{2}\frac{\text{Q(Apr 17)}}{\text{Q(Oct 15)}} = 1.09375 = M_3\) \\
+Jan 2018 & \((100+1)\frac{\text{Q(Oct 17)}}{\text{Q(Oct 15)}} = 116.7812= M_4\) \\
+\bottomrule
+\end{longtable}
+
+\begin{verbatim}
+3.
+\end{verbatim}
+
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.50}}
+  >{\centering\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.50}}@{}}
+\toprule
+\begin{minipage}[b]{\linewidth}\centering
+Date
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Real Payment \(=\) Monetary Payment \(\times \frac{\text{Q(Jan 16)}}{\text{Q(Date)}}\)
+\end{minipage} \\
+\midrule
+\endhead
+Jul 2016 & \(1.03125\frac{97}{100} = 1.0003125\) \\
+Jan 2017 & \(1.0625\frac{97}{104} = 0.9909856\) \\
+Jul 2017 & \(1.09375\frac{97}{109} = 0.9733372\) \\
+Jan 2018 & \(116.7812\frac{97}{112} = 101.1408607\) \\
+\bottomrule
+\end{longtable}
+
+\begin{verbatim}
+4. The purchase price of the bond per 100 THB nominal if the investor obtained a real redemption yield of 0.79% p.a. effective on the bond satisfies
+\end{verbatim}
+
+\[
+\begin{aligned}
+P &= \frac{1.0003125}{(1+0.0079)^{1/2}} + \frac{0.9909856}{(1+0.0079)^{2/2}} + \frac{0.9733372}{(1+0.0079)^{3/2}} + \frac{101.1408607}{(1+0.0079)^{4/2}}\\ 
+&= 102.50.
+\end{aligned}
+\]
 
 \end{document}
