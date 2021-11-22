@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Section 22 Solutions to Tutorial 7 | SCMA329 Practical Mathematical Financial Modeling</title>
-  <meta name="description" content="Section 22 Solutions to Tutorial 7 | SCMA329 Practical Mathematical Financial Modeling" />
+  <title>Section 24 Solutions to Tutorial 8 | SCMA329 Practical Mathematical Financial Modeling</title>
+  <meta name="description" content="Section 24 Solutions to Tutorial 8 | SCMA329 Practical Mathematical Financial Modeling" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Section 22 Solutions to Tutorial 7 | SCMA329 Practical Mathematical Financial Modeling" />
+  <meta property="og:title" content="Section 24 Solutions to Tutorial 8 | SCMA329 Practical Mathematical Financial Modeling" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Section 22 Solutions to Tutorial 7 | SCMA329 Practical Mathematical Financial Modeling" />
+  <meta name="twitter:title" content="Section 24 Solutions to Tutorial 8 | SCMA329 Practical Mathematical Financial Modeling" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="tutorial-7.html"/>
-<link rel="next" href="tutorial-8.html"/>
+<link rel="prev" href="tutorial-8.html"/>
+
 <script src="libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -207,149 +207,93 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="solutions-to-tutorial-7" class="section level1" number="22">
-<h1><span class="header-section-number">Section 22</span> Solutions to Tutorial 7</h1>
+<div id="solutions-to-tutorial-8" class="section level1" number="24">
+<h1><span class="header-section-number">Section 24</span> Solutions to Tutorial 8</h1>
 <ol style="list-style-type: decimal">
-<li>The timeline of the transaction is given in the following table.</li>
+<li><p>Let <span class="math inline">\(i&#39;\)</span>% be the real rate of return (yield) per annum earned on this investment. It follows that
+<span class="math display">\[(1 + i&#39;)^3 = (1.025)(1.035)(1.045)\frac{100}{108.83} = 0.00618.\]</span></p></li>
+<li><p>The drift rate is <span class="math inline">\((0.24)(4) = 1\)</span> per year and the variance rate is <span class="math inline">\((9)(4) = 36\)</span> per year.</p></li>
 </ol>
-<table style="width:100%;">
-<colgroup>
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-</colgroup>
+<p>At the end of 6 months, the probability distribution of the cash position is normally distributed with mean
+<span class="math display">\[35 + 1(\frac{1}{2}) = 35.5\]</span>
+and variance
+<span class="math display">\[36(\frac{1}{2}) = 18.\]</span>
+Therefore, the expected cash position at the end of 6 months is 35.5.</p>
+<ol start="3" style="list-style-type: decimal">
+<li>The estimates of the standard deviation of the  are given by
+<span class="math display">\[
+\begin{aligned}
+ s &amp;= \sqrt{\frac{1}{n-1} \sum_{i=1}^n (u_i - \bar{u})^2 } \\
+     &amp;= \sqrt{\frac{1}{n-1} \sum_{i=1}^n    u_i^2 - \frac{1}{n(n-1)}  \left(\sum_{i=1}^n u_i  \right)^2 } \\
+     &amp;= \sqrt{\frac{1}{62-1}(0.0042) - \frac{1}{62(62-1)}(0.25)   } \\
+     &amp;= 0.0072337.
+\end{aligned}
+\]</span></li>
+</ol>
+<p>Because we are using observations at intervals of <span class="math inline">\(\tau\)</span> measured in years, the estimate of the  is given by
+<span class="math display">\[ \hat{\sigma} = \frac{s}{\sqrt{\tau}}.= \sqrt{252}s = 0.1148319 = 11.48\%.\]</span>
+4. The  is approximately <span class="math display">\[\hat{\sigma}/\sqrt{2n} = \frac{0.1148319}{\sqrt{2(62)}} = 0.0103122 = 1.03\%.\]</span></p>
+<ol start="5" style="list-style-type: decimal">
+<li>Recall that the drift rate is <span class="math inline">\((0.24)(4) = 1\)</span> per year and the variance rate is <span class="math inline">\((9)(4) = 36\)</span> per year. It follows that
+<span class="math display">\[X(1) \sim N(X(0) + 1, 36) = (X(0) + 1) + 6N(0,1),\]</span>
+where <span class="math inline">\(X(0)\)</span> is the company’s initial cash position.</li>
+</ol>
+<p>The company’s initial cash position so that the company has a less than 5% chance of a negative cash position by the end of 1 year satisfies
+<span class="math display">\[
+\begin{aligned}
+\Pr((X(0) + 1) + 6Z &lt; 0) &amp;= 0.05 \\
+\Pr( Z &lt; \frac{-(X(0) + 1)}{6}) &amp;= 0.05 \\
+\frac{X(0) + 1}{6} = 1.645,
+\end{aligned}\]</span>
+where <span class="math inline">\(Z \sim N(0,1)\)</span>.
+This implies that <span class="math inline">\(X(0) = 8.87.\)</span></p>
+<ol start="7" style="list-style-type: decimal">
+<li>Following that the proportional return on stocks are normally distributed, the discrete-time version of the model is <span class="math display">\[\begin{aligned} 
+ \frac{\Delta S}{S} &amp;= \mu \Delta t + \sigma \sqrt{\Delta t} \epsilon 
+\end{aligned}
+\]</span>
+where <span class="math inline">\(\epsilon\)</span> has a standard normal distribution. Hence,
+<span class="math display">\[
+\begin{aligned}
+S_t &amp;= S_{t-1} + \Delta S \\
+&amp;= S_{t-1} + S_{t-1}(\mu \Delta t + \sigma \sqrt{\Delta t}
+\epsilon)\\
+&amp;= S_{t-1}\cdot(1+\mu \Delta t + \sigma \sqrt{\Delta t}
+\epsilon)
+\end{aligned}
+\]</span>
+where in this case <span class="math inline">\(\Delta t = 1/12, \mu = 0.08\)</span> and <span class="math inline">\(\sigma = 0.3\)</span>.</li>
+</ol>
+<p>The simulated values of the stock price path at time 3 months are shown in the following table.</p>
+<table>
 <thead>
 <tr class="header">
-<th align="center">Time</th>
-<th align="center">0</th>
-<th align="center">1</th>
-<th align="center">2</th>
-<th align="center">3</th>
-<th align="center">4</th>
-<th align="center">5</th>
+<th align="center">Time (t)</th>
+<th align="center"><span class="math inline">\(S_t\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center">Year</td>
-<td align="center">2012</td>
-<td align="center">2013</td>
-<td align="center">2014</td>
-<td align="center">2015</td>
-<td align="center">2016</td>
-<td align="center">2017</td>
+<td align="center"><span class="math inline">\(\Delta t\)</span></td>
+<td align="center"><span class="math inline">\(40(1 + (0.08)(1/12) + (0.3) \sqrt{(1/12)} (0.62)) = 42.414\)</span></td>
 </tr>
 <tr class="even">
-<td align="center">Cashflow</td>
-<td align="center">-100</td>
-<td align="center">8</td>
-<td align="center">8</td>
-<td align="center">8</td>
-<td align="center">8</td>
-<td align="center">18 + 100</td>
+<td align="center"><span class="math inline">\(2\Delta t\)</span></td>
+<td align="center"><span class="math inline">\(42.414(1 + (0.08)(1/12) + (0.3) \sqrt{(1/12)} (1.34)) = 47.619\)</span></td>
 </tr>
 <tr class="odd">
-<td align="center">CPI</td>
-<td align="center">97.22</td>
-<td align="center">99.17</td>
-<td align="center">101.32</td>
-<td align="center">100.25</td>
-<td align="center">100.36</td>
-<td align="center">100.53</td>
-</tr>
-<tr class="even">
-<td align="center">Real value of cashflow at <span class="math inline">\(t = 0\)</span></td>
-<td align="center">-100</td>
-<td align="center"><span class="math inline">\(\frac{(8)(97.22)}{99.17}\)</span></td>
-<td align="center"><span class="math inline">\(\frac{(8)(97.22)}{101.32}\)</span></td>
-<td align="center"><span class="math inline">\(\frac{(8)(97.22)}{100.25}\)</span></td>
-<td align="center"><span class="math inline">\(\frac{(8)(97.22)}{100.36}\)</span></td>
-<td align="center"><span class="math inline">\(\frac{(8)(97.22)}{100.53}\)</span></td>
-</tr>
-<tr class="odd">
-<td align="center">Real value of cashflow at <span class="math inline">\(t = 0\)</span></td>
-<td align="center">-100</td>
-<td align="center">= 7.84</td>
-<td align="center">= 7.68</td>
-<td align="center">= 7.76</td>
-<td align="center">= 7.75</td>
-<td align="center">= 114.11</td>
+<td align="center"><span class="math inline">\(3\Delta t\)</span></td>
+<td align="center"><span class="math inline">\(42.414(1 + (0.08)(1/12) + (0.3) \sqrt{(1/12)} (-0.76)) = 44.803\)</span></td>
 </tr>
 </tbody>
 </table>
-<p>The real yield <span class="math inline">\(i&#39;\)</span> p.a. effective solve the equation of value as
-follows:
-<span class="math display">\[f(i&#39;) = -100 + 7.84 v  + 7.68v^2 + 7.76v^3 + 7.75v^4 + 114.11v^5 = 0,\]</span>
-where <span class="math inline">\(v = 1/(1 + i&#39;)\)</span>.<br />
-This gives <span class="math inline">\(i&#39; \approx 8.82\%\)</span>.</p>
-<ol start="2" style="list-style-type: decimal">
-<li><p>We know that when the annual rate of inflation is constant and equal to <span class="math inline">\(q\)</span>, the real yield <span class="math inline">\(i&#39;\)</span> and the monetary yield <span class="math inline">\(i\)</span> satisfies <span class="math display">\[(1 +i) = ( 1 + q)(1+i&#39;).\]</span></p>
+<ol start="8" style="list-style-type: decimal">
+<li><p>The questions are similar to the previous tutorial. Only answers are given here.</p>
 <ol style="list-style-type: decimal">
-<li>Given</li>
+<li><p>CPI(OCT 2015) = 96.</p></li>
+<li></li>
 </ol></li>
 </ol>
-<p><span class="math inline">\(i =0.06\)</span> and <span class="math inline">\(q = 0.025\)</span>, we have
-<span class="math display">\[ i&#39; = \frac{1.06}{1.025} - 1 = 0.0341463 = 3.4146341\%.\]</span>
-2. Given</p>
-<p><span class="math inline">\(i =0.06\)</span> and <span class="math inline">\(i&#39; = 0.0425\)</span>, we have
-<span class="math display">\[ i&#39; = \frac{1.06}{1.0425} - 1 = 0.0167866 = 1.6786571\%.\]</span></p>
-<pre><code>3. Given </code></pre>
-<p><span class="math inline">\(q = 0.03\)</span> p.a. for 9 months and <span class="math inline">\(q = 0.0325\)</span> p.a. for the next 3 months,
-<span class="math display">\[ i&#39; = \frac{1.06}{(1.03)^{9/12}(1.0325)^{3/12}} - 1 = 0.0285027 = 2.8502689\%.\]</span></p>
-<ol start="3" style="list-style-type: decimal">
-<li>The timeline of the transaction is given in the following table.</li>
-</ol>
-<table>
-<thead>
-<tr class="header">
-<th align="center">Time</th>
-<th align="center">0</th>
-<th align="center">1</th>
-<th align="center">2</th>
-<th align="center">3</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center">Year</td>
-<td align="center">2015</td>
-<td align="center">2016</td>
-<td align="center">2017</td>
-<td align="center">2018</td>
-</tr>
-<tr class="even">
-<td align="center">Cashflow</td>
-<td align="center">-95</td>
-<td align="center">6</td>
-<td align="center">6</td>
-<td align="center">106</td>
-</tr>
-<tr class="odd">
-<td align="center">Real value of cashflow at <span class="math inline">\(t = 0\)</span></td>
-<td align="center">-95</td>
-<td align="center">5.81</td>
-<td align="center">5.41</td>
-<td align="center">88.70</td>
-</tr>
-</tbody>
-</table>
-<pre><code>1. The equation of value is</code></pre>
-<p><span class="math display">\[ f(i) = -95 + 6 a^i_{\angl{3}} + \frac{100}{(1+i)^3}  = 0.\]</span></p>
-<p>This gives <span class="math inline">\(i \approx 7.938\%\)</span>.</p>
-<pre><code>2. The real yield </code></pre>
-<p><span class="math inline">\(i&#39;\)</span> p.a. effective solve the equation of value as
-follows:
-<span class="math display">\[f(i&#39;) = -95 + 5.81 v  + 5.41v^2 + 88.70v^3  = 0,\]</span>
-where <span class="math inline">\(v = 1/(1 + i&#39;)\)</span>.<br />
-This gives <span class="math inline">\(i&#39; \approx 1.80\%\)</span>.</p>
-<ol start="4" style="list-style-type: decimal">
-<li>Question 4 is not examinable.</li>
-</ol>
-<p>Investment A:</p>
 <table>
 <colgroup>
 <col width="50%" />
@@ -358,118 +302,75 @@ This gives <span class="math inline">\(i&#39; \approx 1.80\%\)</span>.</p>
 <thead>
 <tr class="header">
 <th align="center">Date</th>
-<th align="center">Real payment (monetary payment <span class="math inline">\(\times \frac{\text{Q(APR 2018)}}{\text{Q(Date)}}\)</span>)</th>
+<th align="center">(Monetary) Payment</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center">1 APR 2018</td>
-<td align="center"><span class="math inline">\(-110\)</span></td>
+<td align="center">Jul 2016</td>
+<td align="center"><span class="math inline">\(\frac{2\%}{2}\frac{\text{Q(Date - 3/12)}}{\text{Q(Jan 16 - 3/12)}} = 1.03125 = M_1\)</span></td>
 </tr>
 <tr class="even">
-<td align="center">1 OCT 2018</td>
-<td align="center"><span class="math inline">\(4.5 \times \frac{\text{Q(APR 2018)}}{\text{Q(OCT 2018)} } = 4.5 \times \frac{\text{Q(APR 2018)}}{\text{Q(APR 2018)} \times (1.025)^{1/2}} = 4.5 \times \frac{1}{ (1.025)^{1/2}}\)</span></td>
+<td align="center">Jan 2017</td>
+<td align="center"><span class="math inline">\(\frac{2\%}{2}\frac{\text{Q(Oct 16)}}{\text{Q(Oct 15)}} = 1.0625 = M_2\)</span></td>
 </tr>
 <tr class="odd">
-<td align="center">1 APR 2019</td>
-<td align="center"><span class="math inline">\(4.5 \times \frac{\text{Q(APR 2018)}}{\text{Q(APR 2019)} } = 4.5 \times \frac{\text{Q(APR 2018)}}{\text{Q(APR 2018)} \times (1.025)^{1}} = 4.5 \times \frac{1}{ (1.025)^{1}}\)</span> <span class="math inline">\(\vdots\)</span></td>
+<td align="center">Jul 2017</td>
+<td align="center"><span class="math inline">\(\frac{2\%}{2}\frac{\text{Q(Apr 17)}}{\text{Q(Oct 15)}} = 1.09375 = M_3\)</span></td>
 </tr>
 <tr class="even">
-<td align="center">1 APR 2028</td>
-<td align="center"><span class="math inline">\((100 + 4.5) \times \frac{\text{Q(APR 2018)}}{\text{Q(APR 2028)} } = (100 + 4.5) \times \frac{\text{Q(APR 2018)}}{\text{Q(APR 2018)} \times (1.025)^{10}} = (100 + 4.5) \times \frac{1}{ (1.025)^{10}}\)</span></td>
+<td align="center">Jan 2018</td>
+<td align="center"><span class="math inline">\((100+1)\frac{\text{Q(Oct 17)}}{\text{Q(Oct 15)}} = 116.7812= M_4\)</span></td>
 </tr>
 </tbody>
 </table>
-<p>The real yield <span class="math inline">\(i&#39;\)</span> p.a. effective solve the equation of value as
-follows:
-<span class="math display">\[f(i&#39;) = -110 +  4.5\left( \frac{1}{((1+i&#39;)(1.025))^{1/2}} + \frac{1}{((1+i&#39;)(1.025))^{1}}  + \cdots + \frac{1}{((1+i&#39;)(1.025))^{10}}\right)= 0,\]</span>
-Letting <span class="math inline">\((1+ j) = ((1+i&#39;)(1.025))^{1/2}\)</span> gives the equation in terms of <span class="math inline">\(j\)</span> as follows:</p>
-<p><span class="math display">\[ f(j) = -110 + 4.5 a^j_{\angl{20}} + \frac{100}{(1+j)^{20}}  = 0.\]</span>
-By linear approximation, we obtain
-<span class="math display">\[j \approx 0.0378\]</span>
-and the real yield per annum is
-<span class="math display">\[i&#39; \approx 0.0507.\]</span></p>
-<p>Investment B:</p>
-<p>The coupon payment is 2 THB increased with inflation, paid every 6 months and the redemption payment is 100 THB also increased with inflation.</p>
-<p>We first increase the payments with inflation approximately lagged by 6 months to see how much is acually paid, which gives nominal payments and then calculate their real values in terms of their purchasing power at 1 APR 2018.</p>
+<pre><code>3.</code></pre>
 <table>
 <colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
+<col width="50%" />
+<col width="50%" />
 </colgroup>
 <thead>
 <tr class="header">
 <th align="center">Date</th>
-<th align="center">CPI (Date <span class="math inline">\(-\)</span> 6/12)</th>
-<th align="center">Nominal payment at Date</th>
-<th align="center">Real payment</th>
+<th align="center">Real Payment <span class="math inline">\(=\)</span> Monetary Payment <span class="math inline">\(\times \frac{\text{Q(Jan 16)}}{\text{Q(Date)}}\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center">1 OCT 2018</td>
-<td align="center"><span class="math inline">\(145.68\)</span></td>
-<td align="center"><span class="math inline">\(2 \times \frac{145.68}{100.24}\)</span></td>
-<td align="center"><span class="math inline">\(2 \times \frac{145.68}{100.24} \frac{\text{Q(APR 2018)}}{\text{Q(OCT 2018)} } = 2 \times \frac{145.68}{100.24} \times \frac{1}{ (1.025)^{1/2}}\)</span></td>
+<td align="center">Jul 2016</td>
+<td align="center"><span class="math inline">\(1.03125\frac{97}{100} = 1.0003125\)</span></td>
 </tr>
 <tr class="even">
-<td align="center">1 APR 2019</td>
-<td align="center"><span class="math inline">\(145.68 \times 1.025^{1/2}\)</span></td>
-<td align="center"><span class="math inline">\(2 \times \frac{145.68 \times 1.025^{1/2}}{100.24}\)</span></td>
-<td align="center"><span class="math inline">\(2 \times \frac{145.68 \times 1.025^{1/2}}{100.24} \frac{\text{Q(APR 2018)}}{\text{Q(APR 2019)} } = 2 \times \frac{145.68 }{100.24} \times \frac{1}{ (1.025)^{1/2}}\)</span></td>
+<td align="center">Jan 2017</td>
+<td align="center"><span class="math inline">\(1.0625\frac{97}{104} = 0.9909856\)</span></td>
 </tr>
 <tr class="odd">
-<td align="center"><span class="math inline">\(\vdots\)</span></td>
-<td align="center"><span class="math inline">\(\vdots\)</span></td>
-<td align="center"><span class="math inline">\(\vdots\)</span></td>
-<td align="center"><span class="math inline">\(\vdots\)</span></td>
+<td align="center">Jul 2017</td>
+<td align="center"><span class="math inline">\(1.09375\frac{97}{109} = 0.9733372\)</span></td>
 </tr>
 <tr class="even">
-<td align="center">1 OCT 2027</td>
-<td align="center"><span class="math inline">\(145.68 \times 1.025^{9}\)</span></td>
-<td align="center"><span class="math inline">\(2 \times \frac{145.68 \times 1.025^{9}}{100.24}\)</span></td>
-<td align="center"><span class="math inline">\(2 \times \frac{145.68 \times 1.025^{9}}{100.24} \frac{\text{Q(APR 2018)}}{\text{Q(OCT 2027)} } = 2 \times \frac{145.68 }{100.24} \times \frac{1}{ (1.025)^{1/2}}\)</span></td>
-</tr>
-<tr class="odd">
-<td align="center">1 APR 2028</td>
-<td align="center"><span class="math inline">\(145.68 \times 1.025^{9.5}\)</span></td>
-<td align="center"><span class="math inline">\((100 + 2) \times \frac{145.68 \times 1.025^{9.5}}{100.24}\)</span></td>
-<td align="center"><span class="math inline">\((100 + 2) \times \frac{145.68 \times 1.025^{9.5}}{100.24} \frac{\text{Q(APR 2018)}}{\text{Q(APR 2028)} } = (100 + 2) \times \frac{145.68 }{100.24} \times \frac{1}{ (1.025)^{1/2}}\)</span></td>
+<td align="center">Jan 2018</td>
+<td align="center"><span class="math inline">\(116.7812\frac{97}{112} = 101.1408607\)</span></td>
 </tr>
 </tbody>
 </table>
-<p>The present value at 1 APR 2018 of the real payments at the real yield <span class="math inline">\(i&#39;\)</span> p.a. is
-<span class="math display">\[ f(i&#39;) = -135 + 2 \times \frac{145.68  }{100.24} \times \frac{1}{ (1.025)^{1/2}} \times(2 a^{2(i&#39;)}_{\angl{10}}) + 100 \times \frac{145.68  }{100.24} \times \frac{1}{ (1.025)^{1/2}} \times \frac{1}{(1+i&#39;)^{10}} = 0.\]</span>
-We solve for <span class="math inline">\(i&#39;\)</span>, which results in
-<span class="math display">\[i&#39; \approx 0.0481\]</span> per annum.</p>
-<pre><code>2. Investment A yields the higher real rate of return than investment B, hence investment A is preferred. </code></pre>
-<ol start="5" style="list-style-type: decimal">
-<li>Investment A: The payment received in 5 years is
-<span class="math display">\[50000(1.025)(1.035)(1.045)(1.055)(1.065) = A.\]</span>
-Hence, the real payment in terms of its purchasing power at 15 Jan 2013 is
-<span class="math display">\[ A \times \frac{Q(\text{Jan 13})}{Q(\text{Jan 18})}.\]</span></li>
-</ol>
-<p>Therefore, the real yield <span class="math inline">\(i\%\)</span> p.a. is
-<span class="math display">\[50000 (1 + i&#39;)^5 = A \times \frac{Q(\text{Jan 13})}{Q(\text{Jan 18})} = A \times \frac{114.83}{100},\]</span>
-which gives <span class="math inline">\(i&#39; = 1.64\%.\)</span></p>
-<p>Investment B: First we find an annual income of the annuity.
-<span class="math display">\[\text{Annual income } = \frac{50000}{a^{0.06}_{\angl{5}}} = 1.186982\times 10^{4}.\]</span></p>
-<p>The real yield on investment B is the solution
-<span class="math inline">\(i&#39;\)</span> p.a. to the equation
-follows:
-<span class="math display">\[50000 = \left( \frac{100}{104.17} v  + \frac{100}{110.17} v^2 +  \cdots + \frac{100}{114.83}v^3  \right)\times 1.186982\times 10^{4},\]</span>
-At <span class="math inline">\(1.64\%\)</span>, the RHS of the above equation is equal to the price of B at <span class="math inline">\(1.64\% = 50614.35.\)</span></p>
-<p>Therefore, the real yield of B is greater than 1.64%. Hence B gives greater real yield.</p>
+<pre><code>4. The purchase price of the bond per 100 THB nominal if the investor obtained a real redemption yield of 0.79% p.a. effective on the bond satisfies</code></pre>
+<p><span class="math display">\[
+\begin{aligned}
+P &amp;= \frac{1.0003125}{(1+0.0079)^{1/2}} + \frac{0.9909856}{(1+0.0079)^{2/2}} + \frac{0.9733372}{(1+0.0079)^{3/2}} + \frac{101.1408607}{(1+0.0079)^{4/2}}\\ 
+&amp;= 102.50.
+\end{aligned}
+\]</span></p>
+
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="tutorial-7.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="tutorial-8.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="tutorial-8.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

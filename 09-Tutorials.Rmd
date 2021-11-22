@@ -1482,3 +1482,102 @@ Tutorial 8
 
 
 
+Solutions to Tutorial 8
+==========
+
+1. Let $i'$% be the real rate of return (yield) per annum earned on this investment. It follows that
+$$(1 + i')^3 = (1.025)(1.035)(1.045)\frac{100}{108.83} = 0.00618.$$
+
+2. The drift rate is $(0.24)(4) = 1$ per year and the variance rate is $(9)(4) = 36$ per year.
+
+At the end of 6 months, the probability distribution of the cash position is normally distributed with mean 
+$$35 + 1(\frac{1}{2}) = 35.5$$
+and variance
+$$36(\frac{1}{2}) = 18.$$
+Therefore, the expected cash position at the end of 6 months is 35.5.
+
+3. The estimates of the standard deviation of the \textbf{daily returns} are given by
+$$
+\begin{aligned}
+	s &= \sqrt{\frac{1}{n-1} \sum_{i=1}^n (u_i - \bar{u})^2 } \\
+		&= \sqrt{\frac{1}{n-1} \sum_{i=1}^n    u_i^2 - \frac{1}{n(n-1)}  \left(\sum_{i=1}^n u_i  \right)^2 } \\
+		&= \sqrt{\frac{1}{62-1}(0.0042) - \frac{1}{62(62-1)}(0.25)   } \\
+		&= `r sqrt(0.0042/61 - 0.25^2/(62*61)) `.
+\end{aligned}
+$$
+
+Because we are using observations at intervals of $\tau$ measured in years, the estimate of the \textbf{annualised volatility} is given by
+$$ \hat{\sigma} = \frac{s}{\sqrt{\tau}}.= \sqrt{252}s = `r sqrt(252)*sqrt(0.0042/61 - 0.25^2/(62*61)) ` = 11.48\%.$$
+4. The \textbf{standard error of this estimate} is approximately $$\hat{\sigma}/\sqrt{2n} = \frac{`r sqrt(252)*sqrt(0.0042/61 - 0.25^2/(62*61)) `}{\sqrt{2(62)}} = `r sqrt(252)*sqrt(0.0042/61 - 0.25^2/(62*61))/(sqrt(2*62))` = 1.03\%.$$
+
+
+5. Recall that the drift rate is $(0.24)(4) = 1$ per year and the variance rate is $(9)(4) = 36$ per year. It follows that
+$$X(1) \sim N(X(0) + 1, 36) = (X(0) + 1) + 6N(0,1),$$
+where $X(0)$ is the company's initial cash position.
+
+The company's initial cash position so that the company has a less than 5% chance of a negative cash position by the end of 1 year satisfies
+$$
+\begin{aligned}
+\Pr((X(0) + 1) + 6Z < 0) &= 0.05 \\
+\Pr( Z < \frac{-(X(0) + 1)}{6}) &= 0.05 \\
+\frac{X(0) + 1}{6} = 1.645,
+\end{aligned}$$
+where $Z \sim N(0,1)$.
+This implies that $X(0) = 8.87.$
+
+
+7. Following that the proportional return on stocks are normally distributed, the discrete-time version of the model is $$\begin{aligned} 
+	\frac{\Delta S}{S} &= \mu \Delta t + \sigma \sqrt{\Delta t} \epsilon 
+\end{aligned}
+$$
+where $\epsilon$ has a standard normal distribution. Hence, 
+$$
+\begin{aligned}
+S_t &= S_{t-1} + \Delta S \\
+&= S_{t-1} + S_{t-1}(\mu \Delta t + \sigma \sqrt{\Delta t}
+\epsilon)\\
+&= S_{t-1}\cdot(1+\mu \Delta t + \sigma \sqrt{\Delta t}
+\epsilon)
+\end{aligned}
+$$
+where in this case $\Delta t = 1/12, \mu = 0.08$ and $\sigma = 0.3$. 
+
+The simulated values of the stock price path at time 3 months are shown in the following table.
+
+Time (t) | $S_t$
+:-: | :-: | 
+$\Delta t$ | $40(1 + (0.08)(1/12) + (0.3) \sqrt{(1/12)} (0.62)) = 42.414$
+$2\Delta t$ | $42.414(1 + (0.08)(1/12) + (0.3) \sqrt{(1/12)} (1.34)) = 47.619$
+$3\Delta t$ | $42.414(1 + (0.08)(1/12) + (0.3) \sqrt{(1/12)} (-0.76)) = 44.803$
+
+
+8. The questions are similar to the previous tutorial. Only answers are given here.
+
+    1. CPI(OCT 2015) = 96.
+    
+    2.
+
+Date | (Monetary) Payment |
+:-: | :-: | 
+Jul 2016 | $\frac{2\%}{2}\frac{\text{Q(Date - 3/12)}}{\text{Q(Jan 16 - 3/12)}} = 1.03125 = M_1$ 
+Jan 2017 | $\frac{2\%}{2}\frac{\text{Q(Oct 16)}}{\text{Q(Oct 15)}} = 1.0625 = M_2$ 
+Jul 2017 | $\frac{2\%}{2}\frac{\text{Q(Apr 17)}}{\text{Q(Oct 15)}} = 1.09375 = M_3$ 
+Jan 2018 | $(100+1)\frac{\text{Q(Oct 17)}}{\text{Q(Oct 15)}} = 116.7812= M_4$ 
+
+    3.
+    
+Date | Real Payment $=$ Monetary Payment $\times \frac{\text{Q(Jan 16)}}{\text{Q(Date)}}$ |
+:-: | :-: | 
+Jul 2016 | $1.03125\frac{97}{100} = `r 1.03125*97/100`$ 
+Jan 2017 | $1.0625\frac{97}{104} = `r 1.0625*97/104`$  
+Jul 2017 | $1.09375\frac{97}{109} = `r 1.09375*97/109`$  
+Jan 2018 | $116.7812\frac{97}{112} = `r 116.7812*97/112`$    
+
+    4. The purchase price of the bond per 100 THB nominal if the investor obtained a real redemption yield of 0.79% p.a. effective on the bond satisfies
+$$
+\begin{aligned}
+P &= \frac{`r 1.03125*97/100`}{(1+0.0079)^{1/2}} + \frac{`r 1.0625*97/104`}{(1+0.0079)^{2/2}} + \frac{`r 1.09375*97/109`}{(1+0.0079)^{3/2}} + \frac{`r 116.7812*97/112`}{(1+0.0079)^{4/2}}\\ 
+&= 102.50.
+\end{aligned}
+$$
+
