@@ -1318,7 +1318,7 @@ $$ A \times \frac{Q(\text{Jan 13})}{Q(\text{Jan 18})}.$$
 
 
 Therefore, the real yield $i\%$ p.a. is
-$$50000 (1 + i')^5 = A \times \frac{Q(\text{Jan 13})}{Q(\text{Jan 18})} = A \times \frac{114.83}{100},$$
+$$50000 (1 + i')^5 = A \times \frac{Q(\text{Jan 13})}{Q(\text{Jan 18})} = A \times \frac{100}{114.83},$$
 which gives $i' = 1.64\%.$
 
 Investment B: First we find an annual income of the annuity.
