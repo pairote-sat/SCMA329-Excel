@@ -26,7 +26,7 @@ The following date formats are recognized by Excel:
 
 -   1-Jul-2017
 
-if the date input is without the year, then it is the date on the
+If the date input is without the year, then it is the date on the
 current year, i.e. 7-1, 7/1, July 1, Jul 1, corresponds to 1 July 2018.
 
 Inconsistent date entries
